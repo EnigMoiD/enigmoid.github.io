@@ -1,33 +1,25 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
-@font-face {
-  font-family: 'Audimat';
-  src: url("/fonts/AUdimat-Regular.otf");
-}
-@font-face {
-  font-family: 'Audimat';
-  font-weight: bold;
-  src: url("/fonts/AUdimat-Bold.otf");
-}
 a {
   text-decoration: none;
 }
-body {
+div,
+body,
+header,
+h1,
+img {
+  padding: 0px;
+  margin: 0px;
   font-family: 'Open Sans';
-  background-color: #f0f9fa;
-  color: #1b1b1b;
+  background-color: #000;
 }
 p {
-  line-height: 1.6em;
+  line-height: line-height;
 }
 header {
-  background-color: #3178ff;
-  border-bottom: 1px solid #0049d5;
-  text-shadow: 0px -1px 0px #0049d5;
+  color: #fff;
 }
 header h1 {
-  font-family: 'Audimat';
-  padding: 50px 10px;
-  font-size: 40px;
+  font-size: 2em;
   text-align: center;
 }
 header a {
@@ -43,138 +35,25 @@ header a :visited {
 header a :highlighted {
   color: #fff;
 }
-header .topbar {
-  width: 100%;
-}
-header .topbar ul li {
-  text-align: center;
-  display: inline-block;
-}
-header .topbar ul .active {
-  font-size: 30px;
-}
 div.container {
   width: 100%;
   overflow: hidden;
-  background-color: #f0f9fa;
+  background-color: #000;
 }
-footer {
-  width: 900px;
-  border-top: 1px dotted #ccc;
-}
-div.column {
-  width: 50%;
-  min-width: 400px;
-  display: inline;
-  float: left;
+div.project {
+  background-color: #fff;
+  height: 300px;
+  display: inline-block;
   overflow: hidden;
 }
-div.tags {
-  margin: 0.3em;
-  margin-left: 0;
+div.project img {
+  transition: -webkit-transform 500ms, opacity 500ms;
+  height: 100%;
 }
-div.tags .tag {
-  padding: 0.3em;
-  margin-right: 1px;
-  display: inline;
-  background-color: #3178ff;
-  color: #fff;
-  transition: background-color 100ms, color 100ms;
-}
-div.tags .tag:hover {
-  background-color: rgba(255,255,255,0);
-  color: #3178ff;
-}
-div.tags .highlight-tag {
-  background-color: rgba(255,255,255,0);
-  color: #3178ff;
-  transition: background-color 100ms, color 100ms;
-}
-div.tags .highlight-tag:hover {
-  background-color: #3178ff;
-  color: #fff;
-}
-div.post {
-  margin: 0.3em;
-  padding: 0.3em;
-  background-color: #fff;
-}
-div.post .header {
-  border-bottom: 1px solid #3178ff;
-  font-size: 1.5em;
-}
-div.post .date {
-  color: #8d8d8d;
-}
-div.post a {
-  text-decoration: none;
-  color: #3178ff;
-}
-div.post a :hover {
-  color: #3178ff;
-}
-div.post a :visited {
-  color: #3178ff;
-}
-div.post a :highlighted {
-  color: #3178ff;
-}
-div.post .post-title {
-  text-align: center;
-}
-div.post-port-snippet,
-.front-post-port-snippet {
-  float: left;
-  position: relative;
-  width: 400px;
-  color: #fff;
-}
-div.post-port-snippet div.imgContainer,
-.front-post-port-snippet div.imgContainer {
-  z-index: -1;
-}
-div.post-port-snippet div.imgContainer img,
-.front-post-port-snippet div.imgContainer img {
-  width: 100%;
-}
-div.post-port-snippet div.postPortSnippetInfoContainer,
-.front-post-port-snippet div.postPortSnippetInfoContainer {
-  background: linear-gradient(top, rgba(0,0,0,0), #000);
-  position: absolute;
-  height: 2.8800000000000003em;
-  width: 100%;
-  bottom: 0;
-}
-div.post-port-snippet div.postPortSnippetInfoContainer h1,
-.front-post-port-snippet div.postPortSnippetInfoContainer h1 {
-  margin-left: 0.3em;
-  color: inherit;
-  display: inline;
-}
-div.post-port-snippet div.postPortSnippetInfoContainer .date,
-.front-post-port-snippet div.postPortSnippetInfoContainer .date {
-  display: inline;
-}
-div.post-port-snippet div.postPortSnippetInfoContainer div.postPortSnippetText,
-.front-post-port-snippet div.postPortSnippetInfoContainer div.postPortSnippetText {
-  margin-left: 0.3em;
-}
-.front-post-port-snippet {
-  width: 100% !important;
-}
-.page-number {
-  display: inline;
-}
-.page-number a {
-  text-decoration: none;
-  color: #3178ff;
-}
-.page-number a :hover {
-  color: #3178ff;
-}
-.page-number a :visited {
-  color: #3178ff;
-}
-.page-number a :highlighted {
-  color: #3178ff;
+div.project img:hover {
+  transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  opacity: 0.9;
 }
