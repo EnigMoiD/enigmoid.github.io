@@ -1,0 +1,77 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300')
+
+//Mixins
+
+a-color(color)
+	a
+		text-decoration none
+		color color
+		:hover
+			color color
+		:visited
+			color color
+		:highlighted
+			color color
+
+margin-not(margin, except)
+	margin margin
+	margin-{except} 0
+
+transform()
+	transform arguments
+	-webkit-transform arguments
+	-moz-transform arguments
+	-ms-transform arguments
+
+//Animation
+quickly = 100ms
+slowly = 500ms
+
+//Colors
+bg-color = #000000
+
+//Global config
+
+a
+	text-decoration none
+
+div, body, header, h1, img
+	padding 0px
+	margin 0px
+
+	font-family 'Open Sans'
+	background-color bg-color
+
+p
+	line-height line-height
+
+//Global Layout
+
+header
+	color white
+	h1
+		font-size 2em
+		text-align center
+
+	a-color(white)
+
+div.container
+	width 100%
+	overflow hidden
+	background-color bg-color
+
+//Projects
+
+div.project
+	background-color white
+	height 300px
+	display inline-block
+	overflow hidden
+
+	img
+		transition -webkit-transform slowly, opacity slowly
+		height 100%
+
+		&:hover
+			transform scale(1.03)
+			opacity .9
