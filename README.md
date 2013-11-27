@@ -1,3 +1,7 @@
+- about me
+	- apple (iPhone, macbook)
+	- my pockets
+		- iPhone, wallet, keys (olin, ECE, key), pencil (engineer)
 - contact
 - projects
 	- olin

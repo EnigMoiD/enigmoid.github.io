@@ -19,7 +19,9 @@
   -moz-transform: translate(0.5em, 0em);
   -ms-transform: translate(0.5em, 0em);
 }
-a text-decoration none,
+a {
+  text-decoration: none;
+}
 body {
   background-color: #000;
 }
@@ -38,35 +40,38 @@ div {
   color: #fff;
 }
 p line-height line-height,
-ul {
-  list-style-type: none;
-}
 header {
   padding-left: 2em;
   padding-right: 2em;
   color: #fff;
 }
+p line-height line-height h1,
 header h1 {
   font-size: 10em;
-  border-bottom: 1px solid #fff;
 }
+p line-height line-height a,
 header a {
   text-decoration: none;
   color: #fff;
 }
+p line-height line-height a :hover,
 header a :hover {
   color: #fff;
 }
+p line-height line-height a :visited,
 header a :visited {
   color: #fff;
 }
+p line-height line-height a :highlighted,
 header a :highlighted {
   color: #fff;
 }
 div.container {
-  width: 100%;
   overflow: hidden;
   background-color: #000;
+}
+p {
+  line-height: line-height;
 }
 ul.splash {
   position: relative;
@@ -78,6 +83,19 @@ ul.splash li {
   display: inline-block;
   width: 32.25806451612903%;
 }
+#pockets img {
+  width: 50%;
+}
+#pockets img li {
+  font-size: 2em;
+  text-align: center;
+  display: inline-block;
+  width: 32.25806451612903%;
+}
+#pockets img {
+  display: inline;
+  width: 30%;
+}
 div.project {
   background-color: #fff;
   height: 300px;
@@ -85,5 +103,13 @@ div.project {
   overflow: hidden;
 }
 div.project img {
+  transition: -webkit-transform 500ms, opacity 500ms;
   height: 100%;
+}
+div.project img:hover {
+  transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+  -moz-transform: scale(1.03);
+  -ms-transform: scale(1.03);
+  opacity: 0.9;
 }
