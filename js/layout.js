@@ -1,6 +1,12 @@
 $(document).ready(function() {
-	processImages();
+	// processImages();
+
+	$('li#contact').click(toggleContact);
 });
+
+function toggleContact() {
+	$('div#contact').toggle();
+}
 
 function processImages() {
 	var images = $('img');

@@ -1,6 +1,6 @@
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:300')
 
-//Mixins
+// Mixins
 
 a-color(color)
 	a
@@ -23,35 +23,56 @@ transform()
 	-moz-transform arguments
 	-ms-transform arguments
 
-//Animation
+// Animation
 quickly = 100ms
 slowly = 500ms
 
-//Colors
+// Colors
 bg-color = #000000
+text-color = white
 
-//Global config
+// Modifiers
 
-a
-	text-decoration none
+.hover
+	transition-timing-function cubic-bezier(.83,.02,.52,.57)
+	transition -webkit-transform slowly
+	&:hover
+		transform scale(1.03)
 
-div, body, header, h1, img
+.advance
+	transition-timing-function cubic-bezier(.83,.02,.52,.57)
+	transition -webkit-transform slowly
+	&:hover
+		transform translate(.5em, 0em)
+
+// Global config
+
+a text-decoration none
+
+body
+	background-color bg-color
+
+div, body, header, h1, img, ul, li, h1, div
 	padding 0px
 	margin 0px
 
 	font-family 'Open Sans'
-	background-color bg-color
+	color text-color
 
-p
-	line-height line-height
+p line-height line-height
 
-//Global Layout
+ul
+	list-style-type none
+
+// Global Layout
 
 header
+	padding-left 2em
+	padding-right 2em
 	color white
 	h1
-		font-size 2em
-		text-align center
+		font-size 10em
+		border-bottom 1px solid white
 
 	a-color(white)
 
@@ -60,7 +81,18 @@ div.container
 	overflow hidden
 	background-color bg-color
 
-//Projects
+// Splash
+
+ul.splash
+	position relative
+	width 50%
+	li
+		font-size 2em
+		text-align center
+		display inline-block
+		width (100/3.1)%
+
+// Projects
 
 div.project
 	background-color white
@@ -69,9 +101,4 @@ div.project
 	overflow hidden
 
 	img
-		transition -webkit-transform slowly, opacity slowly
 		height 100%
-
-		&:hover
-			transform scale(1.03)
-			opacity .9

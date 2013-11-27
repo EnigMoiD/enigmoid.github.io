@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>{{page.title}}</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+</head>
+<body>
+	<header>
+		<a href="/"><h1>Evan Dorsky</h1></a>
+		<ul class="splash">
+			<li class="advance">About</li>
+			<a href="/portfolio.html"><li class="advance">Portfolio</li></a>
+			<li id="contact" class="advance">Contact</li>
+			{% include contact.html %}
+		</ul>
+	</header>
