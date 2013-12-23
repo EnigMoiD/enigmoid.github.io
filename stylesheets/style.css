@@ -97,7 +97,6 @@ ul.splash li {
   width: 30%;
 }
 div.project {
-  background-color: #fff;
   height: 300px;
   display: inline-block;
   overflow: hidden;
@@ -105,11 +104,4 @@ div.project {
 div.project img {
   transition: -webkit-transform 500ms, opacity 500ms;
   height: 100%;
-}
-div.project img:hover {
-  transform: scale(1.03);
-  -webkit-transform: scale(1.03);
-  -moz-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-  opacity: 0.9;
 }
