@@ -1,27 +1,34 @@
 $(document).ready(function() {
-	// processImages();
+	window.contactShowing = false;
+	window.contact = new OriDomi($("div#contact")[0]);
 
 	$('li#contact').click(toggleContact);
 });
 
 function toggleContact() {
-	$('div#contact').toggle();
+	console.log('CINTAODSOAJFADS');
+	console.log(contactShowing);
+	if (contactShowing)
+		contact.foldUp();
+	else
+		contact.unfold();
+	contactShowing = !contactShowing;
 }
 
-function processImages() {
-	var images = $('img');
+// function centerImage(img) {
+// 	var w = img.width();
+// 	var h = img.height();
 
-	images.each(function(i, image) {
-		var $img = $(image);
+// 	var offset = (w - h)/2;
+// 	img.css('margin-left', -offset);
+// }
 
-		centerImage($img);
-	});
-}
+// function processImages() {
+// 	var images = $('img');
 
-function centerImage(img) {
-	var w = img.width();
-	var h = img.height();
+// 	images.each(function(i, image) {
+// 		var $img = $(image);
 
-	var offset = (w - h)/2;
-	img.css('margin-left', -offset);
-}
+// 		centerImage($img);
+// 	});
+// }
