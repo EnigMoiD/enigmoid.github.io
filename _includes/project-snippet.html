@@ -1,0 +1,14 @@
+<div class="project-snippet project-snippet-{% cycle 'odd', 'even' %}">
+	<h1>{{ include.title }}</h1>
+	<div class="desc-container">
+		{% if include.team %}
+		<span class="desc-item"><i class="fa fa-fw fa-user"></i>{{ include.team }}</span>
+		{% endif %}
+		{% if include.code %}<span class="desc-item"><i class="fa fa-fw fa-code"></i>{{ include.code }}</span>
+		{% endif %}
+		{% if include.icon0 %}<span class="desc-item"><i class="fa fa-fw {{ include.icon0 }}"></i></span>
+		{% endif %}
+		{% if include.icon1 %}<span class="desc-item"><i class="fa fa-fw {{ include.icon1 }}"></i></span>
+		{% endif %}
+	</div>
+</div>
