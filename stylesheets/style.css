@@ -1,4 +1,16 @@
 @import url("http://fonts.googleapis.com/css?family=Jura:300");
+@import url("http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100");
+.project-snippet {
+  text-shadow: 0px -1px rgba(0,0,0,0.2);
+  background-color: #202b30;
+  padding: 0.1em 0px 0.2em 0.5em;
+}
+.project-snippet .desc-item {
+  padding-right: 1em;
+}
+.project-snippet-even {
+  background-color: #31424a;
+}
 a {
   text-decoration: none;
 }
@@ -16,14 +28,16 @@ h1,
 div {
   padding: 0px;
   margin: 0px;
-  font-family: 'Jura';
+  font-family: 'Alegreya Sans SC';
   color: #f1f7e2;
+}
+header {
+  font-family: 'Jura';
 }
 p line-height line-height,
 header {
   display: block;
-  padding-left: 2em;
-  padding-right: 2em;
+  padding-left: 0px 2em;
   background-color: #4e7178;
 }
 p line-height line-height a,
@@ -43,23 +57,27 @@ p line-height line-height a:active,
 header a:active {
   color: #a9ce4e;
 }
-ul#left-items {
-  display: inline;
+p line-height line-height li,
+header li {
   font-size: 1.5em;
-}
-ul#left-items li {
   padding: 0px 1em;
   text-align: center;
   display: inline-block;
+  text-shadow: 0px -1px rgba(0,0,0,0.2);
+}
+p line-height line-height li.active,
+header li.active {
+  background-color: #4fa9b8;
+}
+p line-height line-height li.active a,
+header li.active a {
+  color: #f1f7e2;
+}
+ul#left-items {
+  display: inline;
 }
 ul#right-items {
   float: right;
-  font-size: 1.5em;
-}
-ul#right-items li {
-  padding: 0px 1em;
-  text-align: center;
-  display: inline-block;
 }
 div.container {
   overflow: hidden;
@@ -68,25 +86,6 @@ div.container {
 p {
   line-height: line-height;
 }
-#pockets img {
-  width: 50%;
-}
-#pockets img li {
-  font-size: 2em;
-  text-align: center;
-  display: inline-block;
-  width: 32.25806451612903%;
-}
-#pockets img {
-  display: inline;
-  width: 30%;
-}
-div.project {
-  height: 300px;
-  display: inline-block;
-  overflow: hidden;
-}
-div.project img {
-  transition: -webkit-transform 500ms, opacity 500ms;
-  height: 100%;
+span.project {
+  display: block;
 }
