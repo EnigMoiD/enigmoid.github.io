@@ -1,20 +1,16 @@
-@import url('http://fonts.googleapis.com/css?family=Open+Sans:300')
+@import url('http://fonts.googleapis.com/css?family=Jura:300');
 
 // Mixins
-a-color(color)
+a-color(color, hover, active)
 	a
 		text-decoration none
 		color color
-		:hover
+		&:visited
 			color color
-		:visited
-			color color
-		:highlighted
-			color color
-
-margin-not(margin, except)
-	margin margin
-	margin-{except} 0
+		&:hover
+			color hover
+		&:active
+			color active
 
 transform()
 	transform arguments
@@ -27,23 +23,16 @@ quickly = 100ms
 slowly = 500ms
 
 // Colors
-bg-color = #000000
+dark-blue = rgb(32, 43, 48)
+dark-gray = rgb(78, 113, 120)
+bright-blue = rgb(79, 169, 184)
+light-blue = rgb(116, 192, 207)
+off-white = rgb(241, 247, 226)
 
-text-color = white
+text-color = off-white
+bg-color = dark-blue
 
 // Modifiers
-
-.hover
-	transition-timing-function cubic-bezier(.83,.02,.52,.57)
-	transition -webkit-transform slowly
-	&:hover
-			transform scale(1.03)
-
-.advance
-	transition-timing-function cubic-bezier(.83,.02,.52,.57)
-	transition -webkit-transform slowly
-	&:hover
-			transform translate(.5em, 0em)
 
 // Global config
 
@@ -57,7 +46,7 @@ div, body, header, h1, img, ul, li, h1, div
 	padding 0px
 	margin 0px
 
-	font-family 'Open Sans'
+	font-family 'Jura'
 	color text-color
 
 p line-height line-height
@@ -65,13 +54,31 @@ p line-height line-height
 // Global Layout
 
 header
+	display block
 	padding-left 2em
 	padding-right 2em
-	color white
-	h1
-		font-size 8em
+	background-color dark-gray
 
-	a-color(white)
+	a-color(rgba(text-color, 70%), text-color, darken(text-color, 40%))
+
+ul#left-items
+	display inline
+	font-size 1.5em
+	li
+		padding 0px 1em
+		text-align center
+		display inline-block
+
+ul#right-items
+	float right
+
+	font-size 1.5em
+	li
+		padding 0px 1em
+		text-align center
+		display inline-block
+
+style-header(right)
 
 div.container
 	overflow hidden
@@ -82,14 +89,6 @@ p
 
 // About
 
-ul.splash
-	position relative
-	width 50%
-	li
-		font-size 2em
-		text-align center
-		display inline-block
-		width (100/3.1)%
 #pockets img
 	width 50%
 	li

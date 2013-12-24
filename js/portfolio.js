@@ -9,4 +9,4 @@ $(document).ready(function() {
 		if ($(this)[0].complete)
 			$(this).pixastic("desaturate");
 	});
-})
+});

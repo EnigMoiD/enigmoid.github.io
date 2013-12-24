@@ -1,29 +1,9 @@
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
-.hover {
-  transition-timing-function: cubic-bezier(0.83, 0.02, 0.52, 0.57);
-  transition: -webkit-transform 500ms;
-}
-.hover:hover {
-  transform: scale(1.03);
-  -webkit-transform: scale(1.03);
-  -moz-transform: scale(1.03);
-  -ms-transform: scale(1.03);
-}
-.advance {
-  transition-timing-function: cubic-bezier(0.83, 0.02, 0.52, 0.57);
-  transition: -webkit-transform 500ms;
-}
-.advance:hover {
-  transform: translate(0.5em, 0em);
-  -webkit-transform: translate(0.5em, 0em);
-  -moz-transform: translate(0.5em, 0em);
-  -ms-transform: translate(0.5em, 0em);
-}
+@import url("http://fonts.googleapis.com/css?family=Jura:300");
 a {
   text-decoration: none;
 }
 body {
-  background-color: #000;
+  background-color: #202b30;
 }
 div,
 body,
@@ -36,52 +16,57 @@ h1,
 div {
   padding: 0px;
   margin: 0px;
-  font-family: 'Open Sans';
-  color: #fff;
+  font-family: 'Jura';
+  color: #f1f7e2;
 }
 p line-height line-height,
 header {
+  display: block;
   padding-left: 2em;
   padding-right: 2em;
-  color: #fff;
-}
-p line-height line-height h1,
-header h1 {
-  font-size: 8em;
+  background-color: #4e7178;
 }
 p line-height line-height a,
 header a {
   text-decoration: none;
-  color: #fff;
+  color: rgba(241,247,226,0.7);
 }
-p line-height line-height a :hover,
-header a :hover {
-  color: #fff;
+p line-height line-height a:visited,
+header a:visited {
+  color: rgba(241,247,226,0.7);
 }
-p line-height line-height a :visited,
-header a :visited {
-  color: #fff;
+p line-height line-height a:hover,
+header a:hover {
+  color: #f1f7e2;
 }
-p line-height line-height a :highlighted,
-header a :highlighted {
-  color: #fff;
+p line-height line-height a:active,
+header a:active {
+  color: #a9ce4e;
+}
+ul#left-items {
+  display: inline;
+  font-size: 1.5em;
+}
+ul#left-items li {
+  padding: 0px 1em;
+  text-align: center;
+  display: inline-block;
+}
+ul#right-items {
+  float: right;
+  font-size: 1.5em;
+}
+ul#right-items li {
+  padding: 0px 1em;
+  text-align: center;
+  display: inline-block;
 }
 div.container {
   overflow: hidden;
-  background-color: #000;
+  background-color: #202b30;
 }
 p {
   line-height: line-height;
-}
-ul.splash {
-  position: relative;
-  width: 50%;
-}
-ul.splash li {
-  font-size: 2em;
-  text-align: center;
-  display: inline-block;
-  width: 32.25806451612903%;
 }
 #pockets img {
   width: 50%;
