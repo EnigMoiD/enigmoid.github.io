@@ -1,5 +1,54 @@
 @import url("http://fonts.googleapis.com/css?family=Jura:300");
 @import url("http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100");
+@font-face {
+  font-family: Entypo;
+  src: url("/font/Entypo/entypo.eot");
+  src: url("/font/Entypo/entypo.eot?#iefix") format('embedded-opentype'), url("/font/Entypo/entypo.woff") format('woff'), url("/font/Entypo/entypo.ttf") format('truetype'), url("/font/Entypo/entypo.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Entypo-Social;
+  src: url("/font/Entypo-Social/entypo-social.eot");
+  src: url("/font/Entypo-Social/entypo-social.eot?#iefix") format('embedded-opentype'), url("/font/Entypo-Social/entypo-social.woff") format('woff'), url("/font/Entypo-Social/entypo-social.ttf") format('truetype'), url("/font/Entypo-Social/entypo-social.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.e {
+  display: inline-block;
+  font-family: 'Entypo';
+  font-size: 2em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.e.code:before {
+  content: '\E714';
+}
+.e.user:before {
+  content: '\1F464';
+}
+.e.envelope:before {
+  content: '\2709';
+}
+.e.bolt:before {
+  content: '\26A1';
+}
+.e-s {
+  display: inline-block;
+  font-family: 'Entypo-Social';
+  font-size: 2em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.e-s.github:before {
+  content: '\F300';
+}
 .project-snippet {
   text-shadow: 0px -1px rgba(0,0,0,0.2);
   background-color: #202b30;

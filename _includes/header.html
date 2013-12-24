@@ -3,7 +3,7 @@
 <head>
 	<title>{{page.title}}</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
-	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+	<!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
 </head>
 <body>
 	<header>
@@ -11,9 +11,10 @@
 			<li {% if include.active == "home" %} class="active" {% endif %}><a href="/">HOME</a></li>
 			<li {% if include.active == "about" %} class="active" {% endif %}><a href="/about.html">ABOUT</a></li>
 			<li {% if include.active == "portfolio" %} class="active" {% endif %}><a href="/portfolio.html">PORTFOLIO</a></li>
+			<li {% if include.active == "paper" %} class="active" {% endif %}><a href="/paper.html">PAPER</a></li>
 		</ul>
 		<ul id="right-items">
-			<li><a href="mailto:enigmoid@gmail.com"><i class="fa fa-fw fa-envelope"></i></a></li>
-			<li><a href="http://github.com/EnigMoiD"><i class="fa fa-fw fa-github"></i></a></li>
+			<li><a href="mailto:enigmoid@gmail.com"><i class="e envelope"></i></a></li>
+			<li><a href="http://github.com/EnigMoiD"><i class="e-s github"></i></a></li>
 		</ul>
 	</header>
