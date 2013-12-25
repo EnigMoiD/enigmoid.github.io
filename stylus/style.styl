@@ -1,4 +1,5 @@
 @import url('http://fonts.googleapis.com/css?family=Jura:300');
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:300');
 @import url('http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100');
 
 // Mixins
@@ -13,18 +14,9 @@ a-color(color, hover, active)
 		&:active
 			color active
 
-transform()
-	transform arguments
-	-webkit-transform arguments
-	-moz-transform arguments
-	-ms-transform arguments
-
-// Animation
-quickly = 100ms
-slowly = 500ms
-
 // Colors
 dark-blue = rgb(32, 43, 48)
+dark-dark-blue = darken(dark-blue, 50%)
 dark-gray = rgb(78, 113, 120)
 bright-blue = rgb(79, 169, 184)
 light-blue = rgb(116, 192, 207)
@@ -33,22 +25,6 @@ off-white = rgb(241, 247, 226)
 text-color = off-white
 bg-color = dark-blue
 
-// Includes
-	
-.project-snippet
-	text-shadow 0px -1px rgba(0, 0, 0, .2)
-	background-color dark-blue
-
-	padding .1em 0px .2em .5em
-
-	.desc-item
-		padding-right 1em
-
-.project-snippet-even
-	background-color lighten(dark-blue, 10%)
-
-// Modifiers
-
 // Global config
 
 a
@@ -56,18 +32,31 @@ a
 
 body
 	background-color bg-color
+	font-family 'Open Sans'
 
-div, body, header, h1, img, ul, li, h1, div
+div, body, header, h1, h2, h3, h4, h5, h6, img, ul, li, div
 	padding 0px
 	margin 0px
 
-	font-family 'Alegreya Sans SC'
 	color text-color
 
-header
-	font-family 'Jura'
+#container
+	clear both
+	
+// Includes
+	
+.project-snippet
+	font-family 'Alegreya Sans SC'
+	text-shadow 0px -1px rgba(0, 0, 0, .2)
 
-p line-height line-height
+	background-color dark-blue
+	padding .1em 0px .2em .5em
+
+	.desc-item
+		padding-right 1em
+
+.project-snippet-even
+	background-color lighten(dark-blue, 10%)
 
 // Global Layout
 
@@ -79,6 +68,7 @@ header
 	a-color(rgba(text-color, 70%), text-color, darken(text-color, 40%))
 
 	li
+		font-family 'Jura'
 		font-size 1.5em
 		padding 0px 1em
 		text-align center
@@ -91,17 +81,26 @@ header
 		background-color bright-blue
 
 ul#left-items
-	display inline
+	display inline-block
 
 ul#right-items
 	float right
 
-div.container
-	overflow hidden
-	background-color bg-color
+// Posts
+#post-container
+	h1, h2, h3, h4, h5, h6
+		font-family 'Alegreya Sans SC'
 
-p
-	line-height line-height
+#post-banner
+	width 100%
+	display table
+	h1
+		display table-cell
+		vertical-align middle
+	font-family 'Alegreya Sans SC'
+	text-align center
+	background-color darken(dark-blue, 30%)
+	height 10em
 
 // Projects
 

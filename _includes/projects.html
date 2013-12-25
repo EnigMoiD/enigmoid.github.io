@@ -1,11 +1,3 @@
-{% include project-snippet.html title="Bike-Charged Supercapacitors" img="poe-pyrois" team="4" code="C" icon0="fa-bolt" %}
-{% include project-snippet.html title="A Working CPU From Scratch" img="cpu" team="4" code="Verilog" icon0="fa-bolt" %}
-{% include project-snippet.html title="Automated Petri Dish Scanner" img="poe-petri" team="2" code="Arduino C" icon0="fa-wrench" %}
-{% include project-snippet.html title="Infrared 3D Scanner" img="poe-lidar" team="2" code="Arduino C" icon0="" %}
-{% include project-snippet.html title="A Webapp to Empower Teachers" img="educanon" team="5" code="JavaScript, PHP" icon0="" %}
-{% include project-snippet.html title="Large Scale Modular Origami" img="origami" team="100+" icon0="" %}
-{% include project-snippet.html title="Graphene Ultracapacitors" img="stuff-ultracaps" team="4" code="d3.js" icon0="fa-flask" %}
-{% include project-snippet.html title="Cast Bronze Bells" img="stuff-bronze" team="4" icon0="fa-flask" %}
-{% include project-snippet.html title="Billiards Modeled and Analyzed" img="billiards" team="2" code="MATLAB, Objective-C" icon0="" %}
-{% include project-snippet.html title="Plastic Froghopper" img="hopper" team="1" icon0="fa-wrench" %}
-{% include project-snippet.html title="Electric Fields" img="efields" team="1" code="Objective-C++, OpenGL ES" icon0="" %}
+{% for post in site.posts %}
+{% include project-snippet.html %}
+{% endfor %}

@@ -1,6 +1,35 @@
 @import url("http://fonts.googleapis.com/css?family=Jura:300");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
 @import url("http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100");
+a {
+  text-decoration: none;
+}
+body {
+  background-color: #202b30;
+  font-family: 'Open Sans';
+}
+div,
+body,
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+ul,
+li,
+div {
+  padding: 0px;
+  margin: 0px;
+  color: #f1f7e2;
+}
+#container {
+  clear: both;
+}
 .project-snippet {
+  font-family: 'Alegreya Sans SC';
   text-shadow: 0px -1px rgba(0,0,0,0.2);
   background-color: #202b30;
   padding: 0.1em 0px 0.2em 0.5em;
@@ -11,80 +40,63 @@
 .project-snippet-even {
   background-color: #31424a;
 }
-a {
-  text-decoration: none;
-}
-body {
-  background-color: #202b30;
-}
-div,
-body,
-header,
-h1,
-img,
-ul,
-li,
-h1,
-div {
-  padding: 0px;
-  margin: 0px;
-  font-family: 'Alegreya Sans SC';
-  color: #f1f7e2;
-}
-header {
-  font-family: 'Jura';
-}
-p line-height line-height,
 header {
   display: block;
   padding-left: 0px 2em;
   background-color: #4e7178;
 }
-p line-height line-height a,
 header a {
   text-decoration: none;
   color: rgba(241,247,226,0.7);
 }
-p line-height line-height a:visited,
 header a:visited {
   color: rgba(241,247,226,0.7);
 }
-p line-height line-height a:hover,
 header a:hover {
   color: #f1f7e2;
 }
-p line-height line-height a:active,
 header a:active {
   color: #a9ce4e;
 }
-p line-height line-height li,
 header li {
+  font-family: 'Jura';
   font-size: 1.5em;
   padding: 0px 1em;
   text-align: center;
   display: inline-block;
   text-shadow: 0px -1px rgba(0,0,0,0.2);
 }
-p line-height line-height li.active,
 header li.active {
   background-color: #4fa9b8;
 }
-p line-height line-height li.active a,
 header li.active a {
   color: #f1f7e2;
 }
 ul#left-items {
-  display: inline;
+  display: inline-block;
 }
 ul#right-items {
   float: right;
 }
-div.container {
-  overflow: hidden;
-  background-color: #202b30;
+#post-container h1,
+#post-container h2,
+#post-container h3,
+#post-container h4,
+#post-container h5,
+#post-container h6 {
+  font-family: 'Alegreya Sans SC';
 }
-p {
-  line-height: line-height;
+#post-banner {
+  width: 100%;
+  display: table;
+  font-family: 'Alegreya Sans SC';
+  text-align: center;
+  background-color: #161e22;
+  height: 10em;
+}
+#post-banner h1 {
+  display: table-cell;
+  vertical-align: middle;
 }
 span.project {
   display: block;
