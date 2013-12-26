@@ -25,6 +25,9 @@ div {
   margin: 0px;
   color: #f1f7e2;
 }
+ul {
+  list-style: none;
+}
 #container {
   clear: both;
 }
@@ -77,6 +80,9 @@ ul#left-items {
 }
 ul#right-items {
   float: right;
+}
+#post-container {
+  padding: 1em;
 }
 #post-container h1,
 #post-container h2,

@@ -4,14 +4,8 @@
 		{% if post.team %}
 		<span class="desc-item"><i class="fa fa-fw fa-user"></i>{{ post.team }}</span>
 		{% endif %}
-		{% if post.code %}
-		<span class="desc-item"><i class="fa fa-fw fa-code"></i>{{ post.code }}</span>
-		{% endif %}
-		{% if post.icon0 %}
-		<span class="desc-item"><i class="fa fa-fw {{ post.icon0 }}"></i></span>
-		{% endif %}
-		{% if post.icon1 %}
-		<span class="desc-item"><i class="fa fa-fw {{ post.icon1 }}"></i></span>
-		{% endif %}
+		{% for spec in post.specs %}
+			<span class="desc-item"><i class="fa fa-fw fa-{{ spec[0] }}"></i> {{ spec[1] }}</span>
+		{% endfor %}
 	</div>
 </div>
