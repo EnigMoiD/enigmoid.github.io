@@ -1,6 +1,8 @@
 {% include header.html %}
+<div id="post-banner" class="{{ page.shade }}" style="background-image:url('/img/{{ page.short }}/banner.jpg')">
+		<h1>{{ page.title }}</h1>
+</div>
 <div id="post-container">
-	<div id="post-banner" class="{{ page.shade }}" style="background-image:url('/img/{{ page.short }}/banner.jpg')"><h1>{{ page.title }}</h1></div>
 	<h1>{{ page.header[0] }}</h1>
 	<p>{{ page.header[1] }}</p>
 	{% if page.specs %}

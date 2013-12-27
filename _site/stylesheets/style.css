@@ -116,6 +116,7 @@ ul#right-items {
 }
 #post-container {
   clear: both;
+  padding: 0 1em;
 }
 #post-banner {
   clear: both;
@@ -125,7 +126,7 @@ ul#right-items {
   text-align: center;
   background-position: 50% 50%;
   background-color: #161e22;
-  text-shadow: 0px 1px 3px #000, 0px 1px 3px #000, 0px 1px 3px #000;
+  text-shadow: 0px 1px 3px #101518, 0px 1px 3px #101518, 0px 1px 3px #101518;
   height: 10em;
 }
 #post-banner h1 {
