@@ -30,6 +30,8 @@ bg-color = dark-blue
 a
 	text-decoration none
 
+a-color(rgba(text-color, 70%), text-color, darken(text-color, 40%))
+
 body
 	background-color bg-color
 	font-family 'Open Sans'
@@ -39,6 +41,12 @@ div, body, header, h1, h2, h3, h4, h5, h6, img, ul, li, div
 	margin 0px
 
 	color text-color
+
+h1, h2, h3, h4, h5, h6
+	font-family 'Alegreya Sans SC'
+
+img
+	max-width 100%
 
 ul
 	list-style none
@@ -55,27 +63,40 @@ ul
 	background-color dark-blue
 	padding .1em 0px .2em .5em
 
+	h1
+		display inline-block
+
 	.desc-item
 		padding-right 1em
+
+	.external-pin
+		float right
+		font-size 1.5em
 
 .project-snippet-even
 	background-color lighten(dark-blue, 10%)
 
+// Modifiers
+.center
+	text-align center
+
 // Global Layout
 
+header-padding = 1px
+
 header
-	display block
-	padding-left 0px 2em
+	padding header-padding 0px
 	background-color dark-gray
 
 	a-color(rgba(text-color, 70%), text-color, darken(text-color, 40%))
 
 	li
+		padding header-padding 1em
+
 		font-family 'Jura'
 		font-size 1.5em
-		padding 0px 1em
 		text-align center
-		display inline-block
+		display inline
 		text-shadow 0px -1px rgba(0, 0, 0, .2)
 
 	li.active
@@ -84,19 +105,17 @@ header
 		background-color bright-blue
 
 ul#left-items
-	display inline-block
+	display inline-table
 
 ul#right-items
 	float right
 
 // Posts
 #post-container
-	h1, h2, h3, h4, h5, h6
-		font-family 'Alegreya Sans SC'
-
-	padding 1em
+	clear both
 
 #post-banner
+	clear both
 	width 100%
 	display table
 	h1
@@ -104,8 +123,14 @@ ul#right-items
 		vertical-align middle
 	font-family 'Alegreya Sans SC'
 	text-align center
+
+	background-position 50% 50%
 	background-color darken(dark-blue, 30%)
+	text-shadow 0px 1px 3px black,
+				0px 1px 3px black,
+				0px 1px 3px black
 	height 10em
+
 
 // Projects
 

@@ -1,8 +1,15 @@
 <div class="project-snippet project-snippet-{% cycle 'odd', 'even' %}">
+	{% if post.external %}
+	<div class="external-pin">
+		<a href="//{{ post.external[1] }}">
+		<i class="fa fa-fw fa-{{ post.external[0] }}"></i>
+		</a>
+	</div>
+	{% endif %}
 	<a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
 	<div class="desc-container">
 		{% if post.team %}
-		<span class="desc-item"><i class="fa fa-fw fa-user"></i>{{ post.team }}</span>
+			<span class="desc-item"><i class="fa fa-fw fa-user"></i>{{ post.team }}</span>
 		{% endif %}
 		{% for spec in post.specs %}
 			<span class="desc-item"><i class="fa fa-fw fa-{{ spec[0] }}"></i> {{ spec[1] }}</span>

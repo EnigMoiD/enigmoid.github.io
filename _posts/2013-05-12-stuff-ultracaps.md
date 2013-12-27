@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Graphene Ultracapacitors
-img: stuff-ultracaps 
+external: [github, github.com/EnigMoiD/Ultracap-Site]
+short: stuff-ultracaps
 team: 4
 specs: [[code, 'd3.js']]
-icon0: fa-flask
 ---

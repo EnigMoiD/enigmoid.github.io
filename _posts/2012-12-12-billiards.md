@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Billiards Modeled and Analyzed
-img: billiards 
+short: billiards 
 team: 2
 specs: [[code, 'MATLAB, Objective-C']]
 ---
