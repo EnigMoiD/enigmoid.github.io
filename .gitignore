@@ -1,5 +1,4 @@
 _site/
-*.css
 .DS_Store
 *.psd
 *.sublime-workspace

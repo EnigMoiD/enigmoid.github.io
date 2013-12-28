@@ -1,0 +1,168 @@
+@import url("http://fonts.googleapis.com/css?family=Jura:300");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
+@import url("http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100");
+a {
+  text-decoration: none;
+  color: rgba(245,249,251,0.8);
+}
+a:visited {
+  color: rgba(245,249,251,0.8);
+}
+a:hover {
+  color: #f5f9fb;
+}
+a:active {
+  color: #478eb1;
+}
+html {
+  height: 100%;
+}
+body {
+  background-color: #14151a;
+  font-family: 'Open Sans';
+  height: 100%;
+}
+div,
+body,
+header,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+img,
+ul,
+li,
+div {
+  padding: 0px;
+  margin: 0px;
+  color: #f5f9fb;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Alegreya Sans SC';
+}
+img {
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+.project-snippet {
+  font-family: 'Alegreya Sans SC';
+  text-shadow: 0px -1px rgba(0,0,0,0.2);
+  background-color: #1d2326;
+  padding: 0.1em 0px 0.2em 0.5em;
+}
+.project-snippet h1 {
+  display: inline-block;
+}
+.project-snippet .desc-item {
+  padding-right: 1em;
+}
+.project-snippet .external-pin {
+  float: right;
+  font-size: 1.5em;
+}
+.project-snippet-odd {
+  background-color: #303a3f;
+}
+#container,
+#post-container {
+  clear: both;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 120px;
+}
+footer {
+  clear: both;
+  width: 100%;
+  display: table;
+  position: relative;
+  z-index: 2;
+  height: 120px;
+  margin-top: -120px;
+  background-color: #1194ce;
+}
+footer #content {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 0.8em;
+  text-align: center;
+  text-shadow: 0px 1px rgba(0,0,0,0.2);
+}
+footer #content a {
+  border-bottom: 1px dotted #f5f9fb;
+  text-decoration: none;
+}
+footer #content a:hover {
+  border-bottom: 1px solid #f5f9fb;
+}
+footer #content a:active {
+  color: #f5f9fb;
+}
+.center {
+  text-align: center;
+}
+header {
+  padding: 1px 0px;
+  background-color: #1d2326;
+}
+header a {
+  text-decoration: none;
+  color: rgba(245,249,251,0.7);
+}
+header a:visited {
+  color: rgba(245,249,251,0.7);
+}
+header a:hover {
+  color: #f5f9fb;
+}
+header a:active {
+  color: #67a4c2;
+}
+header li {
+  padding: 1px 1em;
+  font-family: 'Jura';
+  font-size: 1.5em;
+  text-align: center;
+  display: inline;
+  text-shadow: 0px -1px rgba(0,0,0,0.2);
+}
+header li.active {
+  background-color: #1194ce;
+}
+header li.active a {
+  color: #f5f9fb;
+}
+ul#left-items {
+  display: inline-table;
+}
+ul#right-items {
+  float: right;
+}
+#post-container {
+  padding: 0 1em;
+}
+#post-banner {
+  clear: both;
+  width: 100%;
+  display: table;
+  font-family: 'Alegreya Sans SC';
+  text-align: center;
+  background-color: #14191b;
+  text-shadow: 0px 1px 3px #1d2326, 0px 1px 3px #1d2326, 0px 1px 3px #1d2326;
+  height: 10em;
+}
+#post-banner h1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+span.project {
+  display: block;
+}
