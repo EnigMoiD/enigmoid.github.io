@@ -24,6 +24,9 @@ off-white = desaturate(lighten(accent, 95%), 50%)
 text-color = off-white
 bg-color = dark-gray
 
+footer-color = accent
+footer-height = 120px
+
 // Global config
 
 a
@@ -31,9 +34,13 @@ a
 
 a-color(rgba(text-color, 80%), text-color, darken(text-color, 50%))
 
+html
+	height 100%
+
 body
 	background-color bg-color
 	font-family 'Open Sans'
+	height 100%
 
 div, body, header, h1, h2, h3, h4, h5, h6, img, ul, li, div
 	padding 0px
@@ -49,9 +56,6 @@ img
 
 ul
 	list-style none
-
-#container
-	clear both
 	
 // Includes
 	
@@ -74,6 +78,40 @@ ul
 
 .project-snippet-odd
 	background-color lighten(dim-blue, 10%)
+
+#container
+	clear both
+	height auto
+	min-height 100%
+	padding-bottom footer-height
+
+footer
+	clear both
+	width 100%
+	display table
+	position relative
+	z-index 2
+	height footer-height
+	margin-top - footer-height
+
+	#content
+		display table-cell
+		vertical-align middle
+		font-size 0.8em
+		text-align center
+
+		text-shadow 0px 1px rgba(0, 0, 0, .2)
+
+		a
+			border-bottom 1px dotted text-color
+			text-decoration none
+			&:hover
+				border-bottom 1px solid text-color
+			&:active
+				color text-color
+
+	background-color footer-color
+
 
 // Modifiers
 .center
@@ -109,20 +147,9 @@ ul#left-items
 ul#right-items
 	float right
 
-footer
-	clear both
-	position relative
-	z-index 2
-	height 3em
-	margin-top -3em
-
-	font-size 0.8em
-	text-align center
-	background-color dim-blue
-
 // Posts
 #post-container
-	clear both
+	@extends #container
 	padding 0 1em
 
 #post-banner
@@ -135,7 +162,6 @@ footer
 	font-family 'Alegreya Sans SC'
 	text-align center
 
-	background-position 50% 50%
 	background-color darken(dim-blue, 30%)
 	text-shadow 0px 1px 3px dim-blue,
 				0px 1px 3px dim-blue,
