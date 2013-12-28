@@ -6,19 +6,19 @@ a {
 }
 a {
   text-decoration: none;
-  color: rgba(241,247,226,0.7);
+  color: rgba(245,249,251,0.8);
 }
 a:visited {
-  color: rgba(241,247,226,0.7);
+  color: rgba(245,249,251,0.8);
 }
 a:hover {
-  color: #f1f7e2;
+  color: #f5f9fb;
 }
 a:active {
-  color: #a9ce4e;
+  color: #478eb1;
 }
 body {
-  background-color: #202b30;
+  background-color: #14151a;
   font-family: 'Open Sans';
 }
 div,
@@ -36,7 +36,7 @@ li,
 div {
   padding: 0px;
   margin: 0px;
-  color: #f1f7e2;
+  color: #f5f9fb;
 }
 h1,
 h2,
@@ -58,7 +58,7 @@ ul {
 .project-snippet {
   font-family: 'Alegreya Sans SC';
   text-shadow: 0px -1px rgba(0,0,0,0.2);
-  background-color: #202b30;
+  background-color: #1d2326;
   padding: 0.1em 0px 0.2em 0.5em;
 }
 .project-snippet h1 {
@@ -71,28 +71,28 @@ ul {
   float: right;
   font-size: 1.5em;
 }
-.project-snippet-even {
-  background-color: #31424a;
+.project-snippet-odd {
+  background-color: #303a3f;
 }
 .center {
   text-align: center;
 }
 header {
   padding: 1px 0px;
-  background-color: #4e7178;
+  background-color: #1d2326;
 }
 header a {
   text-decoration: none;
-  color: rgba(241,247,226,0.7);
+  color: rgba(245,249,251,0.7);
 }
 header a:visited {
-  color: rgba(241,247,226,0.7);
+  color: rgba(245,249,251,0.7);
 }
 header a:hover {
-  color: #f1f7e2;
+  color: #f5f9fb;
 }
 header a:active {
-  color: #a9ce4e;
+  color: #67a4c2;
 }
 header li {
   padding: 1px 1em;
@@ -103,16 +103,26 @@ header li {
   text-shadow: 0px -1px rgba(0,0,0,0.2);
 }
 header li.active {
-  background-color: #4fa9b8;
+  background-color: #1194ce;
 }
 header li.active a {
-  color: #f1f7e2;
+  color: #f5f9fb;
 }
 ul#left-items {
   display: inline-table;
 }
 ul#right-items {
   float: right;
+}
+footer {
+  clear: both;
+  position: relative;
+  z-index: 2;
+  height: 3em;
+  margin-top: -3em;
+  font-size: 0.8em;
+  text-align: center;
+  background-color: #1d2326;
 }
 #post-container {
   clear: both;
@@ -125,8 +135,8 @@ ul#right-items {
   font-family: 'Alegreya Sans SC';
   text-align: center;
   background-position: 50% 50%;
-  background-color: #161e22;
-  text-shadow: 0px 1px 3px #101518, 0px 1px 3px #101518, 0px 1px 3px #101518;
+  background-color: #14191b;
+  text-shadow: 0px 1px 3px #1d2326, 0px 1px 3px #1d2326, 0px 1px 3px #1d2326;
   height: 10em;
 }
 #post-banner h1 {
