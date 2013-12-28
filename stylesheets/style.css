@@ -56,7 +56,7 @@ ul {
 .project-snippet {
   font-family: 'Alegreya Sans SC';
   text-shadow: 0px -1px rgba(0,0,0,0.2);
-  background-color: #1d2326;
+  background-color: #14151a;
   padding: 0.1em 0px 0.2em 0.5em;
 }
 .project-snippet h1 {
@@ -69,45 +69,16 @@ ul {
   float: right;
   font-size: 1.5em;
 }
-.project-snippet-odd {
-  background-color: #303a3f;
-}
-#container,
-#post-container {
-  clear: both;
-  height: auto;
-  min-height: 100%;
-  padding-bottom: 120px;
-}
-footer {
-  clear: both;
-  width: 100%;
-  display: table;
-  position: relative;
-  z-index: 2;
-  height: 120px;
-  margin-top: -120px;
-  background-color: #1194ce;
-}
-footer #content {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 0.8em;
-  text-align: center;
-  text-shadow: 0px 1px rgba(0,0,0,0.2);
-}
-footer #content a {
-  border-bottom: 1px dotted #f5f9fb;
-  text-decoration: none;
-}
-footer #content a:hover {
-  border-bottom: 1px solid #f5f9fb;
-}
-footer #content a:active {
-  color: #f5f9fb;
+.project-snippet-even {
+  background-color: #1e2027;
 }
 .center {
   text-align: center;
+}
+.accent,
+.milestone .number {
+  color: #1194ce;
+  font-size: 3em;
 }
 header {
   padding: 1px 0px;
@@ -146,8 +117,46 @@ ul#left-items {
 ul#right-items {
   float: right;
 }
+#container,
+#post-container {
+  clear: both;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 120px;
+}
+#container p,
+#post-container p {
+  padding: 0px 1em;
+}
 #post-container {
   padding: 0 1em;
+}
+footer {
+  clear: both;
+  width: 100%;
+  display: table;
+  position: relative;
+  z-index: 2;
+  height: 120px;
+  margin-top: -120px;
+  background-color: #1194ce;
+}
+footer #content {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 0.8em;
+  text-align: center;
+  text-shadow: 0px 1px rgba(0,0,0,0.2);
+}
+footer #content a {
+  border-bottom: 1px dotted #f5f9fb;
+  text-decoration: none;
+}
+footer #content a:hover {
+  border-bottom: 1px solid #f5f9fb;
+}
+footer #content a:active {
+  color: #f5f9fb;
 }
 #post-banner {
   clear: both;
@@ -162,7 +171,4 @@ ul#right-items {
 #post-banner h1 {
   display: table-cell;
   vertical-align: middle;
-}
-span.project {
-  display: block;
 }

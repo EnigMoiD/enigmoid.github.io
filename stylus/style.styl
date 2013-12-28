@@ -23,8 +23,12 @@ off-white = desaturate(lighten(accent, 95%), 50%)
 
 text-color = off-white
 bg-color = dark-gray
-
 footer-color = accent
+
+// Sizes
+
+header-padding = 1px
+accent-size = 3em
 footer-height = 120px
 
 // Global config
@@ -60,7 +64,7 @@ ul
 	font-family 'Alegreya Sans SC'
 	text-shadow 0px -1px rgba(0, 0, 0, .2)
 
-	background-color dim-blue
+	background-color dark-gray
 	padding .1em 0px .2em .5em
 
 	h1
@@ -73,49 +77,20 @@ ul
 		float right
 		font-size 1.5em
 
-.project-snippet-odd
-	background-color lighten(dim-blue, 10%)
-
-#container
-	clear both
-	height auto
-	min-height 100%
-	padding-bottom footer-height
-
-footer
-	clear both
-	width 100%
-	display table
-	position relative
-	z-index 2
-	height footer-height
-	margin-top - footer-height
-
-	#content
-		display table-cell
-		vertical-align middle
-		font-size 0.8em
-
-		text-align center
-		text-shadow 0px 1px rgba(0, 0, 0, .2)
-		a
-			border-bottom 1px dotted text-color
-			text-decoration none
-			&:hover
-				border-bottom 1px solid text-color
-			&:active
-				color text-color
-
-	background-color footer-color
-
+.project-snippet-even
+	background-color lighten(dark-gray, 5%)
 
 // Modifiers
 .center
 	text-align center
 
+.accent
+	color accent
+	font-size accent-size
+
 // Global Layout
 
-header-padding = 1px
+// Header
 
 header
 	padding header-padding 0px
@@ -143,10 +118,56 @@ ul#left-items
 ul#right-items
 	float right
 
-// Posts
+// Content Container
+
+#container
+	clear both
+	height auto
+	min-height 100%
+	padding-bottom footer-height
+
+	p
+		padding 0px 1em
+
 #post-container
 	@extends #container
 	padding 0 1em
+
+// Footer
+
+footer
+	clear both
+	width 100%
+	display table
+	position relative
+	z-index 2
+	height footer-height
+	margin-top - footer-height
+
+	#content
+		display table-cell
+		vertical-align middle
+		font-size 0.8em
+
+		text-align center
+		text-shadow 0px 1px rgba(0, 0, 0, .2)
+		a
+			border-bottom 1px dotted text-color
+			text-decoration none
+			&:hover
+				border-bottom 1px solid text-color
+			&:active
+				color text-color
+
+	background-color footer-color
+
+// About
+
+.milestone
+	.number
+		@extends .accent
+
+// Posts
 
 #post-banner
 	clear both
@@ -163,9 +184,3 @@ ul#right-items
 				0px 1px 3px dim-blue,
 				0px 1px 3px dim-blue
 	height 10em
-
-
-// Projects
-
-span.project
-	display block
