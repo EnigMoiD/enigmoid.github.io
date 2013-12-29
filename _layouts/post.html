@@ -1,17 +1,20 @@
 {% include header.html %}
-<div class="post banner" class="{{ page.shade }}" style="background-image:url('/img/{{ page.short }}/banner.jpg')">
+<div class="post banner {{ page.shade }}">
+	<div class="banner-content">
 		<h1>{{ page.title }}</h1>
+	</div>
+	<img src="/img/{{ page.short }}/banner.jpg">
 </div>
 <div id="post-container">
 	<h1>{{ page.header[0] }}</h1>
 	<p>{{ page.header[1] }}</p>
 	{% if page.specs %}
-		<h2>Tech Specs</h2>
-		<p><ul>
-			{% for spec in page.specs %}
-				<li><i class="fa fa-fw fa-{{ spec[0] }}"></i> {{ spec[1] }}</li>
-			{% endfor %}
-		</ul></p>
+	<h2>Tech Specs</h2>
+	<p><ul>
+		{% for spec in page.specs %}
+		<li><i class="fa fa-fw fa-{{ spec[0] }}"></i> {{ spec[1] }}</li>
+		{% endfor %}
+	</ul></p>
 	{% endif %}
 	{{ content }}
 </div>

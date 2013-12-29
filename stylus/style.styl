@@ -56,6 +56,7 @@ a-color(rgba(text-color, 80%), text-color, darken(text-color, 50%))
 
 html
 	height 100%
+	width 100%
 
 body
 	background-color bg-color
@@ -152,14 +153,13 @@ div.column
 		display block
 		width 100%
 
-about-height = 5em
+// Banner (for putting a background behind content)
 
-.column.about
-	height about-height
+.banner
 	text-align center
 	margin-bottom 1em
 
-.about-content
+.banner-content
 	font-size 1.1em
 	text-shadow 0px 1px 3px dim-blue,
 				0px 1px 3px dim-blue,
@@ -168,16 +168,26 @@ about-height = 5em
 	position absolute
 	z-index 1
 
-.about-background
+.banner-bg
 	width 100%
-	position absolute
-	z-index 0
 
+// About banners
+about-height = 5em
+
+.about.banner
+	height about-height
+
+.about.banner-bg
 	i
 		font-size about-height
 
-	img
-		height 100%
+// Index banners
+
+
+
+// Post banners
+
+
 
 // Content Container
 
@@ -235,7 +245,7 @@ footer
 
 // Posts
 
-.banner
+.banana
 	clear both
 	width 100%
 	display table
@@ -249,8 +259,3 @@ footer
 	text-shadow 0px 1px 3px dim-blue,
 				0px 1px 3px dim-blue,
 				0px 1px 3px dim-blue
-
-// Banners
-
-.post.banner
-	height 10em

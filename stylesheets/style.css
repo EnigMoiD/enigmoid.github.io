@@ -37,6 +37,7 @@ a:active {
 }
 html {
   height: 100%;
+  width: 100%;
 }
 body {
   background-color: #0c0d10;
@@ -154,28 +155,25 @@ div.column {
     width: 100%;
   }
 }
-.column.about {
-  height: 5em;
+.banner {
   text-align: center;
   margin-bottom: 1em;
 }
-.about-content {
+.banner-content {
   font-size: 1.1em;
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 3px #1d2326, 0px 1px 3px #1d2326;
   width: 100%;
   position: absolute;
   z-index: 1;
 }
-.about-background {
+.banner-bg {
   width: 100%;
-  position: absolute;
-  z-index: 0;
 }
-.about-background i {
+.about.banner {
+  height: 5em;
+}
+.about.banner-bg i {
   font-size: 5em;
-}
-.about-background img {
-  height: 100%;
 }
 #container,
 #post-container {
@@ -223,7 +221,7 @@ footer #content a:active {
 .milestone {
   text-align: center;
 }
-.banner {
+.banana {
   clear: both;
   width: 100%;
   display: table;
@@ -232,10 +230,7 @@ footer #content a:active {
   background-color: #14191b;
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 3px #1d2326, 0px 1px 3px #1d2326;
 }
-.banner h1 {
+.banana h1 {
   display: table-cell;
   vertical-align: middle;
-}
-.post.banner {
-  height: 10em;
 }
