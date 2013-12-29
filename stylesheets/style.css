@@ -172,7 +172,7 @@ div.column {
   z-index: 0;
 }
 .about-background i {
-  font-size: 4em;
+  font-size: 5em;
 }
 .about-background img {
   height: 100%;
@@ -223,7 +223,7 @@ footer #content a:active {
 .milestone {
   text-align: center;
 }
-#post-banner {
+.banner {
   clear: both;
   width: 100%;
   display: table;
@@ -231,9 +231,11 @@ footer #content a:active {
   text-align: center;
   background-color: #14191b;
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 3px #1d2326, 0px 1px 3px #1d2326;
-  height: 10em;
 }
-#post-banner h1 {
+.banner h1 {
   display: table-cell;
   vertical-align: middle;
+}
+.post.banner {
+  height: 10em;
 }
