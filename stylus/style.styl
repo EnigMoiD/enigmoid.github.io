@@ -14,15 +14,34 @@ a-color(color, hover, active)
 		&:active
 			color active
 
+/* Better styles for embedding GitHub Gists */
+.gist
+	font-size 14px
+	line-height 18px
+	margin-bottom 20px
+	width 100%
+	pre
+		font-family Monaco,'Bitstream Vera Sans Mono','Courier New',monospace !important
+
+.gist-meta
+	font-family Helvetica,Arial,sans-serif
+	font-size 14px !important
+	a
+		color #26a !important
+		text-decoration none
+		&:hover
+			color #0e4071 !important
+
 // Colors
 dark-gray = #14151A
+dark-dark-gray = darken(dark-gray, 40%)
 accent = #1194CE
 
 dim-blue = desaturate(darken(accent, 70%), 85%)
 off-white = desaturate(lighten(accent, 95%), 50%)
 
 text-color = off-white
-bg-color = dark-gray
+bg-color = dark-dark-gray
 footer-color = accent
 
 // Sizes
@@ -41,13 +60,13 @@ html
 body
 	background-color bg-color
 	font-family 'Open Sans'
+	color text-color
+
 	height 100%
 
 div, body, header, h1, h2, h3, h4, h5, h6, img, ul, li, div
 	padding 0px
 	margin 0px
-
-	color text-color
 
 h1, h2, h3, h4, h5, h6
 	font-family 'Alegreya Sans SC'
@@ -85,6 +104,7 @@ ul
 	text-align center
 
 .accent
+	text-shadow none
 	color accent
 	font-size accent-size
 
@@ -118,13 +138,56 @@ ul#left-items
 ul#right-items
 	float right
 
+// Columns
+.column-container
+	width 100%
+	display table
+
+div.column
+	display table-cell
+	width 1%
+	position relative
+
+	@media (max-width: 700px)
+		display block
+		width 100%
+
+.column.about
+	height 5em
+	text-align center
+	margin-bottom 1em
+
+.about-content
+	font-size 1.1em
+	text-shadow 0px 1px 3px dim-blue,
+				0px 1px 3px dim-blue,
+				0px 1px 3px dim-blue
+	width 100%
+	position absolute
+	z-index 1
+
+.about-background
+	width 100%
+	position absolute
+	z-index 0
+
+	i
+		font-size 4em
+
+	img
+		height 100%
+
 // Content Container
 
 #container
+	background-color dark-gray
+
 	clear both
 	height auto
 	min-height 100%
 	padding-bottom footer-height
+
+	margin auto
 
 	p
 		padding 0px 1em
@@ -164,6 +227,7 @@ footer
 // About
 
 .milestone
+	text-align center
 	.number
 		@extends .accent
 

@@ -22,16 +22,15 @@
 		else return "<span class='number'>" + yearTitles[years] + "</span>";
 	}
 
-	var yearTitles = [
-		'Freshman',
-		'Sophomore',
-		'Junior',
-		'Senior'
-	]
+	var yearTitles = {
+		'-4': 'Freshman',
+		'-3': 'Sophomore',
+		'-2': 'Junior',
+		'-1': 'Senior'
+	}
 
-	var now = new Date()
-	// Important dates
 	window.dates = {
+
 		birth: new Date(1994, 1, 26),
 		graduation: new Date(2016, 4, 20),
 		programming: new Date(2009, 10, 22),
@@ -39,10 +38,11 @@
 		fire: new Date(2012, 10, 11)
 	}
 
-	var Evan = {}
-	for (var date in dates)
-		Evan[date] = Math.abs(dates[date].timeSince(now).years) - 1
+	var now = new Date(),
+		interval
+	for (var title in dates) {
+		interval = now.timeSince(dates[title]).years
+		document.getElementById(title).innerHTML = yearText(interval, title)
+	}
 
-	for (var id in Evan)
-		document.getElementById(id).innerHTML = yearText(Evan[id], id)
 })()

@@ -1,6 +1,27 @@
 @import url("http://fonts.googleapis.com/css?family=Jura:300");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
 @import url("http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100");
+/* Better styles for embedding GitHub Gists */
+.gist {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.gist pre {
+  font-family: Monaco, 'Bitstream Vera Sans Mono', 'Courier New', monospace !important;
+}
+.gist-meta {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px !important;
+}
+.gist-meta a {
+  color: #26a !important;
+  text-decoration: none;
+}
+.gist-meta a:hover {
+  color: #0e4071 !important;
+}
 a {
   text-decoration: none;
   color: rgba(245,249,251,0.8);
@@ -18,8 +39,9 @@ html {
   height: 100%;
 }
 body {
-  background-color: #14151a;
+  background-color: #0c0d10;
   font-family: 'Open Sans';
+  color: #f5f9fb;
   height: 100%;
 }
 div,
@@ -37,7 +59,6 @@ li,
 div {
   padding: 0px;
   margin: 0px;
-  color: #f5f9fb;
 }
 h1,
 h2,
@@ -77,6 +98,7 @@ ul {
 }
 .accent,
 .milestone .number {
+  text-shadow: none;
   color: #1194ce;
   font-size: 3em;
 }
@@ -117,12 +139,52 @@ ul#left-items {
 ul#right-items {
   float: right;
 }
+.column-container {
+  width: 100%;
+  display: table;
+}
+div.column {
+  display: table-cell;
+  width: 1%;
+  position: relative;
+}
+@media (max-width: 700px) {
+  div.column {
+    display: block;
+    width: 100%;
+  }
+}
+.column.about {
+  height: 5em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+.about-content {
+  font-size: 1.1em;
+  text-shadow: 0px 1px 3px #1d2326, 0px 1px 3px #1d2326, 0px 1px 3px #1d2326;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.about-background {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+}
+.about-background i {
+  font-size: 4em;
+}
+.about-background img {
+  height: 100%;
+}
 #container,
 #post-container {
+  background-color: #14151a;
   clear: both;
   height: auto;
   min-height: 100%;
   padding-bottom: 120px;
+  margin: auto;
 }
 #container p,
 #post-container p {
@@ -157,6 +219,9 @@ footer #content a:hover {
 }
 footer #content a:active {
   color: #f5f9fb;
+}
+.milestone {
+  text-align: center;
 }
 #post-banner {
   clear: both;

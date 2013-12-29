@@ -3,19 +3,54 @@ title: About
 layout: default
 active: about
 ---
-	<h1>My name is Evan Dorsky.</h1>
-<p>
-	I am <span class="milestone" id="birth"></span> old.
-	<br><br>
-	I'm a <span class="milestone" id="graduation"></span> at Olin College.
-	<br><br>
-	I've been playing violin for <span class="milestone" id="violin"></span>.
-	<br><br>
-	I've been programming for <span class="milestone" id="programming"></span>.
-	<br><br>
-	I've been spinning fire for <span class="milestone" id="fire"></span>.
-	<br><br>
-</p>
+
+<div class="column-container">
+	<div class="column about">
+		<div class="about-content">I am <span class="milestone" id="birth"></span> old.</div>
+		<div class="about-background"><i class="fa fa-clock-o"></i></div>
+	</div>
+
+	<div class="column about">
+		<div class="about-content">I'm a <span class="milestone" id="graduation"></span> at Olin College.</div>
+		<div class="about-background"><img src="/img/about/olin-white.svg"></div>
+	</div>
+
+	<div class="column about">
+		<div class="about-content">I've been programming for <span class="milestone" id="programming"></span>.</div>
+		<div class="about-background"><i class="fa fa-code"></i></div>
+	</div>
+</div>
+<div class="column-container">
+	<div class="column about">
+		<div class="about-content">I've been playing violin for <span class="milestone" id="violin"></span>.</div>
+		<div class="about-background"><i class="fa fa-music"></i></div>
+	</div>
+
+	<div class="column about">
+		<div class="about-content">I've been spinning fire for <span class="milestone" id="fire"></span>.</div>
+		<div class="about-background"><i class="fa fa-fire"></i></div>
+	</div>
+</div>
+<br>
+<div class="column-container">
+	<div class="column">
+		<h1><i class="fa fa-bolt"></i> Electrical Engineering <i class="fa fa-heart"></i></h1>
+		<ul>
+			<li class="accent">PCB Layout</li>
+			<li class="accent">Soldering</li>
+			<li class="accent">Computer Architecture</li>
+			<li class="accent">Digital, Analog, Power</li>
+		</ul>
+	</div>
+	<div class="column">
+		<h1><i class="fa fa-code"></i> Development <i class="fa fa-heart"></i></h1>
+		<ul>
+			<li class="accent">git</li>
+			<li class="accent">js</li>
+			<li class="accent">stylus</li>
+		</ul>
+	</div>
+</div>
 
 <!--
 TODO
