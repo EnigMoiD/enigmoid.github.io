@@ -1,6 +1,24 @@
 @import url("http://fonts.googleapis.com/css?family=Jura:300");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
 @import url("http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100");
+@font-face {
+  font-family: 'Olin';
+  src: url("/font/olin/olin-webfont.eot");
+  src: url("/font/olin/olin-webfont.eot?#iefix") format('embedded-opentype'), url("/font/olin/olin-webfont.woff") format('woff'), url("/font/olin/olin-webfont.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.olin:before {
+  display: inline-block;
+  font-family: Olin;
+  content: 'l';
+  font-size: 2em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 0.3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 /* Better styles for embedding GitHub Gists */
 .gist {
   font-size: 14px;
@@ -159,6 +177,10 @@ div.column {
   text-align: center;
   margin-bottom: 1em;
 }
+.banner img {
+  width: 100%;
+  height: auto !important;
+}
 .banner-content {
   font-size: 1.1em;
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 3px #1d2326, 0px 1px 3px #1d2326;
@@ -174,6 +196,8 @@ div.column {
 }
 .about.banner-bg i {
   font-size: 5em;
+  color: rgba(0,0,0,0);
+  text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
 }
 #container,
 #post-container {
