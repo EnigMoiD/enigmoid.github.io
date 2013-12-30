@@ -122,7 +122,7 @@ ul {
   font-size: 3em;
 }
 header {
-  padding: 1px 0px;
+  padding: 0px 0px;
   background-color: #1d2326;
 }
 header a {
@@ -139,12 +139,17 @@ header a:active {
   color: #67a4c2;
 }
 header li {
-  padding: 1px 1em;
+  padding: 0px;
   font-family: 'Jura';
   font-size: 1.5em;
   text-align: center;
-  display: inline;
   text-shadow: 0px -1px rgba(0,0,0,0.2);
+}
+@media (min-width: 400px) {
+  header li {
+    padding: 0px 1em;
+    display: inline;
+  }
 }
 header li.active {
   background-color: #1194ce;
@@ -153,7 +158,8 @@ header li.active a {
   color: #f5f9fb;
 }
 ul#left-items {
-  display: inline-table;
+  margin: auto;
+  display: inline;
 }
 ul#right-items {
   float: right;

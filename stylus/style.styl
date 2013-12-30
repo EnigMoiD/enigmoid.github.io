@@ -68,7 +68,7 @@ footer-color = accent
 
 // Sizes
 
-header-padding = 1px
+header-padding = 0px
 accent-size = 3em
 footer-height = 120px
 
@@ -142,13 +142,16 @@ header
 	a-color(rgba(text-color, 70%), text-color, darken(text-color, 40%))
 
 	li
-		padding header-padding 1em
+		padding header-padding
 
 		font-family 'Jura'
 		font-size 1.5em
 		text-align center
-		display inline
 		text-shadow 0px -1px rgba(0, 0, 0, .2)
+
+		@media(min-width: 400px)
+			padding header-padding 1em
+			display inline
 
 	li.active
 		a
@@ -156,7 +159,8 @@ header
 		background-color accent
 
 ul#left-items
-	display inline-table
+	margin auto
+	display inline
 
 ul#right-items
 	float right
