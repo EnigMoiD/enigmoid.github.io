@@ -15,7 +15,7 @@
   font-size: 2em;
   font-style: normal;
   font-weight: normal;
-  line-height: 0.3;
+  line-height: 0.35;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -182,7 +182,6 @@ div.column {
   height: auto !important;
 }
 .banner-content {
-  font-size: 1.1em;
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 3px #1d2326, 0px 1px 3px #1d2326;
   width: 100%;
   position: absolute;
@@ -192,12 +191,36 @@ div.column {
   width: 100%;
 }
 .about.banner {
+  border: 1px solid #fff;
   height: 5em;
+}
+.about.banner-content {
+  font-size: 1.1em;
 }
 .about.banner-bg i {
   font-size: 5em;
   color: rgba(0,0,0,0);
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
+}
+.index.banner {
+  position: relative;
+}
+@media (min-width: 500px) {
+  .index.banner-content {
+    top: 50%;
+    height: 3em;
+    margin-top: -1.5em;
+  }
+}
+.post.banner {
+  position: relative;
+}
+@media (min-width: 700px) {
+  .post.banner-content {
+    top: 50%;
+    height: 3em;
+    margin-top: -1.5em;
+  }
 }
 #container,
 #post-container {

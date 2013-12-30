@@ -18,7 +18,7 @@
 	font-size 2em
 	font-style normal
 	font-weight normal
-	line-height .3
+	line-height .35
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 
@@ -63,6 +63,8 @@ off-white = desaturate(lighten(accent, 95%), 50%)
 text-color = off-white
 bg-color = dark-dark-gray
 footer-color = accent
+
+// Media variables
 
 // Sizes
 
@@ -184,7 +186,6 @@ div.column
 		height auto !important
 
 .banner-content
-	font-size 1.1em
 	text-shadow 0px 1px 3px dim-blue,
 				0px 1px 3px dim-blue,
 				0px 1px 3px dim-blue
@@ -199,7 +200,11 @@ div.column
 about-height = 5em
 
 .about.banner
+	border 1px solid white
 	height about-height
+
+.about.banner-content
+	font-size 1.1em
 
 .about.banner-bg
 	i
@@ -213,11 +218,25 @@ about-height = 5em
 
 // Index banners
 
+.index.banner
+	position relative
 
+.index.banner-content
+	@media(min-width: 500px)
+		top 50%
+		height 3em
+		margin-top -1.5em
 
 // Post banners
 
+.post.banner
+	position relative
 
+.post.banner-content
+	@media(min-width: 700px)
+		top 50%
+		height 3em
+		margin-top -1.5em
 
 // Content Container
 
