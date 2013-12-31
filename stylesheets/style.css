@@ -210,6 +210,9 @@ div.column {
 .index.banner {
   position: relative;
 }
+.index.banner h1 {
+  font-size: 3em;
+}
 @media (min-width: 500px) {
   .index.banner-content {
     top: 50%;
