@@ -1,7 +1,7 @@
 ---
 layout: post
 title: An FPGA Piano
-external: [github, github.com/mdelrosa/cafinalproject]
+external: [[github, github.com/mdelrosa/cafinalproject],[compass, 'wikis.olin.edu/ca/doku.php?id=projects:fpga_piano']]
 short: blinkenlights
 banner-type: jpg
 team: 5

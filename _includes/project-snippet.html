@@ -1,13 +1,13 @@
 <div class="project-snippet project-snippet-{% cycle 'odd', 'even' %}">
 	<div>
 		<a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
-		{% if post.external %}
+		{% for ext in post.external %}
 		<div class="external-pin">
-			<a href="//{{ post.external[1] }}">
-				<i class="fa fa-fw fa-{{ post.external[0] }}"></i>
+			<a href="//{{ ext[1] }}">
+				<i class="fa fa-fw fa-{{ ext[0] }}"></i>
 			</a>
 		</div>
-		{% endif %}
+		{% endfor %}
 	</div>
 	<div class="desc-container">
 		{% if post.team %}
