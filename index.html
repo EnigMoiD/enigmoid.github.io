@@ -13,23 +13,3 @@ active: home
 	<br><br>
 	I also build things tangible and intangible inside and outside of Olin. See those things in my <a href="/portfolio.html">portfolio</a>.
 </p>
-{% highlight ruby %}
-module Jekyll
-  class UpcaseConverter < Converter
-    safe true
-    priority :low
-
-    def matches(ext)
-      ext =~ /^\.upcase$/i
-    end
-
-    def output_ext(ext)
-      ".html"
-    end
-
-    def convert(content)
-      content.upcase
-    end
-  end
-end
-{% endhighlight %}
