@@ -22,12 +22,15 @@ yearTitles =
 	'-3': 'Sophomore'
 	'-2': 'Junior'
 	'-1': 'Senior'
+###
+For those viewing source, remember that js 0-indexes months
+###
 
 dates =
 	birth: new Date(1994, 1, 26)
 	graduation: new Date(2016, 4, 20)
 	programming: new Date(2009, 10, 22)
-	violin: new Date(2004, 0, 1)
+	violin: new Date(2003, 9, 0)
 	fire: new Date(2012, 10, 11)
 
 now = new Date
