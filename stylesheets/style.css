@@ -207,18 +207,17 @@ div.column {
   color: rgba(0,0,0,0);
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
 }
-.index.banner {
-  position: relative;
+.index-banner {
+  width: 100%;
 }
-.index.banner h1 {
-  font-size: 3em;
+.index-banner h1 {
+  font-size: 2em;
+  background-color: #0c0d10;
+  text-align: center;
 }
-@media (min-width: 500px) {
-  .index.banner-content {
-    top: 50%;
-    height: 3em;
-    margin-top: -1.5em;
-  }
+.index-banner img {
+  width: 100%;
+  height: auto !important;
 }
 .post.banner {
   position: relative;
