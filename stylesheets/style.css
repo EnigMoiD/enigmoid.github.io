@@ -220,6 +220,7 @@ div.column {
   height: auto !important;
 }
 .post.banner {
+  overflow: hidden;
   position: relative;
 }
 @media (min-width: 700px) {
