@@ -22,7 +22,17 @@
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 
-// Mixins
+/*
+// Good call by d3vron:
+// gist.github.com/d3vron/1080346
+*/
+vendor(prop, args)
+	-webkit-{prop} args
+	-moz-{prop} args
+	-ms-{prop} args
+	-o-{prop} args
+	{prop} args
+
 a-color(color, hover, active)
 	a
 		text-decoration none
@@ -34,23 +44,8 @@ a-color(color, hover, active)
 		&:active
 			color active
 
-/* Better styles for embedding GitHub Gists */
-.gist
-	font-size 14px
-	line-height 18px
-	margin-bottom 20px
-	width 100%
-	pre
-		font-family Monaco,'Bitstream Vera Sans Mono','Courier New',monospace !important
-
-.gist-meta
-	font-family Helvetica,Arial,sans-serif
-	font-size 14px !important
-	a
-		color #26a !important
-		text-decoration none
-		&:hover
-			color #0e4071 !important
+transition()
+	vendor('transition', arguments)
 
 // Colors
 dark-gray = #14151A

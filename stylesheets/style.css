@@ -19,27 +19,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* Better styles for embedding GitHub Gists */
-.gist {
-  font-size: 14px;
-  line-height: 18px;
-  margin-bottom: 20px;
-  width: 100%;
-}
-.gist pre {
-  font-family: Monaco, 'Bitstream Vera Sans Mono', 'Courier New', monospace !important;
-}
-.gist-meta {
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 14px !important;
-}
-.gist-meta a {
-  color: #26a !important;
-  text-decoration: none;
-}
-.gist-meta a:hover {
-  color: #0e4071 !important;
-}
+/*
+// Good call by d3vron:
+// gist.github.com/d3vron/1080346
+*/
 a {
   text-decoration: none;
   color: rgba(245,249,251,0.8);

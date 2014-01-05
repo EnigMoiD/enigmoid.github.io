@@ -3,25 +3,43 @@ banner = $("div.post.banner")
 bannerClosed = true
 
 $(bannerImg).load ->
-	sizeBanner($(@), true)
+	sizeBanner($(@), true, true)
 
 $(window).resize ->
-	sizeBanner(bannerImg, bannerClosed)
+	sizeBanner(bannerImg, bannerClosed, false)
 
 banner.click ->
 	if bannerClosed
-		banner.height bannerImg.height()
-		bannerImg.css("margin-top", 0)
+		banner.animate
+			"height": bannerImg.height(),
+			200
+		bannerImg.animate
+			"margin-top": 0,
+			200
 	else
-		sizeBanner(bannerImg, true)
+		sizeBanner(bannerImg, true, true)
 
 	bannerClosed = !bannerClosed
 
-sizeBanner = (b, closed) ->
+sizeBanner = (b, closed, animate) ->
 	if closed
 		h = b.height()
 
-		banner.height banner.width()/5
-		b.css("margin-top", -h/3)
+		if animate
+			banner.animate
+				"height": banner.width()/5,
+				200
+			b.animate
+				"margin-top": -h/3,
+				200
+		else
+			banner.height banner.width()/5
+			b.css "margin-top", -h/3
+
 	else
-		banner.height bannerImg.height()
+		if animate
+			banner.animate
+				"height": bannerImg.height(),
+				200
+		else 
+			banner.css "height", bannerImg.height()

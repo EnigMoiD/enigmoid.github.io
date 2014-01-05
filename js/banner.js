@@ -9,31 +9,50 @@
   bannerClosed = true;
 
   $(bannerImg).load(function() {
-    return sizeBanner($(this), true);
+    return sizeBanner($(this), true, true);
   });
 
   $(window).resize(function() {
-    return sizeBanner(bannerImg, bannerClosed);
+    return sizeBanner(bannerImg, bannerClosed, false);
   });
 
   banner.click(function() {
     if (bannerClosed) {
-      banner.height(bannerImg.height());
-      bannerImg.css("margin-top", 0);
+      banner.animate({
+        "height": bannerImg.height()
+      }, 200);
+      bannerImg.animate({
+        "margin-top": 0
+      }, 200);
     } else {
-      sizeBanner(bannerImg, true);
+      sizeBanner(bannerImg, true, true);
     }
     return bannerClosed = !bannerClosed;
   });
 
-  sizeBanner = function(b, closed) {
+  sizeBanner = function(b, closed, animate) {
     var h;
     if (closed) {
       h = b.height();
-      banner.height(banner.width() / 5);
-      return b.css("margin-top", -h / 3);
+      if (animate) {
+        banner.animate({
+          "height": banner.width() / 5
+        }, 200);
+        return b.animate({
+          "margin-top": -h / 3
+        }, 200);
+      } else {
+        banner.height(banner.width() / 5);
+        return b.css("margin-top", -h / 3);
+      }
     } else {
-      return banner.height(bannerImg.height());
+      if (animate) {
+        return banner.animate({
+          "height": bannerImg.height()
+        }, 200);
+      } else {
+        return banner.css("height", bannerImg.height());
+      }
     }
   };
 
