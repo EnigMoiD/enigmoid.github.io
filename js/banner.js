@@ -33,10 +33,11 @@
   });
 
   sizeBanner = function(b, closed, animate) {
-    var bImgClosed, bannerClosed, bannerOpen, h;
+    var bImgClosed, bannerClosed, bannerOpen, bannerPosition, h;
     h = b.height();
+    bannerPosition = banner.attr("bannerposition");
     bImgClosed = {
-      "margin-top": -h / 3
+      "margin-top": -bannerPosition * h
     };
     bannerClosed = {
       "height": banner.width() / 5

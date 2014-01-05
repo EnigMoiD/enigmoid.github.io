@@ -24,7 +24,9 @@ banner.click ->
 sizeBanner = (b, closed, animate) ->
 	h = b.height()
 
-	bImgClosed = "margin-top": -h/3
+	bannerPosition = banner.attr("bannerposition")
+
+	bImgClosed = "margin-top": -bannerPosition*h
 	bannerClosed =
 		"height": banner.width()/5
 
