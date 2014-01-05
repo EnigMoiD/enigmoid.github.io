@@ -206,6 +206,13 @@ div.column {
   overflow: hidden;
   position: relative;
 }
+.post.banner-content {
+  -webkit-transition: opacity 200ms;
+  -moz-transition: opacity 200ms;
+  -ms-transition: opacity 200ms;
+  -o-transition: opacity 200ms;
+  transition: opacity 200ms;
+}
 @media (min-width: 700px) {
   .post.banner-content {
     top: 50%;

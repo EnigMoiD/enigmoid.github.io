@@ -4,6 +4,7 @@ title: Bike-Charged Supercapacitors
 external: [[compass, pyrois.weebly.com]]
 short: poe-pyrois
 banner-type: jpg
+banner-position: .33
 team: 4
 
 header: [For Principles of Engineering we wanted to harness the energy of a human pedaling a bike.,'And we wanted to be efficient about it, so we wanted to manage the power storage ourselves. We also wanted to charge USB devices from whatever energy storage unit we ended up using. None of us knew anything about what building this would involve, so it took us about a month to realize that we wanted to charge a bank of supercapacitors and build a 5V switching regulator.']

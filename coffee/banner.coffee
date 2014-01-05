@@ -3,49 +3,62 @@ banner = $("div.post.banner")
 isBannerClosed = true
 
 $(bannerImg).load ->
-	sizeBanner($(@), true, false)
+	sizeBanner($(@), true)
 
 $(window).resize ->
-	sizeBanner(bannerImg, isBannerClosed, false)
+	sizeBanner(bannerImg, isBannerClosed)
 
 banner.click ->
+	setTransition(true)
+	setTimeout (-> setTransition(false)), 200
+
 	if isBannerClosed
-		banner.animate "height": bannerImg.height(),
-			200
-		bannerImg.animate "margin-top": 0,
-			200
-		banner.find(".banner-content").fadeOut(200)
+		banner.css "height": bannerImg.height()
+		bannerImg.css "margin-top": 0
+		banner.find(".banner-content").css "opacity": 0
 	else
-		sizeBanner(bannerImg, true, true)
-		banner.find(".banner-content").fadeIn(200)
+		sizeBanner(bannerImg, true)
+		banner.find(".banner-content").css "opacity": 1
 
 	isBannerClosed = !isBannerClosed
 
-sizeBanner = (b, closed, animate) ->
+sizeBanner = (b, closed) ->
 	h = b.height()
 
-	bannerPosition = banner.attr("bannerposition")
-
-	bImgClosed = "margin-top": -bannerPosition*h
-	bannerClosed =
-		"height": banner.width()/5
-
-	bannerOpen = "height": bannerImg.height()
+	bannerPosition = banner.attr("bannerPosition")
 
 	if closed
-
-		if animate
-			banner.animate bannerClosed,
-				200
-			b.animate bImgClosed,
-				200
-		else
-			banner.css bannerClosed
-			b.css bImgClosed
-
+		banner.css "height": banner.width()/5
+		b.css "margin-top": -bannerPosition*h
 	else
-		if animate
-			banner.animate bannerOpen,
-				200
-		else 
-			banner.css bannerOpen
+		banner.css "height": bannerImg.height()
+
+setTransition = (enable) ->
+	if enable
+		banner.css
+			"-webkit-transition": "height 200ms"
+			"   -moz-transition": "height 200ms"
+			"    -ms-transition": "height 200ms"
+			"     -o-transition": "height 200ms"
+			"        transition": "height 200ms"
+
+		bannerImg.css
+			"-webkit-transition": "margin-top 200ms"
+			"   -moz-transition": "margin-top 200ms"
+			"    -ms-transition": "margin-top 200ms"
+			"     -o-transition": "margin-top 200ms"
+			"        transition": "margin-top 200ms"
+	else
+		banner.css
+			"-webkit-transition": "none"
+			"   -moz-transition": "none"
+			"    -ms-transition": "none"
+			"     -o-transition": "none"
+			"        transition": "none"
+
+		bannerImg.css
+			"-webkit-transition": "none"
+			"   -moz-transition": "none"
+			"    -ms-transition": "none"
+			"     -o-transition": "none"
+			"        transition": "none"
