@@ -2,6 +2,16 @@
 (function() {
   var banner, bannerClosed, bannerImg, sizeBanner;
 
+  $.easing.nice = function(t, millisecondsSince, startValue, endValue, totalDuration) {
+    var By, x1, x2, y1, y2;
+    x1 = .17;
+    y1 = .67;
+    x2 = .83;
+    y2 = .67;
+    By = 3 * Math.pow(1 - t, 2) * t * y1 + 3 * (1 - t) * Math.pow(t, 2) * y2 + Math.pow(t, 3);
+    return By;
+  };
+
   bannerImg = $("#post-banner");
 
   banner = $("div.post.banner");
@@ -20,10 +30,10 @@
     if (bannerClosed) {
       banner.animate({
         "height": bannerImg.height()
-      }, 200);
+      }, 200, "nice");
       bannerImg.animate({
         "margin-top": 0
-      }, 200);
+      }, 200, "nice");
     } else {
       sizeBanner(bannerImg, true, true);
     }
@@ -37,10 +47,10 @@
       if (animate) {
         banner.animate({
           "height": banner.width() / 5
-        }, 200);
+        }, 200, "nice");
         return b.animate({
           "margin-top": -h / 3
-        }, 200);
+        }, 200, "nice");
       } else {
         banner.height(banner.width() / 5);
         return b.css("margin-top", -h / 3);
@@ -49,7 +59,7 @@
       if (animate) {
         return banner.animate({
           "height": bannerImg.height()
-        }, 200);
+        }, 200, "nice");
       } else {
         return banner.css("height", bannerImg.height());
       }
