@@ -1,45 +1,49 @@
 bannerImg = $("#post-banner")
 banner = $("div.post.banner")
-bannerClosed = true
+isBannerClosed = true
 
 $(bannerImg).load ->
-	sizeBanner($(@), true, true)
+	sizeBanner($(@), true, false)
 
 $(window).resize ->
-	sizeBanner(bannerImg, bannerClosed, false)
+	sizeBanner(bannerImg, isBannerClosed, false)
 
 banner.click ->
-	if bannerClosed
-		banner.animate
-			"height": bannerImg.height(),
+	if isBannerClosed
+		banner.animate "height": bannerImg.height(),
 			200
-		bannerImg.animate
-			"margin-top": 0,
+		bannerImg.animate "margin-top": 0,
 			200
+		banner.find(".banner-content").fadeOut(200)
 	else
 		sizeBanner(bannerImg, true, true)
+		banner.find(".banner-content").fadeIn(200)
 
-	bannerClosed = !bannerClosed
+	isBannerClosed = !isBannerClosed
 
 sizeBanner = (b, closed, animate) ->
+	h = b.height()
+
+	bImgClosed = "margin-top": -h/3
+	bannerClosed =
+		"height": banner.width()/5
+
+	bannerOpen = "height": bannerImg.height()
+
 	if closed
-		h = b.height()
 
 		if animate
-			banner.animate
-				"height": banner.width()/5,
+			banner.animate bannerClosed,
 				200
-			b.animate
-				"margin-top": -h/3,
+			b.animate bImgClosed,
 				200
 		else
-			banner.height banner.width()/5
-			b.css "margin-top", -h/3
+			banner.css bannerClosed
+			b.css bImgClosed
 
 	else
 		if animate
-			banner.animate
-				"height": bannerImg.height(),
+			banner.animate bannerOpen,
 				200
 		else 
-			banner.css "height", bannerImg.height()
+			banner.css bannerOpen
