@@ -102,7 +102,6 @@ ul
 	text-shadow 0px -1px rgba(0, 0, 0, .2)
 
 	background-color dark-gray
-	padding .1em 0px .2em .5em
 
 	h1
 		display inline-block
@@ -114,7 +113,14 @@ ul
 		float right
 		font-size 1.5em
 
-.project-snippet-even
+	position relative
+	img
+		top 0px
+		position absolute
+		width 100%
+		height auto !important
+
+.project-snippet.even
 	background-color lighten(dark-gray, 5%)
 
 // Modifiers
@@ -175,11 +181,8 @@ div.column
 		width 100%
 
 // Banner (for putting a background behind content)
-
 .banner
-	text-align center
-	margin-bottom 1em
-
+	overflow hidden
 	img
 		width 100%
 		height auto !important
@@ -195,10 +198,39 @@ div.column
 .banner-bg
 	width 100%
 
+// Snippet banners
+snippet-height = 4em
+
+.project-snippet.banner
+	position relative
+	height snippet-height
+	
+.snippet.banner-content
+	height snippet-height
+
+	background-color rgba(dark-gray, .3)
+
+// Post banners
+
+.post.banner
+	margin-bottom 1em
+	text-align center
+	position relative
+
+.post.banner-content
+	transition opacity 200ms
+	@media(min-width: 700px)
+		top 50%
+		height 3em
+		margin-top -1.5em
+
 // About banners
+
 about-height = 5em
 
 .about.banner
+	margin-bottom 1em
+	text-align center
 	height about-height
 
 .about.banner-content
@@ -217,6 +249,7 @@ about-height = 5em
 // Index banners
 
 .index-banner
+	margin-bottom 1em
 	width 100%
 	h1
 		font-size 2em
@@ -225,19 +258,6 @@ about-height = 5em
 	img
 		width 100%
 		height auto !important
-
-// Post banners
-
-.post.banner
-	overflow hidden
-	position relative
-
-.post.banner-content
-	transition opacity 200ms
-	@media(min-width: 700px)
-		top 50%
-		height 3em
-		margin-top -1.5em
 
 // Content Container
 

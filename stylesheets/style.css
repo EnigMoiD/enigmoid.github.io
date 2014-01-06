@@ -80,7 +80,7 @@ ul {
   font-family: 'Alegreya Sans SC';
   text-shadow: 0px -1px rgba(0,0,0,0.2);
   background-color: #14151a;
-  padding: 0.1em 0px 0.2em 0.5em;
+  position: relative;
 }
 .project-snippet h1 {
   display: inline-block;
@@ -92,7 +92,13 @@ ul {
   float: right;
   font-size: 1.5em;
 }
-.project-snippet-even {
+.project-snippet img {
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  height: auto !important;
+}
+.project-snippet.even {
   background-color: #1e2027;
 }
 .center {
@@ -163,8 +169,7 @@ div.column {
   }
 }
 .banner {
-  text-align: center;
-  margin-bottom: 1em;
+  overflow: hidden;
 }
 .banner img {
   width: 100%;
@@ -179,31 +184,17 @@ div.column {
 .banner-bg {
   width: 100%;
 }
-.about.banner {
-  height: 5em;
+.project-snippet.banner {
+  position: relative;
+  height: 4em;
 }
-.about.banner-content {
-  font-size: 1.1em;
-}
-.about.banner-bg i {
-  font-size: 5em;
-  color: rgba(0,0,0,0);
-  text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
-}
-.index-banner {
-  width: 100%;
-}
-.index-banner h1 {
-  font-size: 2em;
-  background-color: #0c0d10;
-  text-align: center;
-}
-.index-banner img {
-  width: 100%;
-  height: auto !important;
+.snippet.banner-content {
+  height: 4em;
+  background-color: rgba(20,21,26,0.3);
 }
 .post.banner {
-  overflow: hidden;
+  margin-bottom: 1em;
+  text-align: center;
   position: relative;
 }
 .post.banner-content {
@@ -219,6 +210,32 @@ div.column {
     height: 3em;
     margin-top: -1.5em;
   }
+}
+.about.banner {
+  margin-bottom: 1em;
+  text-align: center;
+  height: 5em;
+}
+.about.banner-content {
+  font-size: 1.1em;
+}
+.about.banner-bg i {
+  font-size: 5em;
+  color: rgba(0,0,0,0);
+  text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
+}
+.index-banner {
+  margin-bottom: 1em;
+  width: 100%;
+}
+.index-banner h1 {
+  font-size: 2em;
+  background-color: #0c0d10;
+  text-align: center;
+}
+.index-banner img {
+  width: 100%;
+  height: auto !important;
 }
 #container,
 #post-container {
