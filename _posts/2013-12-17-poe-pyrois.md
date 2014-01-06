@@ -3,7 +3,7 @@ layout: post
 title: Bike-Charged Supercapacitors
 external: [[compass, pyrois.weebly.com]]
 short: poe-pyrois
-banner-type: jpg
+
 banner-position: .45
 team: 4
 

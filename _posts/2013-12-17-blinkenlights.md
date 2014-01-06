@@ -3,7 +3,8 @@ layout: post
 title: An FPGA Piano
 external: [[github, github.com/mdelrosa/cafinalproject],[compass, 'wikis.olin.edu/ca/doku.php?id=projects:fpga_piano']]
 short: blinkenlights
-banner-type: jpg
+banner-position: .3
+
 team: 5
 
 header: ['Our FPGA breakout had 8 switches and a clock speed jumper. So we turned it into a 3 octave piano.','Two of those octaves were kind of by accident. It was only after we had programmed the FPGA and wired up the speaker that we realized we could change the octave of the notes by moving the clock multiplier jumper on the FPGA breakout board.']
