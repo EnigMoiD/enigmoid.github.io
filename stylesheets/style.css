@@ -1,6 +1,3 @@
-@import url("http://fonts.googleapis.com/css?family=Jura:300");
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:300");
-@import url("http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100");
 @font-face {
   font-family: 'Olin';
   src: url("/font/olin/olin-webfont.eot");
@@ -266,16 +263,24 @@ footer #content a:active {
 .milestone {
   text-align: center;
 }
-.banana {
+.image-box {
   clear: both;
-  width: 100%;
-  display: table;
-  font-family: 'Alegreya Sans SC';
-  text-align: center;
-  background-color: #14191b;
-  text-shadow: 0px 1px 3px #1d2326, 0px 1px 3px #1d2326, 0px 1px 3px #1d2326;
+  float: left;
+  position: relative;
 }
-.banana h1 {
-  display: table-cell;
-  vertical-align: middle;
+.image-box img {
+  width: 100%;
+}
+.image-box .caption {
+  text-align: center;
+}
+.images-box {
+  clear: both;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+}
+.images-box img {
+  margin: 0px;
+  float: left;
 }
