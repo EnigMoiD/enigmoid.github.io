@@ -8,7 +8,7 @@ short: poe-lidar
 banner-position: .61
 team: 2
 
-header: [The assignment was to create a LIDAR two servos and an Infrared range finder, "They weren't the ideal components (and the governing principle behind our system was nothing like the one behind a real LIDAR), but we were able to generate some pretty convincing 3-dimensional scans. And each scan only took a few minutes!"]
+header: [The lab was to create a LIDAR with two servos and an infrared range finder, "They weren't the ideal components (and the governing principle behind our system was nothing like the one behind a real LIDAR), but we were able to generate some pretty convincing 3 dimensional scans. And each scan only took a few minutes!"]
 
 specs: [[code, 'Arduino C, MATLAB, Python'],
 [desktop, 'Arduino']]
@@ -24,12 +24,19 @@ specs: [[code, 'Arduino C, MATLAB, Python'],
 	<div class="caption">After: Much better.</div>
 </div>
 The sensor sends out and receives infrared light, and the attenuation of the light is more or less proportional to the distance the light has traveled. But it's not exact, and it's certainly not linear. So we needed to create a function to map the sensor voltage to its distance from the surface it's facing. The easiest way to do that was to take data at known distances to see what the sensor's response was.
-
-We used MATLAB to generate a fourth order curve fit, and used the inverse of that function to convert sensor voltage to centimeters. These were the calibrated readings:
+<br><br>
+We used MATLAB to generate a fourth order curve fit, and used the inverse of that function to convert sensor voltage to centimeters.
+<h2>The Transformation</h2>
+Our system had three degrees of freedom: two orthogonal angles and the distance reported by the rangefinder. This meant that our data was in spherical coordinates. We made sure to mount the sensor at the center of both rotational axes so that it was at the origin in spherical space and we wouldn't have to do any transformations.
+<br><br>
+We used MATLAB to collect the spherical coordinates over the serial port and convert them to cartesian. MATLAB has a built in function for this, but because of how we had defined our coordinate system, we ended up writing our own transfer function. The math itself isn't very complex, but working out whether to use sine or cosine was confusing.
+<h2>Point Clouds</h2>
+The goal of the lab was to scan the diorama below.
 <div class="images-box">
 	<img alt="Real Diorama" src="/img/{{ page.short }}/diorama.jpg">
 	<img alt="Scanned Diorama" src="/img/{{ page.short }}/diorama-scan.png">
 </div>
+Then we we got to choose some other real world things to scan:
 <div class="images-box">
 	<img alt="Real Viola" src="/img/{{ page.short }}/viola.jpg">
 	<img alt="Scanned Viola" src="/img/{{ page.short }}/viola-scan.png">
