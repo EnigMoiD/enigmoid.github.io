@@ -225,6 +225,7 @@ div.column {
   min-height: 100%;
   padding-bottom: 120px;
   margin: auto;
+  max-width: 900px;
 }
 #container p,
 #post-container p {
@@ -278,7 +279,6 @@ footer #content a:active {
   clear: both;
   position: relative;
   width: 100%;
-  max-width: 900px;
 }
 .images-box img {
   margin: 0px;
