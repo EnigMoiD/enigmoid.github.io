@@ -53,6 +53,7 @@ off-white = desaturate(lighten(accent, 95%), 50%)
 
 text-color = off-white
 bg-color = dark-dark-gray
+inset-color = darken(dark-dark-gray, 10%)
 footer-color = accent
 
 // Media variables
@@ -292,9 +293,9 @@ footer
 
 // Post-specific stuff
 
-// Lidar
-
 .image-box
+	background-color inset-color
+	padding 1em
 	clear both
 	float left
 	position relative

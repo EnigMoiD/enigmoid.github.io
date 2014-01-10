@@ -265,6 +265,8 @@ footer #content a:active {
   text-align: center;
 }
 .image-box {
+  background-color: #0b0c0e;
+  padding: 1em;
   clear: both;
   float: left;
   position: relative;
