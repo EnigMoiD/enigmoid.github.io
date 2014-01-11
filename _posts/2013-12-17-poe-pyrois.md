@@ -12,9 +12,22 @@ header: [For Principles of Engineering we wanted to harness the energy of a huma
 specs: [
 [code, C],
 [desktop, MSP430],
-[gear, ~300W 24V Motor],
+[gear, 200W+ 24V Motor],
 [bolt, Four 400F 2.7V SuperCaps]]
 ---
 
 ## Why Supercapacitors?
 We originally wanted to charge Li-Ion batteries because of their high energy-to-weight ratio (this is a bike-portable system), but we decided against them because capacitors are much easier to charge with a widely varying input voltage. They're also really cool. We didn't realize the necessity of load balancing circuitry until the end, so we just kept the supply voltage well below the rating of the entire bank. That came down to just keeping the bike below a certain gear, and made the bank _really_ easy to charge, if not slightly more dangerous.
+
+## The Buck Converter
+Our final system had a single buck converter controlled by the MSP430. A buck converter consists of a switch (the MOSFET), a diode, and an inductor and capacitor arranged as a low pass LC filter.
+
+![The most interesting part of the system](/img/poe-pyrois/buck.png)
+
+## Regulation Through Control
+	diff = actual - 740; // Compute the difference between set and actual
+	if (diff > 0 && CCR1 < period) // CCR1 should never be greater than the PWM period
+		CCR1++;	// If output is too high, increase the duty cycle
+		        // (this is inverted because of how we're switching the FET)
+	else if (CCR1 > 1) // CCR1 should never be negative
+		CCR1--; // If output is too low, decrease the duty cycle
