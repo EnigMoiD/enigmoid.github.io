@@ -264,12 +264,15 @@ footer #content a:active {
 .milestone {
   text-align: center;
 }
+.box,
 .image-box {
   background-color: #0b0c0e;
   padding: 1em;
   clear: both;
-  float: left;
   position: relative;
+}
+.box.project-specs img {
+  width: 200px;
 }
 .image-box img {
   width: 100%;

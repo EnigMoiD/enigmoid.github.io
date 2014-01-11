@@ -1,8 +1,21 @@
+# Wrapping images in boxes
+
 images = $("#post-container img")
 
 images.each ->
-	$(@).wrap "<div class='image-box'></div>"
-	$(@).parent().append "<div class='caption'>#{$(@).attr 'alt'}</div>"
-	width = $(@).attr "box-width"
-	if width
-		$(@).parent().attr "style", "width:#{width}"
+	img = $(@)
+
+	if img.attr("nobox") isnt ""
+		img.wrap "<div class='image-box'></div>"
+		if img.attr "alt"
+			img.parent().append "<div class='caption'>#{img.attr 'alt'}</div>"
+		style = img.attr "box-style"
+		if style
+			img.parent().attr "style", style
+
+# Cheap fix for spec list height
+
+specList = $(".project-specs")
+
+specList.find("img").load ->
+	specList.height $(@).height()

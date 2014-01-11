@@ -293,12 +293,18 @@ footer
 
 // Post-specific stuff
 
-.image-box
+.box
 	background-color inset-color
 	padding 1em
 	clear both
-	float left
 	position relative
+
+.box.project-specs
+	img
+		width 200px
+
+.image-box
+	@extends .box
 	img
 		width 100%
 

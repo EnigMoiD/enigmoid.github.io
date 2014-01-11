@@ -15,9 +15,9 @@ specs: [[code, 'Arduino C, MATLAB, Python'],
 ---
 
 <h2>The Sensor and Calibration</h2>
-<img box-width = "400px" src="/img/{{ page.short }}/sensor-over-distance.png" alt="Before: That's not linear at all!">
+<img box-style="width: 400px; float: left" src="/img/{{ page.short }}/sensor-over-distance.png" alt="Before: That's not linear at all!">
 
-<img box-width="400px" src="/img/{{ page.short }}/distance-over-distance.png" alt="After: Much better.">
+<img box-style="width: 400px; float: left" src="/img/{{ page.short }}/distance-over-distance.png" alt="After: Much better.">
 The sensor sends out and receives infrared light, and the attenuation of the light is more or less proportional to the distance the light has traveled. But it's not exact, and it's certainly not linear. So we needed to create a function to map the sensor voltage to its distance from the surface it's facing. The easiest way to do that was to take data at known distances to see what the sensor's response was.
 <br><br>
 We used MATLAB to generate a fourth order curve fit, and used the inverse of that function to convert sensor voltage to centimeters.
