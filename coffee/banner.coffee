@@ -2,6 +2,14 @@ bannerImg = $("#post-banner")
 banner = $("div.post.banner")
 isBannerClosed = true
 
+###
+Size the banner before the image has loaded
+Because it doesn't depend on the image size
+And it's jarring if this doesn't happen
+###
+
+banner.css "height": banner.width()/5
+
 $(bannerImg).load ->
 	sizeBanner($(@), true)
 
