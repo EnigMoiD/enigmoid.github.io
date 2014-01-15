@@ -12,10 +12,3 @@ images.each ->
 		style = img.attr "box-style"
 		if style
 			img.parent().attr "style", style
-
-# Cheap fix for spec list height
-
-specList = $(".project-specs")
-
-specList.find("img").load ->
-	specList.height $(@).height()

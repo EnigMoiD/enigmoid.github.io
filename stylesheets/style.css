@@ -259,8 +259,30 @@ footer #content a:active {
   clear: both;
   position: relative;
 }
-.box.project-specs img {
-  width: 200px;
+.box.project-specs .specs-image {
+  height: 180px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 600px) {
+  .box.project-specs .specs-image {
+    float: right;
+    display: inline-block;
+    margin: none;
+  }
+}
+.box.project-specs .specs-content {
+  text-align: center;
+}
+@media (min-width: 600px) {
+  .box.project-specs .specs-content {
+    display: inline-block;
+    vertical-align: top;
+    min-height: 180px;
+    text-align: left;
+  }
 }
 .image-box img {
   width: 100%;

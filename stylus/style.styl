@@ -302,8 +302,26 @@ footer
 	position relative
 
 .box.project-specs
-	img
-		width 200px
+	.specs-image
+		@media(min-width: 600px)
+			float right
+			display inline-block
+			margin none
+
+		height 180px
+		width auto
+
+		display block
+		margin-left auto
+		margin-right auto
+
+	.specs-content
+		@media(min-width: 600px)
+			display inline-block
+			vertical-align top
+			min-height 180px
+			text-align left
+		text-align center
 
 .image-box
 	@extends .box

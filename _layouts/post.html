@@ -13,13 +13,15 @@ active: project
 	<h1>{{ page.header[0] }}</h1>
 	<p>{{ page.header[1] }}</p>
 	<div class="box project-specs">
-		<img nobox style="float: right" src="/img/{{ page.short }}/project.jpg">
-		<h2>The Project</h2>
-		<ul>
-			{% for spec in page.specs %}
-			<li><i class="fa fa-fw fa-{{ spec[0] }}"></i> {{ spec[1] }}</li>
-			{% endfor %}
-		</ul>
+		<div class="specs-content">
+			<h2>The Project</h2>
+			<ul>
+				{% for spec in page.specs %}
+				<li><i class="fa fa-fw fa-{{ spec[0] }}"></i> {{ spec[1] }}</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<img nobox class="specs-image" src="/img/{{ page.short }}/project.jpg">
 	</div>
 	{{ content }}
 </div>
