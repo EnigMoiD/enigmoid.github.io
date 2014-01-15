@@ -107,13 +107,14 @@ header a:active {
   color: #67a4c2;
 }
 header li {
+  white-space: nowrap;
   padding: 0px;
   font-family: 'Jura';
   font-size: 1.5em;
   text-align: center;
   text-shadow: 0px -1px rgba(0,0,0,0.2);
 }
-@media (min-width: 400px) {
+@media (min-width: 380px) {
   header li {
     padding: 0px 1em;
     display: inline;
