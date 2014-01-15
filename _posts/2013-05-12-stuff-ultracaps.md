@@ -5,5 +5,6 @@ external: [[github, github.com/EnigMoiD/Ultracap-Site], [compass, ultracapacitor
 short: stuff-ultracaps
 banner-position: .4
 team: 4
-specs: [[code, 'd3.js']]
+specs: [[code, 'd3.js'],
+[flask, 'Graphene Oxide?']]
 ---
