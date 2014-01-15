@@ -43,19 +43,7 @@ body {
   color: #f5f9fb;
   height: 100%;
 }
-div,
-body,
-header,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-img,
-ul,
-li,
-div {
+* {
   padding: 0px;
   margin: 0px;
 }
@@ -227,11 +215,10 @@ div.column {
   margin: auto;
   max-width: 900px;
 }
-#container p,
-#post-container p {
-  padding: 0px 1em;
-}
 #post-container {
+  padding: 0 1em;
+}
+#content-container {
   padding: 0 1em;
 }
 footer {
