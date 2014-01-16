@@ -15,16 +15,16 @@ specs: [[code, 'Arduino C, MATLAB, Python'],
 ---
 
 <h2>The Sensor and Calibration</h2>
-<img box-style="width: 400px; float: left" src="/img/{{ page.short }}/sensor-over-distance.png" alt="Before: That's not linear at all!">
+<img box-style="max-width: 300px; float: left" src="/img/{{ page.short }}/sensor-over-distance.png" alt="Before: That's not linear at all!">
 
-<img box-style="width: 400px; float: left" src="/img/{{ page.short }}/distance-over-distance.png" alt="After: Much better.">
+<img box-style="max-width: 300px; float: left" src="/img/{{ page.short }}/distance-over-distance.png" alt="After: Much better.">
 The sensor sends out and receives infrared light, and the attenuation of the light is more or less proportional to the distance the light has traveled. But it's not exact, and it's certainly not linear. So we needed to create a function to map the sensor voltage to its distance from the surface it's facing. The easiest way to do that was to take data at known distances to see what the sensor's response was.
 <br><br>
 We used MATLAB to generate a fourth order curve fit, and used the inverse of that function to convert sensor voltage to centimeters.
 <h2>The Transformation</h2>
 Our system had three degrees of freedom: two orthogonal angles and the distance reported by the rangefinder. This meant that our data was in spherical coordinates. We made sure to mount the sensor at the center of both rotational axes so that it was at the origin in spherical space and we wouldn't have to do any transformations.
 <br><br>
-We used MATLAB to collect the spherical coordinates over the serial port and convert them to cartesian. MATLAB has a built in function for this, but because of how we had defined our coordinate system, we ended up writing our own transfer function. The math itself isn't very complex, but working out whether to use sine or cosine was confusing.
+We used MATLAB to collect the spherical coordinates over the serial port and convert them to cartesian. MATLAB has a built in function for this, but because of how we had defined our coordinate system, we ended up writing our own transfer function. MATLAB wasn't using cosines and sines in the same places we needed them.
 <h2>Point Clouds</h2>
 The goal of the lab was to scan the diorama below.
 <div class="images-box">
