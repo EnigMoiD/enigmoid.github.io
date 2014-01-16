@@ -1,4 +1,4 @@
-<div class="project-snippet project-snippet-{% cycle 'odd', 'even' %}">
+<div class="project-snippet {% cycle 'odd', 'even' %}">
 	<div>
 		<a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
 		{% for ext in post.external %}
