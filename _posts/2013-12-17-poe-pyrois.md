@@ -25,9 +25,11 @@ Our final system had a single buck converter controlled by the MSP430. A buck co
 ![The most interesting part of the system](/img/poe-pyrois/buck.png)
 
 ## Regulation Through Control
-	diff = actual - 740; // Compute the difference between set and actual
-	if (diff > 0 && CCR1 < period) // CCR1 should never be greater than the PWM period
-		CCR1++;	// If output is too high, increase the duty cycle
-		        // (this is inverted because of how we're switching the FET)
-	else if (CCR1 > 1) // CCR1 should never be negative
-		CCR1--; // If output is too low, decrease the duty cycle
+{% highlight c %}
+diff = actual - 740; // Compute the difference between set and actual
+if (diff > 0 && CCR1 < period) // CCR1 should never be greater than the PWM period
+	CCR1++;	// If output is too high, increase the duty cycle
+			// (this is inverted because of how we're switching the FET)
+else if (CCR1 > 1) // CCR1 should never be negative
+	CCR1--; // If output is too low, decrease the duty cycle
+{% endhighlight %}
