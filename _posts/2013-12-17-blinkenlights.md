@@ -29,4 +29,4 @@ We also came up with a system that would have allowed the FPGA to automatically 
 1. Encoded songs could have chords.
 1. Notes of arbitrary length could be encoded by just repeating notes.
 
-Unofrtunately, because of difficulties with the FPGA synthesis/programming software we were using, we weren't able to implement the lookup table on the FPGA. No player piano for us.
+Unfortunately, because of difficulties with the FPGA synthesis/programming software we were using, we weren't able to implement the lookup table on the FPGA. No player piano for us.
