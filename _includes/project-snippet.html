@@ -1,20 +1,18 @@
 <div class="project-snippet {% cycle 'odd', 'even' %}">
-	<div>
-		<a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
-		{% for ext in post.external %}
-		<div class="external-pin">
-			<a href="//{{ ext[1] }}">
-				<i class="fa fa-fw fa-{{ ext[0] }}"></i>
-			</a>
-		</div>
-		{% endfor %}
+	{% for ext in post.external %}
+	<div class="external-pin">
+		<a href="//{{ ext[1] }}">
+			<i class="fa fa-fw fa-{{ ext[0] }}"></i>
+		</a>
 	</div>
+	{% endfor %}
+	<a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
 	<div class="desc-container">
 		{% if post.team %}
 		<span class="desc-item"><i class="fa fa-fw fa-user"></i>{{ post.team }}</span>
 		{% endif %}
 		{% for spec in post.specs %}
-		<span class="desc-item"><i class="fa fa-fw fa-{{ spec[0] }}"></i> {{ spec[1] }}</span>
+		<span class="desc-item"><i class="fa fa-fw fa-{{ spec[0] }}"></i>{{ spec[1] }}</span>
 		{% endfor %}
 	</div>
 </div>
