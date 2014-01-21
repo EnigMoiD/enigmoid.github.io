@@ -68,7 +68,7 @@ ul {
   padding: 0.1em 0px 0.2em 0.5em;
 }
 .project-snippet h1 {
-  display: inline-block;
+  display: inline;
 }
 .project-snippet .desc-item {
   padding-right: 1em;
