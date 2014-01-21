@@ -29,7 +29,7 @@ The buck converter creates a square wave from the input voltage by switching it 
 ## Regulation Through Control
 The MSP430 outputs the PWM signal that switches the MOSFET. Below is the control code we wrote for the MSP430.
 
-{% highlight c %}
+{% highlight c linenos %}
 err = actual - 740;
 if (err > 0 && CCR1 < period)
 	CCR1++; // The PWM duty cycle
