@@ -303,6 +303,16 @@ footer #content a:active {
   margin: 0px;
   float: left;
 }
+.highlight {
+  margin: 0.5em;
+  overflow: scroll;
+  background-color: #0c0d10;
+}
+.highlight .lineno {
+  color: #5b676d;
+  background-color: #1d2326;
+  padding: 0 0.7em;
+}
 code .hll {
   background-color: #ffc;
 }

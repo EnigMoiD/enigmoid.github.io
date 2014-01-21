@@ -51,6 +51,8 @@ accent = #1194CE
 dim-blue = desaturate(darken(accent, 70%), 85%)
 off-white = desaturate(lighten(accent, 95%), 50%)
 
+dim-text = desaturate(lighten(dim-blue, 30%), 30%)
+
 text-color = off-white
 bg-color = dark-dark-gray
 inset-color = darken(dark-dark-gray, 10%)
@@ -345,6 +347,16 @@ footer
 // Pygments stuff
 
 // Using manni theme from github.com/richleland/pygments-css
+
+.highlight
+	margin .5em
+	overflow scroll
+	background-color dark-dark-gray
+
+	.lineno
+		color dim-text
+		background-color dim-blue
+		padding 0 .7em
 
 code .hll { background-color: #ffffcc }
 code .c { color: #0099FF; font-style: italic } /* Comment */
