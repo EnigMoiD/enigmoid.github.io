@@ -5,7 +5,7 @@
   images = $("#post-container img");
 
   images.each(function() {
-    var img, style;
+    var boxClass, img, style;
     img = $(this);
     if (img.attr("nobox") !== "") {
       img.wrap("<div class='image-box'></div>");
@@ -13,8 +13,12 @@
         img.parent().append("<div class='caption'>" + (img.attr('alt')) + "</div>");
       }
       style = img.attr("box-style");
+      boxClass = img.attr("box-class");
       if (style) {
-        return img.parent().attr("style", style);
+        img.parent().attr("style", style);
+      }
+      if (boxClass) {
+        return img.parent().attr("class", img.parent().attr("class") + (" " + boxClass));
       }
     }
   });

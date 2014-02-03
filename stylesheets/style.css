@@ -288,11 +288,19 @@ footer #content a:active {
     text-align: left;
   }
 }
+.image-box {
+  margin: 0.5em;
+}
 .image-box img {
   width: 100%;
 }
 .image-box .caption {
   text-align: center;
+}
+.image-box.center {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .images-box {
   clear: both;
