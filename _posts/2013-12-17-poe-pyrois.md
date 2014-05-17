@@ -22,7 +22,7 @@ We originally wanted to charge Li-Ion batteries because of their high energy-to-
 ## The Buck Converter
 Our final system had a single buck converter controlled by the MSP430.
 
-The buck converter creates a square wave from the input voltage by switching it on and off with the MOSFET. The LC filter then smooths the output voltage to a level proportional to the duty cycle of the square.
+The buck converter creates a square wave from the input voltage by switching it on and off with the MOSFET. The LC filter then smooths the output voltage to a level proportional to the duty cycle of the square wave.
 
 ![The most interesting part of the system](/img/poe-pyrois/buck.png)
 
