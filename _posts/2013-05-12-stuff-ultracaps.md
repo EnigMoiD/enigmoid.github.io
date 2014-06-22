@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Graphene Ultracapacitors
-external: [[github, github.com/EnigMoiD/Ultracap-Site], [compass, ultracapacitors.herokuapp.com]]
+external: [[github, 'http://www.github.com/EnigMoiD/Ultracap-Site'], [compass, 'http://ultracapacitors.herokuapp.com']]
 short: stuff-ultracaps
 banner-position: .4
 team: 4

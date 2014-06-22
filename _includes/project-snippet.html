@@ -1,7 +1,7 @@
 <div class="project-snippet {% cycle 'odd', 'even' %}">
 	{% for ext in post.external %}
 	<div class="external-pin">
-		<a href="//{{ ext[1] }}">
+		<a href="{{ ext[1] }}">
 			<i class="fa fa-fw fa-{{ ext[0] }}"></i>
 		</a>
 	</div>

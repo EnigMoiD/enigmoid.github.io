@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Bike-Charged Supercapacitors
-external: [[compass, pyrois.weebly.com]]
+external: [[compass, 'http://pyrois.weebly.com']]
 short: poe-pyrois
 
 banner-position: .45
