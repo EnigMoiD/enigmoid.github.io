@@ -7,6 +7,6 @@ def resize(filename, dirname, width):
 for dirname, dirnames, filenames in os.walk("."):
 	for filename in filenames:
 		if re.search(r"banner-full.jpg", filename):
-			resize(filename, dirname, 900)
+			resize(filename, dirname, "900")
 		if re.search(r"project-full.jpg", filename):
-			resize(filename, dirname, 360)
+			resize(filename, dirname, "360")
