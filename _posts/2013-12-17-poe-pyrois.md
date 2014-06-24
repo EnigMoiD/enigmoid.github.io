@@ -12,7 +12,7 @@ header: [For Principles of Engineering we wanted to harness the energy of a huma
 specs: [
 [code, C],
 [desktop, MSP430],
-[gear, 200W+ 24V Motor],
+[gear, 200W 24V Motor],
 [bolt, Four 400F 2.7V SuperCaps]]
 ---
 
