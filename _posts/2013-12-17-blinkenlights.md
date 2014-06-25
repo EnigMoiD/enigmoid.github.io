@@ -11,7 +11,7 @@ header: ['Our FPGA breakout had 8 switches and a clock speed jumper. So we turne
 
 specs: [
 [code, Verilog],
-[desktop, Xilink Spartan-3]]
+[laptop, Xilink Spartan-3]]
 ---
 
 ## Chords!
