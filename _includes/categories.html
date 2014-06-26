@@ -33,11 +33,19 @@
 
 	for (var i in specs) {
 		var spec = specs[i]
-		var specObj = {type: spec[1], url: spec[2], title: spec[3]}
-		if (specifications[spec[0]])
-			specifications[spec[0]].push(specObj)
-		else
-			specifications[spec[0]] = [specObj]
+		var specObj = {}
+		specObj[spec[1]] = {url: spec[2], title: spec[3]}
+
+		if (specifications[spec[0]]) {
+			if (specifications[spec[0]][spec[1]])
+				specifications[spec[0]][spec[1]].push(specObj[spec[1]])
+			else
+				specifications[spec[0]][spec[1]] = [ specObj[spec[1]] ]
+		}
+		else {
+			specifications[spec[0]] = {}
+			specifications[spec[0]][spec[1]] = [ specObj[spec[1]] ]
+		}
 	}
 
 	// Generating DOM from specs
@@ -47,9 +55,13 @@
 		for (var cat in specifications) {
 			var catContainer = catsContainer.append("<div class='category' category='"+cat+"'><i class='fa fa-fw fa-"+cat+"'</div>")
 			var catList = specifications[cat]
-			for (var j in catList) {
-				var entry = catList[j]
-				catContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
+			for (var type in catList) {
+				var entries = catList[type]
+				catContainer.append("<div class='type' type='"+type+"'><h3>"+type+"</h3></div>")
+				for (var j in entries) {
+					var entry = entries[j]
+					catContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
+				}
 			}
 		}
 	}
