@@ -4,26 +4,24 @@ layout: default
 active: about
 ---
 
-<div class="column-container">
-	<div class="column about banner">
-		<div class="about banner-content">I am <span class="milestone" id="birth"></span> old.</div>
-		<div class="about banner-bg"><i class="fa fa-clock-o"></i></div>
-	</div>
-
-	<div class="column about banner">
-		<div class="about banner-content">I'm a <span class="milestone" id="graduation"></span> at Olin College.</div>
-		<div class="about banner-bg"><i class="olin"></i></div>
-	</div>
-
-	<div class="column about banner">
-		<div class="about banner-content">I've been programming for <span class="milestone" id="programming"></span>.</div>
-		<div class="about banner-bg"><i class="fa fa-code"></i></div>
-	</div>
-</div>
-
-{% include categories.html %}
-
 <div id="content-container">
+	<div class="column-container">
+		<div class="column about banner">
+			<div class="about banner-content">I am <span class="milestone" id="birth"></span> old.</div>
+			<div class="about banner-bg"><i class="fa fa-clock-o"></i></div>
+		</div>
+
+		<div class="column about banner">
+			<div class="about banner-content">I'm a <span class="milestone" id="graduation"></span> at Olin College.</div>
+			<div class="about banner-bg"><i class="olin"></i></div>
+		</div>
+
+		<div class="column about banner">
+			<div class="about banner-content">I've been programming for <span class="milestone" id="programming"></span>.</div>
+			<div class="about banner-bg"><i class="fa fa-code"></i></div>
+		</div>
+	</div>
+
 	<div class="column-container">
 		<div class="column about banner">
 			<div class="about banner-content">I've been playing violin for <span class="milestone" id="violin"></span>.</div>
@@ -35,6 +33,9 @@ active: about
 			<div class="about banner-bg"><i class="fa fa-fire"></i></div>
 		</div>
 	</div>
+
+	{% include categories.html %}
+
 	<br>
 	I'm the electrical team coordinator for the <a href="http://olinsailbot.com">Olin Robotic Sailing Team</a> and a course assistant for Real World Measurements, an introductory signal processing class. In the fall of 2013 I was a course assistant for Modeling and Control, a first semester systems debugging class.
 	<div class="column-container">
