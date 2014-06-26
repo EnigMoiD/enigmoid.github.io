@@ -10,11 +10,15 @@ team: 4
 header: [For Principles of Engineering we wanted to harness the energy of a human pedaling a bike.,'And we wanted to be efficient about it, which meant managing the energy storage ourselves. We also wanted to charge USB devices from whatever energy storage unit we ended up using. None of us knew anything about what building this would involve, so it took us about a month to realize that we wanted to charge a bank of supercapacitors and build a 5V switching regulator.']
 
 specs: [
-[code, C],
-[laptop, MSP430],
-[gear, 200W 24V Motor],
-[bolt, Four 400F 2.7V SuperCaps]]
+[code, [C]],
+[laptop, [MSP430]],
+[gear, [200W 24V Motor]],
+[bolt, [Four 400F 2.7V SuperCaps]]
+]
 ---
+
+<!-- It was a beautiful regex. I tried. -->
+<!-- specs: \[(\n)?(\[(\w.*?,) (\w.*?)\],?(\n)?)* -->
 
 ## Why Supercapacitors?
 We originally wanted to charge Li-Ion batteries because of their high energy-to-weight ratio (this is a bike-portable system), but we decided against them because capacitors are much easier to charge with a widely varying input voltage. They're also really cool. We didn't realize the necessity of load balancing circuitry until the end, so we just kept the supply voltage well below the rating of the entire bank. That came down to just keeping the bike below a certain gear, and made the bank _really_ easy to charge, if not slightly more dangerous.
