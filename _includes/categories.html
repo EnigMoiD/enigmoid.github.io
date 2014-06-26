@@ -1,0 +1,59 @@
+<script type="text/javascript">
+(function() {
+	// Dictionary for external links
+	var exts = [
+	{% for post in site.posts %}
+		{% for ext in post.external %}
+			["{{ ext[0] }}", "{{ ext[1] }}"],
+		{% endfor %}
+	{% endfor %}
+	]
+
+	window.externals = {}
+
+	for (var i in exts) {
+		var ext = exts[i]
+		if (externals[ext[0]])
+			externals[ext[0]].push(ext[1])
+		else
+			externals[ext[0]] = [ext[1]]
+	}
+
+	// Dictionary for specs
+
+	var specs  = [
+	{% for post in site.posts %}
+		{% for spec in post.specs %}
+			["{{ spec[0] }}", "{{ spec[1] }}", "{{ post.url }}", "{{ post.title }}"],
+		{% endfor %}
+	{% endfor %}
+	]
+
+	window.specifications = {}
+
+	for (var i in specs) {
+		var spec = specs[i]
+		var specObj = {type: spec[1], url: spec[2], title: spec[3]}
+		if (specifications[spec[0]])
+			specifications[spec[0]].push(specObj)
+		else
+			specifications[spec[0]] = [specObj]
+	}
+
+	// Generating DOM from specs
+
+	window.onload = function() {
+		var catsContainer = $("#category-container")
+		for (var cat in specifications) {
+			var catContainer = catsContainer.append("<div class='category' category='"+cat+"'><i class='fa fa-fw fa-"+cat+"'</div>")
+			var catList = specifications[cat]
+			for (var j in catList) {
+				var entry = catList[j]
+				catContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
+			}
+		}
+	}
+})()
+</script>
+<div id="category-container">
+</div>
