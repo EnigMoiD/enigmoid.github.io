@@ -24,7 +24,9 @@
 	var specs  = [
 	{% for post in site.posts %}
 		{% for spec in post.specs %}
-			["{{ spec[0] }}", "{{ spec[1] }}", "{{ post.url }}", "{{ post.title }}"],
+			{% for s in spec[1] %}
+				["{{ spec[0] }}","{{ s }}" , "{{ post.url }}", "{{ post.title }}"],
+			{% endfor %}
 		{% endfor %}
 	{% endfor %}
 	]
