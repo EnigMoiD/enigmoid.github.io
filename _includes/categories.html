@@ -53,11 +53,11 @@
 	window.onload = function() {
 		var catsContainer = $("#category-container")
 		for (var cat in specifications) {
-			var catContainer = catsContainer.append("<div class='category' category='"+cat+"'><i class='fa fa-fw fa-"+cat+"'</div>")
+			var catContainer = catsContainer.append("<div class='category' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'</div>")
 			var catList = specifications[cat]
 			for (var type in catList) {
 				var entries = catList[type]
-				catContainer.append("<div class='type' type='"+type+"'><h3>"+type+"</h3></div>")
+				catContainer.append("<div class='type' type='"+type+"'><h2>"+type+"</h2></div>")
 				for (var j in entries) {
 					var entry = entries[j]
 					catContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
