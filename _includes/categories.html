@@ -54,8 +54,15 @@
 
 	window.onload = function() {
 		var catsContainer = $("#category-container")
+		var i = 0
+		var colContainer
 		for (var cat in specifications) {
-			var catContainer = catsContainer.append("<div class='category' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'</div>")
+			if (i%2 === 0) {
+				catsContainer.append("<div class='column-container' number="+i+"></div>")
+				colContainer = catsContainer.find('[number='+i+']')
+			}
+
+			var catContainer = colContainer.append("<div class='category column about banner' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'</div>")
 			var catList = specifications[cat]
 			for (var type in catList) {
 				var entries = catList[type]
@@ -65,6 +72,8 @@
 					catContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
 				}
 			}
+
+			i++
 		}
 	}
 })()
