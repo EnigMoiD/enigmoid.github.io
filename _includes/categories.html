@@ -24,8 +24,13 @@
 	var specs  = [
 	{% for post in site.posts %}
 		{% for spec in post.specs %}
-			{% for s in spec[1] %}
-				["{{ spec[0] }}","{{ s }}" , "{{ post.url }}", "{{ post.title }}"],
+			{% for value in spec[1] %}
+				{
+					value: "{{ value }}",
+					icon: "{{ spec[0] }}",
+					url: "{{ post.url }}",
+					title: "{{ post.title }}"
+				},
 			{% endfor %}
 		{% endfor %}
 	{% endfor %}
@@ -33,25 +38,27 @@
 
 	window.specifications = {}
 
+	var spec, icon, value
 	for (var i in specs) {
-		var spec = specs[i]
-		var specObj = {}
-		specObj[spec[1]] = {url: spec[2], title: spec[3]}
+		spec = specs[i]
+		icon = spec.icon
+		value = spec.value
 
-		if (specifications[spec[0]]) {
-			if (specifications[spec[0]][spec[1]])
-				specifications[spec[0]][spec[1]].push(specObj[spec[1]])
+		if (specifications[icon]) {
+			if (specifications[icon][value])
+				specifications[icon][value].push(spec)
 			else
-				specifications[spec[0]][spec[1]] = [ specObj[spec[1]] ]
+				specifications[icon][value] = [ spec ]
 		}
 		else {
-			specifications[spec[0]] = {}
-			specifications[spec[0]][spec[1]] = [ specObj[spec[1]] ]
+			specifications[icon] = {}
+			specifications[icon][value] = [ spec ]
 		}
 	}
 
-	for (var cat in specifications) {
-		var catList = specifications[cat]
+
+	for (var icon in specifications) {
+		var catList = specifications[icon]
 		var catFreq = Object.keys(catList).length
 
 		for (var type in catList) {
@@ -61,12 +68,11 @@
 			catList[type] = {freq: typeFreq, typeList: typeList, type: type}
 		}
 
-		specifications[cat] = {freq: catFreq, cat: catList}
+		specifications[icon] = {freq: catFreq, icon: catList}
 	}
 
-	for (var cat in specifications) {
-		console.log(specifications[cat]);
-		specifications[cat].cat = _.sortBy(specifications[cat].cat, function(spec) {
+	for (var icon in specifications) {
+		specifications[icon].icon = _.sortBy(specifications[icon].icon, function(spec) {
 			return -spec.freq
 		})		
 	}
@@ -78,9 +84,9 @@
 		var catsContainer = $("#category-container")
 		var i = 0, k = 0
 		var colContainer
-		for (var cat in specifications) {
-			var catList = specifications[cat].cat
-			var catFreq = specifications[cat].freq
+		for (var icon in specifications) {
+			var catList = specifications[icon].icon
+			var catFreq = specifications[icon].freq
 
 			if (catFreq < 2)
 				continue
@@ -91,17 +97,17 @@
 
 			switch (k) {
 				case 0:
-					colContainer.append("<div class='category column banner one' category='"+cat+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+					colContainer.append("<div class='category column banner one' category='"+icon+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
 					break
 				case 1:
-					colContainer.append("<div class='category column banner two' category='"+cat+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+					colContainer.append("<div class='category column banner two' category='"+icon+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
 					break
 				case 2:
-					colContainer.append("<div class='category column banner three' category='"+cat+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+					colContainer.append("<div class='category column banner three' category='"+icon+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
 					break
 			}
 
-			var catContainer = colContainer.find('[category='+cat+']')
+			var catContainer = colContainer.find('[category='+icon+']')
 			for (var type in catList) {
 
 				var entries = catList[type].typeList
