@@ -50,6 +50,8 @@
 		}
 	}
 
+	console.log(specifications);
+
 	// Generating DOM from specs
 
 	window.onload = function() {
@@ -58,8 +60,9 @@
 		var colContainer
 		for (var cat in specifications) {
 			var catList = specifications[cat]
+			var catFreq = Object.keys(catList).length
 
-			if (Object.keys(catList).length < 2)
+			if (catFreq < 2)
 				continue
 			if (i%2 === 0) {
 				catsContainer.append("<div class='column-container' number="+i+"></div>")
@@ -68,26 +71,26 @@
 
 			switch (k) {
 				case 0:
-					colContainer.append("<div class='category column banner one' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+					colContainer.append("<div class='category column banner one' category='"+cat+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
 					break
 				case 1:
-					colContainer.append("<div class='category column banner two' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+					colContainer.append("<div class='category column banner two' category='"+cat+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
 					break
 				case 2:
-					colContainer.append("<div class='category column banner three' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+					colContainer.append("<div class='category column banner three' category='"+cat+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
 					break
 			}
 
 			var catContainer = colContainer.find('[category='+cat+']')
 			for (var type in catList) {
 				var entries = catList[type]
-				if (Object.keys(entries).length < 1)
-					continue
+				var freq = Object.keys(entries).length
 
-				catContainer.append("<div class='type' type='"+type+"'><h2>"+type+"</h2></div>")
+				catContainer.append("<div class='type' type='"+type+"' freq="+freq+"><h2 style='font-size:"+(freq*20)+"px'>"+type+"</h2></div>")
+				var typeContainer = catContainer.find('[type="'+type+'"]')
 				for (var j in entries) {
 					var entry = entries[j]
-					catContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
+					typeContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
 				}
 			}
 
