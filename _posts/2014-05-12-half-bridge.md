@@ -8,7 +8,7 @@ team: 2
 specs: [
 [code, ['Arduino C']],
 [laptop, [Arduino]],
-[bolt, ['Power MOSFETs']],
+[bolt, ['Power Electronics']],
 [floppy-o, [LTSpice]]
 ]
 

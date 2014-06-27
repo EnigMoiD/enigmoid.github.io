@@ -17,7 +17,9 @@ active: project
 			<h2>The Project</h2>
 			<ul>
 				{% for spec in page.specs %}
-				<li><i class="fa fa-fw fa-{{ spec[0] }}"></i> {{ spec[1] }}</li>
+				<li><i class="fa fa-fw fa-{{ spec[0] }}"></i>{% for s in spec[1] %}
+			{{ s }}{% unless forloop.last %}, {% endunless %}
+			{% endfor %}</li>
 				{% endfor %}
 			</ul>
 		</div>

@@ -13,7 +13,7 @@ specs: [
 [code, [C]],
 [laptop, [MSP430]],
 [gear, [200W 24V Motor]],
-[bolt, [Four 400F 2.7V SuperCaps, Power MOSFETs]],
+[bolt, [400F SuperCaps, Power Electronics]],
 [floppy-o, [LTSpice]]
 ]
 ---
