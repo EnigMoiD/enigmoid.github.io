@@ -14,7 +14,7 @@ specs: [
 [laptop, [MSP430]],
 [gear, [200W 24V Motor]],
 [bolt, [UltraCaps, Power Electronics]],
-[floppy-o, [LTSpice]]
+[floppy-o, [LTSpice, DipTrace]]
 ]
 ---
 
