@@ -50,7 +50,27 @@
 		}
 	}
 
-	console.log(specifications);
+	for (var cat in specifications) {
+		var catList = specifications[cat]
+		var catFreq = Object.keys(catList).length
+
+		for (var type in catList) {
+			var typeList = catList[type]
+			var typeFreq = Object.keys(typeList).length
+
+			catList[type] = {freq: typeFreq, typeList: typeList, type: type}
+		}
+
+		specifications[cat] = {freq: catFreq, cat: catList}
+	}
+
+	for (var cat in specifications) {
+		console.log(specifications[cat]);
+		specifications[cat].cat = _.sortBy(specifications[cat].cat, function(spec) {
+			return -spec.freq
+		})		
+	}
+
 
 	// Generating DOM from specs
 
@@ -59,8 +79,8 @@
 		var i = 0, k = 0
 		var colContainer
 		for (var cat in specifications) {
-			var catList = specifications[cat]
-			var catFreq = Object.keys(catList).length
+			var catList = specifications[cat].cat
+			var catFreq = specifications[cat].freq
 
 			if (catFreq < 2)
 				continue
@@ -83,11 +103,13 @@
 
 			var catContainer = colContainer.find('[category='+cat+']')
 			for (var type in catList) {
-				var entries = catList[type]
-				var freq = Object.keys(entries).length
 
-				catContainer.append("<div class='type' type='"+type+"' freq="+freq+"><h2 style='font-size:"+(freq*20)+"px'>"+type+"</h2></div>")
-				var typeContainer = catContainer.find('[type="'+type+'"]')
+				var entries = catList[type].typeList
+				var freq = catList[type].freq
+				var title = catList[type].type
+
+				catContainer.append("<div class='type' type='"+title+"' freq="+freq+"><h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2></div>")
+				var typeContainer = catContainer.find('[type="'+title+'"]')
 				for (var j in entries) {
 					var entry = entries[j]
 					typeContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
