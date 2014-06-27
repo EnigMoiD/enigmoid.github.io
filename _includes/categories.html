@@ -54,7 +54,7 @@
 
 	window.onload = function() {
 		var catsContainer = $("#category-container")
-		var i = 0
+		var i = 0, k = 0
 		var colContainer
 		for (var cat in specifications) {
 			if (i%2 === 0) {
@@ -62,7 +62,14 @@
 				colContainer = catsContainer.find('[number='+i+']')
 			}
 
-			var catContainer = colContainer.append("<div class='category column about banner' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'</div>")
+			if (k === 0)
+				colContainer.append("<div class='category column banner one' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+			if (k === 1)
+				colContainer.append("<div class='category column banner two' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+			if (k === 2)
+				colContainer.append("<div class='category column banner three' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+
+			var catContainer = colContainer.find('[category='+cat+']')
 			var catList = specifications[cat]
 			for (var type in catList) {
 				var entries = catList[type]
@@ -74,6 +81,7 @@
 			}
 
 			i++
+			k = (k+1)%3
 		}
 	}
 })()
