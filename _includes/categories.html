@@ -57,22 +57,33 @@
 		var i = 0, k = 0
 		var colContainer
 		for (var cat in specifications) {
+			var catList = specifications[cat]
+
+			if (Object.keys(catList).length < 2)
+				continue
 			if (i%2 === 0) {
 				catsContainer.append("<div class='column-container' number="+i+"></div>")
 				colContainer = catsContainer.find('[number='+i+']')
 			}
 
-			if (k === 0)
-				colContainer.append("<div class='category column banner one' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
-			if (k === 1)
-				colContainer.append("<div class='category column banner two' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
-			if (k === 2)
-				colContainer.append("<div class='category column banner three' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+			switch (k) {
+				case 0:
+					colContainer.append("<div class='category column banner one' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+					break
+				case 1:
+					colContainer.append("<div class='category column banner two' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+					break
+				case 2:
+					colContainer.append("<div class='category column banner three' category='"+cat+"'><i class='fa fa-fw fa-3x fa-"+cat+"'></i>")
+					break
+			}
 
 			var catContainer = colContainer.find('[category='+cat+']')
-			var catList = specifications[cat]
 			for (var type in catList) {
 				var entries = catList[type]
+				if (Object.keys(entries).length < 1)
+					continue
+
 				catContainer.append("<div class='type' type='"+type+"'><h2>"+type+"</h2></div>")
 				for (var j in entries) {
 					var entry = entries[j]
