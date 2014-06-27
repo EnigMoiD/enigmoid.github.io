@@ -58,21 +58,21 @@
 
 
 	for (var icon in specifications) {
-		var catList = specifications[icon]
-		var catFreq = Object.keys(catList).length
+		var iconList = specifications[icon]
+		var iconFreq = Object.keys(iconList).length
 
-		for (var type in catList) {
-			var typeList = catList[type]
+		for (var value in iconList) {
+			var typeList = iconList[value]
 			var typeFreq = Object.keys(typeList).length
 
-			catList[type] = {freq: typeFreq, typeList: typeList, type: type}
+			iconList[value] = {freq: typeFreq, typeList: typeList, value: value}
 		}
 
-		specifications[icon] = {freq: catFreq, icon: catList}
+		specifications[icon] = {freq: iconFreq, values: iconList}
 	}
 
 	for (var icon in specifications) {
-		specifications[icon].icon = _.sortBy(specifications[icon].icon, function(spec) {
+		specifications[icon].values = _.sortBy(specifications[icon].values, function(spec) {
 			return -spec.freq
 		})		
 	}
@@ -85,37 +85,28 @@
 		var i = 0, k = 0
 		var colContainer
 		for (var icon in specifications) {
-			var catList = specifications[icon].icon
-			var catFreq = specifications[icon].freq
+			var iconFreq = specifications[icon].freq
+			var iconList = specifications[icon].values
 
-			if (catFreq < 2)
-				continue
+			if (iconFreq < 2) continue
+
 			if (i%2 === 0) {
 				catsContainer.append("<div class='column-container' number="+i+"></div>")
 				colContainer = catsContainer.find('[number='+i+']')
 			}
 
-			switch (k) {
-				case 0:
-					colContainer.append("<div class='category column banner one' category='"+icon+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
-					break
-				case 1:
-					colContainer.append("<div class='category column banner two' category='"+icon+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
-					break
-				case 2:
-					colContainer.append("<div class='category column banner three' category='"+icon+"' freq='"+catFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
-					break
-			}
+			colContainer.append("<div class='category column banner "+(k===0?'one':k===1?'two':'three')+"' category='"+icon+"' freq='"+iconFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
 
 			var catContainer = colContainer.find('[category='+icon+']')
-			for (var type in catList) {
 
-				var entries = catList[type].typeList
-				var freq = catList[type].freq
-				var title = catList[type].type
+			var entries, freq, title
+			for (var value in iconList) {
+				entries = iconList[value].typeList
+				freq = iconList[value].freq
+				title = iconList[value].value
 
-				catContainer.append("<div class='type' type='"+title+"' freq="+freq+"><h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2></div>")
-				var typeContainer = catContainer.find('[type="'+title+'"]')
+				catContainer.append("<div class='type' value='"+title+"' freq="+freq+"><h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2></div>")
+				var typeContainer = catContainer.find('[value="'+title+'"]')
 				for (var j in entries) {
 					var entry = entries[j]
 					typeContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
