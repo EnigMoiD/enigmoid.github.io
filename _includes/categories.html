@@ -109,8 +109,18 @@
 				var header = $("<h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2>")
 				var valuesContainer = $("<div class='values'></div>")
 				typeContainer.append(header)
+
+				window.openContainers = {}
+
 				header.click(function() {
-					$(this).parent().find("div").toggle()
+					var type = $(this).parent().parent().attr("category")
+					if (window.openContainers[type])
+						openContainers[type].hide()
+
+					var links = $(this).parent().find("div")
+					links.show()
+
+					window.openContainers[type] = links
 				})
 				typeContainer.append(valuesContainer)
 				for (var j in entries) {
