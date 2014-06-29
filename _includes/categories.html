@@ -95,9 +95,9 @@
 				colContainer = catsContainer.find('[number='+i+']')
 			}
 
-			colContainer.append("<div class='category column banner "+(k===0?'one':k===1?'two':'three')+"' category='"+icon+"' freq='"+iconFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
 
-			var catContainer = colContainer.find('[category='+icon+']')
+			var catContainer = $("<div class='category column banner "+(k===0?'one':k===1?'two':'three')+"' category='"+icon+"' freq='"+iconFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
+			colContainer.append(catContainer)
 
 			var entries, freq, title
 			for (var value in iconList) {
@@ -105,12 +105,14 @@
 				freq = iconList[value].freq
 				title = iconList[value].value
 
-				catContainer.append("<div class='type' value='"+title+"' freq="+freq+"><h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2></div>")
-				var typeContainer = catContainer.find('[value="'+title+'"]')
+				var typeContainer = $("<div class='type' value='"+title+"' freq="+freq+"><h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2></div>")
+				var valuesContainer = $("<div class='values'></div>")
+				typeContainer.append(valuesContainer)
 				for (var j in entries) {
 					var entry = entries[j]
-					typeContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
+					valuesContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
 				}
+				catContainer.append(typeContainer)
 			}
 
 			i++
