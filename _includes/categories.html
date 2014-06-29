@@ -105,14 +105,20 @@
 				freq = iconList[value].freq
 				title = iconList[value].value
 
-				var typeContainer = $("<div class='type' value='"+title+"' freq="+freq+"><h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2></div>")
+				var typeContainer = $("<div class='type' value='"+title+"' freq="+freq+"></div>")
+				var header = $("<h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2>")
 				var valuesContainer = $("<div class='values'></div>")
+				typeContainer.append(header)
+				header.click(function() {
+					$(this).parent().find("div").toggle()
+				})
 				typeContainer.append(valuesContainer)
 				for (var j in entries) {
 					var entry = entries[j]
 					valuesContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
 				}
 				catContainer.append(typeContainer)
+				valuesContainer.hide()
 			}
 
 			i++
