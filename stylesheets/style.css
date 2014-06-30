@@ -185,6 +185,9 @@ div.column {
 .category.column.three {
   background-color: #0e0f13;
 }
+.category .values {
+  background-color: #0c0d10;
+}
 .index-banner {
   width: 100%;
 }

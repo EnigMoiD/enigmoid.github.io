@@ -1,5 +1,7 @@
 <script type="text/javascript">
 (function() {
+
+	$.easing.def = 'easeInOutSine'
 	// Dictionary for external links
 	var exts = [
 	{% for post in site.posts %}
@@ -113,14 +115,23 @@
 				window.openContainers = {}
 
 				header.click(function() {
-					var type = $(this).parent().parent().attr("category")
-					if (window.openContainers[type])
-						openContainers[type].hide()
+					var self = $(this)
 
-					var links = $(this).parent().find("div")
-					links.show()
+					var open = self.attr("open")
+					if ((typeof open !== typeof undefined && open !== false)) return
 
-					window.openContainers[type] = links
+					var type = self.parent().parent().attr("category")
+					if (window.openContainers[type]) {
+						openContainers[type].slideUp(200, function() {
+							self.removeAttr("open")
+						})
+					}
+
+					var links = self.parent().find("div")
+					links.slideDown(200, function() {
+						window.openContainers[type] = links
+						self.attr("open", "true")
+					})
 				})
 				typeContainer.append(valuesContainer)
 				for (var j in entries) {
