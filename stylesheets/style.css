@@ -193,7 +193,7 @@ div.column {
   transition: color 200ms;
 }
 .type h2:hover {
-  color: #1194ce !important;
+  color: #1194ce;
 }
 .type .values {
   background-color: #0c0d10;
