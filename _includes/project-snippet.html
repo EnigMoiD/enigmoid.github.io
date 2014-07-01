@@ -6,7 +6,7 @@
 		</a>
 	</div>
 	{% endfor %}
-	<a href="{{ post.url }}"><h1>{{ post.title }}</h1></a>
+	<a href="{{ post.url }}"><h1>{{ post.title }}<span class="date"> – {{ post.date | date: "%B %Y"}}</span></h1></a>
 	<div class="desc-container">
 		{% if post.team %}
 		<span class="desc-item"><i class="fa fa-fw fa-user"></i>{{ post.team }}</span>

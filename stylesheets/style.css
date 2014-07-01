@@ -70,6 +70,11 @@ ul {
 .project-snippet h1 {
   display: inline;
 }
+.project-snippet h1 .date {
+  font-size: 0.7em;
+  vertical-align: middle;
+  color: #3c3f4e;
+}
 .project-snippet .desc-item {
   padding-right: 1em;
 }
@@ -78,7 +83,7 @@ ul {
   font-size: 1.5em;
 }
 .project-snippet.even {
-  background-color: #1e2027;
+  background-color: #18191f;
 }
 .center {
   text-align: center;
