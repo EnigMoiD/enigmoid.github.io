@@ -116,21 +116,27 @@
 
 				header.click(function() {
 					var self = $(this)
+					var container = self.parent().find("div")
 
-					var open = self.attr("open")
-					if ((typeof open !== typeof undefined && open !== false)) return
+					var open = container.attr("open")
+					if (open === "open") {
+						openContainers[type] = undefined
+						container.slideUp(200, function() {
+							$(this).removeAttr("open")
+						})
+						return
+					}
 
 					var type = self.parent().parent().attr("category")
 					if (window.openContainers[type]) {
 						openContainers[type].slideUp(200, function() {
-							self.removeAttr("open")
+							$(this).removeAttr("open")
 						})
 					}
 
-					var links = self.parent().find("div")
-					links.slideDown(200, function() {
-						window.openContainers[type] = links
-						self.attr("open", "true")
+					container.slideDown(200, function() {
+						window.openContainers[type] = container
+						$(this).attr("open", "true")
 					})
 				})
 				typeContainer.append(valuesContainer)
