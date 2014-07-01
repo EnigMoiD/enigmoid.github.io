@@ -1,9 +1,7 @@
 @font-face
 	font-family 'Olin'
 	src url('/font/olin/olin-webfont.eot')
-	src url('/font/olin/olin-webfont.eot?#iefix') format('embedded-opentype'),
-		url('/font/olin/olin-webfont.woff') format('woff'),
-		url('/font/olin/olin-webfont.ttf') format('truetype')
+	src url('/font/olin/olin-webfont.eot?#iefix') format('embedded-opentype'), url('/font/olin/olin-webfont.woff') format('woff'), url('/font/olin/olin-webfont.ttf') format('truetype')
 	font-weight normal
 	font-style normal
 
@@ -179,16 +177,14 @@ div.column
 
 .banner
 	text-align center
-	margin-bottom 1em
+	padding 1em 0
 
 	img
 		width 100%
 		height auto !important
 
 .banner-content
-	text-shadow 0px 1px 3px dim-blue,
-				0px 1px 3px dim-blue,
-				0px 1px 3px dim-blue
+	text-shadow 0px 1px 3px dim-blue, 0px 1px 3px dim-blue, 0px 1px 3px dim-blue
 	width 100%
 	position absolute
 	z-index 1
@@ -209,11 +205,26 @@ about-height = 5em
 	i
 		font-size about-height
 		color rgba(0, 0, 0, 0)
-		text-shadow 0px 1px 3px dim-blue,
-					0px 1px 5px dim-blue,
-					0px 1px 9px dim-blue,
-					0px 1px 13px dim-blue,
-					0px 1px 19px dim-blue
+		text-shadow 0px 1px 3px dim-blue, 0px 1px 5px dim-blue, 0px 1px 9px dim-blue, 0px 1px 13px dim-blue, 0px 1px 19px dim-blue
+
+// Category columns
+
+.category.column.one
+	background-color lighten(dark-dark-gray, 3%)
+
+.category.column.two
+	background-color lighten(dark-dark-gray, 2%)
+
+.category.column.three
+	background-color lighten(dark-dark-gray, 1%)
+
+.type
+	h2
+		transition color 200ms
+		&:hover
+			color accent !important
+	.values
+		background-color dark-dark-gray
 
 // Index banners
 

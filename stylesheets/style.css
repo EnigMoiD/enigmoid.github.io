@@ -150,7 +150,7 @@ div.column {
 }
 .banner {
   text-align: center;
-  margin-bottom: 1em;
+  padding: 1em 0;
 }
 .banner img {
   width: 100%;
@@ -175,6 +175,28 @@ div.column {
   font-size: 5em;
   color: rgba(0,0,0,0);
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
+}
+.category.column.one {
+  background-color: #121418;
+}
+.category.column.two {
+  background-color: #101116;
+}
+.category.column.three {
+  background-color: #0e0f13;
+}
+.type h2 {
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -ms-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+.type h2:hover {
+  color: #1194ce !important;
+}
+.type .values {
+  background-color: #0c0d10;
 }
 .index-banner {
   width: 100%;

@@ -1,0 +1,160 @@
+<script type="text/javascript">
+(function() {
+
+	$.easing.def = 'easeInOutSine'
+	// Dictionary for external links
+	var exts = [
+	{% for post in site.posts %}
+		{% for ext in post.external %}
+			["{{ ext[0] }}", "{{ ext[1] }}"],
+		{% endfor %}
+	{% endfor %}
+	]
+
+	window.externals = {}
+
+	for (var i in exts) {
+		var ext = exts[i]
+		if (externals[ext[0]])
+			externals[ext[0]].push(ext[1])
+		else
+			externals[ext[0]] = [ext[1]]
+	}
+
+	// Dictionary for specs
+
+	var specs  = [
+	{% for post in site.posts %}
+		{% for spec in post.specs %}
+			{% for value in spec[1] %}
+				{
+					value: "{{ value }}",
+					icon: "{{ spec[0] }}",
+					url: "{{ post.url }}",
+					title: "{{ post.title }}"
+				},
+			{% endfor %}
+		{% endfor %}
+	{% endfor %}
+	]
+
+	window.specifications = {}
+
+	var spec, icon, value
+	for (var i in specs) {
+		spec = specs[i]
+		icon = spec.icon
+		value = spec.value
+
+		if (specifications[icon]) {
+			if (specifications[icon][value])
+				specifications[icon][value].push(spec)
+			else
+				specifications[icon][value] = [ spec ]
+		}
+		else {
+			specifications[icon] = {}
+			specifications[icon][value] = [ spec ]
+		}
+	}
+
+
+	for (var icon in specifications) {
+		var iconList = specifications[icon]
+		var iconFreq = Object.keys(iconList).length
+
+		for (var value in iconList) {
+			var typeList = iconList[value]
+			var typeFreq = Object.keys(typeList).length
+
+			iconList[value] = {freq: typeFreq, typeList: typeList, value: value}
+		}
+
+		specifications[icon] = {freq: iconFreq, values: iconList}
+	}
+
+	for (var icon in specifications) {
+		specifications[icon].values = _.sortBy(specifications[icon].values, function(spec) {
+			return -spec.freq
+		})		
+	}
+
+
+	// Generating DOM from specs
+
+	window.onload = function() {
+		var catsContainer = $("#category-container")
+		var i = 0, k = 0
+		var colContainer
+		for (var icon in specifications) {
+			var iconFreq = specifications[icon].freq
+			var iconList = specifications[icon].values
+
+			if (iconFreq < 2) continue
+
+			if (i%2 === 0) {
+				catsContainer.append("<div class='column-container' number="+i+"></div>")
+				colContainer = catsContainer.find('[number='+i+']')
+			}
+
+
+			var catContainer = $("<div class='category column banner "+(k===0?'one':k===1?'two':'three')+"' category='"+icon+"' freq='"+iconFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
+			colContainer.append(catContainer)
+
+			var entries, freq, title
+			for (var value in iconList) {
+				entries = iconList[value].typeList
+				freq = iconList[value].freq
+				title = iconList[value].value
+
+				var typeContainer = $("<div class='type' value='"+title+"' freq="+freq+"></div>")
+				var header = $("<h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2>")
+				var valuesContainer = $("<div class='values'></div>")
+				typeContainer.append(header)
+
+				window.openContainers = {}
+
+				header.click(function() {
+					var closeContainer = function(con) {
+						con.removeAttr("open")
+						con.find("h2").css("color", "inherit")
+					}
+
+					var container = $(this).parent().find("div")
+					var parent = container.parent()
+
+					var open = parent.attr("open")
+					if (open === "open") {
+						openContainers[type] = undefined
+						container.slideUp(200, closeContainer(parent))
+						return
+					}
+
+					var type = $(this).parent().parent().attr("category")
+					if (window.openContainers[type]) {
+						openContainers[type].slideUp(200, closeContainer(openContainers[type].parent()))
+					}
+
+					container.slideDown(200, function() {
+						window.openContainers[type] = container
+						parent.attr("open", "true")
+						parent.find("h2").css("color", accentColor)
+					})
+				})
+				typeContainer.append(valuesContainer)
+				for (var j in entries) {
+					var entry = entries[j]
+					valuesContainer.append('<a href="'+entry.url+'">'+entry.title+'</a><br>')
+				}
+				catContainer.append(typeContainer)
+				valuesContainer.hide()
+			}
+
+			i++
+			k = (k+1)%3
+		}
+	}
+})()
+</script>
+<div id="category-container">
+</div>
