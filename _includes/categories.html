@@ -4,7 +4,7 @@
 	$.easing.def = 'easeInOutSine'
 	// Dictionary for external links
 	var exts = [
-	{% for post in site.posts %}
+	{% for post in site.categories.projects %}
 		{% for ext in post.external %}
 			["{{ ext[0] }}", "{{ ext[1] }}"],
 		{% endfor %}
