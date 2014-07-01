@@ -115,28 +115,30 @@
 				window.openContainers = {}
 
 				header.click(function() {
-					var self = $(this)
-					var container = self.parent().find("div")
+					var closeContainer = function(con) {
+						con.removeAttr("open")
+						con.find("h2").css("color", "inherit")
+					}
 
-					var open = container.attr("open")
+					var container = $(this).parent().find("div")
+					var parent = container.parent()
+
+					var open = parent.attr("open")
 					if (open === "open") {
 						openContainers[type] = undefined
-						container.slideUp(200, function() {
-							$(this).removeAttr("open")
-						})
+						container.slideUp(200, closeContainer(parent))
 						return
 					}
 
-					var type = self.parent().parent().attr("category")
+					var type = $(this).parent().parent().attr("category")
 					if (window.openContainers[type]) {
-						openContainers[type].slideUp(200, function() {
-							$(this).removeAttr("open")
-						})
+						openContainers[type].slideUp(200, closeContainer(openContainers[type].parent()))
 					}
 
 					container.slideDown(200, function() {
 						window.openContainers[type] = container
-						$(this).attr("open", "true")
+						parent.attr("open", "true")
+						parent.find("h2").css("color", accentColor)
 					})
 				})
 				typeContainer.append(valuesContainer)

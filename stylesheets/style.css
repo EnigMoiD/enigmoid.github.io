@@ -185,7 +185,17 @@ div.column {
 .category.column.three {
   background-color: #0e0f13;
 }
-.category .values {
+.type h2 {
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -ms-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+.type h2:hover {
+  color: #1194ce !important;
+}
+.type .values {
   background-color: #0c0d10;
 }
 .index-banner {
