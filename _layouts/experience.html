@@ -1,0 +1,30 @@
+---
+active: project
+---
+
+{% include header.html %}
+<div bannerPosition="{{ page.banner-position }}" class="post banner {{ page.shade }}">
+	<div class="post banner-content">
+		<h1>{{ page.title }}</h1>
+	</div>
+	<img id="post-banner" src="/img/{{ page.short }}/banner.jpg">
+</div>
+<div id="post-container">
+	<h1>{{ page.header[0] }}</h1>
+	<p>{{ page.header[1] }}</p>
+	<div class="box project-specs">
+		<div class="specs-content">
+			<h2>The Project</h2>
+			<ul>
+				{% for spec in page.specs %}
+				<li><i class="fa fa-fw fa-{{ spec[0] }}"></i>{% for s in spec[1] %}
+			{{ s }}{% unless forloop.last %}, {% endunless %}
+			{% endfor %}</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<img nobox class="specs-image" alt="A representative picture of the project" src="/img/{{ page.short }}/project.jpg">
+	</div>
+	{{ content }}
+</div>
+{% include footer.html %}

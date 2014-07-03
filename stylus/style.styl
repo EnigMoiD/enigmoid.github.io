@@ -94,13 +94,15 @@ ul
 	list-style none
 	
 // Includes
-	
-.project-snippet
+
+snippet-padding = .1em 0px .2em .5em
+
+.snippet
 	font-family 'Alegreya Sans SC'
 	text-shadow 0px -1px rgba(0, 0, 0, .2)
 
 	background-color dark-gray
-	padding .1em 0px .2em .5em
+	padding snippet-padding
 
 	h1
 		display inline
@@ -112,7 +114,7 @@ ul
 		float right
 		font-size 1.5em
 
-.project-snippet.even
+.snippet.even
 	background-color lighten(dark-gray, 5%)
 
 // Modifiers
@@ -123,6 +125,26 @@ ul
 	text-shadow none
 	color accent
 	font-size accent-size
+
+// Experience
+.experience.snippet
+	position relative
+	height 100%
+	display inline-block
+
+	padding 0px
+
+	vertical-align top
+
+	top 100px
+
+	.inner
+		padding snippet-padding
+
+	background-color lighten(dark-gray, 5%)
+
+.experience.snippet.even
+	background-color lighten(dark-gray, 10%)
 
 // Global Layout
 

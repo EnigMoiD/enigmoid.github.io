@@ -61,23 +61,23 @@ img {
 ul {
   list-style: none;
 }
-.project-snippet {
+.snippet {
   font-family: 'Alegreya Sans SC';
   text-shadow: 0px -1px rgba(0,0,0,0.2);
   background-color: #14151a;
   padding: 0.1em 0px 0.2em 0.5em;
 }
-.project-snippet h1 {
+.snippet h1 {
   display: inline;
 }
-.project-snippet .desc-item {
+.snippet .desc-item {
   padding-right: 1em;
 }
-.project-snippet .external-pin {
+.snippet .external-pin {
   float: right;
   font-size: 1.5em;
 }
-.project-snippet.even {
+.snippet.even {
   background-color: #1e2027;
 }
 .center {
@@ -88,6 +88,21 @@ ul {
   text-shadow: none;
   color: #1194ce;
   font-size: 3em;
+}
+.experience.snippet {
+  position: relative;
+  height: 100%;
+  display: inline-block;
+  padding: 0px;
+  vertical-align: top;
+  top: 100px;
+  background-color: #1e2027;
+}
+.experience.snippet .inner {
+  padding: 0.1em 0px 0.2em 0.5em;
+}
+.experience.snippet.even {
+  background-color: #282a34;
 }
 header {
   padding: 0px 0px;
