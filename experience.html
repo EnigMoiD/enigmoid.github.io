@@ -4,6 +4,4 @@ layout: default
 active: experience
 ---
 <script type="text/javascript" src="/js/experience.js"></script>
-{% for post in site.categories.experience %}
-{% include experience-snippet.html %}
-{% endfor %}
+{% for post in site.categories.experience %}{% include experience-snippet.html %}{% endfor %}

@@ -41,6 +41,8 @@ a-color(color, hover, active)
 transition()
 	vendor('transition', arguments)
 
+quickly = 200ms
+
 // Colors
 dark-gray = #14151A
 dark-dark-gray = darken(dark-gray, 40%)
@@ -132,6 +134,10 @@ snippet-padding = .1em 0px .2em .5em
 	height 100%
 	display inline-block
 
+
+	&:first-child
+		margin-left 0px
+
 	padding 0px
 
 	vertical-align top
@@ -140,6 +146,8 @@ snippet-padding = .1em 0px .2em .5em
 
 	.inner
 		padding snippet-padding
+
+	transition width quickly
 
 	background-color lighten(dark-gray, 5%)
 
@@ -242,7 +250,7 @@ about-height = 5em
 
 .type
 	h2
-		transition color 200ms
+		transition color quickly
 		&:hover
 			color accent !important
 	.values
@@ -267,7 +275,7 @@ about-height = 5em
 	position relative
 
 .post.banner-content
-	transition opacity 200ms
+	transition opacity quickly
 	@media(min-width: 700px)
 		top 50%
 		height 3em
