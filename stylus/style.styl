@@ -130,32 +130,32 @@ snippet-padding = .1em 0px .2em .5em
 
 // Experience
 .experience.snippet
-	position relative
-	height 100%
+	position absolute
+	width auto
 	display inline-block
-
-	&:first-child
-		margin-left 0px
 
 	padding snippet-padding
 
 	vertical-align top
 
-	top 100px
-
 	transition width quickly
 
-	background-color lighten(dark-gray, 5%)
+.experience.snippet.one
+	background-color lighten(dark-dark-gray, 15%)
 
-.experience.snippet.even
-	background-color lighten(dark-gray, 10%)
+.experience.snippet.two
+	background-color lighten(dark-dark-gray, 10%)
+
+.experience.snippet.three
+	background-color lighten(dark-dark-gray, 5%)
+
+#track-container
+	height auto
 
 .track
 	vertical-align top
 	position relative
 	display inline-block
-
-	width 20%
 
 // Global Layout
 
@@ -242,13 +242,13 @@ about-height = 5em
 
 // Category columns
 
-.category.column.one
+.category.one
 	background-color lighten(dark-dark-gray, 3%)
 
-.category.column.two
+.category.two
 	background-color lighten(dark-dark-gray, 2%)
 
-.category.column.three
+.category.three
 	background-color lighten(dark-dark-gray, 1%)
 
 .type

@@ -90,30 +90,33 @@ ul {
   font-size: 3em;
 }
 .experience.snippet {
-  position: relative;
-  height: 100%;
+  position: absolute;
+  width: auto;
   display: inline-block;
   padding: 0.1em 0px 0.2em 0.5em;
   vertical-align: top;
-  top: 100px;
   -webkit-transition: width 200ms;
   -moz-transition: width 200ms;
   -ms-transition: width 200ms;
   -o-transition: width 200ms;
   transition: width 200ms;
-  background-color: #1e2027;
 }
-.experience.snippet:first-child {
-  margin-left: 0px;
+.experience.snippet.one {
+  background-color: #2b2f39;
 }
-.experience.snippet.even {
-  background-color: #282a34;
+.experience.snippet.two {
+  background-color: #21232c;
+}
+.experience.snippet.three {
+  background-color: #16181e;
+}
+#track-container {
+  height: auto;
 }
 .track {
   vertical-align: top;
   position: relative;
   display: inline-block;
-  width: 20%;
 }
 header {
   padding: 0px 0px;
@@ -202,13 +205,13 @@ div.column {
   color: rgba(0,0,0,0);
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
 }
-.category.column.one {
+.category.one {
   background-color: #121418;
 }
-.category.column.two {
+.category.two {
   background-color: #101116;
 }
-.category.column.three {
+.category.three {
   background-color: #0e0f13;
 }
 .type h2 {

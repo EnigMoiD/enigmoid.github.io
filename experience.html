@@ -4,6 +4,8 @@ layout: default
 active: experience
 ---
 <script type="text/javascript" src="/js/experience.js"></script>
-<div class="track-container">
-{% for post in site.categories.experience %}{% include experience-snippet.html %}{% endfor %}
+<div id="track-container">
+{% for track in site.data.tracks %}<div class="track" track="{{track}}" style="width: {{ 100.0 | divided_by: forloop.length }}%">
+	{% for post in site.categories.experience %}{% if post.track == track %}{% include experience-snippet.html %}{% endif %}{% endfor %}
+</div>{% endfor %}
 </div>
