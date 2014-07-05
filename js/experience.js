@@ -1,25 +1,10 @@
 (function() {
 	window.onload = function() {
 		function expsOverlap(exp1, exp2) {
-			// console.log('TESTING');
 			var dates1 = expDates(exp1)
 			var dates2 = expDates(exp2)
 
-			// console.log(exp1);
-			// console.log(exp2);
-			// console.log('dates1.end');
-			// console.log(dates1.end);
-			// console.log('dates2.start');
-			// console.log(dates2.start);
-			// console.log('dates1.start');
-			// console.log(dates1.start);
-			// console.log('dates2.end');
-			// console.log(dates2.end);
-
 			var overlap = (dates1.end > dates2.start && dates1.start < dates2.end)
-
-			// console.log(overlap);
-			// console.log('========');
 
 			return overlap
 		}
@@ -81,13 +66,12 @@
 				top: (today-dates.end)+"px"
 			})
 			intervals.push(interval)
-
-			track.append(exp)
-			track.css("width", 100.0/trackCount+"%")
 		})
 		
 		for (var i in tracks) {
-			track = tracks[i]
+			var track = tracks[i]
+
+			var trackEl = $("[track-name="+track+"]")
 
 			var trackChildren = $("[track="+track+"]")
 
@@ -100,10 +84,18 @@
 					if (expsOverlap(trackChild, trackChildInner)) { // there's one more overlap for each
 						var newOverlaps = parseInt(trackChild.attr("overlaps"))+1
 						var newInnerOverlaps = parseInt(trackChildInner.attr("overlaps"))+1
-						trackChildInner.attr("overlaps", newInnerOverlaps)
 						trackChild.attr("overlaps", newOverlaps)
+						trackChildInner.attr("overlaps", newInnerOverlaps)
 					}
 				}
+			}
+			trackEl.css("width", 100.0/tracks.length+"%")
+			trackChildren = _.sortBy(trackChildren, function(el) {
+				return -expDates($(el)).end
+			})
+			for (var i in trackChildren) {
+				var child = $(trackChildren[i])
+				trackEl.append(child)
 			}
 		}
 		experiences.each(function() {
