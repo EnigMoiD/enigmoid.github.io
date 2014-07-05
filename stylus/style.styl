@@ -134,18 +134,14 @@ snippet-padding = .1em 0px .2em .5em
 	height 100%
 	display inline-block
 
-
 	&:first-child
 		margin-left 0px
 
-	padding 0px
+	padding snippet-padding
 
 	vertical-align top
 
 	top 100px
-
-	.inner
-		padding snippet-padding
 
 	transition width quickly
 
@@ -153,6 +149,13 @@ snippet-padding = .1em 0px .2em .5em
 
 .experience.snippet.even
 	background-color lighten(dark-gray, 10%)
+
+.track
+	vertical-align top
+	position relative
+	display inline-block
+
+	width 20%
 
 // Global Layout
 

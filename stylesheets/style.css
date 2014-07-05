@@ -93,7 +93,7 @@ ul {
   position: relative;
   height: 100%;
   display: inline-block;
-  padding: 0px;
+  padding: 0.1em 0px 0.2em 0.5em;
   vertical-align: top;
   top: 100px;
   -webkit-transition: width 200ms;
@@ -106,11 +106,14 @@ ul {
 .experience.snippet:first-child {
   margin-left: 0px;
 }
-.experience.snippet .inner {
-  padding: 0.1em 0px 0.2em 0.5em;
-}
 .experience.snippet.even {
   background-color: #282a34;
+}
+.track {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  width: 20%;
 }
 header {
   padding: 0px 0px;
