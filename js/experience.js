@@ -21,6 +21,28 @@
 			}
 		}
 
+		// Customized for headers in .textbox divs
+		function intersect(header1, header2) {
+			header1 = $(header1)
+			header2 = $(header2)
+
+			var r1 = {
+				x: header1.offset().left,
+				y: header1.offset().top,
+				w: header1.width(),
+				h: header1.parent().height()
+			}
+
+			var r2 = {
+				x: header2.offset().left,
+				y: header2.offset().top,
+				w: header2.width(),
+				h: header2.parent().height()
+			}
+
+			return (((r1.x+r1.w > r2.x)&&(r1.x <= r2.x)) && ((r1.y+r1.h > r2.y)&&(r1.y <= r2.y)))
+		}
+
 		var experiences = $('.experience.snippet')
 
 		var maxOffset = 0
@@ -35,8 +57,29 @@
 				top: 2*(today-dates.end)+"px"
 			})
 		})
-
 		$("#container").css("height", maxOffset+"px")
+
+		var titles = $('.title')
+
+		titles.each(function() {
+			$(this).parent().css("top", "0px")
+		})
+
+		function moveOutTitles() {
+			for (var i = 0; i < titles.length-1; i++) {
+				for (var j = i+1; j < titles.length; j++) {
+					if (intersect(titles[i], titles[j])) {
+						$(titles[j]).parent().css({
+							top: "+="+$(titles[j]).parent().height()
+						})
+					}
+				}
+			}
+		}
+
+		// function positionTitles() {
+
+		// }
 
 		var tracks = $('.track')
 
@@ -46,15 +89,20 @@
 			if (openTrack === true) {
 				tracks.css("width", window.trackWidth)
 				$(this).css("width", window.trackWidth)
+				$(this).removeClass("selected")
 
 				openTrack = false
 			}
 			else {
 				tracks.css("width", "0%")
 				$(this).css("width", "100%")
+				$(this).addClass("selected")
 
 				openTrack = true
 			}
 		})
+
+		moveOutTitles()
+		window.onresize = moveOutTitles
 	}
 })()

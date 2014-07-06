@@ -71,6 +71,7 @@ ul {
   display: inline;
 }
 .snippet .desc-item {
+  white-space: nowrap;
   padding-right: 1em;
 }
 .snippet .external-pin {
@@ -100,17 +101,26 @@ ul {
   -o-transition: width 200ms;
   transition: width 200ms;
 }
-.experience.snippet .inner {
+.experience.snippet .textbox {
   padding: 0.1em 0px 0.2em 0.5em;
+  position: relative;
+  background-color: inherit;
+  z-index: 6;
+}
+.experience.snippet .textbox h1,
+.experience.snippet .textbox a {
+  padding-right: 0.5em;
+  background-color: inherit;
+  white-space: nowrap;
 }
 .experience.snippet.one {
-  background-color: #2b2f39;
+  background-color: #353a47;
 }
 .experience.snippet.two {
-  background-color: #21232c;
+  background-color: #2b2f39;
 }
 .experience.snippet.three {
-  background-color: #16181e;
+  background-color: #21232c;
 }
 .track {
   vertical-align: top;
@@ -123,6 +133,9 @@ ul {
   transition: width 200ms;
   height: 100%;
   background-color: #14151a;
+}
+.track.selected {
+  z-index: 5 !important;
 }
 header {
   padding: 0px 0px;

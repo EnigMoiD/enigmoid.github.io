@@ -110,6 +110,7 @@ snippet-padding = .1em 0px .2em .5em
 		display inline
 
 	.desc-item
+		white-space nowrap
 		padding-right 1em
 
 	.external-pin
@@ -135,21 +136,29 @@ snippet-padding = .1em 0px .2em .5em
 
 	padding 0px
 
-	.inner
-		padding snippet-padding
-
 	vertical-align top
 
 	transition width quickly
 
+	.textbox
+		padding snippet-padding
+		position relative
+		background-color inherit
+		z-index 6
+
+		h1, a
+			padding-right .5em
+			background-color inherit
+			white-space nowrap
+
 .experience.snippet.one
-	background-color lighten(dark-dark-gray, 15%)
+	background-color lighten(dark-dark-gray, 20%)
 
 .experience.snippet.two
-	background-color lighten(dark-dark-gray, 10%)
+	background-color lighten(dark-dark-gray, 15%)
 
 .experience.snippet.three
-	background-color lighten(dark-dark-gray, 5%)
+	background-color lighten(dark-dark-gray, 10%)
 
 .track
 	vertical-align top
@@ -160,6 +169,9 @@ snippet-padding = .1em 0px .2em .5em
 
 	height 100%
 	background-color dark-gray
+
+.track.selected
+	z-index 5 !important
 
 // Global Layout
 

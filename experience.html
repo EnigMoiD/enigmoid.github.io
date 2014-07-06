@@ -4,6 +4,6 @@ layout: default
 active: experience
 ---
 <script type="text/javascript" src="/js/experience.js"></script>
-{% for track in site.data.tracks %}<div class="track" track="{{track}}" style="width: {{ 100.0 | divided_by: forloop.length }}%">
+{% for track in site.data.tracks %}<div class="track" track="{{track}}" style="width: {{ 100.0 | divided_by: forloop.length }}%; z-index: {{ forloop.length | minus:forloop.index }}">{% if forloop.last %}<script type="text/javascript">window.trackWidth="{{ 100.0 | divided_by: forloop.length }}%"</script>{% endif %}
 	{% for post in site.categories.experience %}{% if post.track == track %}{% include experience-snippet.html %}{% endif %}{% endfor %}
-</div>{% if forloop.last %}<script type="text/javascript">window.trackWidth="{{ 100.0 | divided_by: forloop.length }}%"</script>{% endif %}{% endfor %}
+</div>{% endfor %}
