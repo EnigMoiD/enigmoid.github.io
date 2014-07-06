@@ -4,8 +4,6 @@ layout: default
 active: experience
 ---
 <script type="text/javascript" src="/js/experience.js"></script>
-<div id="track-container">
 {% for track in site.data.tracks %}<div class="track" track="{{track}}" style="width: {{ 100.0 | divided_by: forloop.length }}%">
 	{% for post in site.categories.experience %}{% if post.track == track %}{% include experience-snippet.html %}{% endif %}{% endfor %}
-</div>{% endfor %}
-</div>
+</div>{% if forloop.last %}<script type="text/javascript">window.trackWidth="{{ 100.0 | divided_by: forloop.length }}%"</script>{% endif %}{% endfor %}

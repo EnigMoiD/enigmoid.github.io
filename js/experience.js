@@ -23,14 +23,38 @@
 
 		var experiences = $('.experience.snippet')
 
+		var maxOffset = 0
 		experiences.each(function() {
 			var dates = expDates($(this))
 			var today = Date.parse(new Date())/1000.0/3600/24
 
+			maxOffset = _.max([maxOffset, 2*dates.interval+2*(today-dates.end)])
+
 			$(this).css({
-					height: 2*dates.interval+"px",
-					top: 2*(today-dates.end)+"px"
+				height: 2*dates.interval+"px",
+				top: 2*(today-dates.end)+"px"
 			})
+		})
+
+		$("#container").css("height", maxOffset+"px")
+
+		var tracks = $('.track')
+
+		window.openTrack = false
+
+		tracks.click(function() {
+			if (openTrack === true) {
+				tracks.css("width", window.trackWidth)
+				$(this).css("width", window.trackWidth)
+
+				openTrack = false
+			}
+			else {
+				tracks.css("width", "0%")
+				$(this).css("width", "100%")
+
+				openTrack = true
+			}
 		})
 	}
 })()

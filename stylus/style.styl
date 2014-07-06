@@ -131,10 +131,12 @@ snippet-padding = .1em 0px .2em .5em
 // Experience
 .experience.snippet
 	position absolute
-	width auto
-	display inline-block
+	width 100%
 
-	padding snippet-padding
+	padding 0px
+
+	.inner
+		padding snippet-padding
 
 	vertical-align top
 
@@ -149,13 +151,15 @@ snippet-padding = .1em 0px .2em .5em
 .experience.snippet.three
 	background-color lighten(dark-dark-gray, 5%)
 
-#track-container
-	height auto
-
 .track
 	vertical-align top
 	position relative
 	display inline-block
+
+	transition width quickly
+
+	height 100%
+	background-color dark-gray
 
 // Global Layout
 
@@ -287,10 +291,10 @@ about-height = 5em
 // Universal and Content Containers
 
 #container
+	overflow hidden
+	position relative
 	background-color dark-gray
 
-	clear both
-	height auto
 	min-height 100%
 	padding-bottom footer-height
 

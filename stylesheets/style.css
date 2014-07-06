@@ -91,15 +91,17 @@ ul {
 }
 .experience.snippet {
   position: absolute;
-  width: auto;
-  display: inline-block;
-  padding: 0.1em 0px 0.2em 0.5em;
+  width: 100%;
+  padding: 0px;
   vertical-align: top;
   -webkit-transition: width 200ms;
   -moz-transition: width 200ms;
   -ms-transition: width 200ms;
   -o-transition: width 200ms;
   transition: width 200ms;
+}
+.experience.snippet .inner {
+  padding: 0.1em 0px 0.2em 0.5em;
 }
 .experience.snippet.one {
   background-color: #2b2f39;
@@ -110,13 +112,17 @@ ul {
 .experience.snippet.three {
   background-color: #16181e;
 }
-#track-container {
-  height: auto;
-}
 .track {
   vertical-align: top;
   position: relative;
   display: inline-block;
+  -webkit-transition: width 200ms;
+  -moz-transition: width 200ms;
+  -ms-transition: width 200ms;
+  -o-transition: width 200ms;
+  transition: width 200ms;
+  height: 100%;
+  background-color: #14151a;
 }
 header {
   padding: 0px 0px;
@@ -259,9 +265,9 @@ div.column {
 }
 #container,
 #post-container {
+  overflow: hidden;
+  position: relative;
   background-color: #14151a;
-  clear: both;
-  height: auto;
   min-height: 100%;
   padding-bottom: 120px;
   margin: auto;
