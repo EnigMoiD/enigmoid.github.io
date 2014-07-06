@@ -41,16 +41,7 @@
 			}
 
 			var offset = r1.y+r1.h - r2.y
-			if (((r1.x+r1.w > r2.x)&&(r1.x <= r2.x)) && ((r1.y+r1.h > r2.y)&&(r1.y <= r2.y))) {
-				return {
-					int: true,
-					offset: offset
-				}
-			}
-			return {
-				int: false,
-				offset: 0
-			}
+			return (((r1.x+r1.w > r2.x)&&(r1.x <= r2.x)) && ((r1.y+r1.h > r2.y)&&(r1.y <= r2.y)))? offset : 0
 		}
 
 		var experiences = $('.experience.snippet')
@@ -79,18 +70,12 @@
 			for (var i = 0; i < titles.length-1; i++) {
 				for (var j = i+1; j < titles.length; j++) {
 					var intersection = intersect(titles[i], titles[j])
-					if (intersection.int) {
-						$(titles[j]).parent().css({
-							top: "+="+intersection.offset
-						})
-					}
+					$(titles[j]).parent().css({
+						top: "+="+intersection
+					})
 				}
 			}
 		}
-
-		// function positionTitles() {
-
-		// }
 
 		var tracks = $('.track')
 
