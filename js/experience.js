@@ -21,6 +21,15 @@
 			}
 		}
 
+		function isAcceptable(position, header, headers) {
+			for (var i in headers) {
+				if (header !== headers[i])
+					if (intersect(header, headers[i]) !== 0)
+						return false
+			}
+			return true
+		}
+
 		// Customized for headers in .textbox divs
 		function intersect(header1, header2) {
 			header1 = $(header1)
@@ -73,10 +82,9 @@
 			for (var i = 0; i < titles.length-1; i++) {
 				for (var j = i+1; j < titles.length; j++) {
 					var intersection = intersect(titles[i], titles[j])
-					if (intersection !== 0) {
-						$(titles[i]).css("color", "blue")
-						$(titles[j]).css("color", "red")
-					}
+					if (intersection !== 0)
+						oldTrackOffsets[$(titles[j]).parent().parent().attr("short")].push(intersection)
+
 					$(titles[j]).parent().css({
 						top: "+="+intersection
 					})
@@ -87,6 +95,14 @@
 		var tracks = $('.track')
 
 		window.openTrack = false
+		window.oldTrackOffsets = {}
+
+		tracks.each(function() {
+			$(this).children().each(function() {
+				oldTrackOffsets[$(this).attr("short")] = [0]
+			})
+		})
+
 
 		tracks.click(function() {
 			if (openTrack === true) {
