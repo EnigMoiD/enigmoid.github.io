@@ -133,18 +133,18 @@
 		function handleResize() {
 			moveOutTitles()
 
-			for (var exp in oldExpOffsets) {
-				var expEl = $("[short="+exp+"]")
-				var offset = oldExpOffsets[exp].pop()
-				if (isAcceptable(-offset, expEl, exps)) {
-					$(expEl).children().first().css({
-						top: "-="+offset
-					})
-				}
-				else {
-					oldExpOffsets[exp].push(offset)
-				}
-			}
+			// for (var exp in oldExpOffsets) {
+			// 	var expEl = $("[short="+exp+"]")
+			// 	var offset = oldExpOffsets[exp].pop()
+			// 	if (isAcceptable(-offset, expEl, exps)) {
+			// 		$(expEl).children().first().css({
+			// 			top: "-="+offset
+			// 		})
+			// 	}
+			// 	else {
+			// 		oldExpOffsets[exp].push(offset)
+			// 	}
+			// }
 		}
 
 		moveOutTitles()
