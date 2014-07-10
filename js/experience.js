@@ -26,22 +26,25 @@
 			header1 = $(header1)
 			header2 = $(header2)
 
+			var h1offset = header1.offset()
+			var h2offset = header2.offset()
+
 			var r1 = {
-				x: header1.offset().left,
-				y: header1.offset().top,
-				w: header1.width(),
-				h: header1.parent().height()
+				x1: h1offset.left,
+				y1: h1offset.top,
+				x2: h1offset.left+header1.width(),
+				y2: h1offset.top+header1.parent().height()
 			}
 
 			var r2 = {
-				x: header2.offset().left,
-				y: header2.offset().top,
-				w: header2.width(),
-				h: header2.parent().height()
+				x1: h2offset.left,
+				y1: h2offset.top,
+				x2: h2offset.left+header2.width(),
+				y2: h2offset.top+header2.parent().height()
 			}
 
-			var offset = r1.y+r1.h - r2.y
-			return (((r1.x+r1.w > r2.x)&&(r1.x <= r2.x)) && ((r1.y+r1.h > r2.y)&&(r1.y <= r2.y)))? offset : 0
+			var offset = r1.y2 - r2.y1
+			return ((r1.x1 < r2.x2) && (r1.x2 > r2.x1) && (r1.y1 < r2.y2) && (r1.y2 > r2.y1) )? offset : 0
 		}
 
 		var experiences = $('.experience.snippet')
@@ -70,6 +73,10 @@
 			for (var i = 0; i < titles.length-1; i++) {
 				for (var j = i+1; j < titles.length; j++) {
 					var intersection = intersect(titles[i], titles[j])
+					if (intersection !== 0) {
+						$(titles[i]).css("color", "blue")
+						$(titles[j]).css("color", "red")
+					}
 					$(titles[j]).parent().css({
 						top: "+="+intersection
 					})
