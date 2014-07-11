@@ -6,9 +6,9 @@
 	
 	<title>{{page.title}}</title>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Jura:300' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100' rel='stylesheet' type='text/css'>
-	
+
 	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -29,12 +29,12 @@
 	</script>
 </head>
 <body>
-	<div class="header">
+	<header>
 		<ul id="left-items">
 			<li {% if page.active == "home" %} class="active" {% endif %}><a href="/">HOME</a></li>
 			<li {% if page.active == "about" %} class="active" {% endif %}><a href="/about.html">ABOUT</a></li>
 			<li {% if page.active == "portfolio" %} class="active" {% endif %}><a href="/portfolio.html">PORTFOLIO</a></li>
 			<!-- {% if page.active == "project" %}<li class="active">{{ page.title | upcase}}</li>{% endif %} -->
 		</ul>
-	</div class="header">
+	</header>
 	<div id="container">
