@@ -40,6 +40,20 @@
 			return true
 		}
 
+		function elRect(el) {
+			el = $(el)
+			var elOffset = el.offset()
+
+			return {
+				x: elOffset.left,
+				y: elOffset.top,
+				w: el.width(),
+				h: el.height(),
+				x2: elOffset.left+el.width(),
+				y2: elOffset.top+el.height()
+			}
+		}
+
 		function headerRect(header) {
 			header = $(header)
 			var hOffset = header.offset()
@@ -100,6 +114,20 @@
 			}
 		}
 
+		function horizOffsetTitles() {
+			var rightBound = elRect($("#container")).x2
+
+			var offset
+			$(".textbox").each(function() {
+				$(this).css("left", "0px")
+				offset = elRect($(this).children().first()).x2 - rightBound + parseInt($(this).children().first().css("padding-right"))
+
+				if (offset > 0) {
+					$(this).css("left", -offset+"px")
+				}
+			})
+		}
+
 		var tracks = $('.track')
 		var exps = []
 
@@ -112,6 +140,10 @@
 				exps.push($(this))
 			})
 		})
+
+		$("#container")[0].addEventListener(whichTransitionEvent(), function() {
+			handleResize()
+		});
 
 		tracks.click(function() {
 			if (openTrack === true) {
@@ -132,20 +164,10 @@
 
 		function handleResize() {
 			moveOutTitles()
-
-			// for (var exp in oldExpOffsets) {
-			// 	var expEl = $("[short="+exp+"]")
-			// 	var offset = oldExpOffsets[exp].pop()
-			// 	if (isAcceptable(-offset, expEl, exps)) {
-			// 		$(expEl).children().first().css({
-			// 			top: "-="+offset
-			// 		})
-			// 	}
-			// 	else {
-			// 		oldExpOffsets[exp].push(offset)
-			// 	}
-			// }
+			horizOffsetTitles()
 		}
+
+		handleResize()
 
 		moveOutTitles()
 		window.onresize = handleResize

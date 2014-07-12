@@ -111,7 +111,12 @@ ul {
 .experience.snippet .textbox a {
   padding-right: 0.5em;
   background-color: inherit;
-  white-space: nowrap;
+}
+@media (min-width: 400px) {
+  .experience.snippet .textbox h1,
+  .experience.snippet .textbox a {
+    white-space: nowrap;
+  }
 }
 .experience.snippet.one {
   background-color: #353a47;
@@ -135,7 +140,7 @@ ul {
   background-color: #14151a;
 }
 .track.selected {
-  z-index: 5 !important;
+  z-index: 100 !important;
 }
 header {
   padding: 0px 0px;

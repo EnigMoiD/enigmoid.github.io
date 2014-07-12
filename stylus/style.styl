@@ -149,7 +149,8 @@ snippet-padding = .1em 0px .2em .5em
 		h1, a
 			padding-right .5em
 			background-color inherit
-			white-space nowrap
+			@media(min-width: 400px)
+				white-space nowrap
 
 .experience.snippet.one
 	background-color lighten(dark-dark-gray, 20%)
@@ -171,7 +172,7 @@ snippet-padding = .1em 0px .2em .5em
 	background-color dark-gray
 
 .track.selected
-	z-index 5 !important
+	z-index 100 !important
 
 // Global Layout
 
