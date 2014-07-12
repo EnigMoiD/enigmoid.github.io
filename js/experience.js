@@ -158,11 +158,19 @@
 				$(this).css("width", "100%")
 				$(this).addClass("selected")
 
+				$(this).children().each(function() {
+					$(this).children().first().css({
+						"top": "0px",
+						"left": "0px"
+					})
+				})
+
 				openTrack = true
 			}
 		})
 
 		function handleResize() {
+			if (openTrack) return
 			moveOutTitles()
 			horizOffsetTitles()
 		}
