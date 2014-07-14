@@ -43,6 +43,9 @@ body {
   color: #f5f9fb;
   height: 100%;
 }
+.hidden {
+  display: none;
+}
 * {
   padding: 0px;
   margin: 0px;
@@ -117,6 +120,16 @@ ul {
   .experience.snippet .textbox a {
     white-space: nowrap;
   }
+}
+.experience.snippet .exp-content {
+  font-family: 'Open Sans';
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height 200ms;
+  -moz-transition: height 200ms;
+  -ms-transition: height 200ms;
+  -o-transition: height 200ms;
+  transition: height 200ms;
 }
 .experience.snippet.one {
   background-color: #353a47;

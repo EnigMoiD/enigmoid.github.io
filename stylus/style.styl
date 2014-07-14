@@ -81,6 +81,9 @@ body
 
 	height 100%
 
+.hidden
+	display none
+
 // Rudimentary global reset
 *
 	padding 0px
@@ -151,6 +154,13 @@ snippet-padding = .1em 0px .2em .5em
 			background-color inherit
 			@media(min-width: 400px)
 				white-space nowrap
+
+	.exp-content
+		font-family 'Open Sans'
+
+		height 0px
+		overflow hidden
+		transition height quickly
 
 .experience.snippet.one
 	background-color lighten(dark-dark-gray, 20%)

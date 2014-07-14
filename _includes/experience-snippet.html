@@ -2,4 +2,7 @@
 	<div class="textbox">
 		<h1 class="title">{{ post.title }}</h1><br><a href="{{ post.where[1] }}">{{ post.where[0] }}</a>
 	</div>
+	<div class="exp-content">
+		{{ post.content | markdownify }}
+	</div>
 </div>

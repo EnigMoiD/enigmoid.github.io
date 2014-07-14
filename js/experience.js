@@ -158,23 +158,34 @@
 		});
 
 		tracks.click(function() {
+			var self = $(this)
 			if (openTrack === true) {
 				tracks.css("width", window.trackWidth)
-				$(this).css("width", window.trackWidth)
-				$(this).removeClass("selected")
+				self.css("width", window.trackWidth)
+				self.removeClass("selected")
+
+				var $content = self.find('.exp-content')
+				$content.css("height", "0px")
 
 				openTrack = false
 			}
 			else {
 				tracks.css("width", "0%")
-				$(this).css("width", "100%")
-				$(this).addClass("selected")
+				self.css("width", "100%")
+				self.addClass("selected")
 
-				$(this).children().each(function() {
+				self.children().each(function() {
 					$(this).children().first().css({
 						"top": "0px",
 						"left": "0px"
 					})
+				})
+
+				var $content = self.find('.exp-content')
+				var height = 0
+				$content.each(function() {
+					height = $(this).parent().height() - $(this).parent().children().first().height()
+					$(this).css("height", height)
 				})
 
 				openTrack = true
