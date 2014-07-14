@@ -78,28 +78,6 @@
 			return (r1.x1 < r2.x2) && (r1.x2 > r2.x1) && (r1.y1 < r2.y2) && (r1.y2 > r2.y1)
 		}
 
-		var experiences = $('.experience.snippet')
-
-		var maxOffset = 0
-		experiences.each(function() {
-			var dates = expDates($(this))
-			var today = Date.parse(new Date())/1000.0/3600/24
-
-			maxOffset = _.max([maxOffset, 2*dates.interval+2*(today-dates.end)])
-
-			$(this).css({
-				height: 2*dates.interval+"px",
-				top: 2*(today-dates.end)+"px"
-			})
-		})
-		$("#container").css("height", maxOffset+"px")
-
-		var titles = $('.title')
-
-		titles.each(function() {
-			$(this).parent().css("top", "0px")
-		})
-
 		function moveOutTitles() {
 			for (var i = 0; i < titles.length-1; i++) {
 				for (var j = i+1; j < titles.length; j++) {
@@ -128,6 +106,38 @@
 			})
 		}
 
+		function handleResize() {
+			if (openTrack) return
+			moveOutTitles()
+			horizOffsetTitles()
+		}
+
+		var experiences = $('.experience.snippet')
+
+		var maxOffset = 0
+		// Define the height of the page based on the earliest date
+		experiences.each(function() {
+			var dates = expDates($(this))
+			var today = Date.parse(new Date())/1000.0/3600/24
+
+			maxOffset = _.max([maxOffset, 2*dates.interval+2*(today-dates.end)])
+
+			$(this).css({
+				height: 2*dates.interval+"px",
+				top: 2*(today-dates.end)+"px"
+			})
+		})
+		$("#container").css("height", maxOffset+"px")
+
+		var titles = $('.title')
+
+		// This is necessary for jQuery's "+=" to work
+		titles.each(function() {
+			$(this).parent().css("top", "0px")
+		})
+
+		// Gathering information for future "snap-back"
+		// title positioning behavior
 		var tracks = $('.track')
 		var exps = []
 
@@ -141,6 +151,8 @@
 			})
 		})
 
+		// Handles title display when detail display
+		// transitions begin and end
 		$("#container")[0].addEventListener(whichTransitionEvent(), function() {
 			handleResize()
 		});
@@ -169,14 +181,7 @@
 			}
 		})
 
-		function handleResize() {
-			if (openTrack) return
-			moveOutTitles()
-			horizOffsetTitles()
-		}
-
 		handleResize()
-
 		moveOutTitles()
 		window.onresize = handleResize
 	}
