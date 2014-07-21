@@ -93,7 +93,7 @@
 		}
 
 		function horizOffsetTitles() {
-			var rightBound = elRect($("#container")).x2
+			var rightBound = elRect($("#exp-container")).x2
 
 			var offset
 			$(".textbox").each(function() {
@@ -128,6 +128,8 @@
 			})
 		})
 		$("#container").css("height", maxOffset+"px")
+		$("#exp-container").css("height", maxOffset+"px")
+		$("#time-container").css("height", maxOffset+"px")
 
 		var titles = $('.title')
 
