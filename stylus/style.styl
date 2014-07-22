@@ -168,8 +168,15 @@ snippet-padding = .1em 0px .2em .5em
 	overflow hidden
 
 #time-container
+	float right
 	width 10%
 	display inline-block
+
+	.month
+		width 100%
+		position absolute
+		color lighten(dark-gray, 20%)
+		border-top 1px solid lighten(dark-gray, 10%)
 
 .experience.snippet.one
 	background-color lighten(dark-dark-gray, 20%)

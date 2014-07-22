@@ -137,8 +137,15 @@ ul {
   overflow: hidden;
 }
 #time-container {
+  float: right;
   width: 10%;
   display: inline-block;
+}
+#time-container .month {
+  width: 100%;
+  position: absolute;
+  color: #3c3f4e;
+  border-top: 1px solid #282a34;
 }
 .experience.snippet.one {
   background-color: #353a47;

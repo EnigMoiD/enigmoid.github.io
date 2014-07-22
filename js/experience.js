@@ -1,5 +1,20 @@
 (function() {
 	window.onload = function() {
+		window.months = [
+			"January",
+			"February",
+			"March",
+			"April",
+			"May",
+			"June",
+			"July",
+			"August",
+			"September",
+			"October",
+			"November",
+			"December"
+		]
+
 		function expsOverlap(exp1, exp2) {
 			var dates1 = expDates(exp1)
 			var dates2 = expDates(exp2)
@@ -9,10 +24,11 @@
 			return overlap
 		}
 
+		var daysPerMillis = 1/1000/3600/24
 		function expDates(exp) {
-			var today = Date.parse(new Date())/1000/3600/24
-			var end = Date.parse(exp.attr("end"))/1000/3600/24 || today
-			var start = Date.parse(exp.attr("start"))/1000/3600/24
+			var today = Date.parse(new Date())*daysPerMillis
+			var end = Date.parse(exp.attr("end"))*daysPerMillis || today
+			var start = Date.parse(exp.attr("start"))*daysPerMillis
 
 			return {
 				start: start,
@@ -114,13 +130,17 @@
 
 		var experiences = $('.experience.snippet')
 
-		var maxOffset = 0
+		var maxOffset = 0, earliestDate
+		var pixelsPerDay = 2
 		// Define the height of the page based on the earliest date
 		experiences.each(function() {
 			var dates = expDates($(this))
 			var today = Date.parse(new Date())/1000.0/3600/24
 
-			maxOffset = _.max([maxOffset, 2*dates.interval+2*(today-dates.end)])
+			if (maxOffset < pixelsPerDay * (dates.interval+(today-dates.end))) {
+				maxOffset = pixelsPerDay * (dates.interval+(today-dates.end))
+				earliestDate = dates.end
+			}
 
 			$(this).css({
 				height: 2*dates.interval+"px",
@@ -193,6 +213,30 @@
 				openTrack = true
 			}
 		})
+
+		// Sidebar setup
+
+		// Loop back in time until the earliest time
+
+		var month = new Date().getMonth()
+		var year = 1900+new Date().getYear()
+
+		var monthsElapsed = month - new Date(earliestDate).getMonth()
+
+		var monthEl, monthDate, i = 0, offset=0
+		do {
+			monthEl = $("<div class='month'>"+months[month]+"</div>")
+			monthDate = new Date() - new Date(year, month)
+			offset = monthDate*daysPerMillis*pixelsPerDay
+			monthEl.css("top", offset+"px")
+			$("#time-container").append(monthEl)
+			month = (month-1)%12
+			if (month < 0) {
+				month = 11
+				year--
+			}
+			i++
+		} while (offset+monthEl.height() < maxOffset)
 
 		handleResize()
 		moveOutTitles()
