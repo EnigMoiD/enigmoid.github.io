@@ -145,7 +145,12 @@ ul {
   width: 100%;
   position: absolute;
   color: #3c3f4e;
-  border-top: 1px solid #282a34;
+  border-top: 1px solid #515569;
+}
+#time-container .year {
+  width: 100%;
+  position: absolute;
+  color: #7c819a;
 }
 .experience.snippet.one {
   background-color: #353a47;
@@ -196,7 +201,7 @@ ul {
   text-align: center;
   text-shadow: 0px -1px rgba(0,0,0,0.2);
 }
-@media (min-width: 380px) {
+@media (min-width: 560px) {
   .header li {
     padding: 0px 1em;
     display: inline;

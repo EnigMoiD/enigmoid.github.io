@@ -25,8 +25,11 @@
 		}
 
 		var daysPerMillis = 1/1000/3600/24
+		window.today = new Date()
+		today = Date.parse(new Date(today.getYear()+1900, today.getMonth()+1, today.getDate()))
+		today *= daysPerMillis
+		
 		function expDates(exp) {
-			var today = Date.parse(new Date())*daysPerMillis
 			var end = Date.parse(exp.attr("end"))*daysPerMillis || today
 			var start = Date.parse(exp.attr("start"))*daysPerMillis
 
@@ -135,7 +138,6 @@
 		// Define the height of the page based on the earliest date
 		experiences.each(function() {
 			var dates = expDates($(this))
-			var today = Date.parse(new Date())/1000.0/3600/24
 
 			if (maxOffset < pixelsPerDay * (dates.interval+(today-dates.end))) {
 				maxOffset = pixelsPerDay * (dates.interval+(today-dates.end))
@@ -223,7 +225,11 @@
 
 		var monthsElapsed = month - new Date(earliestDate).getMonth()
 
-		var monthEl, monthDate, i = 0, offset=0
+		var monthEl, monthDate, i = 0, offset=0, yearEl
+
+		yearEl = $("<div class='year'>"+year+"</div>")
+
+		$("#time-container").append(yearEl)
 		do {
 			monthEl = $("<div class='month'>"+months[month]+"</div>")
 			monthDate = new Date() - new Date(year, month)
@@ -234,6 +240,9 @@
 			if (month < 0) {
 				month = 11
 				year--
+				yearEl = $("<div class='year'>"+year+"</div>")
+				yearEl.css("top", offset-monthEl.height()+"px")
+				$("#time-container").append(yearEl)
 			}
 			i++
 		} while (offset+monthEl.height() < maxOffset)
