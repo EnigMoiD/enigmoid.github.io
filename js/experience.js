@@ -1,5 +1,22 @@
 (function() {
 	window.onload = function() {
+		function setTransition(el, enable) {
+			if (enable) $(el).css({
+					"-webkit-transition": "width, height, top, 200ms",
+					"   -moz-transition": "width, height, top, 200ms",
+					"    -ms-transition": "width, height, top, 200ms",
+					"     -o-transition": "width, height, top, 200ms",
+					"        transition": "width, height, top, 200ms"
+				})
+			else $(el).css({
+					"-webkit-transition": "width 200ms",
+					"   -moz-transition": "width 200ms",
+					"    -ms-transition": "width 200ms",
+					"     -o-transition": "width 200ms",
+					"        transition": "width 200ms"
+				})
+		}
+
 		window.months = [
 			"January",
 			"February",
@@ -131,10 +148,24 @@
 			horizOffsetTitles()
 		}
 
+		function hideTimeContainer() {
+			setTransition(timeContainer, true)
+			setTransition(expContainer, true)
+			$(timeContainer).css("width", "0%")
+			$(expContainer).css("width", "100%")
+		}
+
+		function showTimeContainer() {
+			$(timeContainer).css("width", "10%")
+			$(expContainer).css("width", "90%")
+			setTransition(timeContainer, false)
+			setTransition(expContainer, false)
+		}
+
 		var experiences = $('.experience.snippet')
 
-		var maxOffset = 0, earliestDate
-		var pixelsPerDay = 2
+		window.maxOffset = 0
+		var pixelsPerDay = 2, earliestDate
 		// Define the height of the page based on the earliest date
 		experiences.each(function() {
 			var dates = expDates($(this))
@@ -149,9 +180,12 @@
 				top: 2*(today-dates.end)+"px"
 			})
 		})
+		window.expContainer = $("#exp-container")
+		window.timeContainer = $("#time-container")
+
 		$("#container").css("height", maxOffset+"px")
-		$("#exp-container").css("height", maxOffset+"px")
-		$("#time-container").css("height", maxOffset+"px")
+		expContainer.css("height", maxOffset+"px")
+		timeContainer.css("height", maxOffset+"px")
 
 		var titles = $('.title')
 
@@ -181,8 +215,11 @@
 			handleResize()
 		});
 
+		window.oldExpCss = {}
+
 		tracks.click(function() {
 			var self = $(this)
+			// Closing a track
 			if (openTrack === true) {
 				tracks.css("width", window.trackWidth)
 				self.css("width", window.trackWidth)
@@ -191,18 +228,46 @@
 				var $content = self.find('.exp-content')
 				$content.css("height", "0px")
 
+				showTimeContainer()
+				self.children().each(function() {
+					$(this).css(oldExpCss[$(this).attr("short")])
+				})
+
 				openTrack = false
+				oldExpTops = {}
+				setTransition($(this), false)
 			}
+			// Opening a track
 			else {
 				tracks.css("width", "0%")
 				self.css("width", "100%")
 				self.addClass("selected")
 
-				self.children().each(function() {
+				var thisTop, thisHeight, i = 0
+
+				var selfChildren = self.children()
+				selfChildren.each(function() {
 					$(this).children().first().css({
 						"top": "0px",
 						"left": "0px"
 					})
+
+					oldExpCss[$(this).attr('short')] = {
+						top: $(this).css("top"),
+						height: $(this).css("height")
+					}
+
+					thisTop = maxOffset/selfChildren.length*i
+					thisHeight = maxOffset/selfChildren.length
+
+					setTransition($(this), true)
+					hideTimeContainer()
+					$(this).css({
+						top: thisTop,
+						height: thisHeight
+					})
+
+					i++
 				})
 
 				var $content = self.find('.exp-content')
@@ -229,7 +294,7 @@
 
 		yearEl = $("<div class='year'>"+year+"</div>")
 
-		$("#time-container").append(yearEl)
+		timeContainer.append(yearEl)
 		do {
 			monthEl = $("<div class='month'>"+months[month]+"</div>")
 			monthDate = new Date() - new Date(year, month)

@@ -44,7 +44,7 @@ body {
   height: 100%;
 }
 .hidden {
-  display: none;
+  display: none !important;
 }
 * {
   padding: 0px;
@@ -70,7 +70,8 @@ ul {
   background-color: #14151a;
   padding: 0.1em 0px 0.2em 0.5em;
 }
-.snippet h1 {
+.snippet h1,
+.snippet h2 {
   display: inline;
 }
 .snippet .desc-item {
@@ -111,12 +112,14 @@ ul {
   z-index: 6;
 }
 .experience.snippet .textbox h1,
+.experience.snippet .textbox h2,
 .experience.snippet .textbox a {
   padding-right: 0.5em;
   background-color: inherit;
 }
 @media (min-width: 400px) {
   .experience.snippet .textbox h1,
+  .experience.snippet .textbox h2,
   .experience.snippet .textbox a {
     white-space: nowrap;
   }
