@@ -107,6 +107,7 @@ ul {
 }
 .experience.snippet .textbox {
   padding: 0.1em 0px 0.2em 0.5em;
+  padding: 0px 0.5em;
   position: relative;
   background-color: inherit;
   z-index: 6;
@@ -114,6 +115,7 @@ ul {
 .experience.snippet .textbox h1,
 .experience.snippet .textbox h2,
 .experience.snippet .textbox a {
+  width: 100%;
   padding-right: 0.5em;
   background-color: inherit;
 }
