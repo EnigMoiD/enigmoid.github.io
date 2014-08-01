@@ -115,9 +115,11 @@
 				window.openProjLists = {}
 
 				header.click(function() {
-					var closeType = function(typeEl) {
-						typeEl.removeAttr("open")
-						typeEl.find("h2").css("color", "inherit")
+					var closeType = function(openType) {
+						openType.find("div").slideUp(200, function() {
+							openType.removeAttr("open")
+							openType.find("h2").css("color", "inherit")
+						})
 					}
 
 					var projList = $(this).parent().find("div")
@@ -125,13 +127,12 @@
 					var type = parent.parent().attr("category")
 					var openType = window.openProjLists[type]? window.openProjLists[type].parent() : null
 
-					if (parent.attr("open") === "open") {
-						projList.slideUp(200, closeType(openType))
-						return
-					}
+					var selfWasOpen = parent.attr("open") === "open"
 
 					if (window.openProjLists[type])
-						openProjLists[type].slideUp(200, closeType(openType))
+						closeType(openType)
+
+					if (selfWasOpen) return
 
 					projList.slideDown(200, function() {
 						window.openProjLists[type] = projList
