@@ -112,31 +112,29 @@
 				var valuesContainer = $("<div class='values'></div>")
 				typeContainer.append(header)
 
-				window.openContainers = {}
+				window.openProjLists = {}
 
 				header.click(function() {
-					var closeContainer = function(con) {
-						con.removeAttr("open")
-						con.find("h2").css("color", "inherit")
+					var closeType = function(typeEl) {
+						typeEl.removeAttr("open")
+						typeEl.find("h2").css("color", "inherit")
 					}
 
-					var container = $(this).parent().find("div")
-					var parent = container.parent()
+					var projList = $(this).parent().find("div")
+					var parent = $(this).parent()
+					var type = parent.parent().attr("category")
+					var openType = window.openProjLists[type]? window.openProjLists[type].parent() : null
 
-					var open = parent.attr("open")
-					if (open === "open") {
-						openContainers[type] = undefined
-						container.slideUp(200, closeContainer(parent))
+					if (parent.attr("open") === "open") {
+						projList.slideUp(200, closeType(openType))
 						return
 					}
 
-					var type = $(this).parent().parent().attr("category")
-					if (window.openContainers[type]) {
-						openContainers[type].slideUp(200, closeContainer(openContainers[type].parent()))
-					}
+					if (window.openProjLists[type])
+						openProjLists[type].slideUp(200, closeType(openType))
 
-					container.slideDown(200, function() {
-						window.openContainers[type] = container
+					projList.slideDown(200, function() {
+						window.openProjLists[type] = projList
 						parent.attr("open", "true")
 						parent.find("h2").css("color", accentColor)
 					})
