@@ -101,6 +101,10 @@
 			var catContainer = $("<div class='category column banner "+(k===0?'one':k===1?'two':'three')+"' category='"+icon+"' freq='"+iconFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
 			colContainer.append(catContainer)
 
+			var sizeFromFreq = function(freq) {
+				var K = 60, P0 = 5, r=1.5
+				return Math.floor(K*P0*Math.exp(r*freq)/(K+P0*(Math.exp(r*freq)-1)))
+			}
 			var entries, freq, title
 			for (var value in iconList) {
 				entries = iconList[value].typeList
@@ -108,7 +112,7 @@
 				title = iconList[value].value
 
 				var typeContainer = $("<div class='type' value='"+title+"' freq="+freq+"></div>")
-				var header = $("<h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2>")
+				var header = $("<h2 style='font-size:"+sizeFromFreq(freq)+"px'>"+title+"</h2>")
 				var valuesContainer = $("<div class='values'></div>")
 				typeContainer.append(header)
 
