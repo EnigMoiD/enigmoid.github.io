@@ -58,7 +58,21 @@
 		}
 	}
 
+	var sizeFromFreq = function(freq) {
+		var K = 60, P0 = 5, r=1.5
+		return Math.floor(K*P0*Math.exp(r*freq)/(K+P0*(Math.exp(r*freq)-1)))
+	}
+	
+	var colHeight = function(colList) {
+		var height = 0, i = 0
+		for (var val in colList) {
+			height += sizeFromFreq(colList[val].freq) * (i === 0? 3 : 1)
+			i++
+		}
+		return height
+	}
 
+	var displayCatCount = 0, specArray = [], i = 0
 	for (var icon in specifications) {
 		var iconList = specifications[icon]
 		var iconFreq = Object.keys(iconList).length
@@ -67,45 +81,87 @@
 			var typeList = iconList[value]
 			var typeFreq = Object.keys(typeList).length
 
-			iconList[value] = {freq: typeFreq, typeList: typeList, value: value}
+			iconList[value] = {
+				freq: typeFreq,
+				typeList: typeList,
+				value: value
+			}
 		}
+		if (iconFreq > 1) displayCatCount++
 
-		specifications[icon] = {freq: iconFreq, values: iconList}
+		specifications[icon] = {
+			icon: icon,
+			freq: iconFreq,
+			values: iconList,
+			height: colHeight(iconList)
+		}
+		specArray[i] = specifications[icon]
+		i++
 	}
 
 	for (var icon in specifications) {
-		specifications[icon].values = _.sortBy(specifications[icon].values, function(spec) {
+		var iconVal = specifications[icon]
+		iconVal.values = _.sortBy(iconVal.values, function(spec) {
 			return -spec.freq
-		})		
+		})
 	}
 
+	window.leftCol = [], rightCol = []
+
+	specArray = _.sortBy(specArray, function(spec) {
+		return -spec.height
+	})
+
+	var addToCol = function(fromArray, toCol) {
+		toCol.push(fromArray.shift())
+	}
+
+	var colSum = function(col) {
+		return _.reduce(col, function(memo, colEl) {
+			return memo + colEl.height
+		}, 0)
+	}
+
+	addToCol(specArray, leftCol)
+	addToCol(specArray, rightCol)
+
+	var leftSum, rightSum, spec
+
+	for (var i = 0; i < specArray.length; i++) {
+		spec = specArray[i]
+		leftSum = colSum(leftCol) + spec.height
+		rightSum = colSum(rightCol) + spec.height
+		if (leftSum >= rightSum)
+			addToCol(specArray, rightCol, i)
+		else
+			addToCol(specArray, leftCol, i)
+	}
+
+	var colSpecs = leftCol.concat(rightCol)
 
 	// Generating DOM from specs
 
 	window.onload = function() {
 		var catsContainer = $("#category-container")
 		var i = 0, k = 0
-		var colContainer
-		for (var icon in specifications) {
-			var iconFreq = specifications[icon].freq
-			var iconList = specifications[icon].values
+		var colContainer = $("<div class='column'></div>")
+		for (var spec in colSpecs) {
+			var icon = colSpecs[spec].icon
+			var iconFreq = colSpecs[spec].freq
+			var iconList = colSpecs[spec].values
 
 			if (iconFreq < 2) continue
 
-			if (i%2 === 0) {
-				catsContainer.append("<div class='column-container' number="+i+"></div>")
-				colContainer = catsContainer.find('[number='+i+']')
+			if (i === 0 || i === leftCol.length) {
+				colContainer = $("<div class='column' number='"+i+"'></div>")
+				catsContainer.append(colContainer)
 			}
 
-
-			var catContainer = $("<div class='category column banner "+(k===0?'one':k===1?'two':'three')+"' category='"+icon+"' freq='"+iconFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
+			var catContainer = $("<div class='category banner "+(k===0?'one':k===1?'two':'three')+"' category='"+icon+"' freq='"+iconFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
 			colContainer.append(catContainer)
 
-			var sizeFromFreq = function(freq) {
-				var K = 60, P0 = 5, r=1.5
-				return Math.floor(K*P0*Math.exp(r*freq)/(K+P0*(Math.exp(r*freq)-1)))
-			}
 			var entries, freq, title
+
 			for (var value in iconList) {
 				entries = iconList[value].typeList
 				freq = iconList[value].freq
@@ -133,7 +189,7 @@
 
 					var selfWasOpen = parent.attr("open") === "open"
 
-					if (window.openProjLists[type])
+					if (openType)
 						closeType(openType)
 
 					if (selfWasOpen) return
@@ -159,5 +215,5 @@
 	}
 })()
 </script>
-<div id="category-container">
+<div class="column-container" id="category-container">
 </div>
