@@ -43,6 +43,9 @@ body {
   color: #f5f9fb;
   height: 100%;
 }
+.hidden {
+  display: none !important;
+}
 * {
   padding: 0px;
   margin: 0px;
@@ -61,29 +64,32 @@ img {
 ul {
   list-style: none;
 }
-.project-snippet {
+.snippet {
   font-family: 'Alegreya Sans SC';
   text-shadow: 0px -1px rgba(0,0,0,0.2);
   background-color: #14151a;
   padding: 0.1em 0px 0.2em 0.5em;
 }
-.project-snippet h1 {
+.snippet h1,
+.snippet h2 {
   display: inline;
 }
-.project-snippet h1 .date {
+.snippet h1 .date,
+.snippet h2 .date {
   font-size: 0.7em;
   vertical-align: middle;
   color: #3c3f4e;
 }
-.project-snippet .desc-item {
+.snippet .desc-item {
+  white-space: nowrap;
   padding-right: 1em;
 }
-.project-snippet .external-pin {
+.snippet .external-pin {
   float: right;
   font-size: 1.5em;
 }
-.project-snippet.even {
-  background-color: #18191f;
+.snippet.even {
+  background-color: #1e2027;
 }
 .center {
   text-align: center;
@@ -94,24 +100,111 @@ ul {
   color: #1194ce;
   font-size: 3em;
 }
-header {
+.experience.snippet {
+  position: absolute;
+  width: 100%;
+  padding: 0px;
+  vertical-align: top;
+  -webkit-transition: width 200ms;
+  -moz-transition: width 200ms;
+  -ms-transition: width 200ms;
+  -o-transition: width 200ms;
+  transition: width 200ms;
+}
+.experience.snippet .textbox {
+  padding: 0.1em 0px 0.2em 0.5em;
+  padding: 0px 0.5em;
+  position: relative;
+  background-color: inherit;
+  z-index: 6;
+}
+.experience.snippet .textbox h1,
+.experience.snippet .textbox h2,
+.experience.snippet .textbox a {
+  width: 100%;
+  padding-right: 0.5em;
+  background-color: inherit;
+}
+@media (min-width: 400px) {
+  .experience.snippet .textbox h1,
+  .experience.snippet .textbox h2,
+  .experience.snippet .textbox a {
+    white-space: nowrap;
+  }
+}
+.experience.snippet .exp-content {
+  font-family: 'Open Sans';
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height 200ms;
+  -moz-transition: height 200ms;
+  -ms-transition: height 200ms;
+  -o-transition: height 200ms;
+  transition: height 200ms;
+}
+#exp-container {
+  width: 90%;
+  display: inline-block;
+  overflow: hidden;
+}
+#time-container {
+  float: right;
+  width: 10%;
+  display: inline-block;
+}
+#time-container .month {
+  width: 100%;
+  position: absolute;
+  color: #3c3f4e;
+  border-top: 1px solid #515569;
+}
+#time-container .year {
+  width: 100%;
+  position: absolute;
+  color: #7c819a;
+}
+.experience.snippet.one {
+  background-color: #353a47;
+}
+.experience.snippet.two {
+  background-color: #2b2f39;
+}
+.experience.snippet.three {
+  background-color: #21232c;
+}
+.track {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: width 200ms;
+  -moz-transition: width 200ms;
+  -ms-transition: width 200ms;
+  -o-transition: width 200ms;
+  transition: width 200ms;
+  height: 100%;
+  background-color: #14151a;
+}
+.track.selected {
+  z-index: 100 !important;
+}
+.header {
   padding: 0px 0px;
   background-color: #1d2326;
 }
-header a {
+.header a {
   text-decoration: none;
   color: rgba(245,249,251,0.7);
 }
-header a:visited {
+.header a:visited {
   color: rgba(245,249,251,0.7);
 }
-header a:hover {
+.header a:hover {
   color: #f5f9fb;
 }
-header a:active {
+.header a:active {
   color: #67a4c2;
 }
-header li {
+.header li {
   white-space: nowrap;
   padding: 0px;
   font-family: 'Exo 2';
@@ -119,16 +212,16 @@ header li {
   text-align: center;
   text-shadow: 0px -1px rgba(0,0,0,0.2);
 }
-@media (min-width: 380px) {
-  header li {
+@media (min-width: 560px) {
+  .header li {
     padding: 0px 1em;
     display: inline;
   }
 }
-header li.active {
+.header li.active {
   background-color: #1194ce;
 }
-header li.active a {
+.header li.active a {
   color: #f5f9fb;
 }
 ul#left-items {
@@ -181,13 +274,13 @@ div.column {
   color: rgba(0,0,0,0);
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
 }
-.category.column.one {
+.category.one {
   background-color: #121418;
 }
-.category.column.two {
+.category.two {
   background-color: #101116;
 }
-.category.column.three {
+.category.three {
   background-color: #0e0f13;
 }
 .type h2 {
@@ -198,7 +291,7 @@ div.column {
   transition: color 200ms;
 }
 .type h2:hover {
-  color: #1194ce;
+  color: #1194ce !important;
 }
 .type .values {
   background-color: #0c0d10;
@@ -235,9 +328,9 @@ div.column {
 }
 #container,
 #post-container {
+  overflow: hidden;
+  position: relative;
   background-color: #14151a;
-  clear: both;
-  height: auto;
   min-height: 100%;
   padding-bottom: 120px;
   margin: auto;

@@ -58,7 +58,21 @@
 		}
 	}
 
+	var sizeFromFreq = function(freq) {
+		var K = 60, P0 = 5, r=1.5
+		return Math.floor(K*P0*Math.exp(r*freq)/(K+P0*(Math.exp(r*freq)-1)))
+	}
+	
+	var colHeight = function(colList) {
+		var height = 0, i = 0
+		for (var val in colList) {
+			height += sizeFromFreq(colList[val].freq) * (i === 0? 3 : 1)
+			i++
+		}
+		return height
+	}
 
+	var displayCatCount = 0, specArray = [], i = 0
 	for (var icon in specifications) {
 		var iconList = specifications[icon]
 		var iconFreq = Object.keys(iconList).length
@@ -67,76 +81,121 @@
 			var typeList = iconList[value]
 			var typeFreq = Object.keys(typeList).length
 
-			iconList[value] = {freq: typeFreq, typeList: typeList, value: value}
+			iconList[value] = {
+				freq: typeFreq,
+				typeList: typeList,
+				value: value
+			}
 		}
+		if (iconFreq > 1) displayCatCount++
 
-		specifications[icon] = {freq: iconFreq, values: iconList}
+		specifications[icon] = {
+			icon: icon,
+			freq: iconFreq,
+			values: iconList,
+			height: colHeight(iconList)
+		}
+		specArray[i] = specifications[icon]
+		i++
 	}
 
 	for (var icon in specifications) {
-		specifications[icon].values = _.sortBy(specifications[icon].values, function(spec) {
+		var iconVal = specifications[icon]
+		iconVal.values = _.sortBy(iconVal.values, function(spec) {
 			return -spec.freq
-		})		
+		})
 	}
 
+	window.leftCol = [], rightCol = []
+
+	specArray = _.sortBy(specArray, function(spec) {
+		return -spec.height
+	})
+
+	var addToCol = function(fromArray, toCol) {
+		toCol.push(fromArray.shift())
+	}
+
+	var colSum = function(col) {
+		return _.reduce(col, function(memo, colEl) {
+			return memo + colEl.height
+		}, 0)
+	}
+
+	addToCol(specArray, leftCol)
+	addToCol(specArray, rightCol)
+
+	var leftSum, rightSum, spec
+
+	for (var i = 0; i < specArray.length; i++) {
+		spec = specArray[i]
+		leftSum = colSum(leftCol) + spec.height
+		rightSum = colSum(rightCol) + spec.height
+		if (leftSum >= rightSum)
+			addToCol(specArray, rightCol, i)
+		else
+			addToCol(specArray, leftCol, i)
+	}
+
+	var colSpecs = leftCol.concat(rightCol)
 
 	// Generating DOM from specs
 
 	window.onload = function() {
 		var catsContainer = $("#category-container")
 		var i = 0, k = 0
-		var colContainer
-		for (var icon in specifications) {
-			var iconFreq = specifications[icon].freq
-			var iconList = specifications[icon].values
+		var colContainer = $("<div class='column'></div>")
+		for (var spec in colSpecs) {
+			var icon = colSpecs[spec].icon
+			var iconFreq = colSpecs[spec].freq
+			var iconList = colSpecs[spec].values
 
 			if (iconFreq < 2) continue
 
-			if (i%2 === 0) {
-				catsContainer.append("<div class='column-container' number="+i+"></div>")
-				colContainer = catsContainer.find('[number='+i+']')
+			if (i === 0 || i === leftCol.length) {
+				colContainer = $("<div class='column' number='"+i+"'></div>")
+				catsContainer.append(colContainer)
 			}
 
-
-			var catContainer = $("<div class='category column banner "+(k===0?'one':k===1?'two':'three')+"' category='"+icon+"' freq='"+iconFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
+			var catContainer = $("<div class='category banner "+(k===0?'one':k===1?'two':'three')+"' category='"+icon+"' freq='"+iconFreq+"'><i class='fa fa-fw fa-3x fa-"+icon+"'></i>")
 			colContainer.append(catContainer)
 
 			var entries, freq, title
+
 			for (var value in iconList) {
 				entries = iconList[value].typeList
 				freq = iconList[value].freq
 				title = iconList[value].value
 
 				var typeContainer = $("<div class='type' value='"+title+"' freq="+freq+"></div>")
-				var header = $("<h2 style='font-size:"+(freq*20)+"px'>"+title+"</h2>")
+				var header = $("<h2 style='font-size:"+sizeFromFreq(freq)+"px'>"+title+"</h2>")
 				var valuesContainer = $("<div class='values'></div>")
 				typeContainer.append(header)
 
-				window.openContainers = {}
+				window.openProjLists = {}
 
 				header.click(function() {
-					var closeContainer = function(con) {
-						con.removeAttr("open")
-						con.find("h2").css("color", "")
+					var closeType = function(openType) {
+						openType.find("div").slideUp(200, function() {
+							openType.removeAttr("open")
+							openType.find("h2").css("color", "inherit")
+						})
 					}
 
-					var container = $(this).parent().find("div")
-					var parent = container.parent()
+					var projList = $(this).parent().find("div")
+					var parent = $(this).parent()
+					var type = parent.parent().attr("category")
+					var openType = window.openProjLists[type]? window.openProjLists[type].parent() : null
 
-					var open = parent.attr("open")
-					if (open === "open") {
-						openContainers[type] = undefined
-						container.slideUp(200, closeContainer(parent))
-						return
-					}
+					var selfWasOpen = parent.attr("open") === "open"
 
-					var type = $(this).parent().parent().attr("category")
-					if (window.openContainers[type]) {
-						openContainers[type].slideUp(200, closeContainer(openContainers[type].parent()))
-					}
+					if (openType)
+						closeType(openType)
 
-					container.slideDown(200, function() {
-						window.openContainers[type] = container
+					if (selfWasOpen) return
+
+					projList.slideDown(200, function() {
+						window.openProjLists[type] = projList
 						parent.attr("open", "true")
 						parent.find("h2").css("color", accentColor)
 					})
@@ -156,5 +215,5 @@
 	}
 })()
 </script>
-<div id="category-container">
+<div class="column-container" id="category-container">
 </div>
