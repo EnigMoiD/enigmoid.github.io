@@ -260,6 +260,9 @@
 					thisTop = maxOffset/selfChildren.length*i
 					thisHeight = maxOffset/selfChildren.length
 
+					var $content = self.find('.exp-content')
+					$content.css("height", thisHeight)	
+
 					setTransition($(this), true)
 					hideTimeContainer()
 					$(this).css({
@@ -268,13 +271,6 @@
 					})
 
 					i++
-				})
-
-				var $content = self.find('.exp-content')
-				var height = 0
-				$content.each(function() {
-					height = $(this).parent().height() - $(this).parent().children().first().height()
-					$(this).css("height", height)
 				})
 
 				openTrack = true
