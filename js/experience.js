@@ -43,7 +43,7 @@
 
 		var daysPerMillis = 1/1000/3600/24
 		window.today = new Date()
-		today = Date.parse(new Date(today.getYear()+1900, today.getMonth()+1, today.getDate()))
+		today = Date.parse(new Date(today.getYear()+1900, today.getMonth(), today.getDate()))
 		today *= daysPerMillis
 		
 		function expDates(exp) {
@@ -297,7 +297,7 @@
 		timeContainer.append(yearEl)
 		do {
 			monthEl = $("<div class='month'>"+months[month]+"</div>")
-			monthDate = new Date() - new Date(year, month)
+			monthDate = new Date() - new Date(year, month+1)
 			offset = monthDate*daysPerMillis*pixelsPerDay
 			monthEl.css("top", offset+"px")
 			$("#time-container").append(monthEl)
