@@ -70,7 +70,8 @@ ul {
   background-color: #14151a;
   padding: 0.1em 0px 0.2em 0.5em;
 }
-.snippet h1 {
+.snippet h1,
+.snippet h2 {
   display: inline;
 }
 .snippet .date {
