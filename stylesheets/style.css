@@ -70,15 +70,14 @@ ul {
   background-color: #14151a;
   padding: 0.1em 0px 0.2em 0.5em;
 }
-.snippet h1,
-.snippet h2 {
+.snippet h1 {
   display: inline;
 }
-.snippet h1 .date,
-.snippet h2 .date {
-  font-size: 0.7em;
-  vertical-align: middle;
+.snippet .date {
+  display: inline;
+  padding-left: 0.6em;
   color: #3c3f4e;
+  white-space: nowrap;
 }
 .snippet .desc-item {
   white-space: nowrap;
@@ -86,7 +85,7 @@ ul {
 }
 .snippet .external-pin {
   float: right;
-  font-size: 1.5em;
+  font-size: 1.4em;
 }
 .snippet.even {
   background-color: #1e2027;
@@ -212,7 +211,7 @@ ul {
   text-align: center;
   text-shadow: 0px -1px rgba(0,0,0,0.2);
 }
-@media (min-width: 560px) {
+@media (min-width: 600px) {
   .header li {
     padding: 0px 1em;
     display: inline;

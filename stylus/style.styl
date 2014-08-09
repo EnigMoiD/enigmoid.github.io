@@ -109,12 +109,14 @@ snippet-padding = .1em 0px .2em .5em
 	background-color dark-gray
 	padding snippet-padding
 
-	h1, h2
+	h1
 		display inline
-		.date
-			font-size .7em
-			vertical-align middle
-			color lighten(dark-gray, 20%)
+
+	.date
+		display inline
+		padding-left .6em
+		color lighten(dark-gray, 20%)
+		white-space nowrap
 
 	.desc-item
 		white-space nowrap
@@ -122,7 +124,7 @@ snippet-padding = .1em 0px .2em .5em
 
 	.external-pin
 		float right
-		font-size 1.5em
+		font-size 1.4em
 
 .snippet.even
 	background-color lighten(dark-gray, 5%)
@@ -230,7 +232,7 @@ snippet-padding = .1em 0px .2em .5em
 		text-align center
 		text-shadow 0px -1px rgba(0, 0, 0, .2)
 
-		@media (min-width: 560px)
+		@media (min-width: 600px)
 			padding header-padding 1em
 			display inline
 
