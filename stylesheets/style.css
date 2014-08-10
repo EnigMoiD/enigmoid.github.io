@@ -383,6 +383,9 @@ footer #content a:active {
   clear: both;
   position: relative;
 }
+.box.project-specs {
+  position: relative;
+}
 .box.project-specs .specs-image {
   height: 180px;
   width: auto;
@@ -392,9 +395,10 @@ footer #content a:active {
 }
 @media (min-width: 600px) {
   .box.project-specs .specs-image {
-    float: right;
+    position: absolute;
+    top: 1em;
+    right: 1em;
     display: inline-block;
-    margin: none;
   }
 }
 .box.project-specs .specs-content {
