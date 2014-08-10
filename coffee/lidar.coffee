@@ -14,5 +14,5 @@ scaleRects = (w, a, b) ->
 	s1 = w*a.height()/(a.width()*b.height() + b.width()*a.height())
 	s0 = b.height()*s1/a.height()
 
-	a.height(a.height()*s0)
-	b.height(b.height()*s1)
+	a.height(a.height()*s0-1)
+	b.height(b.height()*s1-1)

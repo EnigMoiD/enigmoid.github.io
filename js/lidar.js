@@ -21,8 +21,8 @@
     var s0, s1;
     s1 = w * a.height() / (a.width() * b.height() + b.width() * a.height());
     s0 = b.height() * s1 / a.height();
-    a.height(a.height() * s0);
-    return b.height(b.height() * s1);
+    a.height(a.height() * s0 - 1);
+    return b.height(b.height() * s1 - 1);
   };
 
 }).call(this);
