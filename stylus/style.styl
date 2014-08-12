@@ -232,7 +232,7 @@ snippet-padding = .1em 0px .2em .5em
 		text-align center
 		text-shadow 0px -1px rgba(0, 0, 0, .2)
 
-		@media (min-width: 600px)
+		@media (min-width: 560px)
 			padding header-padding 1em
 			display inline
 
@@ -396,6 +396,7 @@ footer
 .milestone
 	text-align center
 	.number
+		font-family 'Alegreya Sans SC'
 		@extends .accent
 
 // Post-specific stuff
@@ -406,7 +407,7 @@ footer
 	clear both
 	position relative
 
-.box.project-specs
+.project-specs
 	position relative
 	.specs-image
 		@media (min-width: 600px)
@@ -451,6 +452,26 @@ footer
 	img
 		margin 0px
 		float left
+
+// Home stuff
+
+.greeting-container
+	padding 0px
+	margin 0 -1em
+	.greeting-content
+		padding-left .7em
+		z-index 1
+		position absolute
+		bottom 0px
+		text-align center
+		.greeting-name
+			font-size 4em
+			font-family 'Alegreya Sans SC'
+			@extends .accent
+
+		.greeting-header
+			font-family 'Exo 2'
+			font-size 1.2em
 
 // Pygments stuff
 
