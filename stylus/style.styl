@@ -109,14 +109,19 @@ snippet-padding = .1em 0px .2em .5em
 	background-color dark-gray
 	padding snippet-padding
 
+	transition background-color quickly
+	&:hover
+		background-color darken(accent, 20%) !important
+
 	h1, h2
 		display inline
 
 	.date
 		display inline
 		padding-left .6em
-		color lighten(dark-gray, 20%)
+		color text-color
 		white-space nowrap
+		opacity .4
 
 	.desc-item
 		white-space nowrap
@@ -147,7 +152,7 @@ snippet-padding = .1em 0px .2em .5em
 
 	vertical-align top
 
-	transition width quickly
+	transition width quickly, background-color quickly
 
 	.textbox
 		padding snippet-padding
@@ -170,6 +175,15 @@ snippet-padding = .1em 0px .2em .5em
 		overflow hidden
 		transition height quickly
 
+.experience.snippet.one
+	background-color lighten(dark-dark-gray, 20%)
+
+.experience.snippet.two
+	background-color lighten(dark-dark-gray, 15%)
+
+.experience.snippet.three
+	background-color lighten(dark-dark-gray, 10%)
+
 #exp-container
 	width 90%
 	display inline-block
@@ -180,25 +194,28 @@ snippet-padding = .1em 0px .2em .5em
 	width 10%
 	display inline-block
 
-	.month
+	div
 		width 100%
 		position absolute
+		
+	.month
 		color lighten(dark-gray, 20%)
 		border-top 1px solid lighten(dark-gray, 30%)
 
 	.year
-		width 100%
-		position absolute
 		color lighten(dark-gray, 50%)
 
-.experience.snippet.one
-	background-color lighten(dark-dark-gray, 20%)
+.experience.snippet.one.selected
+	&:hover
+		background-color lighten(dark-dark-gray, 20%) !important
 
-.experience.snippet.two
-	background-color lighten(dark-dark-gray, 15%)
+.experience.snippet.two.selected
+	&:hover
+		background-color lighten(dark-dark-gray, 15%) !important
 
-.experience.snippet.three
-	background-color lighten(dark-dark-gray, 10%)
+.experience.snippet.three.selected
+	&:hover
+		background-color lighten(dark-dark-gray, 10%) !important
 
 .track
 	vertical-align top
@@ -308,10 +325,11 @@ about-height = 5em
 	background-color lighten(dark-dark-gray, 1%)
 
 .type
+	transition background-color quickly
+	&:hover
+		background-color darken(accent, 20%) !important
 	h2
 		transition color quickly
-		&:hover
-			color accent !important
 	.values
 		background-color dark-dark-gray
 

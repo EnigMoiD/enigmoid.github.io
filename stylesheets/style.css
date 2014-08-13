@@ -69,6 +69,14 @@ ul {
   text-shadow: 0px -1px rgba(0,0,0,0.2);
   background-color: #14151a;
   padding: 0.1em 0px 0.2em 0.5em;
+  -webkit-transition: background-color 200ms;
+  -moz-transition: background-color 200ms;
+  -ms-transition: background-color 200ms;
+  -o-transition: background-color 200ms;
+  transition: background-color 200ms;
+}
+.snippet:hover {
+  background-color: #0e76a5 !important;
 }
 .snippet h1,
 .snippet h2 {
@@ -77,8 +85,9 @@ ul {
 .snippet .date {
   display: inline;
   padding-left: 0.6em;
-  color: #3c3f4e;
+  color: #f5f9fb;
   white-space: nowrap;
+  opacity: 0.4;
 }
 .snippet .desc-item {
   white-space: nowrap;
@@ -106,11 +115,11 @@ ul {
   width: 100%;
   padding: 0px;
   vertical-align: top;
-  -webkit-transition: width 200ms;
-  -moz-transition: width 200ms;
-  -ms-transition: width 200ms;
-  -o-transition: width 200ms;
-  transition: width 200ms;
+  -webkit-transition: width 200ms, background-color 200ms;
+  -moz-transition: width 200ms, background-color 200ms;
+  -ms-transition: width 200ms, background-color 200ms;
+  -o-transition: width 200ms, background-color 200ms;
+  transition: width 200ms, background-color 200ms;
 }
 .experience.snippet .textbox {
   padding: 0.1em 0px 0.2em 0.5em;
@@ -143,6 +152,15 @@ ul {
   -o-transition: height 200ms;
   transition: height 200ms;
 }
+.experience.snippet.one {
+  background-color: #353a47;
+}
+.experience.snippet.two {
+  background-color: #2b2f39;
+}
+.experience.snippet.three {
+  background-color: #21232c;
+}
 #exp-container {
   width: 90%;
   display: inline-block;
@@ -153,25 +171,25 @@ ul {
   width: 10%;
   display: inline-block;
 }
-#time-container .month {
+#time-container div {
   width: 100%;
   position: absolute;
+}
+#time-container .month {
   color: #3c3f4e;
   border-top: 1px solid #515569;
 }
 #time-container .year {
-  width: 100%;
-  position: absolute;
   color: #7c819a;
 }
-.experience.snippet.one {
-  background-color: #353a47;
+.experience.snippet.one.selected:hover {
+  background-color: #353a47 !important;
 }
-.experience.snippet.two {
-  background-color: #2b2f39;
+.experience.snippet.two.selected:hover {
+  background-color: #2b2f39 !important;
 }
-.experience.snippet.three {
-  background-color: #21232c;
+.experience.snippet.three.selected:hover {
+  background-color: #21232c !important;
 }
 .track {
   vertical-align: top;
@@ -284,15 +302,22 @@ div.column {
 .category.three {
   background-color: #0e0f13;
 }
+.type {
+  -webkit-transition: background-color 200ms;
+  -moz-transition: background-color 200ms;
+  -ms-transition: background-color 200ms;
+  -o-transition: background-color 200ms;
+  transition: background-color 200ms;
+}
+.type:hover {
+  background-color: #0e76a5 !important;
+}
 .type h2 {
   -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -ms-transition: color 200ms;
   -o-transition: color 200ms;
   transition: color 200ms;
-}
-.type h2:hover {
-  color: #1194ce !important;
 }
 .type .values {
   background-color: #0c0d10;

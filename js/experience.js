@@ -224,6 +224,7 @@
 				tracks.css("width", window.trackWidth)
 				self.css("width", window.trackWidth)
 				self.removeClass("selected")
+				self.children().removeClass("selected")
 
 				var $content = self.find('.exp-content')
 				$content.css("height", "0px")
@@ -242,6 +243,7 @@
 				tracks.css("width", "0%")
 				self.css("width", "100%")
 				self.addClass("selected")
+				self.children().addClass("selected")
 
 				var thisTop, thisHeight, i = 0
 

@@ -176,9 +176,9 @@
 
 				header.click(function() {
 					var closeType = function(openType) {
+						openType.find("h2").parent().css("background-color", "inherit")
 						openType.find("div").slideUp(200, function() {
 							openType.removeAttr("open")
-							openType.find("h2").css("color", "inherit")
 						})
 					}
 
@@ -188,16 +188,16 @@
 					var openType = window.openProjLists[type]? window.openProjLists[type].parent() : null
 
 					var selfWasOpen = parent.attr("open") === "open"
-
+					
 					if (openType)
 						closeType(openType)
 
 					if (selfWasOpen) return
 
+					parent.find("h2").parent().css("background-color", accentColor)
 					projList.slideDown(200, function() {
 						window.openProjLists[type] = projList
 						parent.attr("open", "true")
-						parent.find("h2").css("color", accentColor)
 					})
 				})
 				typeContainer.append(valuesContainer)
