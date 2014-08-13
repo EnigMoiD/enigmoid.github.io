@@ -206,49 +206,41 @@ ul {
 .track.selected {
   z-index: 100 !important;
 }
-.header {
+header {
   padding: 0px 0px;
   background-color: #1d2326;
 }
-.header a {
+header a {
   text-decoration: none;
   color: rgba(245,249,251,0.7);
 }
-.header a:visited {
+header a:visited {
   color: rgba(245,249,251,0.7);
 }
-.header a:hover {
+header a:hover {
   color: #f5f9fb;
 }
-.header a:active {
+header a:active {
   color: #67a4c2;
 }
-.header li {
-  white-space: nowrap;
+header li {
   padding: 0px;
   font-family: 'Exo 2';
-  font-size: 1.3em;
+  font-size: 1.4em;
   text-align: center;
   text-shadow: 0px -1px rgba(0,0,0,0.2);
 }
 @media (min-width: 560px) {
-  .header li {
+  header li {
     padding: 0px 1em;
     display: inline;
   }
 }
-.header li.active {
+header li.active {
   background-color: #1194ce;
 }
-.header li.active a {
+header li.active a {
   color: #f5f9fb;
-}
-ul#left-items {
-  margin: auto;
-  display: inline;
-}
-ul#right-items {
-  float: right;
 }
 .column-container {
   width: 100%;
