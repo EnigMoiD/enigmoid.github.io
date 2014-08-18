@@ -381,6 +381,13 @@ footer #content {
   text-align: center;
   text-shadow: 0px 1px rgba(0,0,0,0.2);
 }
+footer #content .contact {
+  line-height: 3em;
+}
+footer #content .contact div {
+  display: inline;
+  padding: 0px 0.3em;
+}
 footer #content a {
   border-bottom: 1px dotted #f5f9fb;
   text-decoration: none;
