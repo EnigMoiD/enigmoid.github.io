@@ -1,4 +1,4 @@
-<div class="project snippet {% cycle 'odd', 'even' %}">
+<div class="project snippet {% cycle 'odd', 'even' %} imp{{ post.importance }}">
 	{% for ext in post.external %}
 	<div class="external-pin">
 		<a href="{{ ext[1] }}">

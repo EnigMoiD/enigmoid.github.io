@@ -41,6 +41,36 @@ a-color(color, hover, active)
 transition()
 	vendor('transition', arguments)
 
+snippet(size)
+	font-family 'Alegreya Sans SC'
+	text-shadow 0px -1px rgba(0, 0, 0, .2)
+
+	background-color dark-gray
+	padding snippet-padding
+
+	transition background-color quickly
+	&:hover
+		background-color darken(accent, 20%) !important
+
+	h1, h2
+		font-size size * 1em
+		display inline
+
+	.date
+		display inline
+		padding-left .6em
+		color text-color
+		white-space nowrap
+		opacity .4
+
+	.desc-item
+		white-space nowrap
+		padding-right 1em
+
+	.external-pin
+		float right
+		font-size 1.4em
+
 quickly = 200ms
 
 // Colors
@@ -103,33 +133,13 @@ ul
 snippet-padding = .1em 0px .2em .5em
 
 .snippet
-	font-family 'Alegreya Sans SC'
-	text-shadow 0px -1px rgba(0, 0, 0, .2)
+	snippet(1)
 
-	background-color dark-gray
-	padding snippet-padding
+.snippet.imp0
+	snippet(2)
 
-	transition background-color quickly
-	&:hover
-		background-color darken(accent, 20%) !important
-
-	h1, h2
-		display inline
-
-	.date
-		display inline
-		padding-left .6em
-		color text-color
-		white-space nowrap
-		opacity .4
-
-	.desc-item
-		white-space nowrap
-		padding-right 1em
-
-	.external-pin
-		float right
-		font-size 1.4em
+.snippet.imp1
+	snippet(1)
 
 .snippet.even
 	background-color lighten(dark-gray, 5%)
