@@ -26,6 +26,7 @@ We generated the waveforms right on the FPGA, so they were square waves. This me
 ## Songs
 
 We also came up with a system that would have allowed the FPGA to automatically play built-in songs. The lookup table held which "keys" of the piano were held down, in song order. We were pleased with this schema because:
+
 1. It was simple and easily implemented. (the most important thing)
 1. Encoded songs could have chords.
 1. Notes of arbitrary length could be encoded by just repeating notes.
