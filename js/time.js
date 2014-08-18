@@ -42,7 +42,8 @@
     graduation: new Date(2016, 4, 20),
     programming: new Date(2009, 10, 22),
     violin: new Date(2003, 9, 0),
-    fire: new Date(2012, 10, 11)
+    fire: new Date(2012, 10, 11),
+    origami: new Date(1998, 7, 10)
   };
 
   now = new Date;
