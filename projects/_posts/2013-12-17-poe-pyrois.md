@@ -13,7 +13,7 @@ team: 4
 header: [For Principles of Engineering we wanted to harness the energy of a human pedaling a bike.,'And we wanted to be efficient about it, which meant managing the energy storage ourselves. We also wanted to charge USB devices from whatever energy storage unit we ended up using. None of us knew anything about what building this would involve, so it took us about a month to realize that we wanted to charge a bank of supercapacitors and build a 5V switching regulator.']
 
 specs: [
-[code, [C]],
+[code-fork, [C]],
 [laptop, [MSP430]],
 [gear, [200W 24V Motor]],
 [bolt, [UltraCaps, Power Electronics]],

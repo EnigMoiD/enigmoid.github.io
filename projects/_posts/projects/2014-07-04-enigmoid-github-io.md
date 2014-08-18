@@ -13,6 +13,6 @@ header: ["I want my website to be simple, clean, and easy to extend.","I've made
 
 external: [[compass, 'http://enigmoid.github.io'], [github, 'https://github.com/EnigMoiD/enigmoid.github.io']]
 specs: [
-[code, [JavaScript, Jekyll]]
+[code-fork, [JavaScript, Jekyll]]
 ]
 ---

@@ -9,7 +9,7 @@ short: half-bridge
 banner-position: .3
 team: 2
 specs: [
-[code, ['Arduino C']],
+[code-fork, ['Arduino C']],
 [laptop, [Arduino]],
 [bolt, ['Power Electronics']],
 [floppy-o, [LTSpice]]

@@ -9,7 +9,7 @@ short: stuff-ultracaps
 banner-position: .4
 team: 4
 specs: [
-[code, ['JavaScript', 'd3.js', 'Heroku']],
+[code-fork, ['JavaScript', 'd3.js', 'Heroku']],
 [bolt, 'UltraCaps'],
 [flask, ['Graphene Oxide?']]
 ]
