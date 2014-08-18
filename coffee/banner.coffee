@@ -1,4 +1,4 @@
-bannerImg = $("#post-banner")
+bannerImg = $(".post-banner")
 banner = $("div.post.banner")
 isBannerClosed = true
 
@@ -34,6 +34,10 @@ sizeBanner = (b, closed) ->
 	h = b.height()
 
 	bannerPosition = banner.attr("bannerPosition")
+	
+	console.log "image height for #{$(b).attr 'src'}"
+	console.log h
+	console.log bannerPosition
 
 	if closed
 		banner.css "height": banner.width()/5

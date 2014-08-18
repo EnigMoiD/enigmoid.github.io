@@ -2,7 +2,7 @@
 (function() {
   var banner, bannerImg, isBannerClosed, setTransition, sizeBanner;
 
-  bannerImg = $("#post-banner");
+  bannerImg = $(".post-banner");
 
   banner = $("div.post.banner");
 
@@ -55,6 +55,9 @@
     var bannerPosition, h;
     h = b.height();
     bannerPosition = banner.attr("bannerPosition");
+    console.log("image height for " + ($(b).attr('src')));
+    console.log(h);
+    console.log(bannerPosition);
     if (closed) {
       banner.css({
         "height": banner.width() / 5

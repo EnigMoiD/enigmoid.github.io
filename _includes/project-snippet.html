@@ -1,5 +1,4 @@
-<div class="project snippet {% cycle 'odd', 'even' %} imp{{ post.importance }}">
-	<img class="snip-bg" src="/img/{{ post.short }}/blue.jpg">
+<div class="project snippet banner {% cycle 'odd', 'even' %} imp{{ post.importance }}">
 	{% for ext in post.external %}
 	<div class="external-pin">
 		<a href="{{ ext[1] }}">
@@ -22,4 +21,5 @@
 			{% endfor %}
 		</div>
 	</a>
+	<img class="post-banner" src="/img/{{ post.short }}/banner.jpg" bannerPosition="{{ post.banner-position }}">
 </div>
