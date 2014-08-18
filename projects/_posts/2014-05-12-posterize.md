@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Image Filter on the GPU
+
+importance: 0
+
 short: posterize
 banner-position: .3
 team: 3

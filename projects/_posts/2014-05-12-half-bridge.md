@@ -1,6 +1,9 @@
 ---
 layout: post
 title: nMOS Half Bridge and Driver
+
+importance: 0
+
 external: [[file, '/doc/half-bridge/paper.pdf']]
 short: half-bridge
 banner-position: .3

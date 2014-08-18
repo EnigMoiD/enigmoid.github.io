@@ -2,6 +2,9 @@
 layout: post
 title: Billiards Modeled and Analyzed
 short: billiards 
+
+importance: 1
+
 banner-position: .33
 team: 2
 specs: [

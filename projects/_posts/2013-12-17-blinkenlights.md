@@ -1,6 +1,9 @@
 ---
 layout: post
 title: FPGA Piano
+
+importance: 1
+
 external: [[github, 'http://github.com/mdelrosa/cafinalproject'],[compass, 'http://wikis.olin.edu/ca/doku.php?id=projects:fpga_piano']]
 short: blinkenlights
 banner-position: .3
