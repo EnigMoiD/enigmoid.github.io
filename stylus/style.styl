@@ -45,7 +45,7 @@ snippet(size)
 	font-family 'Alegreya Sans SC'
 	text-shadow 0px -1px rgba(0, 0, 0, .2)
 
-	background-color dark-gray
+	background-color size is 1? dark-gray : accent
 	padding snippet-padding
 
 	transition background-color quickly
@@ -140,9 +140,6 @@ snippet-padding = .1em 0px .2em .5em
 
 .snippet.imp1
 	snippet(1)
-
-.snippet.even
-	background-color lighten(dark-gray, 5%)
 
 // Modifiers
 .center

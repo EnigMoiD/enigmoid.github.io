@@ -101,7 +101,7 @@ ul {
 .snippet.imp0 {
   font-family: 'Alegreya Sans SC';
   text-shadow: 0px -1px rgba(0,0,0,0.2);
-  background-color: #14151a;
+  background-color: #1194ce;
   padding: 0.1em 0px 0.2em 0.5em;
   -webkit-transition: background-color 200ms;
   -moz-transition: background-color 200ms;
@@ -165,9 +165,6 @@ ul {
 .snippet.imp1 .external-pin {
   float: right;
   font-size: 1.4em;
-}
-.snippet.even {
-  background-color: #1e2027;
 }
 .center {
   text-align: center;
