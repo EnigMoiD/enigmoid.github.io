@@ -1,4 +1,4 @@
-bannerImg = $(".post-banner")
+bannerImg = $("#post-banner")
 banner = $("div.post.banner")
 isBannerClosed = true
 

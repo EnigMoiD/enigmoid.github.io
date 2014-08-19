@@ -2,7 +2,7 @@
 (function() {
   var banner, bannerImg, isBannerClosed, setTransition, sizeBanner;
 
-  bannerImg = $(".post-banner");
+  bannerImg = $("#post-banner");
 
   banner = $("div.post.banner");
 

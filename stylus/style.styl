@@ -281,26 +281,25 @@ div.column
 // Banner (for putting a background behind content)
 
 .banner
-	text-align center
+	overflow hidden
 	padding 1em 0
 
-	img
-		width 100%
-		height auto !important
-
 .banner-content
+	text-align center
 	text-shadow 0px 1px 3px dim-blue, 0px 1px 3px dim-blue, 0px 1px 3px dim-blue
 	width 100%
-	position absolute
-	z-index 1
+	z-index 100
 
 .banner-bg
+	position absolute
 	width 100%
+	z-index 0
 
 // Snippet banners
 snippet-height = 4em
 
 .project.snippet.banner
+	padding 0px
 	position relative
 	height snippet-height
 	

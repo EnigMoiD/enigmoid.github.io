@@ -4,10 +4,12 @@ active: project
 
 {% include header.html %}
 <div bannerPosition="{{ page.banner-position }}" class="post banner {{ page.shade }}">
+	<div class="banner-bg">
+		<img id="post-banner" src="/img/{{ page.short }}/banner.jpg">
+	</div>
 	<div class="post banner-content">
 		<h1>{{ page.title }}</h1>
 	</div>
-	<img id="post-banner" src="/img/{{ page.short }}/banner.jpg">
 </div>
 <div id="post-container">
 	<h1>{{ page.header[0] }}</h1>
