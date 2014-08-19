@@ -173,107 +173,11 @@ ul {
   text-align: center;
 }
 .accent,
-.milestone .number,
-.greeting-container .greeting-content .greeting-name {
+.greeting-container .greeting-content .greeting-name,
+.milestone .number {
   text-shadow: none;
   color: #1194ce;
   font-size: 3em;
-}
-.experience.snippet {
-  position: absolute;
-  width: 100%;
-  padding: 0px;
-  vertical-align: top;
-  -webkit-transition: width 200ms, background-color 200ms;
-  -moz-transition: width 200ms, background-color 200ms;
-  -ms-transition: width 200ms, background-color 200ms;
-  -o-transition: width 200ms, background-color 200ms;
-  transition: width 200ms, background-color 200ms;
-}
-.experience.snippet .textbox {
-  padding: 0.1em 0px 0.2em 0.5em;
-  padding: 0px 0.5em;
-  position: relative;
-  background-color: inherit;
-  z-index: 6;
-}
-.experience.snippet .textbox h1,
-.experience.snippet .textbox h2,
-.experience.snippet .textbox a {
-  width: 100%;
-  padding-right: 0.5em;
-  background-color: inherit;
-}
-@media (min-width: 400px) {
-  .experience.snippet .textbox h1,
-  .experience.snippet .textbox h2,
-  .experience.snippet .textbox a {
-    white-space: nowrap;
-  }
-}
-.experience.snippet .exp-content {
-  font-family: 'Open Sans';
-  height: 0px;
-  overflow: hidden;
-  -webkit-transition: height 200ms;
-  -moz-transition: height 200ms;
-  -ms-transition: height 200ms;
-  -o-transition: height 200ms;
-  transition: height 200ms;
-}
-.experience.snippet.one {
-  background-color: #353a47;
-}
-.experience.snippet.two {
-  background-color: #2b2f39;
-}
-.experience.snippet.three {
-  background-color: #21232c;
-}
-#exp-container {
-  width: 90%;
-  display: inline-block;
-  overflow: hidden;
-}
-#time-container {
-  float: right;
-  width: 10%;
-  display: inline-block;
-}
-#time-container div {
-  width: 100%;
-  position: absolute;
-}
-#time-container .month {
-  color: #3c3f4e;
-  border-top: 1px solid #515569;
-}
-#time-container .year {
-  color: #7c819a;
-}
-.experience.snippet.one.selected:hover {
-  background-color: #353a47 !important;
-}
-.experience.snippet.two.selected:hover {
-  background-color: #2b2f39 !important;
-}
-.experience.snippet.three.selected:hover {
-  background-color: #21232c !important;
-}
-.track {
-  vertical-align: top;
-  position: relative;
-  display: inline-block;
-  -webkit-transition: width 200ms;
-  -moz-transition: width 200ms;
-  -ms-transition: width 200ms;
-  -o-transition: width 200ms;
-  transition: width 200ms;
-  height: 100%;
-  background-color: #14151a;
-}
-.track.selected {
-  z-index: 100 !important;
 }
 header {
   padding: 0px 0px;
@@ -311,17 +215,64 @@ header li.active {
 header li.active a {
   color: #f5f9fb;
 }
+#container,
+#post-container {
+  overflow: hidden;
+  position: relative;
+  background-color: #14151a;
+  min-height: 100%;
+  padding-bottom: 120px;
+  margin: auto;
+  max-width: 900px;
+}
+#content-container {
+  padding: 0 1em;
+}
+footer {
+  clear: both;
+  width: 100%;
+  display: table;
+  position: relative;
+  z-index: 2;
+  height: 120px;
+  margin-top: -120px;
+  background-color: footer-colort;
+}
+footer #content {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 0.8em;
+  text-align: center;
+  text-shadow: 0px 1px rgba(0,0,0,0.2);
+}
+footer #content .contact {
+  line-height: 3em;
+}
+footer #content .contact div {
+  display: inline;
+  padding: 0px 0.3em;
+}
+footer #content a {
+  border-bottom: 1px dotted #f5f9fb;
+  text-decoration: none;
+}
+footer #content a:hover {
+  border-bottom: 1px solid #f5f9fb;
+}
+footer #content a:active {
+  color: #f5f9fb;
+}
 .column-container {
   width: 100%;
   display: table;
 }
-div.column {
+.column {
   display: table-cell;
   width: 1%;
   position: relative;
 }
 @media (max-width: 700px) {
-  div.column {
+  .column {
     display: block;
     width: 100%;
   }
@@ -354,35 +305,6 @@ div.column {
   color: rgba(0,0,0,0);
   text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
 }
-.category.one {
-  background-color: #121418;
-}
-.category.two {
-  background-color: #101116;
-}
-.category.three {
-  background-color: #0e0f13;
-}
-.type {
-  -webkit-transition: background-color 200ms;
-  -moz-transition: background-color 200ms;
-  -ms-transition: background-color 200ms;
-  -o-transition: background-color 200ms;
-  transition: background-color 200ms;
-}
-.type:hover {
-  background-color: #0e76a5 !important;
-}
-.type h2 {
-  -webkit-transition: color 200ms;
-  -moz-transition: color 200ms;
-  -ms-transition: color 200ms;
-  -o-transition: color 200ms;
-  transition: color 200ms;
-}
-.type .values {
-  background-color: #0c0d10;
-}
 .index-banner {
   width: 100%;
 }
@@ -413,59 +335,24 @@ div.column {
     margin-top: -1.5em;
   }
 }
-#container,
-#post-container {
-  overflow: hidden;
-  position: relative;
-  background-color: #14151a;
-  min-height: 100%;
-  padding-bottom: 120px;
-  margin: auto;
-  max-width: 900px;
+.greeting-container {
+  padding: 0px;
+  margin: 0 -1em;
 }
-#post-container {
-  padding: 0 1em;
-}
-#post-container ul,
-#post-container ol {
-  padding: 0 1em;
-}
-#content-container {
-  padding: 0 1em;
-}
-footer {
-  clear: both;
-  width: 100%;
-  display: table;
-  position: relative;
-  z-index: 2;
-  height: 120px;
-  margin-top: -120px;
-  background-color: #1194ce;
-}
-footer #content {
-  display: table-cell;
-  vertical-align: middle;
-  font-size: 0.8em;
+.greeting-container .greeting-content {
+  padding-left: 0.7em;
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
   text-align: center;
-  text-shadow: 0px 1px rgba(0,0,0,0.2);
 }
-footer #content .contact {
-  line-height: 3em;
+.greeting-container .greeting-content .greeting-name {
+  font-size: 4em;
+  font-family: 'Alegreya Sans SC';
 }
-footer #content .contact div {
-  display: inline;
-  padding: 0px 0.3em;
-}
-footer #content a {
-  border-bottom: 1px dotted #f5f9fb;
-  text-decoration: none;
-}
-footer #content a:hover {
-  border-bottom: 1px solid #f5f9fb;
-}
-footer #content a:active {
-  color: #f5f9fb;
+.greeting-container .greeting-content .greeting-header {
+  font-family: 'Exo 2';
+  font-size: 1.2em;
 }
 .milestone {
   text-align: center;
@@ -473,12 +360,138 @@ footer #content a:active {
 .milestone .number {
   font-family: 'Alegreya Sans SC';
 }
-.box,
-.image-box {
-  background-color: #0b0c0e;
-  padding: 1em;
-  clear: both;
+.category.one {
+  background-color: #121418;
+}
+.category.two {
+  background-color: #101116;
+}
+.category.three {
+  background-color: #0e0f13;
+}
+.type {
+  -webkit-transition: background-color 200ms;
+  -moz-transition: background-color 200ms;
+  -ms-transition: background-color 200ms;
+  -o-transition: background-color 200ms;
+  transition: background-color 200ms;
+}
+.type:hover {
+  background-color: #0e76a5 !important;
+}
+.type h2 {
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -ms-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+.type .values {
+  background-color: #0c0d10;
+}
+#exp-container {
+  width: 90%;
+  display: inline-block;
+  overflow: hidden;
+}
+.experience.snippet {
+  position: absolute;
+  padding: 0px;
+  -webkit-transition: width 200ms, background-color 200ms;
+  -moz-transition: width 200ms, background-color 200ms;
+  -ms-transition: width 200ms, background-color 200ms;
+  -o-transition: width 200ms, background-color 200ms;
+  transition: width 200ms, background-color 200ms;
+}
+.experience.snippet .textbox {
+  padding: 0.1em 0px 0.2em 0.5em;
+  padding: 0px 0.5em;
   position: relative;
+  background-color: inherit;
+  z-index: 6;
+}
+.experience.snippet .textbox h1,
+.experience.snippet .textbox h2,
+.experience.snippet .textbox a {
+  width: 100%;
+  padding-right: 0.5em;
+  background-color: inherit;
+}
+@media (min-width: 400px) {
+  .experience.snippet .textbox h1,
+  .experience.snippet .textbox h2,
+  .experience.snippet .textbox a {
+    white-space: nowrap;
+  }
+}
+.experience.snippet .exp-content {
+  font-family: 'Open Sans';
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height 200ms;
+  -moz-transition: height 200ms;
+  -ms-transition: height 200ms;
+  -o-transition: height 200ms;
+  transition: height 200ms;
+}
+.experience.snippet.selected {
+  padding: 0px 1em;
+}
+.experience.snippet.one {
+  background-color: #353a47;
+}
+.experience.snippet.one.selected:hover {
+  background-color: #353a47 !important;
+}
+.experience.snippet.two {
+  background-color: #2b2f39;
+}
+.experience.snippet.two.selected:hover {
+  background-color: #2b2f39 !important;
+}
+.experience.snippet.three {
+  background-color: #21232c;
+}
+.experience.snippet.three.selected:hover {
+  background-color: #21232c !important;
+}
+.track {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: width 200ms;
+  -moz-transition: width 200ms;
+  -ms-transition: width 200ms;
+  -o-transition: width 200ms;
+  transition: width 200ms;
+  height: 100%;
+  background-color: #14151a;
+}
+.track.selected {
+  z-index: 100 !important;
+}
+#time-container {
+  float: right;
+  width: 10%;
+  display: inline-block;
+}
+#time-container div {
+  width: 100%;
+  position: absolute;
+}
+#time-container .month {
+  color: #3c3f4e;
+  border-top: 1px solid #515569;
+}
+#time-container .year {
+  color: #7c819a;
+}
+#post-container {
+  padding: 0 1em;
+}
+#post-container ul,
+#post-container ol {
+  padding: 0 1em;
 }
 .project-specs {
   position: relative;
@@ -509,8 +522,13 @@ footer #content a:active {
     text-align: left;
   }
 }
+.box,
 .image-box {
+  background-color: #0b0c0e;
   margin: 0.5em;
+  padding: 1em;
+  clear: both;
+  position: relative;
 }
 .image-box img {
   width: 100%;
@@ -531,25 +549,6 @@ footer #content a:active {
 .images-box img {
   margin: 0px;
   float: left;
-}
-.greeting-container {
-  padding: 0px;
-  margin: 0 -1em;
-}
-.greeting-container .greeting-content {
-  padding-left: 0.7em;
-  z-index: 1;
-  position: absolute;
-  bottom: 0px;
-  text-align: center;
-}
-.greeting-container .greeting-content .greeting-name {
-  font-size: 4em;
-  font-family: 'Alegreya Sans SC';
-}
-.greeting-container .greeting-content .greeting-header {
-  font-family: 'Exo 2';
-  font-size: 1.2em;
 }
 .highlight {
   margin: 0.5em;

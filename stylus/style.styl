@@ -88,13 +88,13 @@ bg-color = dark-dark-gray
 inset-color = darken(dark-dark-gray, 10%)
 footer-color = accent
 
-// Media variables
-
 // Sizes
 
 header-padding = 0px
 accent-size = 3em
 footer-height = 120px
+
+about-height = 5em
 
 // Global config
 
@@ -153,94 +153,7 @@ snippet-padding = .1em 0px .2em .5em
 	color accent
 	font-size accent-size
 
-// Experience
-.experience.snippet
-	position absolute
-	width 100%
-
-	padding 0px
-
-	vertical-align top
-
-	transition width quickly, background-color quickly
-
-	.textbox
-		padding snippet-padding
-		padding 0px .5em
-		position relative
-		background-color inherit
-		z-index 6
-
-		h1, h2, a
-			width 100%
-			padding-right .5em
-			background-color inherit
-			@media (min-width: 400px)
-				white-space nowrap
-
-	.exp-content
-		font-family 'Open Sans'
-
-		height 0px
-		overflow hidden
-		transition height quickly
-
-.experience.snippet.one
-	background-color lighten(dark-dark-gray, 20%)
-
-.experience.snippet.two
-	background-color lighten(dark-dark-gray, 15%)
-
-.experience.snippet.three
-	background-color lighten(dark-dark-gray, 10%)
-
-#exp-container
-	width 90%
-	display inline-block
-	overflow hidden
-
-#time-container
-	float right
-	width 10%
-	display inline-block
-
-	div
-		width 100%
-		position absolute
-		
-	.month
-		color lighten(dark-gray, 20%)
-		border-top 1px solid lighten(dark-gray, 30%)
-
-	.year
-		color lighten(dark-gray, 50%)
-
-.experience.snippet.one.selected
-	&:hover
-		background-color lighten(dark-dark-gray, 20%) !important
-
-.experience.snippet.two.selected
-	&:hover
-		background-color lighten(dark-dark-gray, 15%) !important
-
-.experience.snippet.three.selected
-	&:hover
-		background-color lighten(dark-dark-gray, 10%) !important
-
-.track
-	vertical-align top
-	position relative
-	display inline-block
-
-	transition width quickly
-
-	height 100%
-	background-color dark-gray
-
-.track.selected
-	z-index 100 !important
-
-// Global Layout
+// GLOBAL
 
 // Header
 
@@ -267,100 +180,7 @@ header
 			color text-color
 		background-color accent
 
-// Columns
-.column-container
-	width 100%
-	display table
-
-div.column
-	display table-cell
-	width 1%
-	position relative
-
-	@media  (max-width: 700px)
-		display block
-		width 100%
-
-// Banner (for putting a background behind content)
-
-.banner
-	text-align center
-	padding 1em 0
-
-	img
-		width 100%
-		height auto !important
-
-.banner-content
-	text-shadow 0px 1px 3px dim-blue, 0px 1px 3px dim-blue, 0px 1px 3px dim-blue
-	width 100%
-	position absolute
-	z-index 1
-
-.banner-bg
-	width 100%
-
-// About banners
-about-height = 5em
-
-.about.banner
-	height about-height
-
-.about.banner-content
-	font-size 1.1em
-
-.about.banner-bg
-	i
-		font-size about-height
-		color rgba(0, 0, 0, 0)
-		text-shadow 0px 1px 3px dim-blue, 0px 1px 5px dim-blue, 0px 1px 9px dim-blue, 0px 1px 13px dim-blue, 0px 1px 19px dim-blue
-
-// Category columns
-
-.category.one
-	background-color lighten(dark-dark-gray, 3%)
-
-.category.two
-	background-color lighten(dark-dark-gray, 2%)
-
-.category.three
-	background-color lighten(dark-dark-gray, 1%)
-
-.type
-	transition background-color quickly
-	&:hover
-		background-color darken(accent, 20%) !important
-	h2
-		transition color quickly
-	.values
-		background-color dark-dark-gray
-
-// Index banners
-
-.index-banner
-	width 100%
-	h1
-		font-size 2em
-		background-color dark-dark-gray
-		text-align center
-	img
-		width 100%
-		height auto !important
-
-// Post banners
-
-.post.banner
-	overflow hidden
-	position relative
-
-.post.banner-content
-	transition opacity quickly
-	@media (min-width: 700px)
-		top 50%
-		height 3em
-		margin-top -1.5em
-
-// Universal and Content Containers
+// Global containers
 
 #container
 	overflow hidden
@@ -372,13 +192,6 @@ about-height = 5em
 
 	margin auto
 	max-width 900px
-
-#post-container
-	@extends #container
-	padding 0 1em
-
-	ul, ol
-		padding 0 1em
 
 #content-container
 	padding 0 1em
@@ -414,9 +227,100 @@ footer
 			&:active
 				color text-color
 
-	background-color footer-color
+	background-color footer-colort
 
-// About
+// Columns
+
+.column-container
+	width 100%
+	display table
+
+.column
+	display table-cell
+	width 1%
+	position relative
+
+	@media  (max-width: 700px)
+		display block
+		width 100%
+
+// Banner
+
+.banner
+	text-align center
+	padding 1em 0
+
+	img
+		width 100%
+		height auto !important
+
+.banner-content
+	text-shadow 0px 1px 3px dim-blue, 0px 1px 3px dim-blue, 0px 1px 3px dim-blue
+	width 100%
+	position absolute
+	z-index 1
+
+.banner-bg
+	width 100%
+
+// Home banners
+
+.about.banner
+	height about-height
+
+.about.banner-content
+	font-size 1.1em
+
+.about.banner-bg
+	i
+		font-size about-height
+		color rgba(0, 0, 0, 0)
+		text-shadow 0px 1px 3px dim-blue, 0px 1px 5px dim-blue, 0px 1px 9px dim-blue, 0px 1px 13px dim-blue, 0px 1px 19px dim-blue
+
+// Index banners
+
+.index-banner
+	width 100%
+	h1
+		font-size 2em
+		background-color dark-dark-gray
+		text-align center
+	img
+		width 100%
+		height auto !important
+
+// Post banners
+
+.post.banner
+	overflow hidden
+	position relative
+
+.post.banner-content
+	transition opacity quickly
+	@media (min-width: 700px)
+		top 50%
+		height 3em
+		margin-top -1.5em
+
+// HOME
+
+.greeting-container
+	padding 0px
+	margin 0 -1em
+	.greeting-content
+		padding-left .7em
+		z-index 1
+		position absolute
+		bottom 0px
+		text-align center
+		.greeting-name
+			font-size 4em
+			font-family 'Alegreya Sans SC'
+			@extends .accent
+
+		.greeting-header
+			font-family 'Exo 2'
+			font-size 1.2em
 
 .milestone
 	text-align center
@@ -424,13 +328,112 @@ footer
 		font-family 'Alegreya Sans SC'
 		@extends .accent
 
-// Post-specific stuff
+// SKILLS
 
-.box
-	background-color inset-color
-	padding 1em
-	clear both
+.category.one
+	background-color lighten(dark-dark-gray, 3%)
+
+.category.two
+	background-color lighten(dark-dark-gray, 2%)
+
+.category.three
+	background-color lighten(dark-dark-gray, 1%)
+
+.type
+	transition background-color quickly
+	&:hover
+		background-color darken(accent, 20%) !important
+	h2
+		transition color quickly
+	.values
+		background-color dark-dark-gray
+
+// EXPERIENCE
+#exp-container
+	width 90%
+	display inline-block
+	overflow hidden
+
+.experience.snippet
+	position absolute
+	padding 0px
+
+	transition width quickly, background-color quickly
+
+	.textbox
+		padding snippet-padding
+		padding 0px .5em
+		position relative
+		background-color inherit
+		z-index 6
+
+		h1, h2, a
+			width 100%
+			padding-right .5em
+			background-color inherit
+			@media (min-width: 400px)
+				white-space nowrap
+
+	.exp-content
+		font-family 'Open Sans'
+
+		height 0px
+		overflow hidden
+		transition height quickly
+
+	&.selected
+		padding 0px 1em
+
+	&.one
+		background-color lighten(dark-dark-gray, 20%)
+		&.selected:hover
+				background-color lighten(dark-dark-gray, 20%) !important
+	&.two
+		background-color lighten(dark-dark-gray, 15%)
+		&.selected:hover
+				background-color lighten(dark-dark-gray, 15%) !important
+	&.three
+		background-color lighten(dark-dark-gray, 10%)
+		&.selected:hover
+				background-color lighten(dark-dark-gray, 10%) !important
+
+.track
+	vertical-align top
 	position relative
+	display inline-block
+
+	transition width quickly
+
+	height 100%
+	background-color dark-gray
+
+.track.selected
+	z-index 100 !important
+
+#time-container
+	float right
+	width 10%
+	display inline-block
+
+	div
+		width 100%
+		position absolute
+
+	.month
+		color lighten(dark-gray, 20%)
+		border-top 1px solid lighten(dark-gray, 30%)
+
+	.year
+		color lighten(dark-gray, 50%)
+
+// Project posts
+
+#post-container
+	@extends #container
+	padding 0 1em
+
+	ul, ol
+		padding 0 1em
 
 .project-specs
 	position relative
@@ -456,9 +459,15 @@ footer
 			text-align left
 		text-align center
 
+.box
+	background-color inset-color
+	margin .5em
+	padding 1em
+	clear both
+	position relative
+
 .image-box
 	@extends .box
-	margin .5em
 	img
 		width 100%
 
@@ -470,6 +479,8 @@ footer
 	margin-left auto
 	margin-right auto
 
+// LIDAR
+
 .images-box
 	clear both
 	position relative
@@ -478,29 +489,7 @@ footer
 		margin 0px
 		float left
 
-// Home stuff
-
-.greeting-container
-	padding 0px
-	margin 0 -1em
-	.greeting-content
-		padding-left .7em
-		z-index 1
-		position absolute
-		bottom 0px
-		text-align center
-		.greeting-name
-			font-size 4em
-			font-family 'Alegreya Sans SC'
-			@extends .accent
-
-		.greeting-header
-			font-family 'Exo 2'
-			font-size 1.2em
-
-// Pygments stuff
-
-// Using manni theme from github.com/richleland/pygments-css
+// Pygments
 
 .highlight
 	margin .5em
@@ -511,6 +500,8 @@ footer
 		color dim-text
 		background-color dim-blue
 		padding 0 .7em
+
+// manni theme: github.com/richleland/pygments-css
 
 code .hll { background-color: #ffffcc }
 code .c { color: #0099FF; font-style: italic } /* Comment */
