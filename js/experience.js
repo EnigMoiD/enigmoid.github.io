@@ -162,7 +162,7 @@
 			setTransition(expContainer, false)
 		}
 
-		var experiences = $('.experience.snippet')
+		var experiences = $('.experience')
 
 		window.maxOffset = 0
 		var pixelsPerDay = 2, earliestDate

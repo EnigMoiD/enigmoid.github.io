@@ -43,7 +43,7 @@ transition()
 
 snippet(size)
 	font-family 'Alegreya Sans SC'
-	text-shadow 0px -1px rgba(0, 0, 0, .2)
+	text-shadow snippet-text-shadow
 
 	background-color dark-gray
 	padding snippet-padding
@@ -74,6 +74,7 @@ snippet(size)
 quickly = 200ms
 
 // Colors
+
 dark-gray = #14151A
 dark-dark-gray = darken(dark-gray, 40%)
 accent = #1194CE
@@ -88,6 +89,10 @@ bg-color = dark-dark-gray
 inset-color = darken(dark-dark-gray, 10%)
 footer-color = accent
 
+// Styles
+
+snippet-text-shadow = 0px -1px rgba(0, 0, 0, .2)
+
 // Sizes
 
 header-padding = 0px
@@ -95,6 +100,8 @@ accent-size = 3em
 footer-height = 120px
 
 about-height = 5em
+
+snippet-padding = .1em 0px .2em .5em
 
 // Global config
 
@@ -130,8 +137,6 @@ ul
 	
 // Includes
 
-snippet-padding = .1em 0px .2em .5em
-
 .snippet
 	snippet(1)
 
@@ -140,9 +145,6 @@ snippet-padding = .1em 0px .2em .5em
 
 .snippet.imp1
 	snippet(1)
-
-.snippet.even
-	background-color lighten(dark-gray, 5%)
 
 // Modifiers
 .center
@@ -227,7 +229,7 @@ footer
 			&:active
 				color text-color
 
-	background-color footer-colort
+	background-color footer-color
 
 // Columns
 
@@ -354,7 +356,8 @@ footer
 	display inline-block
 	overflow hidden
 
-.experience.snippet
+.experience
+	text-shadow snippet-text-shadow
 	position absolute
 	padding 0px
 
@@ -368,6 +371,7 @@ footer
 		z-index 6
 
 		h1, h2, a
+			display inline
 			width 100%
 			padding-right .5em
 			background-color inherit
@@ -380,6 +384,9 @@ footer
 		height 0px
 		overflow hidden
 		transition height quickly
+
+	&:hover
+		background-color darken(accent, 20%) !important
 
 	&.selected
 		padding 0px 1em
