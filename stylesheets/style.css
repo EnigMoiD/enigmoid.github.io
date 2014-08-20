@@ -166,9 +166,6 @@ ul {
   float: right;
   font-size: 1.4em;
 }
-.snippet.even {
-  background-color: #1e2027;
-}
 .center {
   text-align: center;
 }
@@ -236,7 +233,7 @@ footer {
   z-index: 2;
   height: 120px;
   margin-top: -120px;
-  background-color: footer-colort;
+  background-color: #1194ce;
 }
 footer #content {
   display: table-cell;
@@ -394,7 +391,8 @@ footer #content a:active {
   display: inline-block;
   overflow: hidden;
 }
-.experience.snippet {
+.experience {
+  text-shadow: 0px -1px rgba(0,0,0,0.2);
   position: absolute;
   padding: 0px;
   -webkit-transition: width 200ms, background-color 200ms;
@@ -403,28 +401,29 @@ footer #content a:active {
   -o-transition: width 200ms, background-color 200ms;
   transition: width 200ms, background-color 200ms;
 }
-.experience.snippet .textbox {
+.experience .textbox {
   padding: 0.1em 0px 0.2em 0.5em;
   padding: 0px 0.5em;
   position: relative;
   background-color: inherit;
   z-index: 6;
 }
-.experience.snippet .textbox h1,
-.experience.snippet .textbox h2,
-.experience.snippet .textbox a {
+.experience .textbox h1,
+.experience .textbox h2,
+.experience .textbox a {
+  display: inline;
   width: 100%;
   padding-right: 0.5em;
   background-color: inherit;
 }
 @media (min-width: 400px) {
-  .experience.snippet .textbox h1,
-  .experience.snippet .textbox h2,
-  .experience.snippet .textbox a {
+  .experience .textbox h1,
+  .experience .textbox h2,
+  .experience .textbox a {
     white-space: nowrap;
   }
 }
-.experience.snippet .exp-content {
+.experience .exp-content {
   font-family: 'Open Sans';
   height: 0px;
   overflow: hidden;
@@ -434,25 +433,28 @@ footer #content a:active {
   -o-transition: height 200ms;
   transition: height 200ms;
 }
-.experience.snippet.selected {
+.experience:hover {
+  background-color: #0e76a5 !important;
+}
+.experience.selected {
   padding: 0px 1em;
 }
-.experience.snippet.one {
+.experience.one {
   background-color: #353a47;
 }
-.experience.snippet.one.selected:hover {
+.experience.one.selected:hover {
   background-color: #353a47 !important;
 }
-.experience.snippet.two {
+.experience.two {
   background-color: #2b2f39;
 }
-.experience.snippet.two.selected:hover {
+.experience.two.selected:hover {
   background-color: #2b2f39 !important;
 }
-.experience.snippet.three {
+.experience.three {
   background-color: #21232c;
 }
-.experience.snippet.three.selected:hover {
+.experience.three.selected:hover {
   background-color: #21232c !important;
 }
 .track {
