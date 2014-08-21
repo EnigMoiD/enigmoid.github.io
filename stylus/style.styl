@@ -75,6 +75,19 @@ snippet(size)
 		float right
 		font-size 1.4em
 
+proj-snip(size)
+	snippet(size)
+
+	position relative
+	overflow hidden
+
+	height size * 5em
+	padding 0px
+
+	.post-banner
+		position absolute
+		width 100%
+
 quickly = 200ms
 
 // Colors
@@ -150,11 +163,11 @@ ul
 .snippet
 	snippet(1)
 
-.snippet.imp0
-	snippet(2)
+.project.snippet.imp0
+	proj-snip(2)
 
-.snippet.imp1
-	snippet(1)
+.project.snippet.imp1
+	proj-snip(1)
 
 // Modifiers
 .center
@@ -313,6 +326,11 @@ footer
 		top 50%
 		height 3em
 		margin-top -1.5em
+
+// Project banners
+
+.project.banner-content
+	color red
 
 // HOME
 
