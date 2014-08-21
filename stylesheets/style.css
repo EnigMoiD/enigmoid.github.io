@@ -16,10 +16,6 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/*
-// Good call by d3vron:
-// gist.github.com/d3vron/1080346
-*/
 a {
   text-decoration: none;
   color: rgba(245,249,251,0.8);
@@ -51,12 +47,14 @@ body {
   margin: 0px;
 }
 h1,
-h2,
+h2 {
+  font-family: 'Alegreya Sans SC';
+}
 h3,
 h4,
 h5,
 h6 {
-  font-family: 'Alegreya Sans SC';
+  font-family: 'Exo 2';
 }
 img {
   max-width: 100%;
@@ -78,17 +76,29 @@ ul {
 .snippet:hover {
   background-color: #0e76a5 !important;
 }
+.snippet:hover h2 {
+  color: #45bbf0;
+}
 .snippet h1,
 .snippet h2 {
+  font-family: 'Alegreya Sans SC';
   font-size: 1em;
   display: inline;
+}
+.snippet h2 {
+  font-size: 0.8em;
+  color: #515569;
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -ms-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
 }
 .snippet .date {
   display: inline;
   padding-left: 0.6em;
-  color: #f5f9fb;
+  text-color: #2b556a;
   white-space: nowrap;
-  opacity: 0.4;
 }
 .snippet .desc-item {
   white-space: nowrap;
@@ -112,17 +122,29 @@ ul {
 .snippet.imp0:hover {
   background-color: #0e76a5 !important;
 }
+.snippet.imp0:hover h2 {
+  color: #45bbf0;
+}
 .snippet.imp0 h1,
 .snippet.imp0 h2 {
+  font-family: 'Alegreya Sans SC';
   font-size: 2em;
   display: inline;
+}
+.snippet.imp0 h2 {
+  font-size: 1.6em;
+  color: #515569;
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -ms-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
 }
 .snippet.imp0 .date {
   display: inline;
   padding-left: 0.6em;
-  color: #f5f9fb;
+  text-color: #2b556a;
   white-space: nowrap;
-  opacity: 0.4;
 }
 .snippet.imp0 .desc-item {
   white-space: nowrap;
@@ -146,17 +168,29 @@ ul {
 .snippet.imp1:hover {
   background-color: #0e76a5 !important;
 }
+.snippet.imp1:hover h2 {
+  color: #45bbf0;
+}
 .snippet.imp1 h1,
 .snippet.imp1 h2 {
+  font-family: 'Alegreya Sans SC';
   font-size: 1em;
   display: inline;
+}
+.snippet.imp1 h2 {
+  font-size: 0.8em;
+  color: #515569;
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -ms-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
 }
 .snippet.imp1 .date {
   display: inline;
   padding-left: 0.6em;
-  color: #f5f9fb;
+  text-color: #2b556a;
   white-space: nowrap;
-  opacity: 0.4;
 }
 .snippet.imp1 .desc-item {
   white-space: nowrap;
@@ -482,6 +516,7 @@ footer #content a:active {
   position: absolute;
 }
 #time-container .month {
+  font-family: 'Alegreya Sans SC';
   color: #3c3f4e;
   border-top: 1px solid #515569;
 }
