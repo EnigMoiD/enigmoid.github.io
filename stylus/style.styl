@@ -16,10 +16,7 @@
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 
-/*
-// Good call by d3vron:
 // gist.github.com/d3vron/1080346
-*/
 vendor(prop, args)
 	-webkit-{prop} args
 	-moz-{prop} args
@@ -51,17 +48,24 @@ snippet(size)
 	transition background-color quickly
 	&:hover
 		background-color darken(accent, 20%) !important
+		h2
+			color lighten(accent, 30%)
 
 	h1, h2
+		font-family font-big-header
 		font-size size * 1em
 		display inline
+
+	h2
+		font-size size * .8em
+		color lighten(dark-gray, 30%)
+		transition color quickly
 
 	.date
 		display inline
 		padding-left .6em
-		color text-color
+		text-color darken(text-color, 70%)
 		white-space nowrap
-		opacity .4
 
 	.desc-item
 		white-space nowrap
@@ -93,6 +97,10 @@ footer-color = accent
 
 snippet-text-shadow = 0px -1px rgba(0, 0, 0, .2)
 
+font-text = 'Open Sans'
+font-header = 'Exo 2'
+font-big-header = 'Alegreya Sans SC'
+
 // Sizes
 
 header-padding = 0px
@@ -113,7 +121,7 @@ html
 
 body
 	background-color bg-color
-	font-family 'Open Sans'
+	font-family font-text
 	color text-color
 
 	height 100%
@@ -121,13 +129,15 @@ body
 .hidden
 	display none !important
 
-// Rudimentary global reset
 *
 	padding 0px
 	margin 0px
 
-h1, h2, h3, h4, h5, h6
+h1, h2
 	font-family 'Alegreya Sans SC'
+
+h3, h4, h5, h6
+	font-family font-header
 
 img
 	max-width 100%
@@ -168,7 +178,7 @@ header
 	li
 		padding header-padding
 
-		font-family 'Exo 2'
+		font-family font-header
 		font-size 1.4em
 		text-align center
 		text-shadow 0px -1px rgba(0, 0, 0, .2)
@@ -321,7 +331,7 @@ footer
 			@extends .accent
 
 		.greeting-header
-			font-family 'Exo 2'
+			font-family font-header
 			font-size 1.2em
 
 .milestone
@@ -379,7 +389,7 @@ footer
 				white-space nowrap
 
 	.exp-content
-		font-family 'Open Sans'
+		font-family font-text
 
 		height 0px
 		overflow hidden
@@ -427,6 +437,7 @@ footer
 		position absolute
 
 	.month
+		font-family font-big-header
 		color lighten(dark-gray, 20%)
 		border-top 1px solid lighten(dark-gray, 30%)
 
