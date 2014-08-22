@@ -18,17 +18,23 @@
 		}
 	}
 
-	// elsProps is a dict {elementName: {el: el, prop: property}}
+	// elsProps is a dict {elementName: {el: el, props: [prop0, prop1, ...]}}
 	window.setTransition = function(enable, elsProps) {
 		for (var i in elsProps) {
 			var entry = elsProps[i]
+
+			var baseString = ""
+			for (var j in entry.props)
+				baseString += entry.props[j] + " 200ms, "
+
+			baseString = baseString.slice(0, -2)
 			if (enable) {
 				$(entry.el).css({
-					"-webkit-transition": entry.prop + " 200ms",
-					"   -moz-transition": entry.prop + " 200ms",
-					"    -ms-transition": entry.prop + " 200ms",
-					"     -o-transition": entry.prop + " 200ms",
-					"        transition": entry.prop + " 200ms"
+					"-webkit-transition": baseString,
+					"   -moz-transition": baseString,
+					"    -ms-transition": baseString,
+					"     -o-transition": baseString,
+					"        transition": baseString
 				})
 			}
 			else {

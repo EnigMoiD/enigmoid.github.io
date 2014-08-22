@@ -43,13 +43,13 @@
 		var openBanner = function(closedBanner) {
 			var bannerImg = $(closedBanner).find(".post-banner")
 			var elsProps = [
-			{
-				el: closedBanner,
-				prop: "height"
-			},
-			{
-				el: bannerImg,
-				prop: "margin-top"
+				{
+					el: closedBanner,
+					props: ["height"]
+				},
+				{
+					el: bannerImg,
+					props: ["margin-top"]
 				}
 			]
 
