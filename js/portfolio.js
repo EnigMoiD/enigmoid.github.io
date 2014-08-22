@@ -18,7 +18,7 @@
 		h = b.height();
 		bannerPosition = b.attr("bannerPosition");
 
-		return b.css("margin-top", -bannerPosition * h)
+		b.css("margin-top", -bannerPosition * h)
 	};
 
 	window.oldOpenBanner = null
@@ -33,6 +33,21 @@
 			var oldHeight = 5 * (impToSize(openBanner.attr("imp")))+"em"
 			openBanner.css("height", oldHeight)
 			openBanner.removeAttr("open")
+
+			var bannerImg = $(openBanner).find(".post-banner")
+			var height = bannerImg.height()
+			var bannerPosition = bannerImg.attr("bannerPosition")
+			bannerImg.css("margin-top", -bannerPosition * height)
+		}
+
+		var openBanner = function(closedBanner) {
+			var bannerImg = $(closedBanner).find(".post-banner")
+
+			closedBanner.css("height", bannerImg.height()+"px")
+			closedBanner.attr("open", "true")
+			window.oldOpenBanner = closedBanner
+
+			$(closedBanner).find(".post-banner").css("margin-top", "0px")
 		}
 
 		var selfWasOpen = $(this).attr("open") === "open"
@@ -42,9 +57,6 @@
 
 		if (selfWasOpen) return
 
-		$(this).css("height", "15em")
-		$(this).attr("open", "true")
-		window.oldOpenBanner = $(this)
+		openBanner($(this))
 	})
-
 })();
