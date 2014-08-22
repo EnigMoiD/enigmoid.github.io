@@ -1,22 +1,5 @@
 (function() {
 	window.onload = function() {
-		function setTransition(el, enable) {
-			if (enable) $(el).css({
-					"-webkit-transition": "width, height, top, 200ms",
-					"   -moz-transition": "width, height, top, 200ms",
-					"    -ms-transition": "width, height, top, 200ms",
-					"     -o-transition": "width, height, top, 200ms",
-					"        transition": "width, height, top, 200ms"
-				})
-			else $(el).css({
-					"-webkit-transition": "width 200ms",
-					"   -moz-transition": "width 200ms",
-					"    -ms-transition": "width 200ms",
-					"     -o-transition": "width 200ms",
-					"        transition": "width 200ms"
-				})
-		}
-
 		window.months = [
 			"January",
 			"February",
@@ -149,17 +132,35 @@
 		}
 
 		function hideTimeContainer() {
-			setTransition(timeContainer, true)
-			setTransition(expContainer, true)
+			var elsProps = [
+				{
+					el: timeContainer,
+					props: ["height", "top", "width"]
+				},
+				{
+					el: expContainer,
+					props: ["height", "top", "width"]
+				}
+			]
+			window.setTransition(true, elsProps)
 			$(timeContainer).css("width", "0%")
 			$(expContainer).css("width", "100%")
 		}
 
 		function showTimeContainer() {
+			var elsProps = [
+				{
+					el: timeContainer,
+					props: ["width"]
+				},
+				{
+					el: expContainer,
+					props: ["width"]
+				}
+			]
 			$(timeContainer).css("width", "10%")
 			$(expContainer).css("width", "90%")
-			setTransition(timeContainer, false)
-			setTransition(expContainer, false)
+			window.setTransition(true, elsProps)
 		}
 
 		var experiences = $('.experience')
@@ -236,7 +237,7 @@
 
 				openTrack = false
 				oldExpTops = {}
-				setTransition($(this), false)
+				setTransition(true, [{el:$(this), props:["width"]}])
 			}
 			// Opening a track
 			else {
@@ -265,7 +266,7 @@
 					var $content = self.find('.exp-content')
 					$content.css("height", thisHeight)	
 
-					setTransition($(this), true)
+					setTransition(true, [{el:$(this), props:["height", "top", "width"]}])
 					hideTimeContainer()
 					$(this).css({
 						top: thisTop,

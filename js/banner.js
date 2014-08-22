@@ -31,11 +31,11 @@
 		var elsProps = [
 			{
 				el: banner,
-				prop: "height"
+				props: ["height"]
 			},
 			{
 				el: bannerImg,
-				prop: "margin-top"
+				props: ["margin-top"]
 			}
 		]
 		window.setTransition(true, elsProps);
