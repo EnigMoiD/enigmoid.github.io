@@ -61,32 +61,40 @@ snippet(size)
 		color lighten(dark-gray, 30%)
 		transition color quickly
 
-	.date
-		display inline
-		padding-left .6em
-		text-color darken(text-color, 70%)
-		white-space nowrap
-
-	.desc-item
-		white-space nowrap
-		padding-right 1em
-
-	.external-pin
-		float right
-		font-size 1.4em
-
 proj-snip(size)
 	snippet(size)
-
 	position relative
 	overflow hidden
+
+	width 100%
 
 	height size * 5em
 	padding 0px
 
 	.post-banner
-		position absolute
 		width 100%
+
+	h1
+		vertical-align middle
+
+	.date
+		vertical-align middle
+		display inline
+		padding-left .6em
+		text-color darken(text-color, 70%)
+		white-space nowrap
+
+	.desc-container
+		.desc-item
+			white-space nowrap
+			padding-right 1em
+
+	.external-pin
+		float right
+		font-size 1.4em
+
+	transition height quickly
+
 
 quickly = 200ms
 
@@ -326,11 +334,6 @@ footer
 		top 50%
 		height 3em
 		margin-top -1.5em
-
-// Project banners
-
-.project.banner-content
-	color red
 
 // HOME
 
