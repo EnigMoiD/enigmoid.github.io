@@ -17,4 +17,30 @@
 			}
 		}
 	}
+
+	// elsProps is a dict {elementName: {el: el, prop: property}}
+	window.setTransition = function(enable, elsProps) {
+		for (var i in elsProps) {
+			var entry = elsProps[i]
+			if (enable) {
+				$(entry.el).css({
+					"-webkit-transition": entry.prop + " 200ms",
+					"   -moz-transition": entry.prop + " 200ms",
+					"    -ms-transition": entry.prop + " 200ms",
+					"     -o-transition": entry.prop + " 200ms",
+					"        transition": entry.prop + " 200ms"
+				})
+			}
+			else {
+				$(entry.el).css({
+					"-webkit-transition": "none",
+					"   -moz-transition": "none",
+					"    -ms-transition": "none",
+					"     -o-transition": "none",
+					"        transition": "none"
+				})
+			}
+		}
+	};
+
 })()

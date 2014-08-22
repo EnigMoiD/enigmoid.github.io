@@ -137,11 +137,6 @@ ul {
   transition: color 200ms;
 }
 .project.snippet.imp0 .post-banner {
-  -webkit-transition: margin-top 200ms;
-  -moz-transition: margin-top 200ms;
-  -ms-transition: margin-top 200ms;
-  -o-transition: margin-top 200ms;
-  transition: margin-top 200ms;
   width: 100%;
 }
 .project.snippet.imp0 h1 {
@@ -205,11 +200,6 @@ ul {
   transition: color 200ms;
 }
 .project.snippet.imp1 .post-banner {
-  -webkit-transition: margin-top 200ms;
-  -moz-transition: margin-top 200ms;
-  -ms-transition: margin-top 200ms;
-  -o-transition: margin-top 200ms;
-  transition: margin-top 200ms;
   width: 100%;
 }
 .project.snippet.imp1 h1 {

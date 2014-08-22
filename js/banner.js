@@ -28,19 +28,19 @@
 	});
 
 	banner.click(function() {
-		var elsProps = {
-			banner: {
+		var elsProps = [
+			{
 				el: banner,
 				prop: "height"
 			},
-			bannerImg: {
+			{
 				el: bannerImg,
 				prop: "margin-top"
 			}
-		}
-		setTransition(true, elsProps);
+		]
+		window.setTransition(true, elsProps);
 		setTimeout((function() {
-		setTransition(false, elsProps);
+			window.setTransition(false, elsProps);
 		}), 200);
 		if (isBannerClosed) {
 			banner.css({
@@ -76,31 +76,6 @@
 			banner.css({
 				"height": bannerImg.height()
 			});
-		}
-	};
-
-	// elsProps is a dict {elementName: {el: el, prop: property}}
-	setTransition = function(enable, elsProps) {
-		for (var name in elsProps) {
-			var entry = elsProps[name]
-			if (enable) {
-				$(entry.el).css({
-					"-webkit-transition": entry.prop + " 200ms",
-					"   -moz-transition": entry.prop + " 200ms",
-					"    -ms-transition": entry.prop + " 200ms",
-					"     -o-transition": entry.prop + " 200ms",
-					"        transition": entry.prop + " 200ms"
-				})
-			}
-			else {
-				$(entry.el).css({
-					"-webkit-transition": "none",
-					"   -moz-transition": "none",
-					"    -ms-transition": "none",
-					"     -o-transition": "none",
-					"        transition": "none"
-				})
-			}
 		}
 	};
 

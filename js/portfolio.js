@@ -42,6 +42,18 @@
 
 		var openBanner = function(closedBanner) {
 			var bannerImg = $(closedBanner).find(".post-banner")
+			var elsProps = [
+			{
+				el: closedBanner,
+				prop: "height"
+			},
+			{
+				el: bannerImg,
+				prop: "margin-top"
+				}
+			]
+
+			window.setTransition(true, elsProps)
 
 			closedBanner.css("height", bannerImg.height()+"px")
 			closedBanner.attr("open", "true")
