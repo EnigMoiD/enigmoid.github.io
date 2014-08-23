@@ -420,24 +420,24 @@ footer #content a:active {
 .category.three {
   background-color: #0e0f13;
 }
-.type {
+.skill {
   -webkit-transition: background-color 200ms;
   -moz-transition: background-color 200ms;
   -ms-transition: background-color 200ms;
   -o-transition: background-color 200ms;
   transition: background-color 200ms;
 }
-.type:hover {
+.skill:hover {
   background-color: #0e76a5 !important;
 }
-.type h2 {
+.skill h2 {
   -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -ms-transition: color 200ms;
   -o-transition: color 200ms;
   transition: color 200ms;
 }
-.type .values {
+.skill .values {
   background-color: #0c0d10;
 }
 #exp-container {
