@@ -167,7 +167,7 @@
 				freq = iconList[value].freq
 				title = iconList[value].value
 
-				var typeContainer = $("<div class='type' value='"+title+"' freq="+freq+"></div>")
+				var typeContainer = $("<div class='skill' value='"+title+"' freq="+freq+"></div>")
 				var header = $("<h2 style='font-size:"+sizeFromFreq(freq)+"px'>"+title+"</h2>")
 				var valuesContainer = $("<div class='values'></div>")
 				typeContainer.append(header)
@@ -175,30 +175,36 @@
 				window.openProjLists = {}
 
 				header.click(function() {
-					var closeType = function(openType) {
-						openType.find("h2").parent().css("background-color", "inherit")
-						openType.find("div").slideUp(200, function() {
-							openType.removeAttr("open")
+					var closeSkill = function(openedSkill) {
+						openedSkill.css("background-color", "inherit")
+						openedSkill.find("div").slideUp(200, function() {
+							openedSkill.removeAttr("open")
 						})
 					}
 
-					var projList = $(this).parent().find("div")
-					var parent = $(this).parent()
-					var type = parent.parent().attr("category")
-					var openType = window.openProjLists[type]? window.openProjLists[type].parent() : null
+					var openSkill = function(closedSkill) {
+						closedSkill.css("background-color", accentColor)
 
-					var selfWasOpen = parent.attr("open") === "open"
+						var cat = closedSkill.parent().attr("category")
+						closedSkill.find("div").slideDown(200, function() {
+							window.openProjLists[cat] = closedSkill
+							closedSkill.attr("open", "true")
+						})
+					}
+
+					var skillContainer = $(this).parent()
+					var projList = skillContainer.find("div")
+					var skillCat = skillContainer.parent().attr("category")
+					var openedSkill = window.openProjLists[skillCat]? window.openProjLists[skillCat] : null
+
+					var selfWasOpen = skillContainer.attr("open") === "open"
 					
-					if (openType)
-						closeType(openType)
+					if (openedSkill)
+						closeSkill(openedSkill)
 
 					if (selfWasOpen) return
 
-					parent.find("h2").parent().css("background-color", accentColor)
-					projList.slideDown(200, function() {
-						window.openProjLists[type] = projList
-						parent.attr("open", "true")
-					})
+					openSkill(skillContainer)
 				})
 				typeContainer.append(valuesContainer)
 				for (var j in entries) {
