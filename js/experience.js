@@ -135,11 +135,11 @@
 			var elsProps = [
 				{
 					el: timeContainer,
-					props: ["height", "top", "width"]
+					props: ["height", "top", "width", "background-color"]
 				},
 				{
 					el: expContainer,
-					props: ["height", "top", "width"]
+					props: ["height", "top", "width", "background-color"]
 				}
 			]
 			window.setTransition(true, elsProps)
@@ -151,11 +151,11 @@
 			var elsProps = [
 				{
 					el: timeContainer,
-					props: ["width"]
+					props: ["width", "background-color"]
 				},
 				{
 					el: expContainer,
-					props: ["width"]
+					props: ["width", "background-color"]
 				}
 			]
 			$(timeContainer).css("width", "10%")
@@ -237,7 +237,7 @@
 
 				openTrack = false
 				oldExpTops = {}
-				setTransition(true, [{el:$(this), props:["width"]}])
+				setTransition(true, [{el:$(this), props:["width", "background-color"]}])
 			}
 			// Opening a track
 			else {
@@ -266,7 +266,7 @@
 					var $content = self.find('.exp-content')
 					$content.css("height", thisHeight)	
 
-					setTransition(true, [{el:$(this), props:["height", "top", "width"]}])
+					setTransition(true, [{el:$(this), props:["height", "top", "width", "background-color"]}])
 					hideTimeContainer()
 					$(this).css({
 						top: thisTop,
