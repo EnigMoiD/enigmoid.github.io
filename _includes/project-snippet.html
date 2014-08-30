@@ -27,5 +27,7 @@
 			<p>{{ post.header[1] }}</p>
 		</div>
 	</div>
-	<img class="post-banner" bannerPosition="{{ post.banner-position }}" src="/img/{{ post.short }}/blue.jpg">
+	<div bannerPosition="{{ post.banner-position }}" class="post-bg">
+		<img bannerPosition="{{ post.banner-position }}" class="post-banner-color" src="/img/{{ post.short }}/banner.jpg"><img class="post-banner" src="/img/{{ post.short }}/blue.jpg">
+	</div>
 </div>
