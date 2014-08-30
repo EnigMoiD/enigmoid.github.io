@@ -56,7 +56,7 @@
 			bgContainer.animate({"margin-top": "0px"}, 200)
 			$(closedBanner).find(".post-banner-color").animate({"opacity": "1"}, 200)
 
-			$(closedBanner).find(".proj-content").animate({"height": "200px"}, 200)
+			$(closedBanner).find(".proj-content").animate({"height": "100%"}, 200)
 		}
 
 		var selfWasOpen = $(this).attr("open") === "open"
