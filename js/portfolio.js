@@ -1,24 +1,27 @@
 (function() {
-	var bannerImg, sizeBanner;
+	var bgContainer, sizeBanner;
 
-	bannerImg = $(".post-banner");
+	bgContainer = $(".post-bg");
 
-	$(bannerImg).load(function() {
-		return sizeBanner($(this));
+	$(bgContainer).find("img").load(function() {
+		sizeBanner($($(this).parent()));
 	});
 
 	$(window).resize(function() {
-		return bannerImg.each(function() {
-			return sizeBanner($(this));
+		bgContainer.each(function() {
+			sizeBanner($(this));
 		});
 	});
 
-	sizeBanner = function(b) {
-		var bannerPosition, h;
-		h = b.height();
-		bannerPosition = b.attr("bannerPosition");
+	sizeBanner = function(bgContainer) {
+		var h = bgContainer.children().first().height();
+		var banner = bgContainer.parent();
+		var bannerPosition = bgContainer.attr("bannerPosition");
 
-		b.css("margin-top", -bannerPosition * h)
+		if (banner.attr("open") === "open")
+			banner.css("height", h)
+		else
+			bgContainer.css("margin-top", -bannerPosition * h)
 	};
 
 	window.oldOpenBanner = null
@@ -31,35 +34,29 @@
 	banner.click(function() {
 		var closeBanner = function(openBanner) {
 			var oldHeight = 5 * (impToSize(openBanner.attr("imp")))+"em"
-			openBanner.css("height", oldHeight)
+			openBanner.animate({"height": oldHeight}, 200)
 			openBanner.removeAttr("open")
 
-			var bannerImg = $(openBanner).find(".post-banner")
-			var height = bannerImg.height()
-			var bannerPosition = bannerImg.attr("bannerPosition")
-			bannerImg.css("margin-top", -bannerPosition * height)
+			var bgContainer = $(openBanner).find(".post-bg")
+			var height = bgContainer.height()
+			var bannerPosition = bgContainer.attr("bannerPosition")
+			bgContainer.animate({"margin-top": -bannerPosition * height}, 200)
+			$(openBanner).find(".post-banner-color").animate({"opacity": "0"}, 200)
+
+			$(openBanner).find(".proj-content").animate({"height": "0px"}, 200)
 		}
 
 		var openBanner = function(closedBanner) {
-			var bannerImg = $(closedBanner).find(".post-banner")
-			var elsProps = [
-				{
-					el: closedBanner,
-					props: ["height"]
-				},
-				{
-					el: bannerImg,
-					props: ["margin-top"]
-				}
-			]
+			var bgContainer = $(closedBanner).find(".post-bg")
 
-			window.setTransition(true, elsProps)
-
-			closedBanner.css("height", bannerImg.height()+"px")
+			closedBanner.animate({"height": bgContainer.find("img").height()+"px"}, 200)
 			closedBanner.attr("open", "true")
 			window.oldOpenBanner = closedBanner
 
-			$(closedBanner).find(".post-banner").css("margin-top", "0px")
+			bgContainer.animate({"margin-top": "0px"}, 200)
+			$(closedBanner).find(".post-banner-color").animate({"opacity": "1"}, 200)
+
+			$(closedBanner).find(".proj-content").animate({"height": "200px"}, 200)
 		}
 
 		var selfWasOpen = $(this).attr("open") === "open"

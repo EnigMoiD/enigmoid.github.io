@@ -45,12 +45,6 @@ snippet(size)
 	background-color dark-gray
 	padding snippet-padding
 
-	transition background-color quickly
-	&:hover
-		background-color darken(accent, 20%) !important
-		h2
-			color lighten(accent, 30%)
-
 	h1, h2
 		font-family font-big-header
 		font-size size * 1em
@@ -71,8 +65,18 @@ proj-snip(size)
 	height size * 5em
 	padding 0px
 
+	.post-bg
+		width 100%
+		padding 0px
+
 	.post-banner
 		width 100%
+
+	.post-banner-color
+		position absolute
+		width 100%
+
+		opacity 0
 
 	h1
 		vertical-align middle
@@ -93,7 +97,11 @@ proj-snip(size)
 		float right
 		font-size 1.4em
 
-	transition height quickly
+	.proj-content
+		font-family font-text
+
+		height 0px
+		overflow hidden
 
 
 quickly = 200ms
@@ -392,7 +400,7 @@ footer
 	position absolute
 	padding 0px
 
-	transition width quickly, background-color quickly
+	transition background-color quickly !important
 
 	.textbox
 		padding snippet-padding
