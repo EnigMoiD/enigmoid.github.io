@@ -66,17 +66,11 @@
 		h = b.height();
 		bannerPosition = banner.attr("bannerPosition");
 		if (closed) {
-			banner.css({
-				"height": banner.width() / 5
-			});
-			b.css({
-				"margin-top": -bannerPosition * h
-			});
-		} else {
-			banner.css({
-				"height": bannerImg.height()
-			});
+			banner.css("height", banner.width() / 5)
+			b.css("margin-top", -bannerPosition * h)
 		}
+		else
+			banner.css("height", bannerImg.height())
 	};
 
 })()
