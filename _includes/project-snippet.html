@@ -7,23 +7,21 @@
 			</a>
 		</div>
 		{% endfor %}
-		<a href="{{ post.url }}">
-			<div>
-				<h1>{{ post.title }}</h1><h2 class="date">{{ post.date | date: "%B %Y"}}</h2>
-			</div>
-			<div class="desc-container">
-				{% if post.team %}
-				<span class="desc-item"><i class="fa fa-fw fa-user"></i>{{ post.team }}</span>
-				{% endif %}
-				{% for spec in post.specs %}
-				<span class="desc-item"><i class="fa fa-fw fa-{{ spec[0] }}"></i>{% for s in spec[1] %}
-					{{ s }}{% unless forloop.last %}, {% endunless %}
-					{% endfor %}</span>
-				{% endfor %}
-			</div>
-		</a>
+		<div class="title-container">
+			<h1>{{ post.title }}</h1><h2 class="date">{{ post.date | date: "%B %Y"}}</h2>
+		</div>
+		<div class="desc-container">
+			{% if post.team %}
+			<span class="desc-item"><i class="fa fa-fw fa-user"></i>{{ post.team }}</span>
+			{% endif %}
+			{% for spec in post.specs %}
+			<span class="desc-item"><i class="fa fa-fw fa-{{ spec[0] }}"></i>{% for s in spec[1] %}
+				{{ s }}{% unless forloop.last %}, {% endunless %}
+				{% endfor %}</span>
+			{% endfor %}
+		</div>
 		<div class="proj-content">
-			<h2>{{ post.header[0] }}</h2>
+			<h2 class="post-header">{{ post.header[0] }}</h2>
 			<p>{{ post.header[1] }}</p>
 		</div>
 	</div>

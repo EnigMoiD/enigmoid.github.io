@@ -1,5 +1,6 @@
 (function() {
 	window.accentColor = "#1194CE"
+	window.darkDarkGrayColor = "#0C0D10"
 
 	window.whichTransitionEvent = function() {
 		var t;
