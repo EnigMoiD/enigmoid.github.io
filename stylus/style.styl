@@ -47,9 +47,10 @@ snippet(size)
 
 	h1, h2
 		font-family font-big-header
-		font-size size * 1em
 		display inline
 
+	h1
+		font-size size * 1em
 	h2
 		font-size size * .8em
 		color lighten(dark-gray, 30%)
@@ -78,7 +79,26 @@ proj-snip(size)
 			opacity 0
 
 	.project.banner-content
-		background-color rgba(0, 0, 0, 1)
+		text-shadow none
+		h1, h2
+			transition font-size quickly
+		transition background-color quickly
+
+		.post-header
+			color accent
+
+		.proj-content
+			font-family font-text
+
+			height 0px
+			overflow hidden
+			padding snippet-padding
+
+		&.active
+			h1
+				font-size 2.5em
+			h2
+				font-size 2em
 
 	h1
 		vertical-align middle
@@ -98,13 +118,6 @@ proj-snip(size)
 	.external-pin
 		float right
 		font-size 1.4em
-
-	.proj-content
-		font-family font-text
-
-		height 0px
-		overflow hidden
-
 
 quickly = 200ms
 
