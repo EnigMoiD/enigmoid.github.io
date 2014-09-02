@@ -32,7 +32,7 @@
 	}
 
 	banner.click(function() {
-		var closeBanner = function(openBanner) {
+		var closeBanner = function(openBanner, newBanner, sameWasOpen) {
 			var oldHeight = 5 * (impToSize(openBanner.attr("imp")))+"em"
 			openBanner.animate({"height": oldHeight}, 200)
 			openBanner.removeAttr("open")
@@ -43,12 +43,20 @@
 			bgContainer.animate({"margin-top": -bannerPosition * height}, 200)
 			$(openBanner).find(".post-banner-color").animate({"opacity": "0"}, 200)
 
-			$(openBanner).find(".proj-content").animate({"height": "0px"}, 200)
-			$(openBanner).find(".proj-content").parent().removeClass("active")
-			$(openBanner).find(".proj-content").parent().css({"background-color": "transparent"})
+			var projContainer = $(openBanner).find(".proj-content").parent()
+			projContainer.removeClass("active")
+			projContainer.css({"background-color": "transparent"})
+
+			$(openBanner).find(".proj-content").animate({"height": "0px"}, 200, function() {
+				if (sameWasOpen) return
+				$('html, body').animate({
+					scrollTop: $(newBanner).offset().top
+				})
+			})
+			
 		}
 
-		var openBanner = function(closedBanner) {
+		var openBanner = function(closedBanner, bannerOpen) {
 			var bgContainer = $(closedBanner).find(".post-bg")
 
 			closedBanner.animate({"height": bgContainer.find("img").height()+100+"px"}, 200)
@@ -58,18 +66,25 @@
 			bgContainer.animate({"margin-top": "100px"}, 200)
 			$(closedBanner).find(".post-banner-color").animate({"opacity": "1"}, 200)
 
+			var projContainer = $(closedBanner).find(".proj-content").parent()
 			$(closedBanner).find(".proj-content").animate({"height": "100%"}, 200)
-			$(closedBanner).find(".proj-content").parent().addClass("active")
-			$(closedBanner).find(".proj-content").parent().css({"background-color": window.darkDarkGrayColor})
+			projContainer.addClass("active")
+			projContainer.css({"background-color": window.darkDarkGrayColor})
+
+			if (!bannerOpen) {
+				$('html, body').animate({
+					scrollTop: $(closedBanner).offset().top
+				})
+			}
 		}
 
 		var selfWasOpen = $(this).attr("open") === "open"
 
 		if (oldOpenBanner)
-			closeBanner(oldOpenBanner)
+			closeBanner(oldOpenBanner, $(this), selfWasOpen)
 
 		if (selfWasOpen) return
 
-		openBanner($(this))
+		openBanner($(this), oldOpenBanner? true : false)
 	})
 })();
