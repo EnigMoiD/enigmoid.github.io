@@ -1,12 +1,14 @@
 <div class="project snippet {% cycle 'odd', 'even' %} imp{{ post.importance }}" short="{{ post.short }}" imp="{{ post.importance }}">
 	<div class="project banner-content">
-		{% for ext in post.external %}
-		<div class="external-pin">
-			<a href="{{ ext[1] }}">
-				<i class="fa fa-fw fa-{{ ext[0] }}"></i>
-			</a>
+		<div class="pin-container">
+			{% for ext in post.external %}
+			<div class="external-pin">
+				<a href="{{ ext[1] }}">
+					<i class="fa fa-fw fa-{{ ext[0] }}"></i>
+				</a>
+			</div>
+			{% endfor %}
 		</div>
-		{% endfor %}
 		<div class="title-container">
 			<h1>{{ post.title }}</h1><h2 class="date">{{ post.date | date: "%B %Y"}}</h2>
 		</div>
