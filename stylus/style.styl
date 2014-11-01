@@ -79,6 +79,7 @@ proj-snip(size)
 			opacity 0
 
 	.project.banner-content
+		padding-left .3em
 		text-shadow none
 		h1, h2
 			transition font-size quickly
@@ -107,7 +108,7 @@ proj-snip(size)
 		vertical-align middle
 		display inline
 		padding-left .6em
-		text-color darken(text-color, 70%)
+		text-color alpha(text-color, 70%)
 		white-space nowrap
 
 	.desc-container
@@ -115,9 +116,11 @@ proj-snip(size)
 			white-space nowrap
 			padding-right 1em
 
-	.external-pin
-		float right
-		font-size 1.4em
+	.pin-container
+		padding .3em.3em 0px 0px
+		.external-pin
+			float right
+			font-size 1.4em
 
 quickly = 200ms
 
@@ -188,7 +191,7 @@ img
 
 ul
 	list-style none
-	
+
 // Includes
 
 .snippet
