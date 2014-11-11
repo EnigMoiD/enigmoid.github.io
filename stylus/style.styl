@@ -16,6 +16,12 @@
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 
+@font-face
+	font-family 'Existence Light'
+	font-style normal
+	font-weight normal
+	src url('/font/existence-light/Existence-Light.otf') format('opentype')
+
 // gist.github.com/d3vron/1080346
 vendor(prop, args)
 	-webkit-{prop} args
@@ -39,7 +45,7 @@ transition()
 	vendor('transition', arguments)
 
 snippet(size)
-	font-family 'Alegreya Sans SC'
+	font-family font-text
 	text-shadow snippet-text-shadow
 
 	background-color dark-gray
@@ -50,10 +56,10 @@ snippet(size)
 		display inline
 
 	h1
-		font-size size * 1em
+		font-size size * 1.2em
 	h2
 		font-size size * .8em
-		color lighten(dark-gray, 30%)
+		color alpha(text-color, 0.7)
 		transition color quickly
 
 proj-snip(size)
@@ -86,7 +92,7 @@ proj-snip(size)
 		transition background-color quickly
 
 		.post-header
-			color accent
+			color text-color
 
 		.proj-content
 			font-family font-text
@@ -97,9 +103,11 @@ proj-snip(size)
 
 		&.active
 			h1
-				font-size 2.5em
-			h2
 				font-size 2em
+				color accent
+			h2
+				font-size 1.5em
+				color text-color
 
 	h1
 		vertical-align middle
@@ -108,7 +116,7 @@ proj-snip(size)
 		vertical-align middle
 		display inline
 		padding-left .6em
-		text-color alpha(text-color, 70%)
+		color alpha(text-color, 0.6)
 		white-space nowrap
 
 	.desc-container
@@ -146,7 +154,7 @@ snippet-text-shadow = 0px -1px rgba(0, 0, 0, .2)
 
 font-text = 'Open Sans'
 font-header = 'Exo 2'
-font-big-header = 'Alegreya Sans SC'
+font-big-header = 'Open Sans'
 
 // Sizes
 
@@ -181,7 +189,8 @@ body
 	margin 0px
 
 h1, h2
-	font-family 'Alegreya Sans SC'
+	font-family font-big-header
+	font-variant small-caps
 
 h3, h4, h5, h6
 	font-family font-header
@@ -198,7 +207,7 @@ ul
 	snippet(1)
 
 .project.snippet.imp0
-	proj-snip(2)
+	proj-snip(1.5)
 
 .project.snippet.imp1
 	proj-snip(1.1)
@@ -374,7 +383,7 @@ footer
 		text-align center
 		.greeting-name
 			font-size 4em
-			font-family 'Alegreya Sans SC'
+			font-family 'Lato'
 			@extends .accent
 
 		.greeting-header
@@ -384,7 +393,7 @@ footer
 .milestone
 	text-align center
 	.number
-		font-family 'Alegreya Sans SC'
+		font-family 'Lato'
 		@extends .accent
 
 // SKILLS
