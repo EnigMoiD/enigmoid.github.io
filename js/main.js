@@ -1,6 +1,9 @@
 (function() {
-	window.accentColor = "#1194CE"
-	window.darkDarkGrayColor = "#0C0D10"
+	window.accentColor = "rgb(17, 148, 206)"
+	window.darkDarkGrayColor = "rgb(12, 13, 16)"
+	window.rgba = function(rgb, a) {
+		return "rgba"+rgb.slice(3, rgb.length).slice(0, -2)+", "+a+")" 
+	}
 
 	window.whichTransitionEvent = function() {
 		var t;

@@ -59,17 +59,17 @@
 		var openBanner = function(closedBanner, bannerOpen) {
 			var bgContainer = $(closedBanner).find(".post-bg")
 
-			closedBanner.animate({"height": bgContainer.find("img").height()+200+"px"}, 200)
+			closedBanner.animate({"height": bgContainer.find("img").height()}, 200)
 			closedBanner.attr("open", "true")
 			window.oldOpenBanner = closedBanner
 
-			bgContainer.animate({"margin-top": "200px"}, 200)
+			bgContainer.animate({"margin-top": "0px"}, 200)
 			$(closedBanner).find(".post-banner-color").animate({"opacity": "1"}, 200)
 
 			var projContainer = $(closedBanner).find(".proj-content").parent()
 			$(closedBanner).find(".proj-content").animate({"height": "100%"}, 200)
 			projContainer.addClass("active")
-			projContainer.css({"background-color": window.darkDarkGrayColor})
+			projContainer.css({"background-color": window.rgba(window.darkDarkGrayColor, 0.7)})
 
 			if (!bannerOpen) {
 				$('html, body').animate({
