@@ -171,6 +171,7 @@ html
 body
 	background-color bg-color
 	font-family font-text
+	font-weight 300
 	color text-color
 
 	height 100%
@@ -407,10 +408,12 @@ footer
 	transition background-color quickly
 	&:hover
 		background-color darken(accent, 20%) !important
-	h2
-		transition color quickly
 	.values
 		background-color darken(accent, 20%)
+		.example
+			transition background-color quickly
+			&:hover
+				background-color accent
 
 // EXPERIENCE
 #exp-container
