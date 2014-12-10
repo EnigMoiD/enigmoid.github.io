@@ -49,3 +49,5 @@ else if (CCR1 > 1)
 On line 1, the error is calculated by subtracting the desired voltage from the actual voltage. The ADC uses a reference voltage of 3.3V, and outputs its reading on a 0-1023 scale. This means that we couldn't measure voltages above 3.3V, and explains why we measured the output with a balanced voltage divider. When the output is 5V, the ADC will read 2.5V. Thus 740 is about 75% of 1023 (empirically tuned) just as 2.5V is about 75% of 3.3V.
 
 We want the square wave to have a lower duty cycle when the input voltage is higher, so why does our code _increase_ the PWM duty cycle when the output voltage is too high? We do this because our circuit topology is such that the MOSFET is "on" (closed circuit) when the PWM is low and "off" when the PWM is high. Thus a lower PWM duty cycle will correspond to a higher square wave duty cycle.
+
+I've learned a lot about MOSFET drive since working on this project, and I know now that this is _not_ a good way to drive a high-side switch. I explored some more appropriate drive circuitry in my [nMOS half bridge project](/projects/2014/05/12/half-bridge.html).
