@@ -53,19 +53,18 @@ snippet(size)
 	h1
 		font-size size * 1.2em
 	h2
-		// font-variant normal
 		font-size size * .8em
 		transition color quickly
 
 proj-snip(size)
 	snippet(size)
+	padding 0px
 	position relative
 	overflow hidden
 
 	width 100%
 
 	height size*size * 3em
-	padding 0px
 
 	.post-bg
 		position relative
@@ -87,8 +86,9 @@ proj-snip(size)
 			opacity 0
 
 	.project.banner-content
-		padding-left .3em
-		text-shadow none
+		margin 1em
+		width auto
+		text-shadow snippet-text-shadow
 		h1, h2
 			transition font-size quickly
 		transition background-color quickly
@@ -124,9 +124,9 @@ proj-snip(size)
 			padding-right 1em
 
 	.pin-container
-		padding .3em.3em 0px 0px
+		float right
 		.external-pin
-			float right
+			display inline
 			font-size 1.4em
 
 quickly = 200ms
