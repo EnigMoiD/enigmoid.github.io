@@ -28,12 +28,22 @@
 
 	var banner = $('.project.snippet')
 	var impToSize = function(imp) {
-		return 2 - imp
+		var size = 0
+		switch (parseInt(imp)) {
+			case 0:
+				size = 1.5
+				break
+			case 1:
+				size = 1.1
+				break
+		}
+
+		return size*size*3 + "em"
 	}
 
 	banner.click(function() {
 		var closeBanner = function(openBanner, newBanner, sameWasOpen) {
-			var oldHeight = 5 * (impToSize(openBanner.attr("imp")))+"em"
+			var oldHeight = impToSize(openBanner.attr("imp"))
 			openBanner.animate({"height": oldHeight}, 200)
 			openBanner.removeAttr("open")
 
