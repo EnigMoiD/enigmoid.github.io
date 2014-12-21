@@ -11,5 +11,7 @@ specs: [
 [code-fork, ['C', 'C++', 'CUDA', 'OpenCV']]
 ]
 
+external: [[github, 'https://github.com/madisonmay/posterize']]
+
 header: ['We wrote a parallel program that reduces the color space of an image and smooths the edges.', 'It produces a nice "posterize" effect that generates images like the one in the banner from images like the one in the description. To write this program, we had to break the problem into simple, serial processes that could be performed on individual pixels of an image.']
 ---
