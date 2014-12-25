@@ -27,31 +27,16 @@
 	window.oldOpenBanner = null
 
 	var banner = $('.project.snippet')
-	var impToSize = function(imp) {
-		var size = 0
-		switch (parseInt(imp)) {
-			case 0:
-				size = 1.5
-				break
-			case 1:
-				size = 1.1
-				break
-		}
-
-		return size*size*3 + "em"
-	}
 
 	banner.click(function() {
 		var closeBanner = function(openBanner, newBanner, sameWasOpen) {
-			var oldHeight = impToSize(openBanner.attr("imp"))
-			openBanner.animate({"height": oldHeight}, 200)
+			openBanner.animate({"height": "auto"}, 200)
 			openBanner.removeAttr("open")
 
 			var bgContainer = $(openBanner).find(".post-bg")
 			var height = bgContainer.height()
 			var bannerPosition = bgContainer.attr("bannerPosition")
 			bgContainer.animate({"margin-top": -bannerPosition * height}, 200)
-			// $(openBanner).find(".post-banner-color").animate({"opacity": "0"}, 200)
 
 			var projContainer = $(openBanner).find(".proj-content").parent()
 			projContainer.removeClass("active")
@@ -69,17 +54,15 @@
 		var openBanner = function(closedBanner, bannerOpen) {
 			var bgContainer = $(closedBanner).find(".post-bg")
 
-			closedBanner.animate({"height": bgContainer.find("img").height()}, 200)
+			closedBanner.animate({"max-height": bgContainer.find("img").height()}, 200)
 			closedBanner.attr("open", "true")
 			window.oldOpenBanner = closedBanner
 
 			bgContainer.animate({"margin-top": "0px"}, 200)
-			// $(closedBanner).find(".post-banner-color").animate({"opacity": "1"}, 200)
 
 			var projContainer = $(closedBanner).find(".proj-content").parent()
 			$(closedBanner).find(".proj-content").animate({"height": "100%"}, 200)
 			projContainer.addClass("active")
-			// projContainer.css({"background-color": window.rgba(window.darkDarkGrayColor, 0.7)})
 
 			if (!bannerOpen) {
 				$('html, body').animate({
