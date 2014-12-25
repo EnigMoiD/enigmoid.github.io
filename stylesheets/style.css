@@ -1,0 +1,635 @@
+@font-face {
+  font-family: 'Olin';
+  src: url("/font/olin/olin-webfont.eot");
+  src: url("/font/olin/olin-webfont.eot?#iefix") format('embedded-opentype'), url("/font/olin/olin-webfont.woff") format('woff'), url("/font/olin/olin-webfont.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.olin:before {
+  display: inline-block;
+  font-family: Olin;
+  content: 'l';
+  font-size: 2em;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 0.35;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none;
+  color: rgba(245,249,251,0.8);
+}
+a:visited {
+  color: rgba(245,249,251,0.8);
+}
+a:hover {
+  color: #f5f9fb;
+}
+a:active {
+  color: #478eb1;
+}
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  background-color: #0c0d10;
+  font-family: 'Open Sans';
+  font-weight: 300;
+  color: #f5f9fb;
+  height: 100%;
+}
+.hidden {
+  display: none !important;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+}
+h1,
+h2 {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-variant: small-caps;
+}
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Exo 2';
+}
+img {
+  max-width: 100%;
+}
+ul {
+  list-style: none;
+}
+.snippet {
+  font-family: 'Open Sans';
+  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  background-color: #14151a;
+  padding: 0.1em 0.2em 0.2em 0.5em;
+}
+.snippet h1,
+.snippet h2 {
+  font-family: 'Open Sans';
+  display: inline;
+  text-shadow: 0px 1px rgba(0,0,0,0.6);
+}
+.snippet h1 {
+  font-size: 1em;
+}
+.snippet h2 {
+  font-size: 0.6em;
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -ms-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+.project.snippet.imp0 {
+  font-family: 'Open Sans';
+  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  background-color: #14151a;
+  padding: 0.1em 0.2em 0.2em 0.5em;
+  padding: 0px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.project.snippet.imp0 h1,
+.project.snippet.imp0 h2 {
+  font-family: 'Open Sans';
+  display: inline;
+  text-shadow: 0px 1px rgba(0,0,0,0.6);
+}
+.project.snippet.imp0 h1 {
+  font-size: 2em;
+}
+.project.snippet.imp0 h2 {
+  font-size: 1.2em;
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -ms-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+.project.snippet.imp0 .post-bg {
+  position: absolute;
+  width: 100%;
+  padding: 0px;
+  top: 0px;
+  -webkit-transition: margin-top 200ms;
+  -moz-transition: margin-top 200ms;
+  -ms-transition: margin-top 200ms;
+  -o-transition: margin-top 200ms;
+  transition: margin-top 200ms;
+}
+.project.snippet.imp0 .post-bg .post-banner {
+  width: 100%;
+}
+.project.snippet.imp0 .post-bg .post-bg-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), transparent);
+}
+.project.snippet.imp0 .post-bg .post-banner-color {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+}
+.project.snippet.imp0 .project.banner-content {
+  position: relative;
+  margin: 1em 1em;
+  width: auto;
+  text-shadow: 0px 1px rgba(0,0,0,0.6);
+}
+.project.snippet.imp0 .project.banner-content h1,
+.project.snippet.imp0 .project.banner-content h2 {
+  -webkit-transition: font-size 200ms;
+  -moz-transition: font-size 200ms;
+  -ms-transition: font-size 200ms;
+  -o-transition: font-size 200ms;
+  transition: font-size 200ms;
+}
+.project.snippet.imp0 .project.banner-content .post-header {
+  color: #f5f9fb;
+}
+.project.snippet.imp0 .project.banner-content .proj-content {
+  font-family: 'Open Sans';
+  max-height: 0px;
+  overflow: hidden;
+  padding: 0.1em 0.2em 0.2em 0.5em;
+  -webkit-transition: max-height 200ms;
+  -moz-transition: max-height 200ms;
+  -ms-transition: max-height 200ms;
+  -o-transition: max-height 200ms;
+  transition: max-height 200ms;
+}
+.project.snippet.imp0 .project.banner-content.active h1 {
+  font-size: 2em;
+}
+.project.snippet.imp0 .project.banner-content.active h2 {
+  font-size: 1.5em;
+}
+.project.snippet.imp0 .project.banner-content.active .date {
+  font-size: 1.2em;
+}
+.project.snippet.imp0 h1 {
+  vertical-align: middle;
+}
+.project.snippet.imp0 .date {
+  vertical-align: middle;
+  display: inline;
+  padding-left: 0.6em;
+  white-space: nowrap;
+}
+.project.snippet.imp0 .desc-container .desc-item {
+  white-space: nowrap;
+  padding-right: 1em;
+}
+.project.snippet.imp0 .pin-container {
+  float: right;
+}
+.project.snippet.imp0 .pin-container .external-pin {
+  display: inline;
+  font-size: 1.4em;
+}
+.project.snippet.imp1 {
+  font-family: 'Open Sans';
+  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  background-color: #14151a;
+  padding: 0.1em 0.2em 0.2em 0.5em;
+  padding: 0px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+.project.snippet.imp1 h1,
+.project.snippet.imp1 h2 {
+  font-family: 'Open Sans';
+  display: inline;
+  text-shadow: 0px 1px rgba(0,0,0,0.6);
+}
+.project.snippet.imp1 h1 {
+  font-size: 1em;
+}
+.project.snippet.imp1 h2 {
+  font-size: 0.6em;
+  -webkit-transition: color 200ms;
+  -moz-transition: color 200ms;
+  -ms-transition: color 200ms;
+  -o-transition: color 200ms;
+  transition: color 200ms;
+}
+.project.snippet.imp1 .post-bg {
+  position: absolute;
+  width: 100%;
+  padding: 0px;
+  top: 0px;
+  -webkit-transition: margin-top 200ms;
+  -moz-transition: margin-top 200ms;
+  -ms-transition: margin-top 200ms;
+  -o-transition: margin-top 200ms;
+  transition: margin-top 200ms;
+}
+.project.snippet.imp1 .post-bg .post-banner {
+  width: 100%;
+}
+.project.snippet.imp1 .post-bg .post-bg-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), transparent);
+}
+.project.snippet.imp1 .post-bg .post-banner-color {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+}
+.project.snippet.imp1 .project.banner-content {
+  position: relative;
+  margin: 0.5em 1em;
+  width: auto;
+  text-shadow: 0px 1px rgba(0,0,0,0.6);
+}
+.project.snippet.imp1 .project.banner-content h1,
+.project.snippet.imp1 .project.banner-content h2 {
+  -webkit-transition: font-size 200ms;
+  -moz-transition: font-size 200ms;
+  -ms-transition: font-size 200ms;
+  -o-transition: font-size 200ms;
+  transition: font-size 200ms;
+}
+.project.snippet.imp1 .project.banner-content .post-header {
+  color: #f5f9fb;
+}
+.project.snippet.imp1 .project.banner-content .proj-content {
+  font-family: 'Open Sans';
+  max-height: 0px;
+  overflow: hidden;
+  padding: 0.1em 0.2em 0.2em 0.5em;
+  -webkit-transition: max-height 200ms;
+  -moz-transition: max-height 200ms;
+  -ms-transition: max-height 200ms;
+  -o-transition: max-height 200ms;
+  transition: max-height 200ms;
+}
+.project.snippet.imp1 .project.banner-content.active h1 {
+  font-size: 2em;
+}
+.project.snippet.imp1 .project.banner-content.active h2 {
+  font-size: 1.5em;
+}
+.project.snippet.imp1 .project.banner-content.active .date {
+  font-size: 1.2em;
+}
+.project.snippet.imp1 h1 {
+  vertical-align: middle;
+}
+.project.snippet.imp1 .date {
+  vertical-align: middle;
+  display: inline;
+  padding-left: 0.6em;
+  white-space: nowrap;
+}
+.project.snippet.imp1 .desc-container .desc-item {
+  white-space: nowrap;
+  padding-right: 1em;
+}
+.project.snippet.imp1 .pin-container {
+  float: right;
+}
+.project.snippet.imp1 .pin-container .external-pin {
+  display: inline;
+  font-size: 1.4em;
+}
+.center {
+  text-align: center;
+}
+.accent,
+.greeting-container .greeting-content .greeting-name,
+.milestone .number {
+  text-shadow: none;
+  color: #1194ce;
+  font-size: 3em;
+  font-weight: 300;
+}
+.hidden {
+  display: none;
+}
+header {
+  padding: 0px 0px;
+  background-color: #1d2326;
+}
+header a {
+  text-decoration: none;
+  color: rgba(245,249,251,0.7);
+}
+header a:visited {
+  color: rgba(245,249,251,0.7);
+}
+header a:hover {
+  color: #f5f9fb;
+}
+header a:active {
+  color: #67a4c2;
+}
+header li {
+  padding: 0px;
+  font-family: 'Exo 2';
+  font-size: 1.4em;
+  text-align: center;
+  text-shadow: 0px -1px rgba(0,0,0,0.2);
+}
+@media (min-width: 560px) {
+  header li {
+    padding: 0px 1em;
+    display: inline;
+  }
+}
+header li.active {
+  background-color: #1194ce;
+}
+header li.active a {
+  color: #f5f9fb;
+}
+#container {
+  overflow: hidden;
+  position: relative;
+  background-color: #14151a;
+  min-height: 100%;
+  padding-bottom: 120px;
+  margin: auto;
+  max-width: 900px;
+}
+#content-container {
+  padding: 0 1em;
+}
+footer {
+  clear: both;
+  width: 100%;
+  display: table;
+  position: relative;
+  z-index: 2;
+  height: 120px;
+  margin-top: -120px;
+  background-color: #1194ce;
+}
+footer #content {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 0.8em;
+  text-align: center;
+  text-shadow: 0px 1px rgba(0,0,0,0.2);
+}
+footer #content .contact {
+  line-height: 3em;
+}
+footer #content .contact div {
+  display: inline;
+  padding: 0px 0.3em;
+}
+footer #content a {
+  border-bottom: 1px dotted #f5f9fb;
+  text-decoration: none;
+}
+footer #content a:hover {
+  border-bottom: 1px solid #f5f9fb;
+}
+footer #content a:active {
+  color: #f5f9fb;
+}
+.column-container {
+  width: 100%;
+  display: table;
+}
+.column {
+  display: table-cell;
+  width: 1%;
+  position: relative;
+}
+@media (max-width: 700px) {
+  .column {
+    display: block;
+    width: 100%;
+  }
+}
+.banner {
+  text-align: center;
+  padding: 1em 0;
+}
+.banner img {
+  width: 100%;
+  height: auto !important;
+}
+.banner-content {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.banner-bg {
+  width: 100%;
+}
+.about.banner {
+  height: 5em;
+}
+.about.banner-content {
+  font-size: 1.1em;
+}
+.about.banner-bg i {
+  font-size: 5em;
+  color: rgba(0,0,0,0);
+  text-shadow: 0px 1px 3px #1d2326, 0px 1px 5px #1d2326, 0px 1px 9px #1d2326, 0px 1px 13px #1d2326, 0px 1px 19px #1d2326;
+}
+.index-banner {
+  width: 100%;
+}
+.index-banner h1 {
+  font-size: 2em;
+  background-color: #0c0d10;
+  text-align: center;
+}
+.index-banner img {
+  width: 100%;
+  height: auto !important;
+}
+.post.banner {
+  overflow: hidden;
+  position: relative;
+}
+.post.banner-content {
+  -webkit-transition: opacity 200ms;
+  -moz-transition: opacity 200ms;
+  -ms-transition: opacity 200ms;
+  -o-transition: opacity 200ms;
+  transition: opacity 200ms;
+}
+@media (min-width: 700px) {
+  .post.banner-content {
+    top: 50%;
+    height: 3em;
+    margin-top: -1.5em;
+  }
+}
+.greeting-container {
+  padding: 0px;
+  margin: 0 -1em;
+}
+.greeting-container .greeting-content {
+  padding-left: 0.7em;
+  z-index: 1;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+}
+.greeting-container .greeting-content .greeting-name {
+  font-size: 4em;
+  font-family: 'Lato';
+}
+.greeting-container .greeting-content .greeting-header {
+  font-family: 'Exo 2';
+  font-size: 1.2em;
+}
+.milestone {
+  text-align: center;
+}
+.milestone .number {
+  font-family: 'Lato';
+}
+.category.one {
+  background-color: #1d1f26;
+}
+.category.two {
+  background-color: #14161b;
+}
+.category.three {
+  background-color: #0e0f13;
+}
+.skill {
+  -webkit-transition: background-color 200ms;
+  -moz-transition: background-color 200ms;
+  -ms-transition: background-color 200ms;
+  -o-transition: background-color 200ms;
+  transition: background-color 200ms;
+}
+.skill:hover {
+  background-color: #0e76a5 !important;
+}
+.skill .values {
+  background-color: #0e76a5;
+}
+.skill .values .example {
+  -webkit-transition: background-color 200ms;
+  -moz-transition: background-color 200ms;
+  -ms-transition: background-color 200ms;
+  -o-transition: background-color 200ms;
+  transition: background-color 200ms;
+}
+.skill .values .example:hover {
+  background-color: #1194ce;
+}
+#exp-container {
+  width: 90%;
+  display: inline-block;
+  overflow: hidden;
+}
+.experience {
+  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  position: absolute;
+  padding: 0px;
+  -webkit-transition: background-color 200ms;
+  -moz-transition: background-color 200ms;
+  -ms-transition: background-color 200ms;
+  -o-transition: background-color 200ms;
+  transition: background-color 200ms;
+}
+.experience .textbox {
+  padding: 0.1em 0.2em 0.2em 0.5em;
+  position: relative;
+  background-color: inherit;
+  z-index: 6;
+}
+.experience .textbox h1,
+.experience .textbox h2,
+.experience .textbox a {
+  display: inline;
+  width: 100%;
+  padding-right: 0.5em;
+  background-color: inherit;
+}
+@media (min-width: 400px) {
+  .experience .textbox h1,
+  .experience .textbox h2,
+  .experience .textbox a {
+    white-space: nowrap;
+  }
+}
+.experience .exp-content {
+  font-family: 'Open Sans';
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: height 200ms;
+  -moz-transition: height 200ms;
+  -ms-transition: height 200ms;
+  -o-transition: height 200ms;
+  transition: height 200ms;
+}
+.experience:hover {
+  background-color: #0e76a5 !important;
+}
+.experience.selected {
+  padding: 0px 1em;
+}
+.experience.one {
+  background-color: #353a47;
+}
+.experience.one.selected:hover {
+  background-color: #353a47 !important;
+}
+.experience.two {
+  background-color: #2b2f39;
+}
+.experience.two.selected:hover {
+  background-color: #2b2f39 !important;
+}
+.experience.three {
+  background-color: #21232c;
+}
+.experience.three.selected:hover {
+  background-color: #21232c !important;
+}
+.track {
+  vertical-align: top;
+  position: relative;
+  display: inline-block;
+  -webkit-transition: width 200ms;
+  -moz-transition: width 200ms;
+  -ms-transition: width 200ms;
+  -o-transition: width 200ms;
+  transition: width 200ms;
+  height: 100%;
+  background-color: #14151a;
+}
+.track.selected {
+  z-index: 100 !important;
+}
+#time-container {
+  float: right;
+  width: 10%;
+  display: inline-block;
+}
+#time-container div {
+  width: 100%;
+  position: absolute;
+}
+#time-container .month {
+  font-family: 'Open Sans';
+  color: #3c3f4e;
+  border-top: 1px solid #515569;
+}
+#time-container .year {
+  color: #7c819a;
+}
