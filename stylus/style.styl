@@ -63,13 +63,14 @@ proj-snip(size)
 	overflow hidden
 
 	width 100%
-	height auto
 
 	.post-bg
 		position absolute
 		width 100%
 		padding 0px
 		top 0px
+
+		transition margin-top quickly
 
 		.post-banner
 			width 100%
@@ -93,7 +94,6 @@ proj-snip(size)
 		text-shadow snippet-text-shadow
 		h1, h2
 			transition font-size quickly
-		transition background-color quickly
 
 		.post-header
 			color text-color
@@ -101,9 +101,10 @@ proj-snip(size)
 		.proj-content
 			font-family font-text
 
-			height 0px
+			max-height 0px
 			overflow hidden
 			padding snippet-padding
+			transition max-height quickly
 
 		&.active
 			h1
