@@ -552,16 +552,14 @@ footer #content a:active {
   background-color: inherit;
   z-index: 6;
 }
-.experience .textbox h1,
 .experience .textbox h2,
 .experience .textbox a {
   display: inline;
   width: 100%;
-  padding-right: 0.5em;
+  padding-right: 0.2em;
   background-color: inherit;
 }
 @media (min-width: 400px) {
-  .experience .textbox h1,
   .experience .textbox h2,
   .experience .textbox a {
     white-space: nowrap;
@@ -569,6 +567,7 @@ footer #content a:active {
 }
 .experience .exp-content {
   font-family: 'Open Sans';
+  margin: 1em;
   height: 0px;
   overflow: hidden;
   -webkit-transition: height 200ms;
