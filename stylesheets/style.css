@@ -153,8 +153,9 @@ ul {
   color: #f5f9fb;
 }
 .project.snippet.imp0 .project.banner-content .proj-content {
+  position: absolute;
   font-family: 'Open Sans';
-  height: 0px;
+  opacity: 0;
   overflow: hidden;
   padding: 0.1em 0.2em 0.2em 0.5em;
 }
@@ -252,8 +253,9 @@ ul {
   color: #f5f9fb;
 }
 .project.snippet.imp1 .project.banner-content .proj-content {
+  position: absolute;
   font-family: 'Open Sans';
-  height: 0px;
+  opacity: 0;
   overflow: hidden;
   padding: 0.1em 0.2em 0.2em 0.5em;
 }

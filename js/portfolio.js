@@ -21,17 +21,24 @@
 		if (banner.attr("open") === "open")
 			return
 		if (transition)
-			bgContainer.transition({"margin-top": -bannerPosition * h}, 200)
+			bgContainer.transition({
+				"margin-top": -bannerPosition * h,
+				"opacity": 1
+			}, 200)
 		else
 			bgContainer.css("margin-top", -bannerPosition * h)
 	};
 
-	window.oldOpenBanner = null
 
 	var banner = $('.project.snippet')
 
+	window.oldOpenBanner = null
+	window.oldBannerHeight = 0
+	window.oldOffset = 1e6
+	window.selfWasOpenLastTime = false
+
 	banner.click(function() {
-		var closeBanner = function(openBanner, newBanner, sameWasOpen) {
+		var closeBanner = function(openBanner, newBanner) {
 			openBanner.removeAttr("open")
 
 			var bgContainer = $(openBanner).find(".post-bg")
@@ -40,35 +47,45 @@
 			var projContainer = $(openBanner).find(".proj-content").parent()
 			projContainer.removeClass("active")
 
-			$(openBanner).find(".proj-content").transition({"height": "0px"}, 200)
+			$(openBanner).find(".proj-content").transition({"opacity": "0"}, 200)
+			$(openBanner).transition({"height": "auto"}, 200)
 		}
 
 		var openBanner = function(closedBanner, bannerOpen) {
 			closedBanner.attr("open", "true")
-			window.oldOpenBanner = closedBanner
 
 			var bgImage = $(closedBanner).find(".post-bg").find("img")
 			var bgHeight = $(bgImage).height()
-			bgImage.parent().transition({"margin-top": "0px"}, 200)
 
 			var projContainer = $(closedBanner).find(".proj-content").parent()
-			$(closedBanner).find(".proj-content").transition({"height": "auto"}, 200)
-			projContainer.addClass("active")
-
-			setTimeout(function() {
-				$('html, body').animate({
-					scrollTop: $(closedBanner).offset().top
-				}, 200)
+			bgImage.parent().transition({
+				"opacity": 0,
+				"margin-top": "0px"
 			}, 200)
+			$(closedBanner).find(".proj-content").transition({"opacity": 1}, 200)
+			projContainer.addClass("active")
+			$(closedBanner).transition({"height": $(window).height()}, 200)
+
+			var offset = (window.oldOffset < $(closedBanner).offset().top && bannerOpen) ? $(window).height() - oldBannerHeight : 0
+
+			$('html, body').animate({
+				scrollTop: $(closedBanner).offset().top - offset
+			}, 200)
+
+			window.oldOpenBanner = closedBanner
+			window.oldBannerHeight = $(closedBanner).height()
+			window.oldOffset = $(closedBanner).offset().top
 		}
 
 		var selfWasOpen = $(this).attr("open") === "open"
 
-		if (oldOpenBanner)
-			closeBanner(oldOpenBanner, $(this), selfWasOpen)
+		// close any open banners (there should only be one)
+		var theOpenBanner = $("[open='open']")
+		if (theOpenBanner.length > 0)
+			closeBanner(theOpenBanner, $(this))
 
 		if (selfWasOpen) return
 
-		openBanner($(this), oldOpenBanner? true : false)
+		openBanner($(this), theOpenBanner.length > 0? true : false)
 	})
 })();
