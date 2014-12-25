@@ -39,11 +39,6 @@
 			projContainer.removeClass("active")
 
 			$(openBanner).find(".proj-content").css({"max-height": "0px"})
-
-			if (sameWasOpen) return
-			$('html, body').animate({
-				scrollTop: $(newBanner).offset().top
-			})
 		}
 
 		var openBanner = function(closedBanner, bannerOpen) {
@@ -58,11 +53,11 @@
 			$(closedBanner).find(".proj-content").css({"max-height": bgHeight})
 			projContainer.addClass("active")
 
-			if (!bannerOpen) {
+			setTimeout(function() {
 				$('html, body').animate({
 					scrollTop: $(closedBanner).offset().top
-				})
-			}
+				}, 200)
+			}, 200)
 		}
 
 		var selfWasOpen = $(this).attr("open") === "open"
