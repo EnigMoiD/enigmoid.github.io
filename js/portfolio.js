@@ -4,24 +4,26 @@
 	bgContainer = $(".post-bg");
 
 	$(bgContainer).find("img").load(function() {
-		posBanner($($(this).parent()));
+		posBanner($($(this).parent()), false);
 	});
 
 	$(window).resize(function() {
 		bgContainer.each(function() {
-			posBanner($(this));
+			posBanner($(this), false);
 		});
 	});
 
-	posBanner = function(bgContainer) {
+	posBanner = function(bgContainer, transition) {
 		var h = bgContainer.children().first().height();
 		var banner = bgContainer.parent();
 		var bannerPosition = bgContainer.attr("bannerPosition");
 
 		if (banner.attr("open") === "open")
 			return
-
-		bgContainer.css("margin-top", -bannerPosition * h)
+		if (transition)
+			bgContainer.transition({"margin-top": -bannerPosition * h}, 200)
+		else
+			bgContainer.css("margin-top", -bannerPosition * h)
 	};
 
 	window.oldOpenBanner = null
@@ -33,12 +35,12 @@
 			openBanner.removeAttr("open")
 
 			var bgContainer = $(openBanner).find(".post-bg")
-			posBanner(bgContainer)
+			posBanner(bgContainer, true)
 
 			var projContainer = $(openBanner).find(".proj-content").parent()
 			projContainer.removeClass("active")
 
-			$(openBanner).find(".proj-content").css({"max-height": "0px"})
+			$(openBanner).find(".proj-content").transition({"height": "0px"}, 200)
 		}
 
 		var openBanner = function(closedBanner, bannerOpen) {
@@ -47,10 +49,10 @@
 
 			var bgImage = $(closedBanner).find(".post-bg").find("img")
 			var bgHeight = $(bgImage).height()
-			bgImage.parent().css("margin-top", "0px")
+			bgImage.parent().transition({"margin-top": "0px"}, 200)
 
 			var projContainer = $(closedBanner).find(".proj-content").parent()
-			$(closedBanner).find(".proj-content").css({"max-height": bgHeight})
+			$(closedBanner).find(".proj-content").transition({"height": "auto"}, 200)
 			projContainer.addClass("active")
 
 			setTimeout(function() {

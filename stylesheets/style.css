@@ -120,11 +120,6 @@ ul {
   width: 100%;
   padding: 0px;
   top: 0px;
-  -webkit-transition: margin-top 200ms;
-  -moz-transition: margin-top 200ms;
-  -ms-transition: margin-top 200ms;
-  -o-transition: margin-top 200ms;
-  transition: margin-top 200ms;
 }
 .project.snippet.imp0 .post-bg .post-banner {
   width: 100%;
@@ -159,14 +154,9 @@ ul {
 }
 .project.snippet.imp0 .project.banner-content .proj-content {
   font-family: 'Open Sans';
-  max-height: 0px;
+  height: 0px;
   overflow: hidden;
   padding: 0.1em 0.2em 0.2em 0.5em;
-  -webkit-transition: max-height 200ms;
-  -moz-transition: max-height 200ms;
-  -ms-transition: max-height 200ms;
-  -o-transition: max-height 200ms;
-  transition: max-height 200ms;
 }
 .project.snippet.imp0 .project.banner-content.active h1 {
   font-size: 2em;
@@ -229,11 +219,6 @@ ul {
   width: 100%;
   padding: 0px;
   top: 0px;
-  -webkit-transition: margin-top 200ms;
-  -moz-transition: margin-top 200ms;
-  -ms-transition: margin-top 200ms;
-  -o-transition: margin-top 200ms;
-  transition: margin-top 200ms;
 }
 .project.snippet.imp1 .post-bg .post-banner {
   width: 100%;
@@ -268,14 +253,9 @@ ul {
 }
 .project.snippet.imp1 .project.banner-content .proj-content {
   font-family: 'Open Sans';
-  max-height: 0px;
+  height: 0px;
   overflow: hidden;
   padding: 0.1em 0.2em 0.2em 0.5em;
-  -webkit-transition: max-height 200ms;
-  -moz-transition: max-height 200ms;
-  -ms-transition: max-height 200ms;
-  -o-transition: max-height 200ms;
-  transition: max-height 200ms;
 }
 .project.snippet.imp1 .project.banner-content.active h1 {
   font-size: 2em;
