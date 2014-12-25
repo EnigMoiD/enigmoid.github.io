@@ -12,7 +12,7 @@
 		<div class="title-container">
 			<h1>{{ post.title }}</h1><h2 class="date">{{ post.date | date: "%B %Y"}}</h2>
 		</div>
-		<div class="desc-container">
+		<div class="desc-container hidden">
 			<h2 class="desc-item"><i class="fa fa-fw fa-user"></i>{{ post.team }}</h2>
 			{% for spec in post.specs %}
 			<h2 class="desc-item"><i class="fa fa-fw fa-{{ spec[0] }}"></i>{% for s in spec[1] %}
@@ -27,6 +27,6 @@
 	</div>
 	<div bannerPosition="{{ post.banner-position }}" class="post-bg">
 		<div class="post-bg-overlay"></div>
-		<img bannerPosition="{{ post.banner-position }}" class="post-banner-color" src="/img/{{ post.short }}/banner.jpg"><img class="post-banner" src="/img/{{ post.short }}/banner.jpg">
+		<img class="post-banner" src="/img/{{ post.short }}/banner.jpg">
 	</div>
 </div>
