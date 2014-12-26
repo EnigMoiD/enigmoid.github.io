@@ -11,7 +11,16 @@
 		bgContainer.each(function() {
 			posBanner($(this), false);
 		});
+
+		var opBanner = isOpenBanner()
+		if (opBanner.length > 0) {
+			opBanner.css({"height": $(window).height()})
+		}
 	});
+
+	isOpenBanner = function() {
+		return $("[open='open']")
+	}
 
 	posBanner = function(bgContainer, transition) {
 		var h = bgContainer.children().first().height();
@@ -80,7 +89,7 @@
 		var selfWasOpen = $(this).attr("open") === "open"
 
 		// close any open banners (there should only be one)
-		var theOpenBanner = $("[open='open']")
+		var theOpenBanner = isOpenBanner()
 		if (theOpenBanner.length > 0)
 			closeBanner(theOpenBanner, $(this))
 
