@@ -34,14 +34,11 @@
 	};
 
 
-	var banner = $('.project.snippet')
+	var banners = $('.project.snippet')
 
 	window.oldOpenBanner = null
-	window.oldBannerHeight = 0
-	window.oldOffset = 1e6
-	window.selfWasOpenLastTime = false
 
-	banner.click(function() {
+	banners.click(function() {
 		var closeBanner = function(openBanner, newBanner) {
 			var bgContainer = $(openBanner).find(".post-bg")
 			var projContainer = $(openBanner).find(".proj-content").parent()
@@ -75,19 +72,14 @@
 			// open the banner
 			$(closedBanner).transition({"height": $(window).height()}, 200)
 
-			// handle the case where a banner below the open one is opened
-			var offset = (window.oldOffset < $(closedBanner).offset().top && bannerOpen) ? $(window).height() - oldBannerHeight : 0
-
 			$('html, body').animate({
-				scrollTop: $(closedBanner).offset().top - offset
+				scrollTop: $(closedBanner).offset().top
 			}, 200, function() {
 				// make modal once the banner is open
 				closedBanner.addClass("open")
 			})
 
 			window.oldOpenBanner = closedBanner
-			window.oldBannerHeight = $(closedBanner).height()
-			window.oldOffset = $(closedBanner).offset().top
 		}
 
 		var selfWasOpen = $(this).hasClass("open")
