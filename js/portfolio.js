@@ -11,15 +11,10 @@
 		bgContainer.each(function() {
 			posBanner($(this), false);
 		});
-
-		var opBanner = isOpenBanner()
-		if (opBanner.length > 0) {
-			opBanner.css({"height": $(window).height()})
-		}
 	});
 
 	isOpenBanner = function() {
-		return $("[open='open']")
+		return $(".open")
 	}
 
 	posBanner = function(bgContainer, transition) {
@@ -27,7 +22,7 @@
 		var banner = bgContainer.parent();
 		var bannerPosition = bgContainer.attr("bannerPosition");
 
-		if (banner.attr("open") === "open")
+		if (banner.hasClass("open"))
 			return
 		if (transition)
 			bgContainer.transition({
@@ -48,45 +43,54 @@
 
 	banner.click(function() {
 		var closeBanner = function(openBanner, newBanner) {
-			openBanner.removeAttr("open")
-
 			var bgContainer = $(openBanner).find(".post-bg")
-			posBanner(bgContainer, true)
-
 			var projContainer = $(openBanner).find(".proj-content").parent()
+			
+			// make it not modal before closing
+			openBanner.removeClass("open")
+			
+			// reappear and reposition the bg image, hide content
+			posBanner(bgContainer, true)
+			$(openBanner).find(".proj-content").transition({"opacity": "0"}, 200)
 			projContainer.removeClass("active")
 
-			$(openBanner).find(".proj-content").transition({"opacity": "0"}, 200)
+			// close the banner
 			$(openBanner).transition({"height": "auto"}, 200)
 		}
 
 		var openBanner = function(closedBanner, bannerOpen) {
-			closedBanner.attr("open", "true")
-
 			var bgImage = $(closedBanner).find(".post-bg").find("img")
 			var bgHeight = $(bgImage).height()
-
 			var projContainer = $(closedBanner).find(".proj-content").parent()
+
+			// disappear the bg image
 			bgImage.parent().transition({
 				"opacity": 0,
 				"margin-top": "0px"
 			}, 200)
+			// make the content visible and the right font size
 			$(closedBanner).find(".proj-content").transition({"opacity": 1}, 200)
 			projContainer.addClass("active")
+
+			// open the banner
 			$(closedBanner).transition({"height": $(window).height()}, 200)
 
+			// handle the case where a banner below the open one is opened
 			var offset = (window.oldOffset < $(closedBanner).offset().top && bannerOpen) ? $(window).height() - oldBannerHeight : 0
 
 			$('html, body').animate({
 				scrollTop: $(closedBanner).offset().top - offset
-			}, 200)
+			}, 200, function() {
+				// make modal once the banner is open
+				closedBanner.addClass("open")
+			})
 
 			window.oldOpenBanner = closedBanner
 			window.oldBannerHeight = $(closedBanner).height()
 			window.oldOffset = $(closedBanner).offset().top
 		}
 
-		var selfWasOpen = $(this).attr("open") === "open"
+		var selfWasOpen = $(this).hasClass("open")
 
 		// close any open banners (there should only be one)
 		var theOpenBanner = isOpenBanner()

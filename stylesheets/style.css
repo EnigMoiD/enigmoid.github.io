@@ -115,6 +115,14 @@ ul {
   -o-transition: color 200ms;
   transition: color 200ms;
 }
+.project.snippet.imp0.open {
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 10000;
+}
 .project.snippet.imp0 .post-bg {
   position: absolute;
   width: 100%;
@@ -214,6 +222,14 @@ ul {
   -ms-transition: color 200ms;
   -o-transition: color 200ms;
   transition: color 200ms;
+}
+.project.snippet.imp1.open {
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 10000;
 }
 .project.snippet.imp1 .post-bg {
   position: absolute;
