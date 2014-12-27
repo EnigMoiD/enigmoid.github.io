@@ -41,6 +41,8 @@
 			var bgContainer = openBanner.find(".post-bg")
 			var projContainer = openBanner.find(".proj-content").parent()
 			var bannerBanner = openBanner.find(".banner")
+			var bContent = openBanner.find(".banner-content")
+			var bContentHeight = bContent.height()+2*parseInt(bContent.css("padding-top"))
 			
 			// make it not modal before closing
 			openBanner.removeClass("open")
@@ -52,8 +54,10 @@
 			$(window).scrollTop(openBanner.offset().top)
 
 			// close the banner
-			openBanner.transition({"height": "auto"}, 200)
 			bannerBanner.transition({"height": "auto"}, 200)
+			openBanner.transition({"height": bContentHeight}, 200, function() {
+				openBanner.css({"height": "auto"})
+			})
 
 			// once it's closed, no longer active
 			openBanner.removeClass("active")
