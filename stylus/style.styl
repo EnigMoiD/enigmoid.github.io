@@ -62,7 +62,15 @@ proj-snip(size)
 	overflow hidden
 
 	width 100%
-	
+
+	.project.banner
+		position relative
+
+	.project-details
+		position absolute
+		left 0
+		right 0
+
 	&.open
 		background-color dark-dark-gray
 		right 0
@@ -72,20 +80,24 @@ proj-snip(size)
 		min-height 100%
 		position fixed
 		z-index 10000
-	
+			
 	&.active
+		h1
+			font-size 2*1em
+		h2
+			font-size 1.5em
+		.date
+			font-size 2*.6em
+			
 		*
 			margin 0 auto
 		
 		.project.banner-content
 			max-width (900 - 2*16) px
+		
+		.project-details
+			max-width (900 - 2*16) px
 			height 100%
-			h1
-				font-size 2*1em
-			h2
-				font-size 1.5em
-			.date
-				font-size 2*.6em
 
 		.post-bg
 			max-width 900px
@@ -94,14 +106,14 @@ proj-snip(size)
 
 	.post-bg
 		position absolute
-		width 100%
-		padding 0px
 		top 0
 		left 0
 		right 0
 
-		.post-banner
-			width 100%
+		width 100%
+
+		padding 0px
+		overflow hidden
 
 		.post-bg-overlay
 			position absolute
@@ -109,11 +121,9 @@ proj-snip(size)
 			height 100%
 			background linear-gradient(rgba(0, 0, 0, .6), transparent)
 
-		.post-banner-color
-			position absolute
+		.post-banner
+			overflow hidden
 			width 100%
-
-			opacity 0
 
 	.project.banner-content
 		position relative
@@ -128,13 +138,12 @@ proj-snip(size)
 		.post-header
 			color text-color
 
-		.proj-content
-			position absolute
-			font-family font-text
+	.proj-content
+		font-family font-text
 
-			opacity 0
-			overflow hidden
-			padding snippet-padding
+		opacity 0
+		overflow hidden
+		padding snippet-padding
 
 	h1
 		vertical-align middle
@@ -350,14 +359,6 @@ footer
 
 // Banner
 
-.banner
-	text-align center
-	padding 1em 0
-
-	img
-		width 100%
-		height auto !important
-
 .banner-content
 	width 100%
 	position absolute
@@ -369,6 +370,8 @@ footer
 // Home banners
 
 .about.banner
+	text-align center
+	padding 1em 0
 	height about-height
 
 .about.banner-content
@@ -441,6 +444,10 @@ footer
 
 .category.three
 	background-color lighten(dark-dark-gray, 1%)
+
+.category.banner
+	padding 1em 0
+	text-align center
 
 .skill
 	transition background-color quickly

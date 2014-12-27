@@ -18,19 +18,17 @@
 	}
 
 	posBanner = function(bgContainer, transition) {
-		var h = bgContainer.children().first().height();
 		var banner = bgContainer.parent();
 		var bannerPosition = bgContainer.attr("bannerPosition");
+		var bgImg = bgContainer.find("img")
+		var h = bgImg.height();
 
 		if (banner.hasClass("open"))
 			return
 		if (transition)
-			bgContainer.transition({
-				"margin-top": -bannerPosition * h,
-				"opacity": 1
-			}, 200)
+			bgImg.transition({"margin-top": -bannerPosition * h}, 200)
 		else
-			bgContainer.css("margin-top", -bannerPosition * h)
+			bgImg.css("margin-top", -bannerPosition * h)
 	};
 
 
@@ -42,40 +40,42 @@
 		var closeBanner = function(openBanner, newBanner) {
 			var bgContainer = $(openBanner).find(".post-bg")
 			var projContainer = $(openBanner).find(".proj-content").parent()
+			var bannerBanner = $(openBanner).find(".banner")
 			
 			// make it not modal before closing
 			openBanner.removeClass("open")
 			
-			// reappear and reposition the bg image, hide content
-			posBanner(bgContainer, true)
+			// hide the content
 			$(openBanner).find(".proj-content").transition({"opacity": "0"}, 200)
-			projContainer.removeClass("active")
 
 			// correct for scrolling that might have occurred
 			$(window).scrollTop($(openBanner).offset().top)
 
 			// close the banner
 			$(openBanner).transition({"height": "auto"}, 200)
+			$(bannerBanner).transition({"height": "auto"}, 200)
+
+			// once it's closed, no longer active
+			openBanner.removeClass("active")
 		}
 
 		var openBanner = function(closedBanner, bannerOpen) {
 			var bgImage = $(closedBanner).find(".post-bg").find("img")
 			var bgHeight = $(bgImage).height()
 			var projContainer = $(closedBanner).find(".proj-content").parent()
-
-			// disappear the bg image
-			bgImage.parent().transition({
-				"opacity": 0,
-				"margin-top": "0px"
-			}, 200)
+			var bannerBanner = $(closedBanner).find(".banner")
+			
+			// make it active to style it before it opens
+			closedBanner.addClass("active")
 
 			// make the content visible and the right font size
 			$(closedBanner).find(".proj-content").transition({"opacity": 1}, 200)
-			projContainer.addClass("active")
 
 			// open the banner
 			$(closedBanner).transition({"height": $(window).height()}, 200)
+			$(bannerBanner).transition({"height": "15em"}, 200)
 
+			// scroll the page to the top of the banner as it opens
 			$('html, body').animate({
 				scrollTop: $(closedBanner).offset().top
 			}, 200, function() {
