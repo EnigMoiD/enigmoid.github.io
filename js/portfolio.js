@@ -51,6 +51,9 @@
 			$(openBanner).find(".proj-content").transition({"opacity": "0"}, 200)
 			projContainer.removeClass("active")
 
+			// correct for scrolling that might have occurred
+			$(window).scrollTop($(openBanner).offset().top)
+
 			// close the banner
 			$(openBanner).transition({"height": "auto"}, 200)
 		}
@@ -65,6 +68,7 @@
 				"opacity": 0,
 				"margin-top": "0px"
 			}, 200)
+
 			// make the content visible and the right font size
 			$(closedBanner).find(".proj-content").transition({"opacity": 1}, 200)
 			projContainer.addClass("active")

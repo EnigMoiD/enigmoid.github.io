@@ -120,6 +120,7 @@ ul {
   top: 0;
   left: 0;
   bottom: 0;
+  min-height: 100%;
   position: fixed;
   z-index: 10000;
 }
@@ -234,6 +235,7 @@ ul {
   top: 0;
   left: 0;
   bottom: 0;
+  min-height: 100%;
   position: fixed;
   z-index: 10000;
 }
