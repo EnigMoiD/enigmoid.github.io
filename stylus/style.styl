@@ -42,7 +42,6 @@ snippet(size)
 	font-family font-text
 	text-shadow snippet-text-shadow
 
-	background-color snippet-color
 	padding snippet-padding
 
 	h1, h2
@@ -65,6 +64,7 @@ proj-snip(size)
 	width 100%
 	
 	&.open
+		background-color dark-dark-gray
 		right 0
 		top 0
 		left 0
@@ -72,12 +72,33 @@ proj-snip(size)
 		min-height 100%
 		position fixed
 		z-index 10000
+	
+	&.active
+		*
+			margin 0 auto
+		
+		.project.banner-content
+			max-width (900 - 2*16) px
+			height 100%
+			h1
+				font-size 2*1em
+			h2
+				font-size 1.5em
+			.date
+				font-size 2*.6em
+
+		.post-bg
+			max-width 900px
+			background-color dim-blue
+			height 100%
 
 	.post-bg
 		position absolute
 		width 100%
 		padding 0px
-		top 0px
+		top 0
+		left 0
+		right 0
 
 		.post-banner
 			width 100%
@@ -98,7 +119,7 @@ proj-snip(size)
 		position relative
 		padding size*.5em 16px
 		width auto
-		max-width (900 - 2*16) px
+		
 		text-shadow snippet-text-shadow
 		
 		h1, h2
@@ -114,17 +135,6 @@ proj-snip(size)
 			opacity 0
 			overflow hidden
 			padding snippet-padding
-
-		&.active
-			height 100%
-			background-color dim-blue
-			margin 0 auto
-			h1
-				font-size 2*1em
-			h2
-				font-size 1.5em
-			.date
-				font-size 2*.6em
 
 	h1
 		vertical-align middle
