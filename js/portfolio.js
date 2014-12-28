@@ -48,14 +48,16 @@
 			openBanner.removeClass("open")
 			
 			// hide the content
-			openBanner.find(".proj-content").transition({"opacity": "0"}, 200)
+			openBanner.find(".proj-content").animate({"opacity": "0"}, 200)
 
 			// correct for scrolling that might have occurred
-			$(window).scrollTop(openBanner.offset().top)
+			// $(window).scrollTop(openBanner.offset().top)
 
 			// close the banner
-			bannerBanner.transition({"height": "auto"}, 200)
-			openBanner.transition({"height": bContentHeight}, 200, function() {
+			bannerBanner.animate({"height": bContentHeight}, 200, function() {
+				openBanner.css({"height": "auto"})
+			})
+			openBanner.animate({"height": bContentHeight}, 200, function() {
 				openBanner.css({"height": "auto"})
 			})
 
@@ -73,11 +75,11 @@
 			closedBanner.addClass("active")
 
 			// make the content visible and the right font size
-			closedBanner.find(".proj-content").transition({"opacity": 1}, 200)
+			closedBanner.find(".proj-content").animate({"opacity": 1}, 200)
 
 			// open the banner
-			closedBanner.transition({"height": $(window).height()}, 200)
-			bannerBanner.transition({"height": "15em"}, 200)
+			closedBanner.animate({"height": $(window).height()}, 200)
+			bannerBanner.animate({"height": "15em"}, 200)
 
 			// scroll the page to the top of the banner as it opens
 			$('html, body').animate({
