@@ -51,7 +51,7 @@
 			openBanner.find(".proj-content").animate({"opacity": "0"}, 200)
 
 			// correct for scrolling that might have occurred
-			// $(window).scrollTop(openBanner.offset().top)
+			$(window).scrollTop(openBanner.offset().top)
 
 			// close the banner
 			bannerBanner.animate({"height": bContentHeight}, 200, function() {
