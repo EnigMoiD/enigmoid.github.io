@@ -34,7 +34,7 @@
 
 	var banners = $('.project.snippet')
 
-	window.oldOpenBanner = null
+	window.oldOpenBannerHeight = null
 
 	banners.click(function() {
 		var closeBanner = function(openBanner, newBanner) {
@@ -42,7 +42,6 @@
 			var projContainer = openBanner.find(".proj-content").parent()
 			var bannerBanner = openBanner.find(".banner")
 			var bContent = openBanner.find(".banner-content")
-			var bContentHeight = bContent.height()+2*parseInt(bContent.css("padding-top"))
 			
 			// make it not modal before closing
 			openBanner.removeClass("open")
@@ -54,10 +53,10 @@
 			$(window).scrollTop(openBanner.offset().top)
 
 			// close the banner
-			bannerBanner.animate({"height": bContentHeight}, 200, function() {
-				openBanner.css({"height": "auto"})
+			bannerBanner.animate({"height": oldOpenBannerHeight}, 200, function() {
+				bannerBanner.css({"height": "auto"})
 			})
-			openBanner.animate({"height": bContentHeight}, 200, function() {
+			openBanner.animate({"height": oldOpenBannerHeight}, 200, function() {
 				openBanner.css({"height": "auto"})
 			})
 
@@ -89,7 +88,7 @@
 				closedBanner.addClass("open")
 			})
 
-			window.oldOpenBanner = closedBanner
+			window.oldOpenBannerHeight = closedBanner.height()
 		}
 
 		var selfWasOpen = $(this).hasClass("open")

@@ -120,6 +120,7 @@ ul {
   position: absolute;
   left: 0;
   right: 0;
+  overflow: scroll;
 }
 .project.snippet.imp0.open {
   background-color: #0c0d10;
@@ -201,6 +202,7 @@ ul {
   opacity: 0;
   overflow: hidden;
   padding: 0.1em 0.2em 0.2em 0.5em;
+  margin-bottom: 15em;
 }
 .project.snippet.imp0 h1 {
   vertical-align: middle;
@@ -255,6 +257,7 @@ ul {
   position: absolute;
   left: 0;
   right: 0;
+  overflow: scroll;
 }
 .project.snippet.imp1.open {
   background-color: #0c0d10;
@@ -336,6 +339,7 @@ ul {
   opacity: 0;
   overflow: hidden;
   padding: 0.1em 0.2em 0.2em 0.5em;
+  margin-bottom: 15em;
 }
 .project.snippet.imp1 h1 {
   vertical-align: middle;
