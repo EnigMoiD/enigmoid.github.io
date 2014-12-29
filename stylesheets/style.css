@@ -121,6 +121,7 @@ ul {
   left: 0;
   right: 0;
   overflow: scroll;
+  background-color: #1d2326;
 }
 .project.snippet.imp0.open {
   background-color: #0c0d10;
@@ -258,6 +259,7 @@ ul {
   left: 0;
   right: 0;
   overflow: scroll;
+  background-color: #1d2326;
 }
 .project.snippet.imp1.open {
   background-color: #0c0d10;
@@ -686,6 +688,7 @@ footer #content a:active {
   color: #7c819a;
 }
 .project-specs {
+  margin: 1em !important;
   position: relative;
 }
 .project-specs .specs-image {
@@ -713,6 +716,9 @@ footer #content a:active {
     min-height: 180px;
     text-align: left;
   }
+}
+.project-specs .specs-content li {
+  padding-top: 1em;
 }
 .box,
 .image-box {
