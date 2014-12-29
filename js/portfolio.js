@@ -78,7 +78,7 @@
 
 			// open the banner
 			closedBanner.animate({"height": $(window).height()}, 200)
-			bannerBanner.animate({"height": "15em"}, 200)
+			bannerBanner.animate({"height": "10em"}, 200)
 
 			// scroll the page to the top of the banner as it opens
 			$('html, body').animate({
