@@ -99,7 +99,7 @@ proj-snip(size)
 			max-width (900 - 2*16) px
 		
 		.project-details
-			max-width (900 - 2*16) px
+			max-width 900px
 			height 100%
 
 		.post-bg
@@ -187,7 +187,7 @@ dim-text = desaturate(lighten(dim-blue, 30%), 30%)
 
 text-color = off-white
 body-bg-color = dark-dark-gray
-inset-color = darken(dark-dark-gray, 10%)
+inset-color = dark-gray
 header-color = dim-blue
 footer-color = accent
 container-color = dark-gray
@@ -233,12 +233,12 @@ body
 	padding 0px
 	margin 0px
 
-h1, h2
+h1, h2, h3
 	font-family font-big-header
 	font-weight 300
 	font-variant small-caps
 
-h3, h4, h5, h6
+h4, h5, h6
 	font-family font-header
 
 img
@@ -553,15 +553,16 @@ footer
 // PROJECT DETAILS
 
 .project-specs
-	margin 1em !important
+	margin 1.5em !important
 	position relative
 	.specs-image
 		@media (min-width: 600px)
 			position absolute
-			top 1em
-			right 1em
+			right 1.5em
+			top 50%
+			transform translateY(-50%)
 			display inline-block
-		height 180px
+		height 200px
 		width auto
 		display block
 		margin-left auto
@@ -575,11 +576,11 @@ footer
 		text-align center
 
 		li
-			padding-top 1em
+			padding .5em
 .box
 	background-color inset-color
 	margin .5em
-	padding 1em
+	padding 1.5em
 	clear both
 	position relative
 .image-box

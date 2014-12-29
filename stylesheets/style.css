@@ -48,12 +48,12 @@ body {
   margin: 0px;
 }
 h1,
-h2 {
+h2,
+h3 {
   font-family: 'Open Sans';
   font-weight: 300;
   font-variant: small-caps;
 }
-h3,
 h4,
 h5,
 h6 {
@@ -149,7 +149,7 @@ ul {
   max-width: 868px;
 }
 .project.snippet.imp0.active .project-details {
-  max-width: 868px;
+  max-width: 900px;
   height: 100%;
 }
 .project.snippet.imp0.active .post-bg {
@@ -287,7 +287,7 @@ ul {
   max-width: 868px;
 }
 .project.snippet.imp1.active .project-details {
-  max-width: 868px;
+  max-width: 900px;
   height: 100%;
 }
 .project.snippet.imp1.active .post-bg {
@@ -688,11 +688,11 @@ footer #content a:active {
   color: #7c819a;
 }
 .project-specs {
-  margin: 1em !important;
+  margin: 1.5em !important;
   position: relative;
 }
 .project-specs .specs-image {
-  height: 180px;
+  height: 200px;
   width: auto;
   display: block;
   margin-left: auto;
@@ -701,8 +701,9 @@ footer #content a:active {
 @media (min-width: 600px) {
   .project-specs .specs-image {
     position: absolute;
-    top: 1em;
-    right: 1em;
+    right: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
     display: inline-block;
   }
 }
@@ -718,13 +719,13 @@ footer #content a:active {
   }
 }
 .project-specs .specs-content li {
-  padding-top: 1em;
+  padding: 0.5em;
 }
 .box,
 .image-box {
-  background-color: #0b0c0e;
+  background-color: #14151a;
   margin: 0.5em;
-  padding: 1em;
+  padding: 1.5em;
   clear: both;
   position: relative;
 }
