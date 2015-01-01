@@ -39,9 +39,9 @@
 			<img nobox class="specs-image" alt="A representative picture of the project" src="/img/{{ post.short }}/project.jpg">
 		</div>
 		<div class="proj-content">
-			<h2 class="post-header">{{ post.header[0] }}</h2>
-			<p>{{ post.header[1] }}</p>
-			<div>{{ post.content }}</div>
+			<h2 class="post-header">{{ post.header[0] | markdownify }}</h2>
+			<p>{{ post.header[1] | markdownify }}</p>
+			<div>{{ post.content | markdownify }}</div>
 		</div>
 	</div>
 </div>
