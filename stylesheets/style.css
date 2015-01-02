@@ -94,7 +94,8 @@ ul {
   padding: 0px;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: auto;
+  margin-bottom: 2em;
 }
 .project.snippet.imp0 h1,
 .project.snippet.imp0 h2 {
@@ -122,7 +123,7 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(0,0,0,0.4), transparent);
+  background: linear-gradient(rgba(0,0,0,0.6), transparent);
   -webkit-transition: height 200ms;
   -moz-transition: height 200ms;
   -ms-transition: height 200ms;
@@ -239,7 +240,8 @@ ul {
   padding: 0px;
   position: relative;
   overflow: hidden;
-  width: 100%;
+  width: auto;
+  margin-bottom: 2em;
 }
 .project.snippet.imp1 h1,
 .project.snippet.imp1 h2 {
@@ -267,7 +269,7 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(rgba(0,0,0,0.4), transparent);
+  background: linear-gradient(rgba(0,0,0,0.6), transparent);
   -webkit-transition: height 200ms;
   -moz-transition: height 200ms;
   -ms-transition: height 200ms;
