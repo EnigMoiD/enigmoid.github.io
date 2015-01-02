@@ -27,7 +27,29 @@ a:hover {
   color: #f5f9fb;
 }
 a:active {
+  color: #67a4c2;
+}
+p a {
+  text-decoration: none;
+  color: #2bb2ed;
+}
+p a:visited {
+  color: #2bb2ed;
+}
+p a:hover {
+  color: #2bb2ed;
+}
+p a:active {
   color: #478eb1;
+}
+p a {
+  border-bottom: 1px solid rgba(245,249,251,0.5);
+}
+p a:hover {
+  border-bottom: 1px solid #1194ce;
+}
+p a:active {
+  text-shadow: 0px -1px #0c0d10;
 }
 html {
   height: 100%;
@@ -67,14 +89,14 @@ ul {
 }
 .snippet {
   font-family: 'Open Sans';
-  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
   padding: 0.1em 0.2em 0.2em 0.5em;
 }
 .snippet h1,
 .snippet h2 {
   font-family: 'Open Sans';
   display: inline;
-  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
 }
 .snippet h1 {
   font-size: 1em;
@@ -89,7 +111,7 @@ ul {
 }
 .project.snippet.imp0 {
   font-family: 'Open Sans';
-  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
   padding: 0.1em 0.2em 0.2em 0.5em;
   padding: 0px;
   position: relative;
@@ -101,7 +123,7 @@ ul {
 .project.snippet.imp0 h2 {
   font-family: 'Open Sans';
   display: inline;
-  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
 }
 .project.snippet.imp0 h1 {
   font-size: 2em;
@@ -189,7 +211,7 @@ ul {
   position: relative;
   padding: 1em 16px;
   width: auto;
-  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
 }
 .project.snippet.imp0 .project.banner-content h1,
 .project.snippet.imp0 .project.banner-content h2 {
@@ -208,6 +230,7 @@ ul {
   overflow: hidden;
   padding: 0 1.5em;
   margin-bottom: 10em;
+  padding-bottom: 1em;
 }
 .project.snippet.imp0 .proj-content h2 {
   display: block;
@@ -235,7 +258,7 @@ ul {
 }
 .project.snippet.imp1 {
   font-family: 'Open Sans';
-  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
   padding: 0.1em 0.2em 0.2em 0.5em;
   padding: 0px;
   position: relative;
@@ -247,7 +270,7 @@ ul {
 .project.snippet.imp1 h2 {
   font-family: 'Open Sans';
   display: inline;
-  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
 }
 .project.snippet.imp1 h1 {
   font-size: 1em;
@@ -335,7 +358,7 @@ ul {
   position: relative;
   padding: 0.5em 16px;
   width: auto;
-  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
 }
 .project.snippet.imp1 .project.banner-content h1,
 .project.snippet.imp1 .project.banner-content h2 {
@@ -354,6 +377,7 @@ ul {
   overflow: hidden;
   padding: 0 1.5em;
   margin-bottom: 10em;
+  padding-bottom: 1em;
 }
 .project.snippet.imp1 .proj-content h2 {
   display: block;
@@ -610,7 +634,7 @@ footer #content a:active {
   overflow: hidden;
 }
 .experience {
-  text-shadow: 0px 1px rgba(0,0,0,0.6);
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
   position: absolute;
   padding: 0px;
   -webkit-transition: background-color 200ms;

@@ -156,6 +156,7 @@ proj-snip(size)
 		overflow hidden
 		padding 0 1.5em
 		margin-bottom 10em
+		padding-bottom 1em
 		
 		h2
 			display block
@@ -205,7 +206,7 @@ container-color = dark-gray
 snippet-color = dark-gray
 
 // Styles
-snippet-text-shadow = 0px 1px rgba(0, 0, 0, .6)
+snippet-text-shadow = 0px 1px rgba(dark-dark-gray, .6)
 
 font-text = 'Open Sans'
 font-header = 'Exo 2'
@@ -223,7 +224,16 @@ snippet-padding = .1em .2em .2em .5em
 
 // Global config
 
-a-color(rgba(text-color, 80%), text-color, darken(text-color, 50%))
+a-color(rgba(text-color, 80%), text-color, darken(text-color, 40%))
+
+p
+	a-color(lighten(accent, 20%), lighten(accent, 20%), darken(text-color, 50%))
+	a
+		border-bottom 1px solid rgba(text-color, 50%)
+		&:hover
+			border-bottom 1px solid accent
+		&:active
+			text-shadow 0px -1px dark-dark-gray
 
 html
 	height 100%
