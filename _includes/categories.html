@@ -30,7 +30,7 @@
 				{
 					value: "{{ value }}",
 					icon: "{{ spec[0] }}",
-					url: "{{ post.url }}",
+					short: "{{ post.short }}",
 					title: "{{ post.title }}"
 				},
 			{% endfor %}
@@ -209,7 +209,7 @@
 				typeContainer.append(valuesContainer)
 				for (var j in entries) {
 					var entry = entries[j]
-					valuesContainer.append('<div class="example"><a href="'+entry.url+'">'+entry.title+'</a></example>')
+					valuesContainer.append('<div class="example"><a href="/portfolio.html#'+entry.short+'">'+entry.title+'</a></example>')
 				}
 				catContainer.append(typeContainer)
 				valuesContainer.hide()
