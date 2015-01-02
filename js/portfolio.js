@@ -94,18 +94,30 @@
 		openBanner($(window.location.hash), false)
 
 	// banner click handling
-	var banners = $('.project.snippet')
-
-	banners.click(function() {
-		var selfWasOpen = $(this).hasClass("open")
+	var handleBannerClick = function(thisBanner) {
+		var selfWasOpen = $(thisBanner).hasClass("open")
 
 		// close any open banners (there should only be one)
 		var theOpenBanner = isOpenBanner()
 		if (theOpenBanner.length > 0)
-			closeBanner(theOpenBanner, $(this))
+			closeBanner(theOpenBanner, $(thisBanner))
 
 		if (selfWasOpen) return
 
-		openBanner($(this), theOpenBanner.length > 0? true : false)
+		openBanner($(thisBanner), theOpenBanner.length > 0? true : false)	
+	}
+
+	window.oldCloseColor = $(".close-button").css("color")
+	$('.project.snippet').click(function() {
+		if ($(this).hasClass("open") && ! $(arguments[0].target).hasClass("close-button") ) {
+			var closeButton = $(this).find(".close-button")
+			closeButton.css({"color": window.accentColor})
+			setTimeout(function() {
+				closeButton.css({"color": window.oldCloseColor})
+			}, 200)
+
+			return
+		}
+		handleBannerClick(this)
 	})
 })()

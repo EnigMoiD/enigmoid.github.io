@@ -40,6 +40,9 @@ transition()
 
 transform()
 	vendor('transform', arguments)
+	
+user-select()
+	vendor('user-select', arguments)
 
 snippet(size)
 	font-family font-text
@@ -110,6 +113,7 @@ proj-snip(size)
 			margin 0 auto
 		
 		.project.banner-content
+			cursor auto
 			max-width (900 - 2*16) px
 		
 		.project-details
@@ -137,6 +141,8 @@ proj-snip(size)
 			width 100%
 
 	.project.banner-content
+		cursor pointer
+		
 		position relative
 		padding size*.5em 16px
 		width auto
@@ -410,8 +416,7 @@ footer
 .about.banner-bg
 	i
 		font-size about-height
-		color rgba(0, 0, 0, 0)
-		text-shadow 0px 1px 3px dim-blue, 0px 1px 5px dim-blue, 0px 1px 9px dim-blue, 0px 1px 13px dim-blue, 0px 1px 19px dim-blue
+		color dim-blue
 
 // Index banners
 
@@ -465,6 +470,9 @@ footer
 
 // SKILLS
 
+#category-container
+	user-select none
+
 .category.one
 	background-color lighten(dark-dark-gray, 8%)
 
@@ -480,11 +488,15 @@ footer
 
 .skill
 	transition background-color quickly
+	h2
+		cursor pointer
 	&:hover
 		background-color darken(accent, 20%) !important
 	.values
 		background-color darken(accent, 20%)
 		.example
+			width 100%
+			display block
 			transition background-color quickly
 			&:hover
 				background-color accent
@@ -579,6 +591,21 @@ footer
 .project-specs
 	margin 1.5em !important
 	position relative
+
+	.close-button
+		transition color quickly
+		
+		text-align center
+		position absolute
+		top .1em
+		left .1em
+		width 30px
+		height 30px
+		color dim-blue
+		text-shadow 0px -1px dark-dark-gray
+
+		cursor pointer
+
 	.specs-image
 		@media (min-width: 600px)
 			position absolute
@@ -597,6 +624,8 @@ footer
 			vertical-align top
 			min-height 180px
 			text-align left
+			padding-top .5em
+			
 		text-align center
 
 		li
