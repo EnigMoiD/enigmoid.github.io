@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Image Filter on the GPU
+title: GPU Image Filter
 
 importance: 0
 
@@ -13,5 +13,8 @@ specs: [
 
 external: [[github, 'https://github.com/madisonmay/posterize']]
 
-header: ['We wrote a parallel program that reduces the color space of an image and smooths the edges.', 'It produces a nice "posterize" effect that generates images like the one in the banner from images like the one in the description. To write this program, we had to break the problem into simple, serial processes that could be performed on individual pixels of an image.']
+header: [
+'We used a GPU parallel programming library to implement a "posterize" image filter.',
+"We used NVIDIA's [CUDA](http://en.wikipedia.org/wiki/CUDA) to interface with the NVIDIA GPUs (graphics processing units) in our laptops. GPUs are comprised of hundreds to thousands of simple, slow CPUs -- enough processors that running one thread per pixel is common to the point of being the norm. Writing the filter was an exercise in C++ in addition to CUDA and parallel programming -- we used OpenCV to read the images and filter a webcam feed in real time. The filter produced the image in the banner from the image in the project description box. We tuned the parameters to get images that we thought looked nice."
+]
 ---
