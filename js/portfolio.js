@@ -46,6 +46,7 @@
 		openBanner.find(".proj-content").animate({"opacity": "0"}, 200)
 
 		// correct for scrolling that might have occurred
+		window.location.hash = ""
 		$(window).scrollTop(openBanner.offset().top)
 
 		// close the banner
@@ -82,15 +83,15 @@
 		}, 200, function() {
 			// make modal once the banner is open
 			closedBanner.addClass("open")
+			window.location.hash = closedBanner.attr("short")
 		})
 
 		window.oldOpenBannerHeight = closedBanner.height()
 	}
 
 	// focusing targeted banner
-	var focusId = window.location.href.split("#")[1]
-	if (focusId)
-		openBanner($("#"+focusId), false)
+	if (window.location.hash)
+		openBanner($(window.location.hash), false)
 
 	// banner click handling
 	var banners = $('.project.snippet')
