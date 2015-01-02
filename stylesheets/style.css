@@ -447,31 +447,34 @@ footer {
   z-index: 2;
   height: 120px;
   margin-top: -120px;
+  font-size: 1.1em;
   background-color: #1194ce;
 }
 footer #content {
+  padding: 2em;
   display: table-cell;
   vertical-align: middle;
   font-size: 0.8em;
+  color: #95d8f6;
   text-align: center;
-  text-shadow: 0px 1px rgba(0,0,0,0.2);
+  text-shadow: 0px -1px #14151a;
 }
 footer #content .contact {
   line-height: 3em;
 }
 footer #content .contact div {
   display: inline;
-  padding: 0px 0.3em;
+  padding: 0.5em;
 }
 footer #content a {
-  border-bottom: 1px dotted #f5f9fb;
-  text-decoration: none;
+  text-shadow: 0px 1px #14151a;
 }
 footer #content a:hover {
-  border-bottom: 1px solid #f5f9fb;
+  color: #f5f9fb;
 }
 footer #content a:active {
   color: #f5f9fb;
+  text-shadow: 0px -1px #14151a;
 }
 .column-container {
   width: 100%;
@@ -551,7 +554,6 @@ footer #content a:active {
   text-align: center;
 }
 .greeting-container .greeting-content .greeting-name {
-  font-size: 4em;
   font-family: 'Lato';
 }
 .greeting-container .greeting-content .greeting-header {
