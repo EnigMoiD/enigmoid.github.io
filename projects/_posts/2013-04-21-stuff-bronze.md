@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Cast Bronze Bells
+title: Bronze Bell Casting
 short: stuff-bronze
 
 importance: 1

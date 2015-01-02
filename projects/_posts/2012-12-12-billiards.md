@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Billiards Modeled and Analyzed
+title: Billiards Simulation
 short: billiards 
 
 importance: 1
