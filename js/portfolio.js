@@ -38,6 +38,7 @@
 		banner.transition({"height": banner.find("img").height()}, 200)
 		banner.find("img").transition({"margin-top": 0}, 200)
 		banner.find(".banner-content").transition({"opacity": 0}, 200)
+		isBannerClosed = false
 	}
 
 	var closeImageBanner = function(banner, setHeight) {
@@ -45,7 +46,8 @@
 			banner.transition({"height": "10em"}, 200)
 		banner.find(".banner-content").transition({"opacity": 1}, 200)
 		posBanner(banner.find(".post-bg"), true)
-		banner.find(".post-bg").removeClass("active")
+		setTimeout(function(){banner.find(".post-bg").removeClass("active")}, 10)
+		isBannerClosed = true
 	}
 
 	$(".project.banner").click(function() {
@@ -58,8 +60,6 @@
 			openImageBanner(banner)
 		else
 			closeImageBanner(banner, true)
-
-		return isBannerClosed = !isBannerClosed;
 	});
 
 	window.oldOpenBannerHeight = null
@@ -142,14 +142,25 @@
 		openBanner($(thisBanner), theOpenBanner.length > 0? true : false)	
 	}
 
+	var entice = function(container) {
+		var closeButton = container.find(".close-button")
+		closeButton.css({"color": window.accentColor})
+		setTimeout(function() {
+			closeButton.css({"color": window.oldCloseColor})
+		}, 200)
+
+		var banner = container.find(".project.banner")
+		banner.transition({"height": "12em"}, 200, "easeInOutCirc", function() {
+			banner.transition({"height": "10em"}, 250, "easeOutBack")
+		})
+	}
+
 	window.oldCloseColor = $(".close-button").css("color")
 	$('.project.snippet').click(function() {
-		if ($(this).hasClass("open") && ! $(arguments[0].target).hasClass("close-button") ) {
-			var closeButton = $(this).find(".close-button")
-			closeButton.css({"color": window.accentColor})
-			setTimeout(function() {
-				closeButton.css({"color": window.oldCloseColor})
-			}, 200)
+		if ($(this).hasClass("open") && ! $(arguments[0].target).hasClass("close-button")) {
+
+			if (!$(this).find(".post-bg").hasClass("active"))
+				entice($(this))
 
 			return
 		}
