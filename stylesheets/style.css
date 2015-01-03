@@ -644,9 +644,8 @@ footer #content a:active {
   background-color: #1194ce;
 }
 #exp-container {
-  width: 90%;
-  display: inline-block;
-  overflow: hidden;
+  position: relative;
+  display: flex;
 }
 .experience {
   text-shadow: 0px 1px rgba(12,13,16,0.6);
@@ -727,22 +726,33 @@ footer #content a:active {
 .track.selected {
   z-index: 100 !important;
 }
+#experience {
+  -webkit-flex: 1 0 auto;
+  -moz-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  -o-flex: 1 0 auto;
+  flex: 1 0 auto;
+  overflow: hidden;
+}
 #time-container {
-  float: right;
-  width: 10%;
-  display: inline-block;
+  -webkit-flex: 0 1 6em;
+  -moz-flex: 0 1 6em;
+  -ms-flex: 0 1 6em;
+  -o-flex: 0 1 6em;
+  flex: 0 1 6em;
 }
 #time-container div {
   width: 100%;
   position: absolute;
 }
 #time-container .month {
+  padding-left: 0.5em;
   font-family: 'Open Sans';
-  color: #3c3f4e;
-  border-top: 1px solid #515569;
+  color: #515569;
+  border-top: 1px solid #7c819a;
 }
 #time-container .year {
-  color: #7c819a;
+  color: #b0b3c2;
 }
 .project-specs {
   margin: 1.5em !important;

@@ -43,6 +43,12 @@ transform()
 	
 user-select()
 	vendor('user-select', arguments)
+	
+flexbox()
+	vendor('flexbox', arguments)
+	
+flex()
+	vendor('flex', arguments)
 
 snippet(size)
 	font-family font-text
@@ -504,9 +510,8 @@ footer
 // EXPERIENCE
 
 #exp-container
-	width 90%
-	display inline-block
-	overflow hidden
+	position relative
+	display flex
 
 .experience
 	text-shadow snippet-text-shadow
@@ -569,22 +574,25 @@ footer
 .track.selected
 	z-index 100 !important
 
+#experience
+	flex 1 0 auto
+	overflow hidden
+	
 #time-container
-	float right
-	width 10%
-	display inline-block
+	flex 0 1 6em
 
 	div
 		width 100%
 		position absolute
 
 	.month
+		padding-left .5em
 		font-family font-big-header
-		color lighten(container-color, 20%)
-		border-top 1px solid lighten(container-color, 30%)
+		color lighten(container-color, 30%)
+		border-top 1px solid lighten(container-color, 50%)
 
 	.year
-		color lighten(container-color, 50%)
+		color lighten(container-color, 70%)
 
 // PROJECT DETAILS
 

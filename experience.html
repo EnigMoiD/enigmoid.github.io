@@ -4,8 +4,11 @@ layout: default
 active: experience
 ---
 <div id="exp-container"><script type="text/javascript" src="/js/experience.js"></script>
+<div id="experience">
 	{% for track in site.data.tracks %}<div class="track" track="{{track}}" style="width: {{ 100.0 | divided_by: forloop.length }}%">{% if forloop.last %}{% assign len = forloop.length %}{% endif %}
 		{% for post in site.categories.experience %}{% if post.track == track %}{% include experience-snippet.html %}{% endif %}{% endfor %}
 	</div>{% endfor %}
 	<script type="text/javascript">window.trackWidth="{{ 100.0 | divided_by: len }}%"</script>
-</div><h3 id="time-container"></div>
+</div>
+<div id="time-container"></div>
+</div>

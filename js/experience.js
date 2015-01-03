@@ -112,7 +112,7 @@
 		}
 
 		function horizOffsetTitles() {
-			var rightBound = elRect($("#exp-container")).x2
+			var rightBound = elRect($("#experience")).x2
 
 			var offset
 			$(".textbox").each(function() {
@@ -132,35 +132,11 @@
 		}
 
 		function hideTimeContainer() {
-			var elsProps = [
-				{
-					el: timeContainer,
-					props: ["height", "top", "width", "background-color"]
-				},
-				{
-					el: expContainer,
-					props: ["height", "top", "width", "background-color"]
-				}
-			]
-			window.setTransition(true, elsProps)
-			$(timeContainer).css("width", "0%")
-			$(expContainer).css("width", "100%")
+			$(expContainer).transition({"width": "100%"}, 200)
 		}
 
 		function showTimeContainer() {
-			var elsProps = [
-				{
-					el: timeContainer,
-					props: ["width", "background-color"]
-				},
-				{
-					el: expContainer,
-					props: ["width", "background-color"]
-				}
-			]
-			$(timeContainer).css("width", "10%")
-			$(expContainer).css("width", "90%")
-			window.setTransition(true, elsProps)
+			$(expContainer).transition({"width": "auto"}, 200)
 		}
 
 		var experiences = $('.experience')
@@ -181,10 +157,12 @@
 				top: 2*(today-dates.end)+"px"
 			})
 		})
-		window.expContainer = $("#exp-container")
+		window.experience = $("#exp-container")
+		window.expContainer = $("#experience")
 		window.timeContainer = $("#time-container")
 
 		$("#container").css("height", maxOffset+"px")
+		experience.css("height", maxOffset+"px")
 		expContainer.css("height", maxOffset+"px")
 		timeContainer.css("height", maxOffset+"px")
 
@@ -248,6 +226,7 @@
 
 				var thisTop, thisHeight, i = 0
 
+				hideTimeContainer()
 				var selfChildren = self.children()
 				selfChildren.each(function() {
 					$(this).children().first().css({
@@ -267,7 +246,6 @@
 					$content.css("height", thisHeight)	
 
 					setTransition(true, [{el:$(this), props:["height", "top", "width", "background-color"]}])
-					hideTimeContainer()
 					$(this).css({
 						top: thisTop,
 						height: thisHeight
