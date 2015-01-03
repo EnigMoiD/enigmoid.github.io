@@ -183,7 +183,6 @@ ul {
   margin: 0 auto;
 }
 .project.snippet.imp0.active .project.banner-content {
-  cursor: auto;
   max-width: 868px;
 }
 .project.snippet.imp0.active .project-details {
@@ -196,6 +195,7 @@ ul {
   height: 100%;
 }
 .project.snippet.imp0 .post-bg {
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
@@ -332,7 +332,6 @@ ul {
   margin: 0 auto;
 }
 .project.snippet.imp1.active .project.banner-content {
-  cursor: auto;
   max-width: 868px;
 }
 .project.snippet.imp1.active .project-details {
@@ -345,6 +344,7 @@ ul {
   height: 100%;
 }
 .project.snippet.imp1 .post-bg {
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
@@ -773,6 +773,17 @@ footer #content a:active {
   color: #1d2326;
   text-shadow: 0px -1px #0c0d10;
   cursor: pointer;
+}
+.project-specs .close-button:hover {
+  color: #1194ce !important;
+}
+.project-specs .close-button:active {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -ms-transition: none;
+  -o-transition: none;
+  transition: none;
+  color: #084a67 !important;
 }
 .project-specs .specs-image {
   height: 200px;

@@ -31,6 +31,37 @@
 			bgImg.css("margin-top", -bannerPosition * h)
 	}
 
+	window.isBannerClosed = true
+
+	var openImageBanner = function(banner) {
+		banner.find(".post-bg").addClass("active")
+		banner.transition({"height": banner.find("img").height()}, 200)
+		banner.find("img").transition({"margin-top": 0}, 200)
+		banner.find(".banner-content").transition({"opacity": 0}, 200)
+	}
+
+	var closeImageBanner = function(banner, setHeight) {
+		if (setHeight)
+			banner.transition({"height": "10em"}, 200)
+		banner.find(".banner-content").transition({"opacity": 1}, 200)
+		posBanner(banner.find(".post-bg"), true)
+		banner.find(".post-bg").removeClass("active")
+	}
+
+	$(".project.banner").click(function() {
+		var banner = $(this)
+
+		if (!banner.parent().hasClass("open"))
+			return
+
+		if (isBannerClosed)
+			openImageBanner(banner)
+		else
+			closeImageBanner(banner, true)
+
+		return isBannerClosed = !isBannerClosed;
+	});
+
 	window.oldOpenBannerHeight = null
 
 	var closeBanner = function(openBanner, newBanner) {
@@ -42,6 +73,10 @@
 		// make it not modal before closing
 		openBanner.removeClass("open")
 		
+		// close the image if it's open
+		if (bgContainer.hasClass("active"))
+			closeImageBanner(bannerBanner, false)
+
 		// hide the content
 		openBanner.find(".proj-content").animate({"opacity": "0"}, 200)
 

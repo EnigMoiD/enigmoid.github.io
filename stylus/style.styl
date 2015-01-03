@@ -119,7 +119,6 @@ proj-snip(size)
 			margin 0 auto
 		
 		.project.banner-content
-			cursor auto
 			max-width (900 - 2*16) px
 		
 		.project-details
@@ -132,6 +131,8 @@ proj-snip(size)
 			height 100%
 
 	.post-bg
+		cursor pointer
+		
 		position absolute
 		top 0
 		left 0
@@ -611,6 +612,13 @@ footer
 		height 30px
 		color dim-blue
 		text-shadow 0px -1px dark-dark-gray
+
+		&:hover
+			color accent !important
+		
+		&:active
+			transition none
+			color darken(accent, 50%) !important
 
 		cursor pointer
 
