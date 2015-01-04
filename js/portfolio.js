@@ -13,8 +13,12 @@
 		})
 	})
 
-	var isOpenBanner = function() {
+	var theOpenBanner = function() {
 		return $(".open")
+	}
+
+	var isOpenBanner = function() {
+		return theOpenBanner().length > 0
 	}
 
 	var posBanner = function(bgContainer, transition) {
@@ -132,8 +136,8 @@
 	window.onpopstate = function(e) {
 		if (window.location.hash)
 			handleBannerClick(window.location.hash.substring(1))
-		if (e.state === "close" && isOpenBanner().length > 0)
-			handleBannerClick(isOpenBanner().attr("short"))
+		if (e.state === "close" && isOpenBanner())
+			handleBannerClick(theOpenBanner().attr("short"))
 	}
 
 	// banner click handling
@@ -142,13 +146,12 @@
 		var selfWasOpen = $(thisBanner).hasClass("open")
 
 		// close any open banners (there should only be one)
-		var theOpenBanner = isOpenBanner()
-		if (theOpenBanner.length > 0)
-			closeBanner(theOpenBanner, $(thisBanner))
+		if (isOpenBanner())
+			closeBanner(theOpenBanner(), $(thisBanner))
 
 		if (selfWasOpen) return
 
-		openBanner($(thisBanner), theOpenBanner.length > 0? true : false)	
+		openBanner($(thisBanner), isOpenBanner()? true : false)	
 	}
 
 	var entice = function(container) {
