@@ -3,6 +3,11 @@
 		<h2 class="title">{{ post.title }}</h2><br><div class="sub">{{ post.sub }}</div><a href="{{ post.where[1] }}">{{ post.where[0] }}</a>
 	</div>
 	<div class="exp-content">
-		{{ post.content | markdownify }}
+		{{ post.content }}
+		{% if post.works %}
+			{% for work in post.works %}
+				{% include work.html %}
+			{% endfor %}
+		{% endif %}
 	</div>
 </div>

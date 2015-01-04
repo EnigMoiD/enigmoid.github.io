@@ -652,6 +652,7 @@ footer #content a:active {
   text-shadow: 0px 1px rgba(12,13,16,0.6);
   position: absolute;
   padding: 0px;
+  width: 100%;
   -webkit-transition: background-color 200ms;
   -moz-transition: background-color 200ms;
   -ms-transition: background-color 200ms;
@@ -711,6 +712,10 @@ footer #content a:active {
 }
 .experience.three.selected:hover {
   background-color: #21232c !important;
+}
+.work .top *,
+.work .bottom * {
+  display: inline;
 }
 .track {
   vertical-align: top;
