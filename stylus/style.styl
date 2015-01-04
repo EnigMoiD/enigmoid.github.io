@@ -523,6 +523,9 @@ footer
 
 	transition background-color quickly
 
+	&.selected
+		overflow scroll
+
 	.textbox
 		padding snippet-padding
 		position relative
@@ -551,18 +554,22 @@ footer
 	&.selected
 		padding 0px 1em
 
-	&.one
+	&.exp1
 		background-color lighten(dark-dark-gray, 20%)
 		&.selected:hover
 				background-color lighten(dark-dark-gray, 20%) !important
-	&.two
+	&.exp2
 		background-color lighten(dark-dark-gray, 15%)
 		&.selected:hover
 				background-color lighten(dark-dark-gray, 15%) !important
-	&.three
+	&.exp3
 		background-color lighten(dark-dark-gray, 10%)
 		&.selected:hover
 				background-color lighten(dark-dark-gray, 10%) !important
+	&.exp4
+		background-color lighten(dark-dark-gray, 5%)
+		&.selected:hover
+				background-color lighten(dark-dark-gray, 5%) !important
 
 // musical work styling
 .work

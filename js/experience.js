@@ -243,7 +243,7 @@
 					thisHeight = maxOffset/selfChildren.length
 
 					var $content = self.find('.exp-content')
-					$content.css("height", thisHeight)	
+					$content.css("height", "auto")	
 
 					setTransition(true, [{el:$(this), props:["height", "top", "width", "background-color"]}])
 					$(this).css({

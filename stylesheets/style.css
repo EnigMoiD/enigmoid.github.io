@@ -659,6 +659,9 @@ footer #content a:active {
   -o-transition: background-color 200ms;
   transition: background-color 200ms;
 }
+.experience.selected {
+  overflow: scroll;
+}
 .experience .textbox {
   padding: 0.1em 0.2em 0.2em 0.5em;
   position: relative;
@@ -695,23 +698,29 @@ footer #content a:active {
 .experience.selected {
   padding: 0px 1em;
 }
-.experience.one {
+.experience.exp1 {
   background-color: #353a47;
 }
-.experience.one.selected:hover {
+.experience.exp1.selected:hover {
   background-color: #353a47 !important;
 }
-.experience.two {
+.experience.exp2 {
   background-color: #2b2f39;
 }
-.experience.two.selected:hover {
+.experience.exp2.selected:hover {
   background-color: #2b2f39 !important;
 }
-.experience.three {
+.experience.exp3 {
   background-color: #21232c;
 }
-.experience.three.selected:hover {
+.experience.exp3.selected:hover {
   background-color: #21232c !important;
+}
+.experience.exp4 {
+  background-color: #16181e;
+}
+.experience.exp4.selected:hover {
+  background-color: #16181e !important;
 }
 .work .top *,
 .work .bottom * {
