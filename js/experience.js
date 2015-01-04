@@ -197,6 +197,8 @@
 		window.oldExpCss = {}
 
 		tracks.click(function() {
+			if ($(arguments[0].target).is("a"))
+				return
 			var self = $(this)
 			// Closing a track
 			if (openTrack === true) {
@@ -256,6 +258,14 @@
 
 				openTrack = true
 			}
+		})
+
+		// Color snippets based on age
+		tracks.each(function(i, track) {
+			$(track).children().each(function(j, child) {
+				var color = $(child).css("background-color")
+				$(child).css({"background-color": darken(color, j/8.0)})
+			})
 		})
 
 		// Sidebar setup

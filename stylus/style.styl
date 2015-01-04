@@ -548,28 +548,22 @@ footer
 		overflow hidden
 		transition height quickly
 
-	&:hover
-		background-color darken(accent, 20%) !important
+	&:not(.selected)
+		cursor pointer
+		&:hover
+			background-color darken(accent, 20%) !important
 
 	&.selected
 		padding 0px 1em
 
 	&.exp1
-		background-color lighten(dark-dark-gray, 20%)
-		&.selected:hover
-				background-color lighten(dark-dark-gray, 20%) !important
+		background-color lighten(dark-dark-gray, 30%)
 	&.exp2
-		background-color lighten(dark-dark-gray, 15%)
-		&.selected:hover
-				background-color lighten(dark-dark-gray, 15%) !important
+		background-color lighten(dark-dark-gray, 25%)
 	&.exp3
-		background-color lighten(dark-dark-gray, 10%)
-		&.selected:hover
-				background-color lighten(dark-dark-gray, 10%) !important
+		background-color lighten(dark-dark-gray, 20%)
 	&.exp4
-		background-color lighten(dark-dark-gray, 5%)
-		&.selected:hover
-				background-color lighten(dark-dark-gray, 5%) !important
+		background-color lighten(dark-dark-gray, 15%)
 
 // musical work styling
 .work

@@ -5,6 +5,28 @@
 		return "rgba"+rgb.slice(3, rgb.length).slice(0, -2)+", "+a+")"
 	}
 
+	window.rgbvalues = function(rgb) {
+		var rgbs = rgb.split("(")[1].split(",")
+		return _.map(rgbs, function(val) {
+			return parseInt(val)
+		})
+	}
+
+	window.makergb = function(vals) {
+		return "rgb("+vals[0]+", "+vals[1]+", "+vals[2]+")"
+	}
+
+	window.darken = function(rgb, factor) {
+		if (factor < 0 || factor > 1)
+			return console.error("Darkening factor must be between 0 and 1.")
+		
+		var values = rgbvalues(rgb)
+
+		return makergb(_.map(values, function(n) {
+			return n*(1-factor) | 0
+		}))
+	}
+
 	window.whichTransitionEvent = function() {
 		var t;
 		var el = document.createElement('fakeelement');

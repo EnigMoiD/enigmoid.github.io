@@ -692,35 +692,26 @@ footer #content a:active {
   -o-transition: height 200ms;
   transition: height 200ms;
 }
-.experience:hover {
+.experience:not(.selected) {
+  cursor: pointer;
+}
+.experience:not(.selected):hover {
   background-color: #0e76a5 !important;
 }
 .experience.selected {
   padding: 0px 1em;
 }
 .experience.exp1 {
-  background-color: #353a47;
-}
-.experience.exp1.selected:hover {
-  background-color: #353a47 !important;
+  background-color: #4a5063;
 }
 .experience.exp2 {
-  background-color: #2b2f39;
-}
-.experience.exp2.selected:hover {
-  background-color: #2b2f39 !important;
+  background-color: #404555;
 }
 .experience.exp3 {
-  background-color: #21232c;
-}
-.experience.exp3.selected:hover {
-  background-color: #21232c !important;
+  background-color: #353a47;
 }
 .experience.exp4 {
-  background-color: #16181e;
-}
-.experience.exp4.selected:hover {
-  background-color: #16181e !important;
+  background-color: #2b2f39;
 }
 .work .top *,
 .work .bottom * {
