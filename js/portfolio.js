@@ -81,7 +81,7 @@
 		openBanner.find(".proj-content").animate({"opacity": "0"}, 200)
 
 		// correct for scrolling that might have occurred
-		window.location.hash = ""
+		window.history.pushState("close", "", window.location.href.split("#")[0])
 		$(window).scrollTop(openBanner.offset().top)
 
 		// close the banner
@@ -113,12 +113,13 @@
 		bannerBanner.animate({"height": "10em"}, 200)
 
 		// scroll the page to the top of the banner as it opens
-		$('html, body').animate({
+		$('body').animate({
 			scrollTop: closedBanner.offset().top
 		}, 200, function() {
 			// make modal once the banner is open
 			closedBanner.addClass("open")
-			window.location.hash = closedBanner.attr("short")
+			if (!window.location.hash)
+				window.history.pushState("open", "", window.location.href+"#"+closedBanner.attr("short"))
 		})
 
 		window.oldOpenBannerHeight = closedBanner.height()
@@ -128,8 +129,16 @@
 	if (window.location.hash)
 		openBanner($(window.location.hash), false)
 
+	window.onpopstate = function(e) {
+		if (window.location.hash)
+			handleBannerClick(window.location.hash.substring(1))
+		if (e.state === "close" && isOpenBanner().length > 0)
+			handleBannerClick(isOpenBanner().attr("short"))
+	}
+
 	// banner click handling
-	var handleBannerClick = function(thisBanner) {
+	var handleBannerClick = function(entry) {
+		var thisBanner = $("[short="+entry+"]")
 		var selfWasOpen = $(thisBanner).hasClass("open")
 
 		// close any open banners (there should only be one)
@@ -157,13 +166,17 @@
 
 	window.oldCloseColor = $(".close-button").css("color")
 	$('.project.snippet').click(function() {
-		if ($(this).hasClass("open") && ! $(arguments[0].target).hasClass("close-button")) {
+		var clickedEl = $(arguments[0].target)
+		if (clickedEl.is("i") && ! clickedEl.hasClass("close-button"))
+			return
+		var banner = $(this)
+		if (banner.hasClass("open") && ! clickedEl.hasClass("close-button")) {
 
-			if (!$(this).find(".post-bg").hasClass("active"))
-				entice($(this))
+			if (!banner.find(".post-bg").hasClass("active"))
+				entice(banner)
 
 			return
 		}
-		handleBannerClick(this)
+		handleBannerClick(banner.attr("short"))
 	})
 })()
