@@ -12,7 +12,7 @@ team: 5
 
 header: [
 "We used a semester of Computer Architecture to turn an FPGA into a piano.",
-"An [FPGA](http://en.wikipedia.org/wiki/FPGA) (Field-Programmable Gate Array) is, as the name suggests, a large collection of logic gates that can be reconfigured on the fly. FPGAs are used in applications that require extremely low latency, as once they are programmed, they esentially _are_ the specified digital circuit. Our application did not require low latency, but writing the [Verilog HDL](http://en.wikipedia.org/wiki/Verilog) (hardware description language) code to divide the clock down to audible frequencies and interfacing with the onboard switches and LEDs was still a valuable exercise in FPGA development."
+"An [FPGA](http://en.wikipedia.org/wiki/FPGA) (Field-Programmable Gate Array) is, as the name suggests, a large collection of logic gates that can be reconfigured on the fly. FPGAs are used in applications that require extremely low latency, as once they are programmed, they essentially _are_ the specified digital circuit. Our application did not require low latency, but writing the [Verilog HDL](http://en.wikipedia.org/wiki/Verilog) (hardware description language) code to divide the clock down to audible frequencies and interfacing with the onboard switches and LEDs was still a valuable exercise in FPGA development."
 ]
 
 specs: [
