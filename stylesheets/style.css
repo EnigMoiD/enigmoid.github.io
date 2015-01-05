@@ -49,7 +49,7 @@ p a:hover {
   border-bottom: 1px solid #1194ce;
 }
 p a:active {
-  text-shadow: 0px -1px #0c0d10;
+  text-shadow: 0px -1px rgba(12,13,16,0.6);
 }
 html {
   height: 100%;
@@ -487,7 +487,7 @@ footer #content {
   font-size: 0.8em;
   color: #95d8f6;
   text-align: center;
-  text-shadow: 0px -1px #14151a;
+  text-shadow: 0px -1px rgba(12,13,16,0.6);
 }
 footer #content .contact {
   line-height: 3em;
@@ -497,14 +497,14 @@ footer #content .contact div {
   padding: 0.5em;
 }
 footer #content a {
-  text-shadow: 0px 1px #14151a;
+  text-shadow: 0px 1px rgba(12,13,16,0.6);
 }
 footer #content a:hover {
   color: #f5f9fb;
 }
 footer #content a:active {
   color: #f5f9fb;
-  text-shadow: 0px -1px #14151a;
+  text-shadow: 0px -1px rgba(12,13,16,0.6);
 }
 .column-container {
   width: 100%;
@@ -713,8 +713,7 @@ footer #content a:active {
   background-color: #2b2f39;
 }
 .work {
-  margin-top: 1em;
-  padding: 1em;
+  margin: 16px 32px;
   background-color: #1194ce;
 }
 .work .top *,
@@ -723,7 +722,17 @@ footer #content a:active {
 }
 .work .top span,
 .work .bottom span {
-  text-shadow: 0 -1px #0c0d10;
+  text-shadow: 0px -1px rgba(12,13,16,0.6);
+}
+.work .bottom {
+  padding: 0px 16px 16px 16px;
+}
+.work .top {
+  padding: 16px 16px 0px 0px;
+}
+.work .composer {
+  padding: 0px 16px 0px 16px;
+  background-color: rgba(12,13,16,0.2);
 }
 .track {
   vertical-align: top;
@@ -785,7 +794,7 @@ footer #content a:active {
   width: 30px;
   height: 30px;
   color: #576871;
-  text-shadow: 0px -1px #0c0d10;
+  text-shadow: 0px -1px rgba(12,13,16,0.6);
   cursor: pointer;
 }
 .project-specs .close-button:hover {

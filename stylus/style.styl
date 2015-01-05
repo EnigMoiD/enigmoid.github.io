@@ -52,14 +52,14 @@ flex()
 
 snippet(size)
 	font-family font-text
-	text-shadow snippet-text-shadow
+	text-shadow outset-shadow
 
 	padding snippet-padding
 
 	h1, h2
 		font-family font-big-header
 		display inline
-		text-shadow snippet-text-shadow
+		text-shadow outset-shadow
 
 	h1
 		font-size size * 1em
@@ -154,7 +154,7 @@ proj-snip(size)
 		padding size*.5em 16px
 		width auto
 		
-		text-shadow snippet-text-shadow
+		text-shadow outset-shadow
 		
 		h1, h2
 			transition font-size quickly
@@ -219,7 +219,8 @@ container-color = dark-gray
 snippet-color = dark-gray
 
 // Styles
-snippet-text-shadow = 0px 1px rgba(dark-dark-gray, .6)
+outset-shadow = 0px 1px rgba(dark-dark-gray, .6)
+inset-shadow = 0px -1px rgba(dark-dark-gray, .6)
 
 font-text = 'Open Sans'
 font-header = 'Exo 2'
@@ -246,7 +247,7 @@ p
 		&:hover
 			border-bottom 1px solid accent
 		&:active
-			text-shadow 0px -1px dark-dark-gray
+			text-shadow inset-shadow
 
 html
 	height 100%
@@ -374,14 +375,14 @@ footer
 		color lighten(accent, 60%)
 
 		text-align center
-		text-shadow 0px -1px dark-gray
+		text-shadow inset-shadow
 		a
-			text-shadow 0px 1px dark-gray
+			text-shadow outset-shadow
 			&:hover
 				color text-color
 			&:active
 				color text-color
-				text-shadow 0px -1px dark-gray
+				text-shadow inset-shadow
 
 	background-color footer-color
 
@@ -516,7 +517,7 @@ footer
 	display flex
 
 .experience
-	text-shadow snippet-text-shadow
+	text-shadow outset-shadow
 	position absolute
 	padding 0px
 	width 100%
@@ -566,16 +567,22 @@ footer
 
 // musical work styling
 .work
-	margin-top 1em
-	padding 1em
+	margin 16px 32px
 	background-color accent
 	.top, .bottom
 		*
 			display inline
 		span
-			text-shadow 0 -1px dark-dark-gray
+			text-shadow inset-shadow
 
-	// .composer
+	.bottom
+		padding 0px 16px 16px 16px
+	.top
+		padding 16px 16px 0px 0px
+		
+	.composer
+		padding 0px 16px 0px 16px
+		background-color rgba(dark-dark-gray, .2)
 
 	// .name
 		
@@ -634,7 +641,7 @@ footer
 		width 30px
 		height 30px
 		color lighten(dim-blue, 30%)
-		text-shadow 0px -1px dark-dark-gray
+		text-shadow inset-shadow
 
 		&:hover
 			color accent !important
