@@ -165,7 +165,7 @@
 
 		var banner = container.find(".project.banner")
 		banner.velocity({"height": "12em"}, 200, "easeInOutCirc", function() {
-			banner.transition({"height": "10em"}, 250, "easeOutBack")
+			banner.animate({"height": "10em"}, 250, "easeOutBack")
 		})
 	}
 
