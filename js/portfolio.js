@@ -82,17 +82,17 @@
 			closeImageBanner(bannerBanner, false)
 
 		// hide the content
-		openBanner.find(".proj-content").animate({"opacity": "0"}, 200)
+		openBanner.find(".proj-content").velocity({"opacity": "0"}, 200)
 
 		// correct for scrolling that might have occurred
 		window.history.pushState("close", "", window.location.href.split("#")[0])
 		$(window).scrollTop(openBanner.offset().top)
 
 		// close the banner
-		bannerBanner.animate({"height": oldOpenBannerHeight}, 200, function() {
+		bannerBanner.velocity({"height": oldOpenBannerHeight}, 200, function() {
 			bannerBanner.css({"height": "auto"})
 		})
-		openBanner.animate({"height": oldOpenBannerHeight}, 200, function() {
+		openBanner.velocity({"height": oldOpenBannerHeight}, 200, function() {
 			openBanner.css({"height": "auto"})
 		})
 
@@ -110,11 +110,11 @@
 		closedBanner.addClass("active")
 
 		// make the content visible and the right font size
-		closedBanner.find(".proj-content").animate({"opacity": 1}, 200)
+		closedBanner.find(".proj-content").velocity({"opacity": 1}, 200)
 
 		// open the banner
-		closedBanner.animate({"height": $(window).height()}, 200)
-		bannerBanner.animate({"height": "10em"}, 200)
+		closedBanner.velocity({"height": $(window).height()}, 200)
+		bannerBanner.velocity({"height": "10em"}, 200)
 
 		// scroll the page to the top of the banner as it opens
 		$('body').animate({
