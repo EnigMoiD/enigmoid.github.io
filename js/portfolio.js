@@ -30,7 +30,7 @@
 		if (banner.hasClass("open"))
 			return
 		if (transition)
-			bgImg.transition({"margin-top": -bannerPosition * h}, 200)
+			bgImg.velocity({"margin-top": -bannerPosition * h}, 200)
 		else
 			bgImg.css("margin-top", -bannerPosition * h)
 	}
@@ -39,16 +39,16 @@
 
 	var openImageBanner = function(banner) {
 		banner.find(".post-bg").addClass("active")
-		banner.transition({"height": banner.find("img").height()}, 200)
-		banner.find("img").transition({"margin-top": 0}, 200)
-		banner.find(".banner-content").transition({"opacity": 0}, 200)
+		banner.velocity({"height": banner.find("img").height()}, 200)
+		banner.find("img").velocity({"margin-top": 0}, 200)
+		banner.find(".banner-content").velocity({"opacity": 0}, 200)
 		isBannerClosed = false
 	}
 
 	var closeImageBanner = function(banner, setHeight) {
 		if (setHeight)
-			banner.transition({"height": "10em"}, 200)
-		banner.find(".banner-content").transition({"opacity": 1}, 200)
+			banner.velocity({"height": "10em"}, 200)
+		banner.find(".banner-content").velocity({"opacity": 1}, 200)
 		posBanner(banner.find(".post-bg"), true)
 		setTimeout(function(){banner.find(".post-bg").removeClass("active")}, 10)
 		isBannerClosed = true
@@ -162,7 +162,7 @@
 		}, 200)
 
 		var banner = container.find(".project.banner")
-		banner.transition({"height": "12em"}, 200, "easeInOutCirc", function() {
+		banner.velocity({"height": "12em"}, 200, "easeInOutCirc", function() {
 			banner.transition({"height": "10em"}, 250, "easeOutBack")
 		})
 	}

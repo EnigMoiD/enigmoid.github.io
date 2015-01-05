@@ -132,11 +132,11 @@
 		}
 
 		function hideTimeContainer() {
-			$(expContainer).transition({"width": "100%"}, 200)
+			$(expContainer).velocity({"width": "100%"}, 200)
 		}
 
 		function showTimeContainer() {
-			$(expContainer).transition({"width": "auto"}, 200)
+			$(expContainer).velocity({"width": "auto"}, 200)
 		}
 
 		var experiences = $('.experience')

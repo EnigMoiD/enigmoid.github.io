@@ -506,22 +506,22 @@
   // ## $.fn.transition
   // Works like $.fn.animate(), but uses CSS transitions.
   //
-  //     $("...").transition({ opacity: 0.1, scale: 0.3 });
+  //     $("...").velocity({ opacity: 0.1, scale: 0.3 });
   //
   //     // Specific duration
-  //     $("...").transition({ opacity: 0.1, scale: 0.3 }, 500);
+  //     $("...").velocity({ opacity: 0.1, scale: 0.3 }, 500);
   //
   //     // With duration and easing
-  //     $("...").transition({ opacity: 0.1, scale: 0.3 }, 500, 'in');
+  //     $("...").velocity({ opacity: 0.1, scale: 0.3 }, 500, 'in');
   //
   //     // With callback
-  //     $("...").transition({ opacity: 0.1, scale: 0.3 }, function() { ... });
+  //     $("...").velocity({ opacity: 0.1, scale: 0.3 }, function() { ... });
   //
   //     // With everything
-  //     $("...").transition({ opacity: 0.1, scale: 0.3 }, 500, 'in', function() { ... });
+  //     $("...").velocity({ opacity: 0.1, scale: 0.3 }, 500, 'in', function() { ... });
   //
   //     // Alternate syntax
-  //     $("...").transition({
+  //     $("...").velocity({
   //       opacity: 0.1,
   //       duration: 200,
   //       delay: 40,
@@ -536,13 +536,13 @@
 
     var theseProperties = jQuery.extend(true, {}, properties);
 
-    // Account for `.transition(properties, callback)`.
+    // Account for `.velocity(properties, callback)`.
     if (typeof duration === 'function') {
       callback = duration;
       duration = undefined;
     }
 
-    // Account for `.transition(properties, options)`.
+    // Account for `.velocity(properties, options)`.
     if (typeof duration === 'object') {
       easing = duration.easing;
       delay = duration.delay || 0;
@@ -551,7 +551,7 @@
       duration = duration.duration;
     }
 
-    // Account for `.transition(properties, duration, callback)`.
+    // Account for `.velocity(properties, duration, callback)`.
     if (typeof easing === 'function') {
       callback = easing;
       easing = undefined;
