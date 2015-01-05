@@ -544,7 +544,9 @@ footer
 		font-family font-text
 
 		margin 1em
-		height 0px
+		padding 1em
+		opacity 0
+		height 0
 		overflow hidden
 		transition height quickly
 
@@ -552,9 +554,6 @@ footer
 		cursor pointer
 		&:hover
 			background-color darken(accent, 20%) !important
-
-	&.selected
-		padding 0px 1em
 
 	&.exp1
 		background-color lighten(dark-dark-gray, 30%)
@@ -567,9 +566,14 @@ footer
 
 // musical work styling
 .work
+	margin-top 1em
+	padding 1em
+	background-color accent
 	.top, .bottom
 		*
 			display inline
+		span
+			text-shadow 0 -1px dark-dark-gray
 
 	// .composer
 

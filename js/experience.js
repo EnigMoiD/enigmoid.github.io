@@ -208,6 +208,7 @@
 				self.children().removeClass("selected")
 
 				var $content = self.find('.exp-content')
+				$content.css("opacity", "0")
 				$content.css("height", "0px")
 
 				showTimeContainer()
@@ -245,7 +246,8 @@
 					thisHeight = maxOffset/selfChildren.length
 
 					var $content = self.find('.exp-content')
-					$content.css("height", "auto")	
+					$content.css("height", "auto")
+					$content.css("opacity", "1")
 
 					setTransition(true, [{el:$(this), props:["height", "top", "width", "background-color"]}])
 					$(this).css({

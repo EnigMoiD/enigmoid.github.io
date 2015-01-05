@@ -684,7 +684,9 @@ footer #content a:active {
 .experience .exp-content {
   font-family: 'Open Sans';
   margin: 1em;
-  height: 0px;
+  padding: 1em;
+  opacity: 0;
+  height: 0;
   overflow: hidden;
   -webkit-transition: height 200ms;
   -moz-transition: height 200ms;
@@ -698,9 +700,6 @@ footer #content a:active {
 .experience:not(.selected):hover {
   background-color: #0e76a5 !important;
 }
-.experience.selected {
-  padding: 0px 1em;
-}
 .experience.exp1 {
   background-color: #4a5063;
 }
@@ -713,9 +712,18 @@ footer #content a:active {
 .experience.exp4 {
   background-color: #2b2f39;
 }
+.work {
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #1194ce;
+}
 .work .top *,
 .work .bottom * {
   display: inline;
+}
+.work .top span,
+.work .bottom span {
+  text-shadow: 0 -1px #0c0d10;
 }
 .track {
   vertical-align: top;
