@@ -566,23 +566,21 @@ footer
 		background-color lighten(dark-dark-gray, 15%)
 
 // musical work styling
-table
-	border-collapse collapse
-	border none
-	*
-		border none
 .work
 	margin 16px 32px
 	background-color accent
 
 	.top
+		table
+			border-collapse collapse
 		*
 			vertical-align bottom
 		padding 16px 16px 0px 0px
-		margin-bottom 1px
+
 	.bottom
 		padding 0px 16px 16px 16px
 		.info
+			display inline
 			padding-left 16px
 			margin-left -16px
 			border-top 1px solid text-color
@@ -590,9 +588,14 @@ table
 	.composer
 		padding 0px 16px 0px 16px
 		background-color rgba(dark-dark-gray, .2)
-		border-bottom 1px solid text-color
+		h1
+			padding-left 16px
+			margin-left -16px
+			&.hasinfo
+				border-bottom 1px solid text-color
 
-	// .name
+	.name
+		padding-left 8px
 		
 	// .key
 		

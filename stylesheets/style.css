@@ -712,20 +712,15 @@ footer #content a:active {
 .experience.exp4 {
   background-color: #2b2f39;
 }
-table {
-  border-collapse: collapse;
-  border: none;
-}
-table * {
-  border: none;
-}
 .work {
   margin: 16px 32px;
   background-color: #1194ce;
 }
 .work .top {
   padding: 16px 16px 0px 0px;
-  margin-bottom: 1px;
+}
+.work .top table {
+  border-collapse: collapse;
 }
 .work .top * {
   vertical-align: bottom;
@@ -734,6 +729,7 @@ table * {
   padding: 0px 16px 16px 16px;
 }
 .work .bottom .info {
+  display: inline;
   padding-left: 16px;
   margin-left: -16px;
   border-top: 1px solid #f5f9fb;
@@ -741,7 +737,16 @@ table * {
 .work .composer {
   padding: 0px 16px 0px 16px;
   background-color: rgba(12,13,16,0.2);
+}
+.work .composer h1 {
+  padding-left: 16px;
+  margin-left: -16px;
+}
+.work .composer h1.hasinfo {
   border-bottom: 1px solid #f5f9fb;
+}
+.work .name {
+  padding-left: 8px;
 }
 .track {
   vertical-align: top;
