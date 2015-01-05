@@ -134,9 +134,11 @@
 		openBanner($(window.location.hash), false)
 
 	window.onpopstate = function(e) {
-		if (window.location.hash)
+		if (window.location.hash) {
 			handleBannerClick(window.location.hash.substring(1))
-		if (e.state === "close" && isOpenBanner())
+			return
+		}
+		if (isOpenBanner())
 			handleBannerClick(theOpenBanner().attr("short"))
 	}
 
