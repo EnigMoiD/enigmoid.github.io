@@ -712,21 +712,23 @@ footer #content a:active {
 .experience.exp4 {
   background-color: #2b2f39;
 }
+table {
+  border-collapse: collapse;
+  border: none;
+}
+table * {
+  border: none;
+}
 .work {
   margin: 16px 32px;
   background-color: #1194ce;
 }
-.work .top *,
-.work .bottom * {
-  display: inline;
-}
-.work .top span,
-.work .bottom span {
-  text-shadow: 0px -1px rgba(12,13,16,0.6);
-}
 .work .top {
   padding: 16px 16px 0px 0px;
   margin-bottom: 1px;
+}
+.work .top * {
+  vertical-align: bottom;
 }
 .work .bottom {
   padding: 0px 16px 16px 16px;

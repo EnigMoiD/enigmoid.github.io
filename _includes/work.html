@@ -1,14 +1,22 @@
-<div class="work">
-	<div class="top">
-		<h1 class="composer">{{ work[0] }}</h1>
-		<span class="name">{{ work[1] }}</span>{% if work[2] != "" %}<span class="key"> in {{ work[2] }}</span>{% endif %}
-	</div>
-	<div class="bottom">
-		{% if work[3] != "" or work[4] != "" %}
-		<div class="info">
-			<span class="op">{{ work[3] }}</span>
-			<span class="mvt">{{ work[4] }}</span>
-		</div>
-		{% endif %}
-	</div>
-</div>
+<table class="work">
+	<tr>
+		<td class="top">
+			<table><tr>
+				<td>
+					<h1 class="composer">{{ work[0] }}</h1>
+				</td>
+				<td>
+					<span class="name">{{ work[1] }}</span>{% if work[2] != "" %}<span class="key"> in {{ work[2] }}</span>{% endif %}
+				</td>
+			</tr></table>
+		</td>
+	</tr>
+	<tr>
+		<td class="bottom">
+			{% if work[3] != "" or work[4] != "" %}
+				<span class="op">{{ work[3] }}</span>
+				<span class="mvt">{{ work[4] }}</span>
+			{% endif %}
+		</td>
+	</tr>
+</table>
