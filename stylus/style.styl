@@ -220,7 +220,7 @@ snippet-color = dark-gray
 
 // Styles
 outset-shadow = 0px 1px rgba(dark-dark-gray, .6)
-inset-shadow = 0px -1px rgba(dark-dark-gray, .6)
+inset-shadow = 0px -1px rgba(dark-dark-gray, .4)
 
 font-text = 'Open Sans'
 font-header = 'Exo 2'
@@ -584,10 +584,12 @@ footer
 			padding-left 16px
 			margin-left -16px
 			border-top 1px solid text-color
+			text-shadow inset-shadow
 		
 	.composer
 		padding 0px 16px 0px 16px
 		background-color rgba(dark-dark-gray, .2)
+		
 		h1
 			padding-left 16px
 			margin-left -16px
@@ -595,10 +597,11 @@ footer
 				border-bottom 1px solid text-color
 
 	.name
+		text-shadow inset-shadow
 		padding-left 8px
 		
-	// .key
-		
+	.key
+		text-shadow inset-shadow
 	// .op
 		
 	// .mvt
