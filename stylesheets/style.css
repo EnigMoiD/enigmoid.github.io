@@ -724,15 +724,22 @@ footer #content a:active {
 .work .bottom span {
   text-shadow: 0px -1px rgba(12,13,16,0.6);
 }
+.work .top {
+  padding: 16px 16px 0px 0px;
+  margin-bottom: 1px;
+}
 .work .bottom {
   padding: 0px 16px 16px 16px;
 }
-.work .top {
-  padding: 16px 16px 0px 0px;
+.work .bottom .info {
+  padding-left: 16px;
+  margin-left: -16px;
+  border-top: 1px solid #f5f9fb;
 }
 .work .composer {
   padding: 0px 16px 0px 16px;
   background-color: rgba(12,13,16,0.2);
+  border-bottom: 1px solid #f5f9fb;
 }
 .track {
   vertical-align: top;
