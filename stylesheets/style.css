@@ -662,7 +662,15 @@ footer #content a:active {
 .experience.selected {
   overflow: scroll;
 }
+.experience.selected .textbox {
+  padding-left: 2em;
+}
 .experience .textbox {
+  -webkit-transition: padding-left 200ms;
+  -moz-transition: padding-left 200ms;
+  -ms-transition: padding-left 200ms;
+  -o-transition: padding-left 200ms;
+  transition: padding-left 200ms;
   display: inline-block;
   padding: 2px 3px 3px 8px;
   position: relative;

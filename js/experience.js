@@ -281,28 +281,27 @@
 
 		// Loop back in time until the earliest time
 
-		var month = new Date().getMonth()
-		var year = 1900+new Date().getYear()
+		var now = new Date()
+		var month = now.getMonth()
+		var year = 1900+now.getYear()
 
 		var monthsElapsed = month - new Date(earliestDate).getMonth()
 
 		var monthEl, monthDate, i = 0, offset=0, yearEl
 
-		yearEl = $("<div class='year'>"+year+"</div>")
-
-		timeContainer.append(yearEl)
 		do {
 			monthEl = $("<div class='month'>"+months[month]+"</div>")
-			monthDate = new Date() - new Date(year, month+1)
+			monthDate = now - new Date(year, month+1)
 			offset = monthDate*daysPerMillis*pixelsPerDay
 			monthEl.css("top", offset+"px")
 			$("#time-container").append(monthEl)
 			month = (month-1)%12
 			if (month < 0) {
 				month = 11
-				year--
 				yearEl = $("<div class='year'>"+year+"</div>")
-				yearEl.css("top", offset-monthEl.height()+"px")
+				year--
+				var yearOff = offset-monthEl.height()
+				yearEl.css("top", (yearOff >= 0? yearOff : 0)+"px")
 				$("#time-container").append(yearEl)
 			}
 			i++
