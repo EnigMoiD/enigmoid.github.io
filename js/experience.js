@@ -80,8 +80,8 @@
 			return {
 				x1: hOffset.left,
 				y1: hOffset.top,
-				x2: hOffset.left+header.width()+elPadding(header, "h"),
-				y2: hOffset.top+header.parent().height()+elPadding(header, "v")
+				x2: hOffset.left+header.outerWidth(),
+				y2: hOffset.top+header.outerHeight()
 			}
 		}
 
@@ -92,7 +92,7 @@
 				return parseInt(header.css("padding-top"))+parseInt(header.css("padding-bottom"))
 		}
 
-		function headersIntersect(header1, header2) {
+		function textsIntersect(header1, header2) {
 			var r1 = headerRect(header1)
 			var r2 = headerRect(header2)
 
@@ -105,13 +105,13 @@
 		}
 
 		function moveOutTitles() {
-			for (var i = 0; i < titles.length-1; i++) {
-				for (var j = i+1; j < titles.length; j++) {
-					var intersection = headersIntersect(titles[i], titles[j])
+			for (var i = 0; i < textboxes.length-1; i++) {
+				for (var j = i+1; j < textboxes.length; j++) {
+					var intersection = textsIntersect(textboxes[i], textboxes[j])
 					if (intersection !== 0)
-						oldExpOffsets[$(titles[j]).parent().parent().attr("short")].push(intersection)
+						oldExpOffsets[$(textboxes[j]).parent().attr("short")].push(intersection)
 
-					$(titles[j]).parent().css({
+					$(textboxes[j]).css({
 						top: "+="+intersection
 					})
 				}
@@ -173,11 +173,11 @@
 		expContainer.css("height", maxOffset+"px")
 		timeContainer.css("height", maxOffset+"px")
 
-		var titles = $('.title')
+		var textboxes = $('.textbox')
 
 		// This is necessary for jQuery's "+=" to work
-		titles.each(function() {
-			$(this).parent().css("top", "0px")
+		textboxes.each(function() {
+			$(this).css("top", "0px")
 		})
 
 		// Gathering information for future "snap-back"
