@@ -16,6 +16,9 @@ def resize(filename, dirname, width, newname):
 def colorize(dir, path):
 	call(["convert", path, "-grayscale", "rec709luma", "+level-colors", "'#000000','#2B3E53'", os.path.join(dir, "blue.jpg")])
 
+def colorizepro(dir, path):
+	call(["convert", path, "-grayscale", "rec709luma", "+level-colors", "'#000000','#3c4952'", os.path.join(dir, "profile.jpg")])
+
 def resizefiles():
 	for dirname, dirnames, filenames in os.walk("./img"):
 		for filename in filenames:
@@ -30,7 +33,17 @@ def colorizefiles():
 			if "banner.jpg" in filename:
 				colorize(dirname, os.path.join(dirname, filename))
 
+def colorizeprofile():
+	for dirname, dirnames, filenames in os.walk("./img"):
+		for filename in filenames:
+			if "profile-color.jpg" in filename:
+				colorizepro(dirname, os.path.join(dirname, filename))
+	
 ### main
 
-resizefiles()
-colorizefiles()
+if len(sys.argv) > 1:
+	if sys.argv[1] == "profile":
+		colorizeprofile()
+else:
+	resizefiles()
+	colorizefiles()
