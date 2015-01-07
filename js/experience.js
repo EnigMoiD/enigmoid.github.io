@@ -80,9 +80,16 @@
 			return {
 				x1: hOffset.left,
 				y1: hOffset.top,
-				x2: hOffset.left+header.width(),
-				y2: hOffset.top+header.parent().height()
+				x2: hOffset.left+header.width()+elPadding(header, "h"),
+				y2: hOffset.top+header.parent().height()+elPadding(header, "v")
 			}
+		}
+
+		function elPadding(header, which) {
+			if (which == "h")
+				return parseInt(header.css("padding-left"))+parseInt(header.css("padding-right"))
+			if (which == "v")
+				return parseInt(header.css("padding-top"))+parseInt(header.css("padding-bottom"))
 		}
 
 		function headersIntersect(header1, header2) {
@@ -116,12 +123,12 @@
 
 			var offset
 			$(".textbox").each(function() {
-				$(this).css("left", "0px")
-				offset = elRect($(this).children().first()).x2 - rightBound + parseInt($(this).children().first().css("padding-right"))
+				var textbox = $(this)
+				textbox.css("left", "0px")
+				offset = elRect(textbox).x2 - rightBound + elPadding(textbox, "h")
 
-				if (offset > 0) {
-					$(this).css("left", -offset+"px")
-				}
+				if (offset > 0)
+					textbox.css("left", -offset+"px")
 			})
 		}
 

@@ -1,6 +1,10 @@
 <div class="experience exp{{ trackno }}" start="{{ post.dates[0] }}" end="{{ post.dates[1] }}" overlaps="1" track="{{ post.track }}" short="{{ post.short }}">
 	<div class="textbox">
-		<h2 class="title">{{ post.title }}</h2><br><div class="sub">{{ post.sub }}</div><a href="{{ post.where[1] }}">{{ post.where[0] }}</a>
+		<h2 class="title">{{ post.title }}</h2>
+		<br>
+		<span class="sub">{{ post.sub }}</span>
+		<br>
+		<a href="{{ post.where[1] }}">{{ post.where[0] }}</a>
 	</div>
 	<div class="exp-content">
 		{{ post.content }}

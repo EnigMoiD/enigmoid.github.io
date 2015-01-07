@@ -234,7 +234,7 @@ footer-height = 120px
 
 about-height = 5em
 
-snippet-padding = .1em .2em .2em .5em
+snippet-padding = 2px 3px 3px 8px
 
 // Global config
 
@@ -528,6 +528,7 @@ footer
 		overflow scroll
 
 	.textbox
+		display inline-block
 		padding snippet-padding
 		position relative
 		background-color inherit
@@ -535,8 +536,6 @@ footer
 
 		h2, a
 			display inline
-			width 100%
-			padding-right .2em
 			background-color inherit
 			@media (min-width: 400px)
 				white-space nowrap
