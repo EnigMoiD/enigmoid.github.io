@@ -719,11 +719,12 @@ footer #content a:active {
 .work .top {
   padding: 16px 16px 0px 0px;
 }
-.work .top table {
-  border-collapse: collapse;
-}
-.work .top * {
+.work .top div {
+  display: table-cell;
   vertical-align: bottom;
+}
+.work .top .name-container {
+  padding-left: 8px;
 }
 .work .bottom {
   padding: 0px 16px 16px 16px;
@@ -746,10 +747,7 @@ footer #content a:active {
 .work .composer h1.hasinfo {
   border-bottom: 1px solid #f5f9fb;
 }
-.work .name {
-  text-shadow: 0px -1px rgba(12,13,16,0.4);
-  padding-left: 8px;
-}
+.work .name,
 .work .key {
   text-shadow: 0px -1px rgba(12,13,16,0.4);
 }

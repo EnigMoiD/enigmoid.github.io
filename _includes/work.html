@@ -4,14 +4,12 @@
 		{% assign hasinfo = "hasinfo" %}
 	{% endif %}
 	<div class="top">
-		<table><tr>
-			<td class="composer {{ hasinfo }}">
-				<h1>{{ work[0] }}</h1>
-			</td>
-			<td>
+			<div class="composer">
+				<h1 class="{{ hasinfo }}">{{ work[0] }}</h1>
+			</div>
+			<div class="name-container">
 				<span class="name">{{ work[1] }}</span>{% if work[2] != "" %}<span class="key"> in {{ work[2] }}</span>{% endif %}
-			</td>
-		</tr></table>
+			</div>
 	</div>
 	<div class="bottom">
 		{% if hasinfo == "hasinfo" %}

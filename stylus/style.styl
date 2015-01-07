@@ -571,10 +571,12 @@ footer
 	background-color accent
 
 	.top
-		table
-			border-collapse collapse
-		*
+		div
+			display table-cell
 			vertical-align bottom
+		.name-container
+			padding-left 8px
+
 		padding 16px 16px 0px 0px
 
 	.bottom
@@ -596,12 +598,9 @@ footer
 			&.hasinfo
 				border-bottom 1px solid text-color
 
-	.name
+	.name, .key
 		text-shadow inset-shadow
-		padding-left 8px
 		
-	.key
-		text-shadow inset-shadow
 	// .op
 		
 	// .mvt
