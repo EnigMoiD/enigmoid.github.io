@@ -21,8 +21,8 @@
 			return "<span class='number'>" + yearTitles[years] + "</span>"
 	}
 
-	var updateDOM = function(id, data) {
-		$("#"+id).html(data)
+	var updateDOM = function(title, interval) {
+		$("#"+title).html(yearText(interval, title))
 	}
 
 	var yearTitles = {
@@ -46,7 +46,7 @@
 	for (var title in dates) {
 		var date = dates[title]
 		var interval = now.timeSince(date).years
-		updateDOM(title, yearText(interval, title))
+		updateDOM(title, interval)
 	}
 
 })()
