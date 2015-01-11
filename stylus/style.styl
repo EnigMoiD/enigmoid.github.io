@@ -128,11 +128,18 @@ proj-snip(size)
 
 		background-color dim-blue
 
-	.title-container
-		text-align center
-		h1, h2
-			display block
-			margin 0 auto
+	.project.banner-content
+		position relative
+		height proj-snip-height - 32px
+		
+		.title-container
+			position relative
+			top 50%
+			transform translateY(-50%)
+			text-align center
+			h1, h2
+				display block
+				margin 0 auto
 		
 	&.open
 		background-color dark-dark-gray
@@ -156,6 +163,7 @@ proj-snip(size)
 			margin 0 auto
 
 		.project.banner-content
+			height proj-snip-height
 			max-width (900 - 2*16) px
 
 		.project-details
@@ -221,7 +229,9 @@ proj-snip(size)
 			padding-right 1em
 
 	.pin-container
-		float right
+		position absolute
+		right 1em
+		top 1em
 		.external-pin
 			display inline
 			font-size 1.4em

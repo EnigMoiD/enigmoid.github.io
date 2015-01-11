@@ -184,11 +184,22 @@ ul {
   overflow: scroll;
   background-color: #1d2326;
 }
-.project.snippet.imp0 .title-container {
+.project.snippet.imp0 .project.banner-content {
+  position: relative;
+  height: 268px;
+}
+.project.snippet.imp0 .project.banner-content .title-container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
   text-align: center;
 }
-.project.snippet.imp0 .title-container h1,
-.project.snippet.imp0 .title-container h2 {
+.project.snippet.imp0 .project.banner-content .title-container h1,
+.project.snippet.imp0 .project.banner-content .title-container h2 {
   display: block;
   margin: 0 auto;
 }
@@ -215,6 +226,7 @@ ul {
   margin: 0 auto;
 }
 .project.snippet.imp0.active .project.banner-content {
+  height: 300px;
   max-width: 868px;
 }
 .project.snippet.imp0.active .project-details {
@@ -278,7 +290,9 @@ ul {
   padding-right: 1em;
 }
 .project.snippet.imp0 .pin-container {
-  float: right;
+  position: absolute;
+  right: 1em;
+  top: 1em;
 }
 .project.snippet.imp0 .pin-container .external-pin {
   display: inline;
@@ -336,11 +350,22 @@ ul {
   overflow: scroll;
   background-color: #1d2326;
 }
-.project.snippet.imp1 .title-container {
+.project.snippet.imp1 .project.banner-content {
+  position: relative;
+  height: 268px;
+}
+.project.snippet.imp1 .project.banner-content .title-container {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
   text-align: center;
 }
-.project.snippet.imp1 .title-container h1,
-.project.snippet.imp1 .title-container h2 {
+.project.snippet.imp1 .project.banner-content .title-container h1,
+.project.snippet.imp1 .project.banner-content .title-container h2 {
   display: block;
   margin: 0 auto;
 }
@@ -367,6 +392,7 @@ ul {
   margin: 0 auto;
 }
 .project.snippet.imp1.active .project.banner-content {
+  height: 300px;
   max-width: 868px;
 }
 .project.snippet.imp1.active .project-details {
@@ -430,7 +456,9 @@ ul {
   padding-right: 1em;
 }
 .project.snippet.imp1 .pin-container {
-  float: right;
+  position: absolute;
+  right: 1em;
+  top: 1em;
 }
 .project.snippet.imp1 .pin-container .external-pin {
   display: inline;
