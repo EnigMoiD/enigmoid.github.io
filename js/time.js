@@ -1,5 +1,4 @@
 (function() {
-	var date, dates, interval, now, title, yearText, yearTitles
 
 	Date.prototype.timeSince = function(date) {
 		var delta = this.getTime() - date.getTime()
@@ -15,21 +14,25 @@
 		}
 	}
 
-	yearText = function(years, id) {
+	var yearText = function(years, id) {
 		if (id !== 'graduation')
 			return "<span class='number'>" + years + "</span> year" + (years > 1 ? "s" : "")
 		else
 			return "<span class='number'>" + yearTitles[years] + "</span>"
 	}
 
-	yearTitles = {
+	var updateDOM = function(id, data) {
+		$("#"+id).html(data)
+	}
+
+	var yearTitles = {
 		'-4': 'Freshman',
 		'-3': 'Sophomore',
 		'-2': 'Junior',
 		'-1': 'Senior'
 	}
 
-	dates = {
+	var dates = {
 		birth: new Date(1994, 1, 26),
 		graduation: new Date(2016, 4, 20),
 		programming: new Date(2009, 10, 22),
@@ -38,12 +41,12 @@
 		origami: new Date(1998, 7, 10)
 	}
 
-	now = new Date
+	var now = new Date
 
-	for (title in dates) {
-		date = dates[title]
-		interval = now.timeSince(date).years
-		document.getElementById(title).innerHTML = yearText(interval, title)
+	for (var title in dates) {
+		var date = dates[title]
+		var interval = now.timeSince(date).years
+		updateDOM(title, yearText(interval, title))
 	}
 
-}).call(this)
+})()

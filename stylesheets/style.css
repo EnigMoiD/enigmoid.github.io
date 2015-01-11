@@ -626,6 +626,16 @@ footer #content a:active {
 .milestone .number {
   font-family: 'Lato';
 }
+.bar-container {
+  height: 2em;
+  background-color: #0c0d10;
+}
+.bar-container .bar-fill {
+  height: 2em;
+  min-height: 2em;
+  background-color: #1194ce;
+  width: 30%;
+}
 #category-container {
   -webkit-user-select: none;
   -moz-user-select: none;
