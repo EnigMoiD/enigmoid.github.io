@@ -89,12 +89,9 @@
 		$(window).scrollTop(openBanner.offset().top)
 
 		// close the banner
-		bannerBanner.velocity({"height": oldOpenBannerHeight}, 200, function() {
-			bannerBanner.css({"height": "auto"})
-		})
-		openBanner.velocity({"height": oldOpenBannerHeight}, 200, function() {
-			openBanner.css({"height": "auto"})
-		})
+		bannerBanner.velocity({"height": oldOpenBannerHeight}, 200)
+		
+		openBanner.velocity({"height": oldOpenBannerHeight}, 200)
 
 		// once it's closed, no longer active
 		openBanner.removeClass("active")

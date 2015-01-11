@@ -96,6 +96,7 @@ snippet(size)
 		font-size size * .6em
 		transition color quickly
 
+proj-snip-height = 300px
 proj-snip(size)
 	snippet(size)
 	padding 0px
@@ -104,9 +105,10 @@ proj-snip(size)
 
 	width auto
 
-	margin-bottom 2em
+	height proj-snip-height
 
 	.project.banner
+		height proj-snip-height
 		position relative
 		.post-bg-overlay
 			position absolute
@@ -126,6 +128,12 @@ proj-snip(size)
 
 		background-color dim-blue
 
+	.title-container
+		text-align center
+		h1, h2
+			display block
+			margin 0 auto
+		
 	&.open
 		background-color dark-dark-gray
 		right 0
@@ -204,13 +212,7 @@ proj-snip(size)
 			display block
 			margin-bottom .5em
 
-	h1
-		vertical-align middle
-
 	.date
-		vertical-align middle
-		display inline
-		padding-left .6em
 		white-space nowrap
 
 	.desc-container

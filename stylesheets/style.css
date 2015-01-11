@@ -140,7 +140,7 @@ ul {
   position: relative;
   overflow: hidden;
   width: auto;
-  margin-bottom: 2em;
+  height: 300px;
 }
 .project.snippet.imp0 h1,
 .project.snippet.imp0 h2 {
@@ -160,6 +160,7 @@ ul {
   transition: color 200ms;
 }
 .project.snippet.imp0 .project.banner {
+  height: 300px;
   position: relative;
 }
 .project.snippet.imp0 .project.banner .post-bg-overlay {
@@ -182,6 +183,14 @@ ul {
   right: 0;
   overflow: scroll;
   background-color: #1d2326;
+}
+.project.snippet.imp0 .title-container {
+  text-align: center;
+}
+.project.snippet.imp0 .title-container h1,
+.project.snippet.imp0 .title-container h2 {
+  display: block;
+  margin: 0 auto;
 }
 .project.snippet.imp0.open {
   background-color: #0c0d10;
@@ -261,13 +270,7 @@ ul {
   display: block;
   margin-bottom: 0.5em;
 }
-.project.snippet.imp0 h1 {
-  vertical-align: middle;
-}
 .project.snippet.imp0 .date {
-  vertical-align: middle;
-  display: inline;
-  padding-left: 0.6em;
   white-space: nowrap;
 }
 .project.snippet.imp0 .desc-container .desc-item {
@@ -289,7 +292,7 @@ ul {
   position: relative;
   overflow: hidden;
   width: auto;
-  margin-bottom: 2em;
+  height: 300px;
 }
 .project.snippet.imp1 h1,
 .project.snippet.imp1 h2 {
@@ -309,6 +312,7 @@ ul {
   transition: color 200ms;
 }
 .project.snippet.imp1 .project.banner {
+  height: 300px;
   position: relative;
 }
 .project.snippet.imp1 .project.banner .post-bg-overlay {
@@ -331,6 +335,14 @@ ul {
   right: 0;
   overflow: scroll;
   background-color: #1d2326;
+}
+.project.snippet.imp1 .title-container {
+  text-align: center;
+}
+.project.snippet.imp1 .title-container h1,
+.project.snippet.imp1 .title-container h2 {
+  display: block;
+  margin: 0 auto;
 }
 .project.snippet.imp1.open {
   background-color: #0c0d10;
@@ -410,13 +422,7 @@ ul {
   display: block;
   margin-bottom: 0.5em;
 }
-.project.snippet.imp1 h1 {
-  vertical-align: middle;
-}
 .project.snippet.imp1 .date {
-  vertical-align: middle;
-  display: inline;
-  padding-left: 0.6em;
   white-space: nowrap;
 }
 .project.snippet.imp1 .desc-container .desc-item {
