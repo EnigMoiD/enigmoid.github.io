@@ -340,13 +340,16 @@ ul
 // Header
 
 header
-	padding header-padding 0px
+	padding 0
 	background-color header-color
 
 	a-color(rgba(text-color, 70%), text-color, darken(text-color, 40%))
-
+	ul
+		@media (min-width: 560px)
+			display table
+		margin 0 auto
 	li
-		padding header-padding
+		padding 4px 16px
 
 		font-family font-header
 		font-size 1.4em
@@ -354,8 +357,8 @@ header
 		text-shadow 0px -1px rgba(0, 0, 0, .2)
 
 		@media (min-width: 560px)
-			padding header-padding 1em
-			display inline
+			padding 12px 16px
+			display inline-block
 
 	li.active
 		a
