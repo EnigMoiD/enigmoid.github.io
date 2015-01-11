@@ -91,9 +91,9 @@ snippet(size)
 		text-shadow outset-shadow
 
 	h1
-		font-size size * 1em
+		font-size 1.5em
 	h2
-		font-size size * .6em
+		font-size 1.2em
 		transition color quickly
 
 proj-snip-height = 300px
@@ -116,9 +116,16 @@ proj-snip(size)
 			left 0
 			right 0
 			bottom 0
-			background linear-gradient(rgba(0, 0, 0, .6), transparent)
+			background linear-gradient(rgba(black, .8), rgba(black, .5))
 			transition height quickly
 			z-index -10000
+
+		.img-fadeout
+			position absolute
+			bottom 0
+			min-height 30px
+			width 100%
+			background linear-gradient(transparent, black)
 
 	.project-details
 		position absolute
@@ -126,11 +133,11 @@ proj-snip(size)
 		right 0
 		overflow scroll
 
-		background-color dim-blue
+		background-color black
 
 	.project.banner-content
 		position relative
-		height proj-snip-height - 32px
+		height proj-snip-height
 		
 		.title-container
 			position relative
@@ -164,7 +171,14 @@ proj-snip(size)
 
 		.project.banner-content
 			height proj-snip-height
-			max-width (900 - 2*16) px
+			max-width 900px
+			display none
+			opacity 0
+			transition opacity quickly
+		
+		.img-fadeout
+			opacity 0
+			transition opacity quickly
 
 		.project-details
 			max-width 900px
@@ -196,7 +210,6 @@ proj-snip(size)
 		cursor pointer
 
 		position relative
-		padding size*.5em 16px
 		width auto
 
 		text-shadow outset-shadow
@@ -215,6 +228,9 @@ proj-snip(size)
 		padding 0 1.5em
 		margin-bottom 10em
 		padding-bottom 1em
+
+		p
+			padding 0 3em
 
 		h2
 			display block
@@ -252,12 +268,12 @@ dim-text = desaturate(lighten(dim-blue, 30%), 30%)
 // Site Colors
 
 text-color = off-white
-body-bg-color = dark-dark-gray
+body-bg-color = black
 inset-color = dark-gray
 header-color = dim-blue
 footer-color = accent
-container-color = dark-gray
-snippet-color = dark-gray
+container-color = black
+snippet-color = black
 
 // Styles
 outset-shadow = 0px 1px rgba(dark-dark-gray, .6)
@@ -265,7 +281,7 @@ inset-shadow = 0px -1px rgba(dark-dark-gray, .4)
 
 font-text = 'Open Sans'
 font-header = 'Exo 2'
-font-big-header = 'Open Sans'
+font-big-header = 'Lato', sans-serif
 
 // Sizes
 
@@ -282,6 +298,9 @@ snippet-padding = 3px 8px 3px 8px
 a-color(rgba(text-color, 80%), text-color, darken(text-color, 40%))
 
 p
+	font-family 'Slabo 27px', serif
+	letter-spacing .03em
+	font-size 18px
 	a-color(lighten(accent, 20%), lighten(accent, 20%), darken(text-color, 50%))
 	a
 		border-bottom 1px solid rgba(text-color, 50%)
@@ -309,10 +328,14 @@ body
 	padding 0px
 	margin 0px
 
-h1, h2, h3
+h1
 	font-family font-big-header
 	font-weight 300
-	font-variant small-caps
+	letter-spacing .1em
+
+h2, h3
+	font-family font-big-header
+	font-weight 100
 
 h4, h5, h6
 	font-family font-header
