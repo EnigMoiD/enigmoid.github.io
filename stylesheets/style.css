@@ -543,7 +543,6 @@ footer #content a:active {
 }
 .column {
   display: table-cell;
-  width: 1%;
   position: relative;
 }
 @media (max-width: 700px) {
@@ -607,7 +606,7 @@ footer #content a:active {
   margin: 0 -1em;
 }
 .greeting-container .greeting-content {
-  padding-left: 0.7em;
+  padding-left: 1em;
   z-index: 1;
   position: absolute;
   bottom: 0px;
@@ -627,12 +626,20 @@ footer #content a:active {
   font-family: 'Lato';
 }
 .bar-container {
-  height: 2em;
+  position: relative;
+  height: 3em;
   background-color: #0c0d10;
 }
+.bar-container .bar-label {
+  margin-left: 1em;
+  line-height: 3em;
+  height: 100%;
+}
 .bar-container .bar-fill {
-  height: 2em;
-  min-height: 2em;
+  position: absolute;
+  right: 0;
+  height: 3em;
+  min-height: 3em;
   background-color: #1194ce;
   width: 30%;
 }

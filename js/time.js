@@ -22,15 +22,7 @@
 	}
 
 	var updateDOM = function(title, interval, age) {
-		console.log("=====================")
-		console.log(title)
-		console.log("interval")
-		console.log(interval)
-		console.log("age")
-		console.log(age)
 		var percent = interval/age*100
-		console.log("percent")
-		console.log(percent)
 		$("#"+title).css({"width": percent+"%"})
 	}
 

@@ -426,7 +426,6 @@ footer
 
 .column
 	display table-cell
-	width 1%
 	position relative
 
 	@media  (max-width: 700px)
@@ -489,7 +488,7 @@ footer
 	padding 0px
 	margin 0 -1em
 	.greeting-content
-		padding-left .7em
+		padding-left 1em
 		z-index 1
 		position absolute
 		bottom 0px
@@ -508,13 +507,22 @@ footer
 		font-family 'Lato'
 		@extends .accent
 
+bar-height = 3em
 .bar-container
-	height 2em
+	position relative
+	height bar-height
 	background-color dark-dark-gray
+
+	.bar-label
+		margin-left 1em
+		line-height bar-height
+		height 100%
 	
 	.bar-fill
-		height 2em
-		min-height 2em
+		position absolute
+		right 0
+		height bar-height
+		min-height bar-height
 		background-color accent
 		width 30%
 
