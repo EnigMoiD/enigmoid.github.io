@@ -21,8 +21,17 @@
 			return "<span class='number'>" + yearTitles[years] + "</span>"
 	}
 
-	var updateDOM = function(title, interval) {
-		$("#"+title).html(yearText(interval, title))
+	var updateDOM = function(title, interval, age) {
+		console.log("=====================")
+		console.log(title)
+		console.log("interval")
+		console.log(interval)
+		console.log("age")
+		console.log(age)
+		var percent = interval/age*100
+		console.log("percent")
+		console.log(percent)
+		$("#"+title).css({"width": percent+"%"})
 	}
 
 	var yearTitles = {
@@ -43,10 +52,12 @@
 
 	var now = new Date
 
+	var age = now.timeSince(dates.birth)
+
 	for (var title in dates) {
 		var date = dates[title]
 		var interval = now.timeSince(date).years
-		updateDOM(title, interval)
+		updateDOM(title, interval, age.years)
 	}
 
 })()
