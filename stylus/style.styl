@@ -110,6 +110,7 @@ proj-snip(size)
 	.project.banner
 		height proj-snip-height
 		position relative
+			
 		.post-bg-overlay
 			position absolute
 			top 0
@@ -117,8 +118,11 @@ proj-snip(size)
 			right 0
 			bottom 0
 			background linear-gradient(rgba(black, .8), rgba(black, .5))
-			transition height quickly
-			z-index -10000
+			transition opacity quickly
+
+		.post-bg.active
+			.post-bg-overlay
+				opacity 0
 
 		.img-fadeout
 			position absolute
@@ -185,7 +189,6 @@ proj-snip(size)
 
 		.post-bg
 			margin 0 auto
-			background-color dim-blue
 			height 100%
 
 	.post-bg
