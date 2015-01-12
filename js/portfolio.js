@@ -47,7 +47,7 @@
 
 	var closeImageBanner = function(banner, setHeight) {
 		if (setHeight)
-			banner.velocity({"height": "100px"}, 200)
+			banner.velocity({"height": "300px"}, 200)
 		banner.find(".banner-content").velocity({"opacity": 1}, 200)
 		posBanner(banner.find(".post-bg"), true)
 		setTimeout(function(){banner.find(".post-bg").removeClass("active")}, 10)
@@ -57,7 +57,9 @@
 	$(".project.banner").click(function() {
 		var banner = $(this)
 
-		if (!banner.parent().hasClass("open"))
+		var clickedEl = $(arguments[0].target)
+
+		if (!banner.parent().hasClass("open") || clickedEl.hasClass("close-button"))
 			return
 
 		if (isBannerClosed)
@@ -111,7 +113,7 @@
 
 		// open the banner
 		closedBanner.velocity({"height": $(window).height()}, 200)
-		bannerBanner.velocity({"height": "100px"}, 200)
+		bannerBanner.velocity({"height": "300px"}, 200)
 
 		// scroll the page to the top of the banner as it opens
 		$('body').animate({
@@ -161,8 +163,8 @@
 		}, 200)
 
 		var banner = container.find(".project.banner")
-		banner.velocity({"height": "150px"}, 200, "easeInOutCirc", function() {
-			banner.animate({"height": "100px"}, 250, "easeOutBack")
+		banner.velocity({"height": "350px"}, 200, "easeInOutCirc", function() {
+			banner.animate({"height": "300px"}, 250, "easeOutBack")
 		})
 	}
 

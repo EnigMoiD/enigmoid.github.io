@@ -245,14 +245,6 @@ ul {
 }
 .project.snippet.imp0.active .project.banner-content {
   height: 300px;
-  max-width: 900px;
-  display: none;
-  opacity: 0;
-  -webkit-transition: opacity 200ms;
-  -moz-transition: opacity 200ms;
-  -ms-transition: opacity 200ms;
-  -o-transition: opacity 200ms;
-  transition: opacity 200ms;
 }
 .project.snippet.imp0.active .img-fadeout {
   opacity: 0;
@@ -268,7 +260,6 @@ ul {
 }
 .project.snippet.imp0.active .post-bg {
   margin: 0 auto;
-  max-width: 900px;
   background-color: #1d2326;
   height: 100%;
 }
@@ -439,14 +430,6 @@ ul {
 }
 .project.snippet.imp1.active .project.banner-content {
   height: 300px;
-  max-width: 900px;
-  display: none;
-  opacity: 0;
-  -webkit-transition: opacity 200ms;
-  -moz-transition: opacity 200ms;
-  -ms-transition: opacity 200ms;
-  -o-transition: opacity 200ms;
-  transition: opacity 200ms;
 }
 .project.snippet.imp1.active .img-fadeout {
   opacity: 0;
@@ -462,7 +445,6 @@ ul {
 }
 .project.snippet.imp1.active .post-bg {
   margin: 0 auto;
-  max-width: 900px;
   background-color: #1d2326;
   height: 100%;
 }
@@ -593,7 +575,6 @@ header li.active a {
   min-height: 100%;
   padding-bottom: 120px;
   margin: auto;
-  max-width: 900px;
 }
 #content-container {
   padding: 0 1em;
