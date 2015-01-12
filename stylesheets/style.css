@@ -188,7 +188,7 @@ ul {
 .project.snippet.imp0 .project.banner .img-fadeout {
   position: absolute;
   bottom: 0;
-  min-height: 30px;
+  min-height: 100px;
   width: 100%;
   background: linear-gradient(transparent, #000);
 }
@@ -219,7 +219,7 @@ ul {
   margin: 0 auto;
 }
 .project.snippet.imp0.open {
-  background-color: #0c0d10;
+  background-color: #000;
   right: 0;
   top: 0;
   left: 0;
@@ -237,7 +237,10 @@ ul {
 .project.snippet.imp0.active .date {
   font-size: 1.2em;
 }
-.project.snippet.imp0.active * {
+.project.snippet.imp0.active .project-details {
+  margin: 0 auto;
+}
+.project.snippet.imp0.active .project.banner {
   margin: 0 auto;
 }
 .project.snippet.imp0.active .project.banner-content {
@@ -264,6 +267,7 @@ ul {
   height: 100%;
 }
 .project.snippet.imp0.active .post-bg {
+  margin: 0 auto;
   max-width: 900px;
   background-color: #1d2326;
   height: 100%;
@@ -378,7 +382,7 @@ ul {
 .project.snippet.imp1 .project.banner .img-fadeout {
   position: absolute;
   bottom: 0;
-  min-height: 30px;
+  min-height: 100px;
   width: 100%;
   background: linear-gradient(transparent, #000);
 }
@@ -409,7 +413,7 @@ ul {
   margin: 0 auto;
 }
 .project.snippet.imp1.open {
-  background-color: #0c0d10;
+  background-color: #000;
   right: 0;
   top: 0;
   left: 0;
@@ -427,7 +431,10 @@ ul {
 .project.snippet.imp1.active .date {
   font-size: 1.2em;
 }
-.project.snippet.imp1.active * {
+.project.snippet.imp1.active .project-details {
+  margin: 0 auto;
+}
+.project.snippet.imp1.active .project.banner {
   margin: 0 auto;
 }
 .project.snippet.imp1.active .project.banner-content {
@@ -454,6 +461,7 @@ ul {
   height: 100%;
 }
 .project.snippet.imp1.active .post-bg {
+  margin: 0 auto;
   max-width: 900px;
   background-color: #1d2326;
   height: 100%;
@@ -925,11 +933,7 @@ footer #content a:active {
 #time-container .year {
   color: #b3b3b3;
 }
-.project-specs {
-  margin: 1.5em !important;
-  position: relative;
-}
-.project-specs .close-button {
+.close-button {
   -webkit-transition: color 200ms;
   -moz-transition: color 200ms;
   -ms-transition: color 200ms;
@@ -942,59 +946,49 @@ footer #content a:active {
   width: 50px;
   height: 50px;
   font-size: 50px;
-  color: #576871;
-  text-shadow: 0px -1px rgba(12,13,16,0.4);
+  color: #ccc;
+  text-shadow: none !important;
   cursor: pointer;
 }
-.project-specs .close-button:hover {
-  color: #1194ce !important;
+.close-button:hover {
+  color: #fff !important;
 }
-.project-specs .close-button:active {
+.close-button:active {
   -webkit-transition: none;
   -moz-transition: none;
   -ms-transition: none;
   -o-transition: none;
   transition: none;
-  color: #084a67 !important;
+  color: #aaa !important;
 }
-.project-specs .specs-image {
-  height: 200px;
-  width: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.project-specs {
+  margin: 1.5em !important;
+  position: relative;
 }
-@media (min-width: 600px) {
-  .project-specs .specs-image {
-    position: absolute;
-    right: 1.5em;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    transform: translateY(-50%);
-    display: inline-block;
-  }
+.project-specs .specs-left {
+  width: 100%;
+  display: table-cell;
+  vertical-align: top;
 }
-.project-specs .specs-content {
-  text-align: center;
+.project-specs .specs-left h1 {
+  font-size: 1.2em !important;
+  letter-spacing: 0.05em;
 }
-@media (min-width: 600px) {
-  .project-specs .specs-content {
-    display: inline-block;
-    vertical-align: top;
-    min-height: 180px;
-    text-align: left;
-    padding-top: 0.5em;
-  }
+.project-specs .specs-left ul {
+  margin-top: 1em;
 }
-.project-specs .specs-content li {
-  padding: 0.5em;
+.project-specs .specs-left ul li {
+  padding-bottom: 0.5em;
+}
+.project-specs .specs-right {
+  display: table-cell;
+  vertical-align: middle;
+}
+.project-specs .specs-right .specs-image {
+  min-width: 200px;
 }
 .box,
 .image-box {
-  background-color: #14151a;
   margin: 0.5em;
   padding: 1.5em;
   clear: both;

@@ -20,13 +20,13 @@
 		<div bannerPosition="{{ post.banner-position }}" class="post-bg">
 			<div class="img-fadeout"></div>
 			<img class="post-banner" src="/img/{{ post.short }}/banner.jpg">
+			<i class="icon-close close-button"></i>
 		</div>
 	</div>
 	<div class="project-details">
 		<div class="box project-specs">
-			<i class="icon-close close-button"></i>
-			<div class="specs-content">
-				<h1>The Project</h1>
+			<div class="specs-left">
+				<h1>{{ post.title | upcase }}</h1>
 				<ul>
 					{% if post.team == 1 %}
 					<li><h3><i class="fa fa-fw fa-user"></i> Individual</h3></li>
@@ -40,7 +40,9 @@
 					{% endfor %}
 				</ul>
 			</div>
-			<img nobox class="specs-image" alt="A representative picture of the project" src="/img/{{ post.short }}/project.jpg">
+			<div class="specs-right">
+				<img nobox class="specs-image" alt="A representative picture of the project" src="/img/{{ post.short }}/project.jpg">
+			</div>
 		</div>
 		<div class="proj-content">
 			<h2 class="post-header">{{ post.header[0] }}</h2>
