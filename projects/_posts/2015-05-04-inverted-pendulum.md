@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rotary Inverted Pendulum
+title: Inverted Pendulum
 
 importance: 0
 
