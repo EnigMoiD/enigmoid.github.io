@@ -1,230 +1,24 @@
-@font-face
-	font-family 'Olin'
-	src url('/font/olin/olin-webfont.eot')
-	src url('/font/olin/olin-webfont.eot?#iefix') format('embedded-opentype'), url('/font/olin/olin-webfont.woff') format('woff'), url('/font/olin/olin-webfont.ttf') format('truetype')
-	font-weight normal
-	font-style normal
-
-@font-face {
-	font-family: 'icomoon';
-	src:url('/font/x-font/icomoon.eot?-vv26i9');
-	src:url('/font/x-font/icomoon.eot?#iefix-vv26i9') format('embedded-opentype'),
-	url('/font/x-font/icomoon.woff?-vv26i9') format('woff'),
-	url('/font/x-font/icomoon.ttf?-vv26i9') format('truetype'),
-	url('/font/x-font/icomoon.svg?-vv26i9#icomoon') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'icomoon';
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-close:before {
-	content: "\e680";
-}
-
-.olin:before
-	display inline-block
-	font-family Olin
-	content 'l'
-	font-size 2em
-	font-style normal
-	font-weight normal
-	line-height .35
-	-webkit-font-smoothing antialiased
-	-moz-osx-font-smoothing grayscale
-
-// gist.github.com/d3vron/1080346
-vendor(prop, args)
-	-webkit-{prop} args
-	-moz-{prop} args
-	-ms-{prop} args
-	-o-{prop} args
-	{prop} args
+@import font
+@import vendor
 
 a-color(color, hover, active)
-	a
-		text-decoration none
-		color color
-		&:visited
-			color color
-		&:hover
-			color hover
-		&:active
-			color active
-
-transition()
-	vendor('transition', arguments)
-
-transform()
-	vendor('transform', arguments)
-
-user-select()
-	vendor('user-select', arguments)
-
-flexbox()
-	vendor('flexbox', arguments)
-
-flex()
-	vendor('flex', arguments)
-
-snippet(size)
-	font-family font-text
-	text-shadow outset-shadow
-
-	padding snippet-padding
-
-	h1, h2
-		font-family font-big-header
-		display inline
-		text-shadow outset-shadow
-
-	h1
-		font-size size * 1em
-	h2
-		font-size size * .6em
-		transition color quickly
-
-proj-snip(size)
-	snippet(size)
-	padding 0px
-	position relative
-	overflow hidden
-
-	width auto
-
-	margin-bottom 2em
-
-	.project.banner
-		position relative
-		.post-bg-overlay
-			position absolute
-			top 0
-			left 0
-			right 0
-			bottom 0
-			background linear-gradient(rgba(0, 0, 0, .6), transparent)
-			transition height quickly
-			z-index -10000
-
-	.project-details
-		position absolute
-		left 0
-		right 0
-		overflow scroll
-
-		background-color dim-blue
-
-	&.open
-		background-color dark-dark-gray
-		right 0
-		top 0
-		left 0
-		bottom 0
-		min-height 100%
-		position fixed
-		z-index 10000
-
-	&.active
-		h1
-			font-size 2*1em
-		h2
-			font-size 1.5em
-		.date
-			font-size 2*.6em
-
-		*
-			margin 0 auto
-
-		.project.banner-content
-			max-width (900 - 2*16) px
-
-		.project-details
-			max-width 900px
-			height 100%
-
-		.post-bg
-			max-width 900px
-			background-color dim-blue
-			height 100%
-
-	.post-bg
-		cursor pointer
-
-		position absolute
-		top 0
-		left 0
-		right 0
-
-		width 100%
-
-		padding 0px
-		overflow hidden
-
-		.post-banner
-			overflow hidden
-			width 100%
-
-	.project.banner-content
-		cursor pointer
-
-		position relative
-		padding size*.5em 16px
-		width auto
-
-		text-shadow outset-shadow
-
-		h1, h2
-			transition font-size quickly
-
-		.post-header
-			color text-color
-
-	.proj-content
-		font-family font-text
-
-		opacity 0
-		overflow hidden
-		padding 0 1.5em
-		margin-bottom 10em
-		padding-bottom 1em
-
-		h2
-			display block
-			margin-bottom .5em
-
-	h1
-		vertical-align middle
-
-	.date
-		vertical-align middle
-		display inline
-		padding-left .6em
-		white-space nowrap
-
-	.desc-container
-		.desc-item
-			white-space nowrap
-			padding-right 1em
-
-	.pin-container
-		float right
-		.external-pin
-			display inline
-			font-size 1.4em
+  a
+    text-decoration none
+    color color
+    &:visited
+      color color
+    &:hover
+      color hover
+    &:active
+      color active
 
 quickly = 200ms
+font-size = 18px
+
+doc-font()
+  font-family DIN
+  font-weight 300
+  font-size font-size
 
 // Colors
 
@@ -239,21 +33,12 @@ dim-text = desaturate(lighten(dim-blue, 30%), 30%)
 
 // Site Colors
 
-text-color = off-white
-body-bg-color = dark-dark-gray
+text-color = black
+body-bg-color = white
 inset-color = dark-gray
 header-color = dim-blue
 footer-color = accent
-container-color = dark-gray
-snippet-color = dark-gray
-
-// Styles
-outset-shadow = 0px 1px rgba(dark-dark-gray, .6)
-inset-shadow = 0px -1px rgba(dark-dark-gray, .4)
-
-font-text = 'Open Sans'
-font-header = 'Exo 2'
-font-big-header = 'Open Sans'
+container-color = white
 
 // Sizes
 
@@ -269,477 +54,125 @@ snippet-padding = 3px 8px 3px 8px
 
 a-color(rgba(text-color, 80%), text-color, darken(text-color, 40%))
 
-p
-	a-color(lighten(accent, 20%), lighten(accent, 20%), darken(text-color, 50%))
-	a
-		border-bottom 1px solid rgba(text-color, 50%)
-		&:hover
-			border-bottom 1px solid accent
-		&:active
-			text-shadow inset-shadow
-
 html
-	height 100%
-	width 100%
+  height 100%
+  width 100%
 
 body
-	background-color body-bg-color
-	font-family font-text
-	font-weight 300
-	color text-color
+  doc-font()
+  background-color body-bg-color
+  color text-color
 
-	height 100%
-
-.hidden
-	display none !important
+  height 100%
 
 *
-	padding 0px
-	margin 0px
+  padding 0px
+  margin 0px
 
-h1, h2, h3
-	font-family font-big-header
-	font-weight 300
-	font-variant small-caps
-
-h4, h5, h6
-	font-family font-header
-
-img
-	max-width 100%
+h1, h2, h3, h4, h5, h6
+  font-weight 300
 
 ul
-	list-style none
-
-// Includes
-
-.snippet
-	snippet(1)
-
-.project.snippet.imp0
-	proj-snip(2)
-
-.project.snippet.imp1
-	proj-snip(1)
-
-// Modifiers
-.center
-	text-align center
-
-.accent
-	text-shadow none
-	color accent
-	font-size accent-size
-	font-weight 300
-
-.hidden
-	display none
-
-// GLOBAL
-
-// Header
+  list-style none
 
 header
-	padding 0
-	background-color header-color
+  padding 0
+  background-color header-color
 
-	a-color(rgba(text-color, 70%), text-color, darken(text-color, 40%))
-	ul
-		@media (min-width: 560px)
-			display table
-		margin 0 auto
-	li
-		padding 4px 16px
+  a-color(rgba(text-color, 70%), text-color, darken(text-color, 40%))
+  ul
+    @media (min-width: 560px)
+      display table
+    margin 0 auto
+  li
+    padding 4px 16px
 
-		font-family font-header
-		font-size 1.4em
-		text-align center
-		text-shadow 0px -1px rgba(0, 0, 0, .2)
+    font-size 1.4em
+    text-align center
+    text-shadow 0px -1px rgba(0, 0, 0, .2)
 
-		@media (min-width: 560px)
-			padding 12px 16px
-			display inline-block
+    @media (min-width: 560px)
+      padding 12px 16px
+      display inline-block
 
-	li.active
-		a
-			color text-color
-		background-color accent
+  li.active
+    a
+      color text-color
+    background-color accent
 
-// Global containers
+#proj-container
+  .proj
+    padding 1rem
+    
+    background-color #eee
+      
+    border-bottom 1px solid rgba(black, .1)
+    
+    h1
+      font-size 3rem
+      em
+        font-family DIN
+        font-style normal
+        font-weight 900
+    
+    .proj-bg
+      width 100%
+      
+    .proj-details
+      display none
+
+    &:hover
+      background-color white
+      cursor pointer
+    
+    &.imp0
+      flex 1 1 2
+    
+    &.imp1
+      flex 1 1 1
 
 #container
-	overflow hidden
-	position relative
-	background-color container-color
+  overflow hidden
+  position relative
+  background-color container-color
 
-	min-height 100%
-	padding-bottom footer-height
+  min-height 100%
+  padding-bottom footer-height
 
-	margin auto
-	max-width 900px
-
-#content-container
-	padding 0 1em
-
-// Footer
+  margin auto
+  max-width 900px
 
 footer
-	clear both
-	width 100%
-	display table
-	position relative
-	z-index 2
-	height footer-height
-	margin-top - footer-height
-
-	font-size 1.1em
-	#content
-		padding 2em
-		.contact
-			line-height 3em
-			div
-				display inline
-				padding .5em
-		display table-cell
-		vertical-align middle
-		font-size 0.8em
-
-		color lighten(accent, 60%)
-
-		text-align center
-		text-shadow inset-shadow
-		a
-			text-shadow outset-shadow
-			&:hover
-				color text-color
-			&:active
-				color text-color
-				text-shadow inset-shadow
-
-	background-color footer-color
-
-// Columns
-
-.column-container
-	width 100%
-	display table
-
-.column
-	display table-cell
-	width 1%
-	position relative
-
-	@media  (max-width: 700px)
-		display block
-		width 100%
-
-// Banner
-
-.banner-content
-	width 100%
-	position absolute
-	z-index 1
-
-.banner-bg
-	width 100%
-
-// Home banners
-
-.about.banner
-	text-align center
-	padding 1em 0
-	height about-height
-
-.about.banner-content
-	font-size 1.1em
-
-.about.banner-bg
-	i
-		font-size about-height
-		color dim-blue
-
-// Index banners
-
-.index-banner
-	width 100%
-	h1
-		font-size 2em
-		background-color dark-dark-gray
-		text-align center
-	img
-		width 100%
-		height auto !important
-
-// Post banners
-
-.post.banner
-	overflow hidden
-	position relative
-
-.post.banner-content
-	transition opacity quickly
-	@media (min-width: 700px)
-		top 50%
-		height 3em
-		margin-top -1.5em
-
-// HOME
-
-.greeting-container
-	padding 0px
-	margin 0 -1em
-	.greeting-content
-		padding-left .7em
-		z-index 1
-		position absolute
-		bottom 0px
-		text-align center
-		.greeting-name
-			font-family 'Lato'
-			@extends .accent
-
-		.greeting-header
-			font-family font-header
-			font-size 1.2em
-
-.milestone
-	text-align center
-	.number
-		font-family 'Lato'
-		@extends .accent
-
-// SKILLS
-
-#category-container
-	user-select none
-
-.category.one
-	background-color lighten(dark-dark-gray, 8%)
-
-.category.two
-	background-color lighten(dark-dark-gray, 4%)
-
-.category.three
-	background-color lighten(dark-dark-gray, 1%)
-
-.category.banner
-	padding 1em 0
-	text-align center
-
-.skill
-	transition background-color quickly
-	h2
-		cursor pointer
-	&:hover
-		background-color darken(accent, 20%) !important
-	.values
-		background-color darken(accent, 20%)
-		.example
-			width 100%
-			display block
-			transition background-color quickly
-			&:hover
-				background-color accent
-
-// EXPERIENCE
-
-#exp-container
-	position relative
-	display -webkit-flex
-	display flex
-
-.experience
-	text-shadow outset-shadow
-	position absolute
-	padding 0px
-	width 100%
-
-	transition background-color quickly
-
-	h3
-		padding-bottom 16px
-
-	&.selected
-		overflow scroll
-		.textbox
-			padding-left 2em
-
-	.textbox
-		transition padding-left quickly
-		display inline-block
-		padding snippet-padding
-		position relative
-		background-color inherit
-		z-index 6
-
-		h2, a
-			display inline
-			background-color inherit
-			@media (min-width: 400px)
-				white-space nowrap
-
-	.exp-content
-		font-family font-text
-
-		margin 1em
-		padding 1em
-		opacity 0
-		height 0
-		overflow hidden
-		transition height quickly
-
-	&:not(.selected)
-		cursor pointer
-		&:hover
-			background-color darken(accent, 20%) !important
-
-	&.exp1
-		background-color lighten(dark-dark-gray, 30%)
-	&.exp2
-		background-color lighten(dark-dark-gray, 25%)
-	&.exp3
-		background-color lighten(dark-dark-gray, 20%)
-	&.exp4
-		background-color lighten(dark-dark-gray, 15%)
-
-// musical work styling
-.work
-	margin 16px 32px
-	background-color accent
-
-	.top
-		div
-			display table-cell
-			vertical-align bottom
-		.name-container
-			padding-left 8px
-
-		padding 16px 16px 0px 0px
-
-	.bottom
-		padding 0px 16px 16px 16px
-		.info
-			display inline
-			padding-left 16px
-			margin-left -16px
-			border-top 1px solid text-color
-			text-shadow inset-shadow
-
-	.composer
-		padding 0px 16px 0px 16px
-		background-color rgba(dark-dark-gray, .2)
-
-		h1
-			padding-left 16px
-			margin-left -16px
-			&.hasinfo
-				border-bottom 1px solid text-color
-
-	.name, .key
-		text-shadow inset-shadow
-
-	// .op
-
-	// .mvt
-
-.track
-	vertical-align top
-	position relative
-	display inline-block
-
-	transition width quickly
-
-	height 100%
-	background-color container-color
-
-.track.selected
-	z-index 100 !important
-
-#experience
-	flex 1 0 auto
-	overflow hidden
-
-#time-container
-	flex 0 1 6em
-
-	div
-		width 100%
-		position absolute
-
-	.month
-		padding-left .5em
-		font-family font-big-header
-		color lighten(container-color, 30%)
-		border-top 1px solid lighten(container-color, 50%)
-
-	.year
-		color lighten(container-color, 70%)
-
-// PROJECT DETAILS
-
-.project-specs
-	margin 1.5em !important
-	position relative
-
-	.close-button
-		transition color quickly
-
-		text-align center
-		position absolute
-		top 0
-		left 0
-		width 50px
-		height 50px
-		font-size 50px
-		color lighten(dim-blue, 30%)
-		text-shadow inset-shadow
-
-		&:hover
-			color accent !important
-
-		&:active
-			transition none
-			color darken(accent, 50%) !important
-
-		cursor pointer
-
-	.specs-image
-		@media (min-width: 600px)
-			position absolute
-			right 1.5em
-			top 50%
-			transform translateY(-50%)
-			display inline-block
-		height 200px
-		width auto
-		display block
-		margin-left auto
-		margin-right auto
-	.specs-content
-		@media (min-width: 600px)
-			display inline-block
-			vertical-align top
-			min-height 180px
-			text-align left
-			padding-top .5em
-
-		text-align center
-
-		li
-			padding .5em
-.box
-	background-color inset-color
-	margin .5em
-	padding 1.5em
-	clear both
-	position relative
-.image-box
-	@extends .box
-	img
-		width 100%
-	.caption
-		text-align center
-.image-box.center
-	width 80%
-	margin-left auto
-	margin-right auto
+  clear both
+  width 100%
+  display table
+  position relative
+  z-index 2
+  height footer-height
+  margin-top - footer-height
+
+  font-size 1.1em
+  #content
+    padding 2em
+    .contact
+      line-height 3em
+      div
+        display inline
+        padding .5em
+    display table-cell
+    vertical-align middle
+    font-size 0.8em
+
+    color lighten(accent, 60%)
+
+    text-align center
+    text-shadow inset-shadow
+    a
+      text-shadow outset-shadow
+      &:hover
+        color text-color
+      &:active
+        color text-color
+        text-shadow inset-shadow
+
+  background-color footer-color

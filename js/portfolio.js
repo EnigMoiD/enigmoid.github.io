@@ -1,187 +1,59 @@
 (function() {
-	var bgContainer, posBanner
+  var theOpenProject = function() {
+    return $('.open')
+  }
 
-	bgContainer = $(".post-bg")
+  var isOpenProject = function() {
+    return theOpenProject().length > 0
+  }
 
-	$(bgContainer).find("img").load(function() {
-		posBanner($(this).parent(), false)
-	})
+  $('.proj').click(function() {
+    handleProjectClick($(this).attr('id'))
+  });
 
-	$(window).resize(function() {
-		bgContainer.each(function() {
-			posBanner($(this), false)
-		})
-	})
+  var closeProject = function(openProject, newProject) {
+    openProject.removeClass('open')
+    
+    openProject.find('.proj-details').hide()
 
-	var theOpenBanner = function() {
-		return $(".open")
-	}
+    openProject.removeClass('active')
+  }
 
-	var isOpenBanner = function() {
-		return theOpenBanner().length > 0
-	}
+  var openProject = function(closedProject, projectOpen) {
+    closedProject.addClass('active')
 
-	var posBanner = function(bgContainer, transition) {
-		var banner = bgContainer.parent()
-		var bannerPosition = bgContainer.attr("bannerPosition")
-		var bgImg = bgContainer.find("img")
-		var h = bgImg.height()
+    closedProject.find('.proj-details').show()
 
-		if (banner.hasClass("open"))
-			return
-		if (transition)
-			bgImg.velocity({"margin-top": -bannerPosition * h}, 200)
-		else
-			bgImg.css("margin-top", -bannerPosition * h)
-	}
+    $('body').scrollTop(closedProject.offset().top)
 
-	window.isBannerClosed = true
+    closedProject.addClass('open')
+    if (!window.location.hash)
+      window.history.pushState('open', '', window.location.href+'#'+closedProject.attr('id'))
+  }
 
-	var openImageBanner = function(banner) {
-		banner.find(".post-bg").addClass("active")
-		banner.velocity({"height": banner.find("img").height()}, 200)
-		banner.find("img").velocity({"margin-top": 0}, 200)
-		banner.find(".banner-content").velocity({"opacity": 0}, 200)
-		isBannerClosed = false
-	}
+  // focusing targeted project
+  if (window.location.hash)
+    openProject($(window.location.hash), false)
 
-	var closeImageBanner = function(banner, setHeight) {
-		if (setHeight)
-			banner.velocity({"height": "10em"}, 200)
-		banner.find(".banner-content").velocity({"opacity": 1}, 200)
-		posBanner(banner.find(".post-bg"), true)
-		setTimeout(function(){banner.find(".post-bg").removeClass("active")}, 10)
-		isBannerClosed = true
-	}
+  window.onpopstate = function(e) {
+    if (window.location.hash) {
+      handleProjectClick(window.location.hash.substring(1))
+      return
+    }
+    if (isOpenProject())
+      handleProjectClick(theOpenProject().attr('id'))
+  }
 
-	$(".project.banner").click(function() {
-		var banner = $(this)
+  function handleProjectClick(entry) {
+    var thisProject = $('#'+entry)
+    var selfWasOpen = $(thisProject).hasClass('open')
 
-		if (!banner.parent().hasClass("open"))
-			return
+    // close any open projects (there should only be one)
+    if (isOpenProject())
+      closeProject(theOpenProject(), $(thisProject))
 
-		if (isBannerClosed)
-			openImageBanner(banner)
-		else
-			closeImageBanner(banner, true)
-	});
+    if (selfWasOpen) return
 
-	window.oldOpenBannerHeight = null
-
-	var closeBanner = function(openBanner, newBanner) {
-		var bgContainer = openBanner.find(".post-bg")
-		var projContainer = openBanner.find(".proj-content").parent()
-		var bannerBanner = openBanner.find(".banner")
-		var bContent = openBanner.find(".banner-content")
-		
-		// make it not modal before closing
-		openBanner.removeClass("open")
-		
-		// close the image if it's open
-		if (bgContainer.hasClass("active"))
-			closeImageBanner(bannerBanner, false)
-
-		// hide the content
-		openBanner.find(".proj-content").velocity({"opacity": "0"}, 200)
-
-		// correct for scrolling that might have occurred
-		window.history.pushState("close", "", window.location.href.split("#")[0])
-		$(window).scrollTop(openBanner.offset().top)
-
-		// close the banner
-		bannerBanner.velocity({"height": oldOpenBannerHeight}, 200, function() {
-			bannerBanner.css({"height": "auto"})
-		})
-		openBanner.velocity({"height": oldOpenBannerHeight}, 200, function() {
-			openBanner.css({"height": "auto"})
-		})
-
-		// once it's closed, no longer active
-		openBanner.removeClass("active")
-	}
-
-	var openBanner = function(closedBanner, bannerOpen) {
-		var bgImage = closedBanner.find(".post-bg").find("img")
-		var bgHeight = bgImage.height()
-		var projContainer = closedBanner.find(".proj-content").parent()
-		var bannerBanner = closedBanner.find(".banner")
-		
-		// make it active to style it before it opens
-		closedBanner.addClass("active")
-
-		// make the content visible and the right font size
-		closedBanner.find(".proj-content").velocity({"opacity": 1}, 200)
-
-		// open the banner
-		closedBanner.velocity({"height": $(window).height()}, 200)
-		bannerBanner.velocity({"height": "10em"}, 200)
-
-		// scroll the page to the top of the banner as it opens
-		$('body').animate({
-			scrollTop: closedBanner.offset().top
-		}, 200, function() {
-			// make modal once the banner is open
-			closedBanner.addClass("open")
-			if (!window.location.hash)
-				window.history.pushState("open", "", window.location.href+"#"+closedBanner.attr("short"))
-		})
-
-		window.oldOpenBannerHeight = closedBanner.height()
-	}
-
-	// focusing targeted banner
-	if (window.location.hash)
-		openBanner($(window.location.hash), false)
-
-	window.onpopstate = function(e) {
-		if (window.location.hash) {
-			handleBannerClick(window.location.hash.substring(1))
-			return
-		}
-		if (isOpenBanner())
-			handleBannerClick(theOpenBanner().attr("short"))
-	}
-
-	// banner click handling
-	var handleBannerClick = function(entry) {
-		var thisBanner = $("[short="+entry+"]")
-		var selfWasOpen = $(thisBanner).hasClass("open")
-
-		// close any open banners (there should only be one)
-		if (isOpenBanner())
-			closeBanner(theOpenBanner(), $(thisBanner))
-
-		if (selfWasOpen) return
-
-		openBanner($(thisBanner), isOpenBanner()? true : false)	
-	}
-
-	var entice = function(container) {
-		var closeButton = container.find(".close-button")
-		closeButton.css({"color": window.accentColor})
-		setTimeout(function() {
-			closeButton.css({"color": window.oldCloseColor})
-		}, 200)
-
-		var banner = container.find(".project.banner")
-		banner.velocity({"height": "12em"}, 200, "easeInOutCirc", function() {
-			banner.animate({"height": "10em"}, 250, "easeOutBack")
-		})
-	}
-
-	window.oldCloseColor = $(".close-button").css("color")
-	$('.project.snippet').click(function() {
-		var clickedEl = $(arguments[0].target)
-		if (clickedEl.is("i") && ! clickedEl.hasClass("close-button"))
-			return
-		var banner = $(this)
-		if (banner.hasClass("open") && ! clickedEl.hasClass("close-button")) {
-
-			if (!banner.find(".post-bg").hasClass("active"))
-				entice(banner)
-
-			return
-		}
-		handleBannerClick(banner.attr("short"))
-	})
+    openProject($(thisProject), isOpenProject()? true : false) 
+  }
 })()
