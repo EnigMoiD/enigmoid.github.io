@@ -100,14 +100,22 @@ header
       color text-color
     background-color accent
 
-#proj-container
-  .proj
-    padding 1rem
-    
-    background-color #eee
+.proj
+  display flex
+  flex-direction row wrap
+  
+  overflow scroll
+  
+  padding 1rem
+  
+  background-color #eee
+  border-bottom 1px solid rgba(black, .1)
       
-    border-bottom 1px solid rgba(black, .1)
-    
+  .proj-details
+    display none
+  
+  .words
+    flex 0 1 auto
     h1
       font-size 3rem
       em
@@ -118,18 +126,19 @@ header
     .proj-bg
       width 100%
       
-    .proj-details
-      display none
+  .pictures
+    flex 0 1 auto
 
+  &.open
+    height 100%
+    background-color white
+    
     &:hover
-      background-color white
-      cursor pointer
+      cursor auto
     
-    &.imp0
-      flex 1 1 2
-    
-    &.imp1
-      flex 1 1 1
+  &:hover
+    background-color white
+    cursor pointer
 
 #container
   overflow hidden

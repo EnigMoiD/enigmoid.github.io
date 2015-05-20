@@ -1,8 +1,14 @@
 <div class="proj imp{{ post.importance }}" id="{{ post.short }}" imp="{{ post.importance }}">
 {% assign firstword = post.title | split: ' ' | first %}
-  <h1><em>{{ firstword }}</em>{{ post.title | remove: firstword }}</h1>
+  <div class="words">
+    <h1><em>{{ firstword }}</em>{{ post.title | remove: firstword }}</h1>
 
-  <div class="proj-details">
-    {{ post.content }}
+    <div class="proj-details">
+      <h3>{{ post.header[0] }}</h3>
+      {{ post.header[1] | markdownify }}
+    </div>
+  </div>
+  <div class="proj-details pictures">
+    A picture
   </div>
 </div>

@@ -175,42 +175,53 @@ header li.active {
 header li.active a {
   color: #000;
 }
-#proj-container .proj {
+.proj {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row wrap;
+  overflow: scroll;
   padding: 1rem;
   background-color: #eee;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
-#proj-container .proj h1 {
+.proj .proj-details {
+  display: none;
+}
+.proj .words {
+  -webkit-flex: 0 1 auto;
+  -moz-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  -o-flex: 0 1 auto;
+  flex: 0 1 auto;
+}
+.proj .words h1 {
   font-size: 3rem;
 }
-#proj-container .proj h1 em {
+.proj .words h1 em {
   font-family: DIN;
   font-style: normal;
   font-weight: 900;
 }
-#proj-container .proj .proj-bg {
+.proj .words .proj-bg {
   width: 100%;
 }
-#proj-container .proj .proj-details {
-  display: none;
+.proj .pictures {
+  -webkit-flex: 0 1 auto;
+  -moz-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  -o-flex: 0 1 auto;
+  flex: 0 1 auto;
 }
-#proj-container .proj:hover {
+.proj.open {
+  height: 100%;
+  background-color: #fff;
+}
+.proj.open:hover {
+  cursor: auto;
+}
+.proj:hover {
   background-color: #fff;
   cursor: pointer;
-}
-#proj-container .proj.imp0 {
-  -webkit-flex: 1 1 2;
-  -moz-flex: 1 1 2;
-  -ms-flex: 1 1 2;
-  -o-flex: 1 1 2;
-  flex: 1 1 2;
-}
-#proj-container .proj.imp1 {
-  -webkit-flex: 1 1 1;
-  -moz-flex: 1 1 1;
-  -ms-flex: 1 1 1;
-  -o-flex: 1 1 1;
-  flex: 1 1 1;
 }
 #container {
   overflow: hidden;

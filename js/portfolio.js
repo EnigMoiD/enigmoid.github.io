@@ -15,13 +15,9 @@
     openProject.removeClass('open')
     
     openProject.find('.proj-details').hide()
-
-    openProject.removeClass('active')
   }
 
   var openProject = function(closedProject, projectOpen) {
-    closedProject.addClass('active')
-
     closedProject.find('.proj-details').show()
 
     $('body').scrollTop(closedProject.offset().top)

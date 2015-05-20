@@ -6,6 +6,14 @@ vendor(prop, args)
   -o-{prop} args
   {prop} args
 
+// fix display for Safari flexbox support
+display()
+  if arguments[0] is flex
+    display -webkit-flex
+    display flex
+  else
+    display arguments
+
 transition()
   vendor('transition', arguments)
 
@@ -23,6 +31,9 @@ justify-content()
 
 align-items()
   vendor('align-items', arguments)
+
+align-self()
+  vendor('align-self', arguments)
 
 align-content()
   vendor('align-content', arguments)
