@@ -8,7 +8,10 @@
     </div>
     {% for img in post.images %}
       <div class="proj-details proj-image">
-        <img src="{{ img[0] }}">
+        <img src="{{ img[0] }}" {% if post.script == 'true' %}
+          onmouseover="this.src='{{post.originals[forloop.index0]}}'"
+          onmouseout="this.src='{{img[0]}}'"
+          {% endif %}/>
         <p>{{ img[1] }}</p>
       </div>
     {% endfor %}

@@ -103,6 +103,8 @@ header
 .proj
   box-sizing border-box
   overflow scroll
+  display flex
+  flex-flow column nowrap
   
   padding 1rem
   
@@ -110,6 +112,7 @@ header
   border-bottom 1px solid rgba(black, .1)
      
   h1
+    flex 0 0 auto
     font-size 3rem
     em
       font-family DIN
@@ -117,8 +120,11 @@ header
       font-weight 900
       
   .proj-flex
+    flex 1 0 auto
+    
     display flex
     overflow scroll
+    align-items stretch
         
     .proj-details
       display none
@@ -133,7 +139,7 @@ header
         
     .proj-image
       flex 1 0 auto
-      align-self baseline
+      align-self center
       box-sizing border-box
 
       padding 3rem
@@ -142,7 +148,7 @@ header
       
       img
         max-width 100%
-        max-height 70%
+        max-height 75%
 
   &.open
     background-color white

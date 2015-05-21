@@ -178,11 +178,23 @@ header li.active a {
 .proj {
   box-sizing: border-box;
   overflow: scroll;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  -o-flex-flow: column nowrap;
+  flex-flow: column nowrap;
   padding: 1rem;
   background-color: #eee;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 .proj h1 {
+  -webkit-flex: 0 0 auto;
+  -moz-flex: 0 0 auto;
+  -ms-flex: 0 0 auto;
+  -o-flex: 0 0 auto;
+  flex: 0 0 auto;
   font-size: 3rem;
 }
 .proj h1 em {
@@ -191,9 +203,19 @@ header li.active a {
   font-weight: 900;
 }
 .proj .proj-flex {
+  -webkit-flex: 1 0 auto;
+  -moz-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  -o-flex: 1 0 auto;
+  flex: 1 0 auto;
   display: -webkit-flex;
   display: flex;
   overflow: scroll;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  -ms-align-items: stretch;
+  -o-align-items: stretch;
+  align-items: stretch;
 }
 .proj .proj-flex .proj-details {
   display: none;
@@ -216,18 +238,18 @@ header li.active a {
   -ms-flex: 1 0 auto;
   -o-flex: 1 0 auto;
   flex: 1 0 auto;
-  -webkit-align-self: baseline;
-  -moz-align-self: baseline;
-  -ms-align-self: baseline;
-  -o-align-self: baseline;
-  align-self: baseline;
+  -webkit-align-self: center;
+  -moz-align-self: center;
+  -ms-align-self: center;
+  -o-align-self: center;
+  align-self: center;
   box-sizing: border-box;
   padding: 3rem;
   max-width: 100%;
 }
 .proj .proj-flex .proj-image img {
   max-width: 100%;
-  max-height: 70%;
+  max-height: 75%;
 }
 .proj.open {
   background-color: #fff;
