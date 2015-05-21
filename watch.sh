@@ -28,7 +28,9 @@ PROJECT_DIR="${DIR}"
  
 # Set up a list of directories to monitor.
 MONITOR=()
-MONITOR+=( "${PROJECT_DIR}" )
+MONITOR+=( "${PROJECT_DIR}/img" )
+MONITOR+=( "${PROJECT_DIR}/stylus" )
+MONITOR+=( "${PROJECT_DIR}/stylesheets" )
  
 # This file will be used as a timestamp reference point.
 TIMESTAMP_FILE="/tmp/file-monitor-ts"
