@@ -7,7 +7,7 @@ all: img $(css)
 img: $(TAR)
 
 %.jpg: %-full.jpg
-	python convert-img.py
+	python convert-img.py $^
 
 stylesheets/%.css: stylus/%.styl
 	stylus $^ -o stylesheets
