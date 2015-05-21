@@ -1,7 +1,13 @@
-SRC := $(shell find . -name '*-full.jpg')
-TAR := $(addprefix ./,$(notdir $(SRC:-full.jpg=.jpg)))
+SRC := $(shell find ./img -name '*-full.jpg')
+TAR := $(SRC:-full.jpg=.jpg)
+css := stylesheets/style.css
 
-all: $(TAR)
+all: img $(css)
 
-%.jpg : ./img/**/%-full.jpg
+img: $(TAR)
+
+%.jpg: %-full.jpg
 	python convert-img.py
+
+$(css): stylus/*.styl
+	stylus stylus/style.styl -o stylesheets

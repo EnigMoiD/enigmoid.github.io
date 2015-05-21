@@ -177,6 +177,7 @@ header li.active a {
 }
 .proj {
   box-sizing: border-box;
+  overflow: scroll;
   padding: 1rem;
   background-color: #eee;
   border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -191,6 +192,7 @@ header li.active a {
 }
 .proj .proj-flex {
   display: -webkit-flex;
+  display: flex;
   overflow: scroll;
 }
 .proj .proj-flex .proj-details {
@@ -198,6 +200,10 @@ header li.active a {
 }
 .proj .proj-flex .words {
   -webkit-flex: 1 0 auto;
+  -moz-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  -o-flex: 1 0 auto;
+  flex: 1 0 auto;
   max-width: 50%;
   padding: 3rem;
 }
@@ -206,17 +212,26 @@ header li.active a {
 }
 .proj .proj-flex .proj-image {
   -webkit-flex: 1 0 auto;
-  -webkit-align-self: center;
+  -moz-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+  -o-flex: 1 0 auto;
+  flex: 1 0 auto;
+  -webkit-align-self: baseline;
+  -moz-align-self: baseline;
+  -ms-align-self: baseline;
+  -o-align-self: baseline;
+  align-self: baseline;
   box-sizing: border-box;
   padding: 3rem;
-  width: 600px;
+  max-width: 100%;
 }
 .proj .proj-flex .proj-image img {
   max-width: 100%;
+  max-height: 70%;
 }
 .proj.open {
-  height: 100%;
   background-color: #fff;
+  min-height: 30rem;
 }
 .proj.open:hover {
   cursor: auto;
