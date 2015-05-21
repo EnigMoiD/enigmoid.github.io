@@ -2,3 +2,5 @@ _site/
 .DS_Store
 *.psd
 *.sublime-workspace
+stylesheets/font.css
+stylesheets/vendor.css

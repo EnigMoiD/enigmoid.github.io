@@ -176,41 +176,43 @@ header li.active a {
   color: #000;
 }
 .proj {
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: row wrap;
-  overflow: scroll;
+  box-sizing: border-box;
   padding: 1rem;
   background-color: #eee;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
-.proj .proj-details {
-  display: none;
-}
-.proj .words {
-  -webkit-flex: 0 1 auto;
-  -moz-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  -o-flex: 0 1 auto;
-  flex: 0 1 auto;
-}
-.proj .words h1 {
+.proj h1 {
   font-size: 3rem;
 }
-.proj .words h1 em {
+.proj h1 em {
   font-family: DIN;
   font-style: normal;
   font-weight: 900;
 }
-.proj .words .proj-bg {
+.proj .proj-flex {
+  display: -webkit-flex;
+  overflow: scroll;
+}
+.proj .proj-flex .proj-details {
+  display: none;
+}
+.proj .proj-flex .words {
+  -webkit-flex: 1 0 auto;
+  max-width: 50%;
+  padding: 3rem;
+}
+.proj .proj-flex .words .proj-bg {
   width: 100%;
 }
-.proj .pictures {
-  -webkit-flex: 0 1 auto;
-  -moz-flex: 0 1 auto;
-  -ms-flex: 0 1 auto;
-  -o-flex: 0 1 auto;
-  flex: 0 1 auto;
+.proj .proj-flex .proj-image {
+  -webkit-flex: 1 0 auto;
+  -webkit-align-self: center;
+  box-sizing: border-box;
+  padding: 3rem;
+  width: 600px;
+}
+.proj .proj-flex .proj-image img {
+  max-width: 100%;
 }
 .proj.open {
   height: 100%;

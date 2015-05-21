@@ -101,33 +101,44 @@ header
     background-color accent
 
 .proj
-  display flex
-  flex-direction row wrap
-  
-  overflow scroll
-  
+  box-sizing border-box
   padding 1rem
   
   background-color #eee
   border-bottom 1px solid rgba(black, .1)
+     
+  h1
+    font-size 3rem
+    em
+      font-family DIN
+      font-style normal
+      font-weight 900
       
-  .proj-details
-    display none
-  
-  .words
-    flex 0 1 auto
-    h1
-      font-size 3rem
-      em
-        font-family DIN
-        font-style normal
-        font-weight 900
+  .proj-flex
+    display -webkit-flex
+    overflow scroll
+        
+    .proj-details
+      display none
     
-    .proj-bg
-      width 100%
+    .words
+      -webkit-flex 1 0 auto
+      max-width 50%
+      padding 3rem
       
-  .pictures
-    flex 0 1 auto
+      .proj-bg
+        width 100%
+        
+    .proj-image
+      -webkit-flex 1 0 auto
+      -webkit-align-self center
+      box-sizing border-box
+
+      padding 3rem
+      
+      width 600px
+      img
+        max-width 100%
 
   &.open
     height 100%

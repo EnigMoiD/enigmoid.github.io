@@ -1,14 +1,16 @@
 <div class="proj imp{{ post.importance }}" id="{{ post.short }}" imp="{{ post.importance }}">
 {% assign firstword = post.title | split: ' ' | first %}
-  <div class="words">
-    <h1><em>{{ firstword }}</em>{{ post.title | remove: firstword }}</h1>
-
-    <div class="proj-details">
+  <h1><em>{{ firstword }}</em>{{ post.title | remove: firstword }}</h1>
+  <div class="proj-flex">
+    <div class="proj-details words">
       <h3>{{ post.header[0] }}</h3>
       {{ post.header[1] | markdownify }}
     </div>
-  </div>
-  <div class="proj-details pictures">
-    A picture
+    {% for img in post.images %}
+      <div class="proj-details proj-image">
+        <img src="{{ img[0] }}">
+        <p>{{ img[1] }}</p>
+      </div>
+    {% endfor %}
   </div>
 </div>

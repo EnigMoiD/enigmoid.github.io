@@ -1,4 +1,6 @@
 (function() {
+  $.easing.def = 'easeInOutExpo'
+
   var theOpenProject = function() {
     return $('.open')
   }
@@ -13,6 +15,7 @@
 
   var closeProject = function(openProject, newProject) {
     openProject.removeClass('open')
+    openProject.css({height: 'auto'})
     
     openProject.find('.proj-details').hide()
   }
@@ -20,9 +23,13 @@
   var openProject = function(closedProject, projectOpen) {
     closedProject.find('.proj-details').show()
 
-    $('body').scrollTop(closedProject.offset().top)
+    $('body').animate({
+      scrollTop: closedProject.offset().top-.05*$(window).height()
+    }, 200);
 
     closedProject.addClass('open')
+    closedProject.css({height: .9*$(window).height()})
+
     if (!window.location.hash)
       window.history.pushState('open', '', window.location.href+'#'+closedProject.attr('id'))
   }
